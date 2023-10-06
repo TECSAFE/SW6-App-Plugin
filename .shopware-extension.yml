@@ -1,0 +1,24 @@
+changelog:
+  enabled: false
+
+build:
+  zip:
+    composer:
+      enabled: true
+    assets:
+      enabled: true
+      enable_es_build_for_admin: true
+      enable_es_build_for_storefront: true
+    pack:
+      excludes:
+        paths:
+          - shopware-source
+          - tests
+          - .idea
+          - .dockerignore
+          - .gitignore
+          - .shopware-extension.yml
+          - docker-compose.yaml
+          - phpstan.neon
+          - phpunit.xml.dist
+          - README.md

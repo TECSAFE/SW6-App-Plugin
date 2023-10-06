@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+
+  shopware:
+    image: dockware/dev:6.5.0.0
+    container_name: tecsafe-sw6-plugin-shopware
+    ports:
+      - "80:80"
+      - "3306:3306"
+      - "22:22"
+      - "8888:8888"
+      - "9999:9999"
+      - "9998:9998"
+    networks:
+      - web
+    environment:
+      - XDEBUG_ENABLED=1
+    volumes:
+      - ".:/var/www/html/custom/plugins/MadTecsafe"
+
+networks:
+  web:
+    external: false
