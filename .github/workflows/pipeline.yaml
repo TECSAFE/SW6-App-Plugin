@@ -1,0 +1,87 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  phpunit:
+    name: Phpunit tests | Shopware ${{ matrix.shopware }}, PHP ${{ matrix.php }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - shopware: '6.5.0.0'
+            php: '8.0'
+          #- shopware: '6.5.6.0'
+          #  php: '8.0'
+    steps:
+
+      - name: Clone Code
+        uses: actions/checkout@v3
+
+      - name: Download Docker
+        run: |
+          docker pull dockware/dev:${{ matrix.shopware }}
+
+      - name: Start Docker
+        run: |
+          docker run --rm -p 80:80 -p 443:443 --name shop --env PHP_VERSION=${{ matrix.php }} -d dockware/dev:${{ matrix.shopware }}
+          sleep 30
+          docker logs shop
+          # now change the domain of our shop if required
+          sudo echo "127.0.0.1 local.shopware.shop" | sudo tee -a /etc/hosts
+          docker exec shop bash -c "mysql -u root -proot shopware -e \"UPDATE sales_channel_domain SET url='https://local.shopware.shop' WHERE url NOT LIKE 'default.%';\""
+
+      - name: Install additional dependencies
+        run: |
+          docker exec shop bash -c 'composer require --dev dev-tools code-quality'
+          docker exec -u root shop bash -c 'wget -qO- https://github.com/FriendsOfShopware/shopware-cli/releases/download/0.3.4/shopware-cli_Linux_x86_64.tar.gz | tar -xzf- -C /tmp/ && cp /tmp/shopware-cli /usr/local/bin/shopware-cli'
+
+      - name: Upload into Docker
+        run: |
+          docker cp $(pwd)/. shop:/var/www/html/custom/plugins/MadTecsafe
+          docker exec shop bash -c 'sudo chown www-data:www-data /var/www/html/custom/plugins -R'
+
+      - name: Install and Build Artifacts
+        run: |
+          docker exec shop bash -c 'cd /var/www/html/custom/plugins/MadTecsafe && shopware-cli extension build .'
+
+      - name: Install/Configure Plugin
+        run: |
+          docker exec shop bash -c 'cd /var/www/html/custom/plugins/MadTecsafe && php bin/console plugin:refresh'
+          docker exec shop bash -c 'cd /var/www/html/custom/plugins/MadTecsafe && php bin/console plugin:install MadTecsafe --activate'
+          docker exec shop bash -c 'cd /var/www/html/custom/plugins/MadTecsafe && php bin/console cache:clear'
+
+      - name: Run phpunit
+        run: |
+          docker exec shop bash -c 'cd /var/www/html/custom/plugins/MadTecsafe && php vendor/bin/phpunit -c custom/plugins/MadTecsafe'
+  #docker exec shop bash -c 'php bin/console system:config:set MyPlugin.config.MyKey ${{ secrets.MYKEY_TEST }}'
+
+
+#      - name: Install Cypress
+#        run: cd tests/Cypress && make install -B
+#
+#      - name: Start Cypress
+#        run: cd tests/Cypress && CYPRESS_BASE_URL=http://local.shopware.shop CYPRESS_SHOPWARE=${{ matrix.shopware }} ./node_modules/.bin/cypress run --headless
+#
+#      - name: Download Logs
+#        if: ${{ always() }}
+#        run: |
+#          mkdir -p $(pwd)/Tests/Cypress/cypress/logs/shopware
+#          mkdir -p $(pwd)/Tests/Cypress/cypress/logs/apache
+#          docker cp shop:/var/www/html/var/log/. $(pwd)/Tests/Cypress/cypress/logs/shopware
+#          docker cp shop:/var/log/php/. $(pwd)/Tests/Cypress/cypress/logs/apache
+#
+#      - name: Store Cypress Results
+#        if: ${{ always() }}
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: cypress_results_sw_v${{ matrix.shopware }}
+#          retention-days: 1
+#          path: |
+#            Tests/Cypress/cypress/logs
+#            Tests/Cypress/cypress/videos
+#            Tests/Cypress/cypress/screenshots
