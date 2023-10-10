@@ -19,5 +19,3 @@ parameters:
 
     reportUnmatchedIgnoredErrors: false
     tipsOfTheDay: false
-
-docker run --rm -p 80:80 -e VIRTUAL_HOST=localhost ghcr.io/shopwarelabs/testenv:6.X.X
