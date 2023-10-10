@@ -12,7 +12,8 @@ jobs:
       - uses: php-actions/composer@v6 # or alternative dependency management
         with:
           php_version: '8.1'
-          php_extensions: curl dom fileinfo gd intl json mbstring openssl pdo pdo_mysql session simplexml sodium xml zip zlib  
+          php_extensions: curl dom fileinfo gd intl json mbstring openssl pdo pdo_mysql session simplexml sodium xml zip zlib
+          args: "--no-plugins"
       - uses: php-actions/phpstan@v3
         with:
           path: src/
