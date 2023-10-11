@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
+
+    <card>
+        <title>Authentication</title>
+        <input-field>
+            <name>salesChannelName</name>
+            <label>SalesChannel Name</label>
+            <label lang="de-DE">SalesChannel Name</label>
+        </input-field>
+        <input-field type="password">
+            <name>salesChannelSecret</name>
+            <label>SalesChannel Secret</label>
+            <label lang="de-DE">SalesChannel Secret</label>
+        </input-field>
+        <input-field>
+            <name>cockpitUrl</name>
+            <label>Cockpit URL</label>
+            <defaultValue>http://cockpit.ofcp.test:8080/</defaultValue>
+            <placeholder>http://cockpit.ofcp.test:8080/</placeholder>
+        </input-field>
+        <input-field>
+            <name>appUrl</name>
+            <label>App URL</label>
+            <label lang="de-DE">App URL</label>
+            <defaultValue>http://app.ofcp.test:8080/</defaultValue>
+            <placeholder>http://app.ofcp.test:8080/</placeholder>
+        </input-field>
+        <input-field>
+            <name>internalAppUrl</name>
+            <label>Internal App URL</label>
+            <label lang="de-DE">Interne App URL</label>
+            <defaultValue>http://app.ofcp.test:8080/</defaultValue>
+            <placeholder>http://app.ofcp.test:8080/</placeholder>
+        </input-field>
+        <input-field>
+            <name>callbackUrl</name>
+            <label>Callback URL</label>
+            <label lang="de-DE">Callback URL</label>
+            <defaultValue>http://shopware.ofcp.test:8080/api/tecsafe/ofcp/callback</defaultValue>
+            <placeholder>http://shopware.ofcp.test:8080/api/tecsafe/ofcp/callback</placeholder>
+        </input-field>
+    </card>
+</config>
