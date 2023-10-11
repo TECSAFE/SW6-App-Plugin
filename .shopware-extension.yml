@@ -20,5 +20,5 @@ build:
           - .shopware-extension.yml
           - docker-compose.yaml
           - phpstan.neon
-          - phpunit.xml.dist
+          - phpunit.xml
           - README.md
