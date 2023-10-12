@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Madco\Tecsafe\Config;
 
+use Psr\Http\Message\UriFactoryInterface;
 use Shopware\Core\PlatformRequest;
 use Shopware\Core\System\SalesChannel\SalesChannelContext;
 use Shopware\Core\System\SystemConfig\SystemConfigService;
@@ -13,7 +14,8 @@ final class Factory
 {
     public function __construct(
         private readonly SystemConfigService $systemConfigService,
-        private readonly ?RequestStack $requestStack = null
+        private readonly UriFactoryInterface $uriFactory,
+        private readonly ?RequestStack $requestStack = null,
     ) {
     }
 
@@ -63,10 +65,10 @@ final class Factory
             $salesChannelId,
             $salesChannelName,
             $salesChannelSecret,
-            $cockpitUrl,
-            $appUrl,
-            $internalAppUrl,
-            $callbackUrl
+            $this->uriFactory->createUri($cockpitUrl),
+            $this->uriFactory->createUri($appUrl),
+            $this->uriFactory->createUri($internalAppUrl),
+            $this->uriFactory->createUri($callbackUrl)
         );
     }
 }

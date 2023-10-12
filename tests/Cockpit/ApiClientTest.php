@@ -8,6 +8,7 @@ use Google\Auth\Cache\MemoryCacheItemPool;
 use Madco\Tecsafe\Cockpit\AccessToken;
 use Madco\Tecsafe\Cockpit\ApiClient;
 use Madco\Tecsafe\Config\PluginConfig;
+use Nyholm\Psr7\Uri;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Cache\Adapter\ArrayAdapter;
 use Symfony\Component\HttpClient\MockHttpClient;
@@ -39,10 +40,10 @@ class ApiClientTest extends TestCase
             'foobar',
             'foo',
             'barsecret',
-            'foo',
-            'bar',
-            'baz',
-            'wdwd'
+            new Uri('http://app.local'),
+            new Uri('http://app.local'),
+            new Uri('http://app.local'),
+            new Uri('http://app.local'),
         );
 
         $cache = new ArrayAdapter();
@@ -76,10 +77,10 @@ class ApiClientTest extends TestCase
             'foobar',
             'foo',
             'barsecret',
-            'foo',
-            'bar',
-            'baz',
-            'wdwd'
+            new Uri('http://app.local'),
+            new Uri('http://app.local'),
+            new Uri('http://app.local'),
+            new Uri('http://app.local'),
         );
 
         /* prepare cache with expired token */

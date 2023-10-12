@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Madco\Tecsafe\Config;
 
+use Psr\Http\Message\UriInterface;
+
 final class PluginConfig
 {
     private const CONFIG_KEY_PREFIX = 'MadTecsafe.config.';
@@ -24,10 +26,10 @@ final class PluginConfig
         public readonly ?string $salesChannelId,
         public readonly string $salesChannelName,
         public readonly string $salesChannelSecret,
-        public readonly string $cockpitUrl,
-        public readonly string $appUrl,
-        public readonly string $internalAppUrl,
-        public readonly string $callbackUrl
+        public readonly UriInterface $cockpitUrl,
+        public readonly UriInterface $appUrl,
+        public readonly UriInterface $internalAppUrl,
+        public readonly UriInterface $callbackUrl
     ) {
     }
 }
