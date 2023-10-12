@@ -140,7 +140,7 @@ return static function (ECSConfig $ecsConfig): void {
         PhpdocSummaryFixer::class => null,
         ExplicitStringVariableFixer::class => null,
         StandaloneLineInMultilineArrayFixer::class => null,
-        AssignmentInConditionSniff::class => null,
+        //AssignmentInConditionSniff::class => null,
         PhpdocToCommentFixer::class => null,
         PhpdocAlignFixer::class => null,
         PhpdocAnnotationWithoutDotFixer::class => null,
