@@ -88,6 +88,7 @@ class ApiClientTest extends TestCase
         $cacheItem = $cache->getItem('foobar_access-token');
         $cacheItem->set($expiredAccessToken);
         $cacheItem->expiresAt($expiry);
+
         $cache->save($cacheItem);
 
 

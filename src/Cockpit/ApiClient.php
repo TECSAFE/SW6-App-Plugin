@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Madco\Tecsafe\Cockpit;
 
+use Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
+use Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface;
+use Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface;
+use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Madco\Tecsafe\Config\PluginConfig;
 use Psr\Cache\CacheItemPoolInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -19,15 +23,15 @@ class ApiClient
     }
 
     /**
-     * @throws \Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface
-     * @throws \Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface
-     * @throws \Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface
-     * @throws \Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface
+     * @throws ClientExceptionInterface
+     * @throws RedirectionExceptionInterface
+     * @throws ServerExceptionInterface
+     * @throws TransportExceptionInterface
      * @throws \Exception
      */
     public function obtainAccessToken(): AccessToken
     {
-        $cacheKey = $this->pluginConfig->salesChannelId . '_' . 'access-token';
+        $cacheKey = $this->pluginConfig->salesChannelId . '_access-token';
 
         $cacheItem = $this->cacheItemPool->getItem($cacheKey);
 
@@ -38,7 +42,7 @@ class ApiClient
                 'json' => [
                     'salesChannel' => $this->pluginConfig->salesChannelName,
                     'secret' => $this->pluginConfig->salesChannelSecret,
-                ]
+                ],
             ]);
 
             $responseBody = $response->getContent();

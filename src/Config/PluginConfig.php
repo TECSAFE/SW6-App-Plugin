@@ -22,11 +22,11 @@ final class PluginConfig
 
     public function __construct(
         public readonly ?string $salesChannelId,
-        public readonly string  $salesChannelName,
-        public readonly string  $salesChannelSecret,
-        public readonly string  $cockpitUrl,
-        public readonly string  $appUrl,
-        public readonly string  $internalAppUrl,
+        public readonly string $salesChannelName,
+        public readonly string $salesChannelSecret,
+        public readonly string $cockpitUrl,
+        public readonly string $appUrl,
+        public readonly string $internalAppUrl,
         public readonly string $callbackUrl
     ) {
     }

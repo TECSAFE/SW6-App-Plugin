@@ -15,7 +15,11 @@
   },
   "require-dev": {
     "phpstan/phpstan": "^1.10.34",
-    "rector/rector": "^0.18.5"
+    "rector/rector": "^0.18.5",
+    "shopware/dev-tools": "^1.1",
+    "symplify/easy-coding-standard": "^12.0",
+    "frosh/shopware-rector": "^0.2.3",
+    "kubawerlos/php-cs-fixer-custom-fixers": "^3.16"
   },
   "extra": {
     "shopware-plugin-class": "Madco\\Tecsafe\\MadTecsafe",
@@ -46,21 +50,26 @@
       "Madco\\Tecsafe\\Tests\\": "tests/"
     }
   },
+  "config": {
+    "lock": false,
+    "allow-plugins": {
+      "symfony/flex": false,
+      "symfony/runtime": false
+    }
+  },
   "scripts": {
-    "test": "@php ../../../vendor/bin/phpunit -c .",
-    "ecs": "@php ../../../vendor-bin/cs-fixer/vendor/bin/ecs check custom/static-plugins custom/plugins",
-    "ecs-fix": "@php ../../../vendor-bin/cs-fixer/vendor/bin/ecs check --fix custom/static-plugins custom/plugins",
+    "test": "@php vendor/bin/phpunit -c .",
+    "ecs": "@php vendor/bin/ecs check",
+    "ecs-fix": "@php vendor/bin/ecs check --fix",
     "phpstan": [
-      "@php ../../../vendor/frosh/code-quality-meta/phpstan-bootstrap.php",
-      "@php ../../../vendor-bin/phpstan/vendor/bin/phpstan analyze custom/static-plugins custom/plugins"
+      "@php vendor/bin/phpstan analyze ."
     ],
-    "rector-dry": "@php ../../../vendor-bin/rector/vendor/bin/rector process --config=rector.php --dry-run",
-    "rector": "@php ../../../vendor-bin/rector/vendor/bin/rector process --config=rector.php",
+    "rector-dry": "@php vendor/bin/rector process --config=rector.php --dry-run src tests",
+    "rector": "@php vendor/bin/rector process --config=rector.php src tests",
     "commit": [
       "@phpstan",
       "@rector",
-      "@ecs-fix",
-      "@php bin/console dal:validate"
+      "@ecs-fix"
     ]
   }
 }
