@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Madco\Tecsafe\Cockpit;
+namespace Madco\Tecsafe\Tecsafe;
 
 use Madco\Tecsafe\Config\PluginConfig;
 use Psr\Cache\CacheItemPoolInterface;
@@ -66,7 +66,7 @@ class ApiClient
      * @throws TransportExceptionInterface
      * @throws ServerExceptionInterface
      */
-    public function obtainCustomerToken(SalesChannelContext $context): string
+    public function obtainCustomerTokenFromCockpit(SalesChannelContext $context): string
     {
         $accessToken = $this->obtainAccessToken();
 
@@ -86,6 +86,25 @@ class ApiClient
         $customerTokenUrl = $this->pluginConfig->cockpitUrl->withPath('v1/token/customer')->__toString();
         $response = $this->httpClient->request(Request::METHOD_POST, $customerTokenUrl, [
             'json' => $fields,
+            'auth_bearer' => $accessToken->token,
+        ]);
+
+        return $response->getContent();
+    }
+
+    /**
+     * @throws RedirectionExceptionInterface
+     * @throws ClientExceptionInterface
+     * @throws TransportExceptionInterface
+     * @throws ServerExceptionInterface
+     */
+    public function createOfcpOrderInApp(array $payload): string
+    {
+        $accessToken = $this->obtainAccessToken();
+
+        $orderUrl = $this->pluginConfig->internalAppUrl->withPath('api/shop/order');
+        $response = $this->httpClient->request(Request::METHOD_POST, $orderUrl->__toString(), [
+            'json' => $payload,
             'auth_bearer' => $accessToken->token,
         ]);
 

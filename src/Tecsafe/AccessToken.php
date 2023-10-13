@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Madco\Tecsafe\Cockpit;
+namespace Madco\Tecsafe\Tecsafe;
 
 final class AccessToken
 {

@@ -15,18 +15,18 @@
             <factory service="Madco\Tecsafe\Config\Factory" method="create" />
         </service>
 
-        <service id="Madco\Tecsafe\Cockpit\ApiClient">
+        <service id="Madco\Tecsafe\Tecsafe\ApiClient">
             <argument type="service" id="http_client" />
             <argument type="service" id="Madco\Tecsafe\Config\PluginConfig" />
             <argument type="service" id="cache.object" />
         </service>
 
         <service id="Madco\Tecsafe\Storefront\Controller\TokenApiController" public="true">
-            <argument type="service" id="Madco\Tecsafe\Cockpit\ApiClient" />
+            <argument type="service" id="Madco\Tecsafe\Tecsafe\ApiClient" />
         </service>
 
         <service id="Madco\Tecsafe\Core\SalesChannel\TokenStoreRoute">
-            <argument type="service" id="Madco\Tecsafe\Cockpit\ApiClient" />
+            <argument type="service" id="Madco\Tecsafe\Tecsafe\ApiClient" />
         </service>
 
         <service id="Madco\Tecsafe\Api\Controller\WebhookController">
@@ -38,6 +38,14 @@
             <argument type="service" id="Shopware\Core\Checkout\Cart\SalesChannel\CartService" />
 
             <tag name="messenger.message_handler" />
+        </service>
+
+        <service id="Madco\Tecsafe\Subscriber\OrderSubscriber">
+            <argument type="service" id="Madco\Tecsafe\Tecsafe\ApiClient" />
+            <argument type="service" id="logger" />
+            <argument type="service" id="request_stack" />
+
+            <tag name="kernel.event_subscriber" />
         </service>
     </services>
 </container>

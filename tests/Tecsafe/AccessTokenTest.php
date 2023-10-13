@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Madco\Tecsafe\Tests\Cockpit;
+namespace Madco\Tecsafe\Tests\Tecsafe;
 
-use Madco\Tecsafe\Cockpit\AccessToken;
+use Madco\Tecsafe\Tecsafe\AccessToken;
 use PHPUnit\Framework\TestCase;
 
 class AccessTokenTest extends TestCase

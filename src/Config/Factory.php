@@ -24,7 +24,7 @@ final class Factory
         $salesChannelId = null;
 
         if ($this->requestStack !== null) {
-            $salesChannelContext = $this->requestStack->getCurrentRequest()->attributes->get(PlatformRequest::ATTRIBUTE_SALES_CHANNEL_CONTEXT_OBJECT);
+            $salesChannelContext = $this->requestStack->getCurrentRequest()?->attributes->get(PlatformRequest::ATTRIBUTE_SALES_CHANNEL_CONTEXT_OBJECT);
 
             if ($salesChannelContext instanceof SalesChannelContext) {
                 $salesChannelId = $salesChannelContext->getSalesChannelId();

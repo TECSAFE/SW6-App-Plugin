@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Madco\Tecsafe\Core\SalesChannel;
 
-use Madco\Tecsafe\Cockpit\ApiClient as CockpitApiClient;
+use Madco\Tecsafe\Tecsafe\ApiClient as CockpitApiClient;
 use Shopware\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
@@ -27,7 +27,7 @@ class TokenStoreRoute
     )]
     public function index(SalesChannelContext $salesChannelContext): JsonResponse
     {
-        $token = $this->cockpitApiClient->obtainCustomerToken($salesChannelContext);
+        $token = $this->cockpitApiClient->obtainCustomerTokenFromCockpit($salesChannelContext);
 
         return new JsonResponse([
             'token' => $token,

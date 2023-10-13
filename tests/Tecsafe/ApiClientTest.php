@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Madco\Tecsafe\Tests\Cockpit;
+namespace Madco\Tecsafe\Tests\Tecsafe;
 
 use Google\Auth\Cache\MemoryCacheItemPool;
-use Madco\Tecsafe\Cockpit\AccessToken;
-use Madco\Tecsafe\Cockpit\ApiClient;
+use Madco\Tecsafe\Tecsafe\AccessToken;
+use Madco\Tecsafe\Tecsafe\ApiClient;
 use Madco\Tecsafe\Config\PluginConfig;
 use Nyholm\Psr7\Uri;
 use PHPUnit\Framework\TestCase;
