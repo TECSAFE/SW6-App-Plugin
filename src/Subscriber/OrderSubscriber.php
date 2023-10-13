@@ -57,7 +57,7 @@ class OrderSubscriber implements EventSubscriberInterface
             }
         }
 
-        if (!$item) {
+        if ($item === null) {
             return;
         }
 
@@ -75,7 +75,7 @@ class OrderSubscriber implements EventSubscriberInterface
             |TransportExceptionInterface $e
         ) {
             $this->logger->error($e->getMessage(), [
-                'exception' => $e
+                'exception' => $e,
             ]);
 
             return;
@@ -83,7 +83,7 @@ class OrderSubscriber implements EventSubscriberInterface
 
         $response = json_decode($response, true);
 
-        if (!isset($response['success']) || false === \boolval($response['success'])) {
+        if (!isset($response['success']) || (bool) $response['success'] === false) {
             $prefix = 'Could not create OFCP order, reason';
 
             if (isset($response['message'])) {
