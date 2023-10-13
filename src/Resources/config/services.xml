@@ -20,5 +20,24 @@
             <argument type="service" id="Madco\Tecsafe\Config\PluginConfig" />
             <argument type="service" id="cache.object" />
         </service>
+
+        <service id="Madco\Tecsafe\Storefront\Controller\TokenApiController" public="true">
+            <argument type="service" id="Madco\Tecsafe\Cockpit\ApiClient" />
+        </service>
+
+        <service id="Madco\Tecsafe\Core\SalesChannel\TokenStoreRoute">
+            <argument type="service" id="Madco\Tecsafe\Cockpit\ApiClient" />
+        </service>
+
+        <service id="Madco\Tecsafe\Api\Controller\WebhookController">
+            <argument type="service" id="message_bus" />
+        </service>
+
+        <service id="Madco\Tecsafe\MessageHandler\Webhook\CartUpdatedEventReceivedHandler">
+            <argument type="service" id="Shopware\Core\System\SalesChannel\Context\SalesChannelContextFactory" />
+            <argument type="service" id="Shopware\Core\Checkout\Cart\SalesChannel\CartService" />
+
+            <tag name="messenger.message_handler" />
+        </service>
     </services>
 </container>

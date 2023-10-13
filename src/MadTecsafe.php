@@ -35,11 +35,11 @@ class MadTecsafe extends Plugin
         $customFieldSetRepository = $this->container->get('custom_field_set.repository');
 
         if (!$productRepository instanceof EntityRepository) {
-            throw new \RuntimeException("Not an instance of EntityRepository");
+            throw new \RuntimeException('Not an instance of EntityRepository');
         }
 
         if (!$customFieldSetRepository instanceof EntityRepository) {
-            throw new \RuntimeException("Not an instance of EntityRepository");
+            throw new \RuntimeException('Not an instance of EntityRepository');
         }
 
         return new ProductCustomFieldInstaller(

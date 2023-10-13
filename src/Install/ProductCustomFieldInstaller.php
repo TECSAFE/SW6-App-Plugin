@@ -14,7 +14,8 @@ use Shopware\Core\System\CustomField\CustomFieldTypes;
 
 class ProductCustomFieldInstaller
 {
-    public const TECSAFE_OFCP_CUSTOM_FIELD_SET_NAME = 'tecsafe_ofcp_set';
+    final public const TECSAFE_OFCP_CUSTOM_FIELD_SET_NAME = 'tecsafe_ofcp_set';
+
     public function __construct(
         private readonly EntityRepository $productRepository,
         private readonly EntityRepository $customFieldSetRepository
@@ -36,7 +37,7 @@ class ProductCustomFieldInstaller
                     'label' => [
                         'en-GB' => 'Tecsafe OFCP',
                         'de-DE' => 'Tecsafe OFCP',
-                    ]
+                    ],
                 ],
                 'customFields' => [
                     [
@@ -48,16 +49,16 @@ class ProductCustomFieldInstaller
                                 'de-DE' => 'OFCP aktivieren',
                             ],
                             'customFieldPosition' => 0,
-                        ]
-                    ]
+                        ],
+                    ],
                 ],
                 'relations' => [
                     [
                         'id' => Uuid::randomHex(),
                         'entityName' => ProductDefinition::ENTITY_NAME,
-                    ]
-                ]
-            ]
+                    ],
+                ],
+            ],
         ], $context);
     }
 
@@ -74,6 +75,7 @@ class ProductCustomFieldInstaller
     {
         $criteria = new Criteria();
         $criteria->addFilter(new EqualsFilter('name', self::TECSAFE_OFCP_CUSTOM_FIELD_SET_NAME));
+
         $ids = $this->customFieldSetRepository->searchIds($criteria, $context);
 
         if ($ids->getTotal() > 0) {
@@ -83,19 +85,19 @@ class ProductCustomFieldInstaller
         return null;
     }
 
-    public function getCustomFields(String $productId, Context $context): ?array
+    public function getCustomFields(string $productId, Context $context): ?array
     {
         try {
             $criteria = new Criteria([$productId]);
             $criteria->addAssociation(self::TECSAFE_OFCP_CUSTOM_FIELD_SET_NAME);
             $product = $this->productRepository->search($criteria, $context);
 
-            if ($product->getTotal() == 0) {
+            if ($product->getTotal() === 0) {
                 return null;
             }
 
             return $product->get($productId)->customFields;
-        } catch (\Exception $ignored) {
+        } catch (\Exception) {
             return null;
         }
     }
