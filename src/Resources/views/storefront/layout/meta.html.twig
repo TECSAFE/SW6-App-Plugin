@@ -1,0 +1,20 @@
+{% sw_extends '@Storefront/storefront/layout/meta.html.twig' %}
+
+{% block layout_head_meta_tags %}
+    {{ parent() }}
+    <script src="/bundles/madtecsafe/tecsafe-ofcp.js"></script>
+    <style>
+        .tecsafe-ofcp-fullscreen {
+            position: fixed;
+            top: 0; bottom: 0;
+            left: 0; right: 0;
+            width: 100vw;
+            height: 100vh;
+            margin: 0!important;
+            z-index: 9999999;
+        }
+        .tecsafe-ofcp-hidden {
+            display: none!important;
+        }
+    </style>
+{% endblock %}

@@ -47,5 +47,11 @@
 
             <tag name="kernel.event_subscriber" />
         </service>
+
+        <service id="Madco\Tecsafe\Twig\OfcpExtension">
+            <argument type="service" id="Madco\Tecsafe\Config\PluginConfig" />
+
+            <tag name="twig.extension" />
+        </service>
     </services>
 </container>
