@@ -12,13 +12,16 @@ build:
     pack:
       excludes:
         paths:
+          - .github
           - shopware-source
           - tests
           - .idea
           - .dockerignore
           - .gitignore
+          - .php-cs-fixer.dist.php
           - .shopware-extension.yml
           - docker-compose.yaml
           - phpstan.neon
           - phpunit.xml
           - README.md
+          - rector.php

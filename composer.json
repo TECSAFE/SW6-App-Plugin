@@ -17,9 +17,9 @@
     "phpstan/phpstan": "^1.10.34",
     "rector/rector": "^0.18.5",
     "shopware/dev-tools": "^1.1",
-    "symplify/easy-coding-standard": "^12.0",
     "frosh/shopware-rector": "^0.2.3",
-    "kubawerlos/php-cs-fixer-custom-fixers": "^3.16"
+    "kubawerlos/php-cs-fixer-custom-fixers": "^3.16",
+    "friendsofphp/php-cs-fixer": "^3.35"
   },
   "extra": {
     "shopware-plugin-class": "Madco\\Tecsafe\\MadTecsafe",
@@ -59,8 +59,8 @@
   },
   "scripts": {
     "test": "@php vendor/bin/phpunit -c .",
-    "ecs": "@php vendor/bin/ecs check",
-    "ecs-fix": "@php vendor/bin/ecs check --fix",
+    "cs": "@php vendor/bin/php-cs-fixer check",
+    "cs-fix": "@php vendor/bin/php-cs-fixer fix",
     "phpstan": [
       "@php vendor/bin/phpstan analyze ."
     ],
@@ -69,7 +69,7 @@
     "commit": [
       "@phpstan",
       "@rector",
-      "@ecs-fix"
+      "@cs-fix"
     ]
   }
 }

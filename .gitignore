@@ -2,3 +2,4 @@ shopware-source
 .idea
 var
 vendor
+.php-cs-fixer.cache
