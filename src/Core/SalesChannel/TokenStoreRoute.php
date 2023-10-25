@@ -14,8 +14,7 @@ class TokenStoreRoute
 {
     public function __construct(
         private readonly CockpitApiClient $cockpitApiClient
-    ) {
-    }
+    ) {}
 
     #[Route(
         path: '/store-api/tecsafe/ofcp/token',

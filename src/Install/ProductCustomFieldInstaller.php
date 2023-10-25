@@ -19,8 +19,7 @@ class ProductCustomFieldInstaller
     public function __construct(
         private readonly EntityRepository $productRepository,
         private readonly EntityRepository $customFieldSetRepository
-    ) {
-    }
+    ) {}
 
     public function addOfcpCustomFieldSet(Context $context): void
     {

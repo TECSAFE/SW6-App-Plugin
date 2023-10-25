@@ -20,8 +20,7 @@ class ApiClient
         private readonly HttpClientInterface $httpClient,
         private readonly PluginConfig $pluginConfig,
         private readonly CacheItemPoolInterface $cacheItemPool
-    ) {
-    }
+    ) {}
 
     /**
      * @throws ClientExceptionInterface

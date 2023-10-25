@@ -16,8 +16,7 @@ final class Factory
         private readonly SystemConfigService $systemConfigService,
         private readonly UriFactoryInterface $uriFactory,
         private readonly ?RequestStack $requestStack = null,
-    ) {
-    }
+    ) {}
 
     public function create(): PluginConfig
     {

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Madco\Tecsafe\Tests\Tecsafe;
 
-use Google\Auth\Cache\MemoryCacheItemPool;
 use Madco\Tecsafe\Tecsafe\AccessToken;
 use Madco\Tecsafe\Tecsafe\ApiClient;
 use Madco\Tecsafe\Config\PluginConfig;
@@ -13,11 +12,10 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\Cache\Adapter\ArrayAdapter;
 use Symfony\Component\HttpClient\MockHttpClient;
 use Symfony\Component\HttpClient\Response\MockResponse;
-use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class ApiClientTest extends TestCase
 {
-    public function test_can_obtain_and_cache_access_token(): void
+    public function testCanObtainAndCacheAccessToken(): void
     {
         $now = new \DateTime();
         $issuedAt = clone $now;
@@ -62,7 +60,7 @@ class ApiClientTest extends TestCase
         $this->assertEquals($firstToken, $secondToken);
     }
 
-    public function test_can_obtain_access_token_with_expired_cache_item(): void
+    public function testCanObtainAccessTokenWithExpiredCacheItem(): void
     {
         $now = new \DateTime();
         $issuedAt = clone $now;
@@ -91,7 +89,6 @@ class ApiClientTest extends TestCase
         $cacheItem->expiresAt($expiry);
 
         $cache->save($cacheItem);
-
 
         $this->assertFalse($cache->hasItem('foobar_access-token'));
 

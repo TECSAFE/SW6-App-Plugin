@@ -23,8 +23,7 @@ class OrderSubscriber implements EventSubscriberInterface
         private readonly ApiClient $apiClient,
         private readonly LoggerInterface $logger,
         private readonly ?RequestStack $requestStack
-    ) {
-    }
+    ) {}
 
     public static function getSubscribedEvents(): array
     {

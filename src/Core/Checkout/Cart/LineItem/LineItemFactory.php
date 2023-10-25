@@ -21,10 +21,10 @@ class LineItemFactory implements LineItemFactoryInterface
     /**
      * Creates a new line item.
      *
-     * @param array $data The data to be used for creating the line item.
-     * @param SalesChannelContext $context The sales channel context.
+     * @param array               $data    the data to be used for creating the line item
+     * @param SalesChannelContext $context the sales channel context
      *
-     * @return LineItem The created line item.
+     * @return LineItem the created line item
      */
     public function create(array $data, SalesChannelContext $context): LineItem
     {
@@ -34,7 +34,5 @@ class LineItemFactory implements LineItemFactoryInterface
     /**
      * Not implemented yet.
      */
-    public function update(LineItem $lineItem, array $data, SalesChannelContext $context): void
-    {
-    }
+    public function update(LineItem $lineItem, array $data, SalesChannelContext $context): void {}
 }

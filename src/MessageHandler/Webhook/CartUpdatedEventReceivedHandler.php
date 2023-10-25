@@ -20,8 +20,7 @@ class CartUpdatedEventReceivedHandler
     public function __construct(
         private readonly AbstractSalesChannelContextFactory $salesChannelContextFactory,
         private readonly CartService $cartService,
-    ) {
-    }
+    ) {}
 
     public function __invoke(CartUpdatedEventReceived $cartUpdatedWebhook): void
     {

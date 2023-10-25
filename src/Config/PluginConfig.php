@@ -30,6 +30,5 @@ final class PluginConfig
         public readonly UriInterface $appUrl,
         public readonly UriInterface $internalAppUrl,
         public readonly UriInterface $callbackUrl
-    ) {
-    }
+    ) {}
 }

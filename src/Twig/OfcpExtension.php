@@ -12,8 +12,7 @@ class OfcpExtension extends AbstractExtension
 {
     public function __construct(
         private readonly PluginConfig $pluginConfig
-    ) {
-    }
+    ) {}
 
     public function getFunctions(): array
     {

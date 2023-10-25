@@ -14,8 +14,7 @@ class TokenApiController
 {
     public function __construct(
         private readonly CockpitApiClient $cockpitApiClient
-    ) {
-    }
+    ) {}
 
     #[Route(
         path: '/tecsafe/ofcp/token',

@@ -9,8 +9,7 @@ final class AccessToken
     public function __construct(
         public readonly string $token,
         public readonly int $validUntil
-    ) {
-    }
+    ) {}
 
     public static function validateAndExtract(string $tokenResponse): self
     {
