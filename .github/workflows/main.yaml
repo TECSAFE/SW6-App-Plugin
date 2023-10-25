@@ -1,10 +1,25 @@
-name: Test Pipeline
+name: Main
 
 on:
   pull_request:
   push:
 
 jobs:
+  phpstan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: php-actions/composer@v6 # or alternative dependency management
+        with:
+          php_version: '8.1'
+          php_extensions: curl dom fileinfo gd intl json mbstring openssl pdo pdo_mysql session simplexml sodium xml zip zlib
+          args: "--no-plugins"
+      - uses: php-actions/phpstan@v3
+        with:
+          path: src/
+          configuration: ./phpstan.neon
+    env:
+      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
   phpunit:
     name: Phpunit tests | Shopware ${{ matrix.shopware }}, PHP ${{ matrix.php }}
@@ -29,7 +44,7 @@ jobs:
         run: |
           docker run --rm -p 80:80 -p 443:443 -p 3306:3306 --name shopware-${{ matrix.shopware }}-${{ matrix.php }} --env PHP_VERSION=${{ matrix.php }} --env XDEBUG=0 -d dockware/dev:${{ matrix.shopware }}
           sleep 30
-          
+
           # now change the domain of our shop if required
           sudo echo "127.0.0.1 local.shopware.shop" | sudo tee -a /etc/hosts
 
@@ -57,28 +72,31 @@ jobs:
           docker exec shopware-${{ matrix.shopware }}-${{ matrix.php }} bash -c 'cd /var/www/html && php vendor/bin/phpunit -c custom/plugins/MadTecsafe'
   #docker exec it $(docker ps --latest --quiet) bash -c 'php bin/console system:config:set MyPlugin.config.MyKey ${{ secrets.MYKEY_TEST }}'
 
+  build-zip:
+    needs: [phpstan, phpunit]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install shopware-cli
+        uses: FriendsOfShopware/shopware-cli-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: build plugin
+        run: |
+          mkdir -p build/zip build/release
+          shopware-cli extension zip --release --output-directory ./build/zip .
+          unzip build/zip/*.zip -d build/release/
 
-#      - name: Install Cypress
-#        run: cd tests/Cypress && make install -B
-#
-#      - name: Start Cypress
-#        run: cd tests/Cypress && CYPRESS_BASE_URL=http://local.shopware.shop CYPRESS_SHOPWARE=${{ matrix.shopware }} ./node_modules/.bin/cypress run --headless
-#
-#      - name: Download Logs
-#        if: ${{ always() }}
-#        run: |
-#          mkdir -p $(pwd)/Tests/Cypress/cypress/logs/shopware
-#          mkdir -p $(pwd)/Tests/Cypress/cypress/logs/apache
-#          docker cp shop:/var/www/html/var/log/. $(pwd)/Tests/Cypress/cypress/logs/shopware
-#          docker cp shop:/var/log/php/. $(pwd)/Tests/Cypress/cypress/logs/apache
-#
-#      - name: Store Cypress Results
-#        if: ${{ always() }}
-#        uses: actions/upload-artifact@v2
-#        with:
-#          name: cypress_results_sw_v${{ matrix.shopware }}
-#          retention-days: 1
-#          path: |
-#            Tests/Cypress/cypress/logs
-#            Tests/Cypress/cypress/videos
-#            Tests/Cypress/cypress/screenshots
+      #      - name: Release
+      #        uses: softprops/action-gh-release@v1
+      #        with:
+      #          files: |
+      #            build/release/*
+      #          prerelease: true
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: MadTecsafe.zip
+          path: build/release/*
+    env:
+      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
