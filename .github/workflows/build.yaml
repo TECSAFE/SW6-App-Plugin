@@ -7,6 +7,8 @@ on:
 
 jobs:
   build-zip:
+    needs: [phpunit, phpstan]
+
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -19,16 +21,17 @@ jobs:
           mkdir -p build/zip build/release
           shopware-cli extension zip --release --output-directory ./build/zip .
           unzip build/zip/*.zip -d build/release/
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        with:
-          files: |
-            build/release/*
-          prerelease: true
 
-      #- uses: actions/upload-artifact@v3
-      #  with:
-      #    name: plugin-zip
-      #    path: build/*.zip
+#      - name: Release
+#        uses: softprops/action-gh-release@v1
+#        with:
+#          files: |
+#            build/release/*
+#          prerelease: true
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: MadTecsafe.zip
+          path: build/release/*
     env:
       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
