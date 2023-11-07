@@ -3,3 +3,4 @@ shopware-source
 var
 vendor
 .php-cs-fixer.cache
+src/Resources/app/storefront/node_modules

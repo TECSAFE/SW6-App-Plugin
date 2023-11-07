@@ -36,13 +36,18 @@ class ApiClient
         $cacheItem = $this->cacheItemPool->getItem($cacheKey);
 
         if (!$cacheItem->isHit()) {
-            $tokenUrl = $this->pluginConfig->cockpitUrl->withPath('v1/token/shop');
+            $tokenUrl = $this->pluginConfig->cockpitUrl->withPath('/store-api/tecsafe/v1/token/shop');
 
             $response = $this->httpClient->request(Request::METHOD_POST, $tokenUrl->__toString(), [
                 'json' => [
                     'salesChannel' => $this->pluginConfig->salesChannelName,
                     'secret' => $this->pluginConfig->salesChannelSecret,
                 ],
+                'headers' => [
+                    'sw-access-key' => $this->pluginConfig->salesChannelSecret,
+                ],
+                'verify_peer' => false,
+                'verify_host' => false,
             ]);
 
             $responseBody = $response->getContent();
@@ -82,10 +87,12 @@ class ApiClient
             'country' => $context->getCustomer()->getDefaultBillingAddress()->getCountry()->getIso(),
         ];
 
-        $customerTokenUrl = $this->pluginConfig->cockpitUrl->withPath('v1/token/customer')->__toString();
+        $customerTokenUrl = $this->pluginConfig->cockpitUrl->withPath('/store-api/tecsafe/v1/token/customer')->__toString();
         $response = $this->httpClient->request(Request::METHOD_POST, $customerTokenUrl, [
             'json' => $fields,
             'auth_bearer' => $accessToken->token,
+            'verify_peer' => false,
+            'verify_host' => false,
         ]);
 
         return $response->getContent();

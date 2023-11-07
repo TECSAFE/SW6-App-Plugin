@@ -1,0 +1,18 @@
+{
+  "name": "storefront",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tecsafe/app-js-sdk": "^1.0.0-alpha.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.2",
+    "@babel/preset-typescript": "^7.23.2"
+  }
+}
