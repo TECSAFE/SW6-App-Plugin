@@ -9,7 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@tecsafe/app-js-sdk": "^1.0.0-alpha.1"
+    "@tecsafe/app-js-sdk": "^1.0.0-alpha.1",
+    "events": "^3.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.23.2",

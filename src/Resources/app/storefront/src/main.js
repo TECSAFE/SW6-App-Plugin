@@ -1,10 +1,8 @@
-import Plugin from 'src/plugin-system/plugin.class';
+//import Plugin from 'src/plugin-system/plugin.class';
 
-// Import logger
 import TecsafeSdk from '@tecsafe/app-js-sdk/src/index.ts';
 import ProductDetailWidget from "@tecsafe/app-js-sdk/src/ProductDetailWidget.ts";
 
-// The plugin skeleton
 export default class Tecsafe extends Plugin {
     api
 
