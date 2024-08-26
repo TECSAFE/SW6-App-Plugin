@@ -36,7 +36,7 @@ class ApiClient
         $cacheItem = $this->cacheItemPool->getItem($cacheKey);
 
         if (!$cacheItem->isHit()) {
-            $tokenUrl = $this->pluginConfig->cockpitUrl->withPath('/store-api/tecsafe/v1/token/shop');
+            $tokenUrl = $this->pluginConfig->shopApiGatewayUrl->withPath('/store-api/tecsafe/v1/token/shop');
 
             $response = $this->httpClient->request(Request::METHOD_POST, $tokenUrl->__toString(), [
                 'json' => [
@@ -87,7 +87,7 @@ class ApiClient
             'country' => $context->getCustomer()->getDefaultBillingAddress()->getCountry()->getIso(),
         ];
 
-        $customerTokenUrl = $this->pluginConfig->cockpitUrl->withPath('/store-api/tecsafe/v1/token/customer')->__toString();
+        $customerTokenUrl = $this->pluginConfig->shopApiGatewayUrl->withPath('/store-api/tecsafe/v1/token/customer')->__toString();
         $response = $this->httpClient->request(Request::METHOD_POST, $customerTokenUrl, [
             'json' => $fields,
             'auth_bearer' => $accessToken->token,

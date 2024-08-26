@@ -12,6 +12,11 @@ use Symfony\Component\HttpFoundation\RequestStack;
 
 final class Factory
 {
+    private const TECSAFE_SALES_CHANNEL_SECRET_ID = 'TECSAFE_SALES_CHANNEL_SECRET_ID';
+    private const TECSAFE_SALES_CHANNEL_SECRET_KEY = 'TECSAFE_SALES_CHANNEL_SECRET_KEY';
+    private const TECSAFE_SHOP_API_GATEWAY_URL = 'TECSAFE_SHOP_API_GATEWAY_URL';
+    private const TECSAFE_APP_URL = 'TECSAFE_APP_URL';
+
     public function __construct(
         private readonly SystemConfigService $systemConfigService,
         private readonly UriFactoryInterface $uriFactory,
@@ -30,44 +35,32 @@ final class Factory
             }
         }
 
-        $salesChannelName = $this->systemConfigService->getString(
-            PluginConfig::SALES_CHANNEL_NAME_KEY,
+        $salesChannelSecretId = \getenv(self::TECSAFE_SALES_CHANNEL_SECRET_ID) ?? $this->systemConfigService->getString(
+            PluginConfig::SALES_CHANNEL_SECRET_ID,
             $salesChannelId
         );
 
-        $salesChannelSecret = $this->systemConfigService->getString(
-            PluginConfig::SALES_CHANNEL_SECRET,
+        $salesChannelSecretKey = \getenv(self::TECSAFE_SALES_CHANNEL_SECRET_KEY) ?? $this->systemConfigService->getString(
+            PluginConfig::SALES_CHANNEL_SECRET_KEY,
             $salesChannelId
         );
 
-        $cockpitUrl = $this->systemConfigService->getString(
-            PluginConfig::COCKPIT_URL_KEY,
+        $shopApiGatewayUrl = \getenv(self::TECSAFE_SHOP_API_GATEWAY_URL) ?? $this->systemConfigService->getString(
+            PluginConfig::SHOP_API_GATEWAY_URL_KEY,
             $salesChannelId
         );
 
-        $appUrl = $this->systemConfigService->getString(
+        $appUrl = \getenv(self::TECSAFE_APP_URL) ?? $this->systemConfigService->getString(
             PluginConfig::APP_URL_KEY,
-            $salesChannelId
-        );
-
-        $internalAppUrl = $this->systemConfigService->getString(
-            PluginConfig::INTERNAL_APP_URL_KEY,
-            $salesChannelId
-        );
-
-        $callbackUrl = $this->systemConfigService->getString(
-            PluginConfig::CALLBACK_URL_KEY,
             $salesChannelId
         );
 
         return new PluginConfig(
             $salesChannelId,
-            $salesChannelName,
-            $salesChannelSecret,
-            $this->uriFactory->createUri($cockpitUrl),
+            $salesChannelSecretId,
+            $salesChannelSecretKey,
+            $this->uriFactory->createUri($shopApiGatewayUrl),
             $this->uriFactory->createUri($appUrl),
-            $this->uriFactory->createUri($internalAppUrl),
-            $this->uriFactory->createUri($callbackUrl)
         );
     }
 }

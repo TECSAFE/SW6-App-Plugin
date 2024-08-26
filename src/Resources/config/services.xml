@@ -53,5 +53,11 @@
 
             <tag name="twig.extension" />
         </service>
+
+        <service id="Madco\Tecsafe\Storefront\Framework\Cookie\TecsafeCookieProvider"
+            decorates="Shopware\Storefront\Framework\Cookie\CookieProviderInterface"
+            >
+            <argument type="service" id="Madco\Tecsafe\Storefront\Framework\Cookie\TecsafeCookieProvider.inner" />
+        </service>
     </services>
 </container>

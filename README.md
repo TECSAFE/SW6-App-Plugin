@@ -87,3 +87,12 @@ docker compose exec shopware bash
 ```bash
 bin/console plugin:install --activate MadTecsafe
 ```
+
+### 9. Plugin configuration via env vars
+You can override plugin configuration values with environment variables:
+```dotenv
+TECSAFE_SALES_CHANNEL_SECRET_ID
+TECSAFE_SALES_CHANNEL_SECRET_KEY
+TECSAFE_SHOP_API_GATEWAY_URL
+TECSAFE_APP_URL
+```
