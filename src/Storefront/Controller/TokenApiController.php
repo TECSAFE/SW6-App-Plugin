@@ -20,13 +20,14 @@ class TokenApiController
         path: '/tecsafe/ofcp/token',
         name: 'frontend.tecsafe.ofcp.login',
         defaults: [
-            '_loginRequired' => true,
+            '_loginRequired' => false,
             'XmlHttpRequest' => true,
         ],
         methods: ['GET']
     )]
     public function index(SalesChannelContext $salesChannelContext): JsonResponse
     {
+        /* @todo Rework with Shop-Gateway */
         $token = $this->cockpitApiClient->obtainCustomerTokenFromCockpit($salesChannelContext);
 
         return new JsonResponse([

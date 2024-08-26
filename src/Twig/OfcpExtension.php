@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Madco\Tecsafe\Twig;
 
 use Madco\Tecsafe\Config\PluginConfig;
+use Shopware\Core\Content\Product\ProductEntity;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
@@ -20,7 +21,16 @@ class OfcpExtension extends AbstractExtension
             new TwigFunction('ofcp_app_url', [$this, 'getOfcpAppUrl']),
             new TwigFunction('ofcp_app_checkout_cart_url', [$this, 'getOfcpAppCheckoutCartUrl']),
             new TwigFunction('ofcp_app_widget_url', [$this, 'getOfcpAppWidgetUrl']),
+            new TwigFunction('ofcp_is_tecsafe_product', [$this, 'isTecsafeProduct']),
         ];
+    }
+
+    /**
+     * @todo Refactor to really using product data
+     */
+    public function isTecsafeProduct(ProductEntity $productEntity): bool
+    {
+        return true;
     }
 
     public function getOfcpAppUrl(): string

@@ -76,7 +76,7 @@ class ApiClient
 
         $fields = [
             'customer' => $context->getToken(),
-            'callback' => $this->pluginConfig->callbackUrl->withPath('/api/tecsafe/ofcp/webhook')->__toString(),
+            //'callback' => $this->pluginConfig->callbackUrl->withPath('/api/tecsafe/ofcp/webhook')->__toString(),
             'extra' => ['salesChannel' => $context->getSalesChannel()->getId()],
             'email' => $context->getCustomer()->getEmail(),
             'firstname' => $context->getCustomer()->getFirstName(),
@@ -108,7 +108,7 @@ class ApiClient
     {
         $accessToken = $this->obtainAccessToken();
 
-        $orderUrl = $this->pluginConfig->internalAppUrl->withPath('api/shop/order');
+        //$orderUrl = $this->pluginConfig->internalAppUrl->withPath('api/shop/order');
         $response = $this->httpClient->request(Request::METHOD_POST, $orderUrl->__toString(), [
             'json' => $payload,
             'auth_bearer' => $accessToken->token,

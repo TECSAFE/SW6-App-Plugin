@@ -21,12 +21,15 @@ final class Factory
         private readonly SystemConfigService $systemConfigService,
         private readonly UriFactoryInterface $uriFactory,
         private readonly ?RequestStack $requestStack = null,
+        private ?string $tecsafeSalesChannelSecretIdEnv = null,
+        private ?string $tecsafeSalesChannelSecretKeyEnv = null,
+        private ?string $tecsafeShopApiGatewayUrlEnv = null,
+        private ?string $tecsafeAppUrlEnv = null,
     ) {}
 
     public function create(): PluginConfig
     {
         $salesChannelId = null;
-
         if ($this->requestStack !== null) {
             $salesChannelContext = $this->requestStack->getCurrentRequest()?->attributes->get(PlatformRequest::ATTRIBUTE_SALES_CHANNEL_CONTEXT_OBJECT);
 
@@ -35,22 +38,22 @@ final class Factory
             }
         }
 
-        $salesChannelSecretId = \getenv(self::TECSAFE_SALES_CHANNEL_SECRET_ID) ?? $this->systemConfigService->getString(
+        $salesChannelSecretId = $this->tecsafeSalesChannelSecretIdEnv ?? $this->systemConfigService->getString(
             PluginConfig::SALES_CHANNEL_SECRET_ID,
             $salesChannelId
         );
 
-        $salesChannelSecretKey = \getenv(self::TECSAFE_SALES_CHANNEL_SECRET_KEY) ?? $this->systemConfigService->getString(
+        $salesChannelSecretKey = $this->tecsafeSalesChannelSecretKeyEnv ?? $this->systemConfigService->getString(
             PluginConfig::SALES_CHANNEL_SECRET_KEY,
             $salesChannelId
         );
 
-        $shopApiGatewayUrl = \getenv(self::TECSAFE_SHOP_API_GATEWAY_URL) ?? $this->systemConfigService->getString(
+        $shopApiGatewayUrl = $this->tecsafeShopApiGatewayUrlEnv ?? $this->systemConfigService->getString(
             PluginConfig::SHOP_API_GATEWAY_URL_KEY,
             $salesChannelId
         );
 
-        $appUrl = \getenv(self::TECSAFE_APP_URL) ?? $this->systemConfigService->getString(
+        $appUrl = $this->tecsafeAppUrlEnv ?? $this->systemConfigService->getString(
             PluginConfig::APP_URL_KEY,
             $salesChannelId
         );
