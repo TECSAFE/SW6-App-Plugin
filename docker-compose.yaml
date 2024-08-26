@@ -19,6 +19,7 @@ services:
       - XDEBUG_ENABLED=1
     volumes:
       - ".:/var/www/html/custom/plugins/MadTecsafe"
+      - ".env.local:/var/www/html/.env.local"
       - "db_volume:/var/lib/mysql"
     extra_hosts:
       - "tecsafe-headless-shop.ddev.site:192.168.192.9"

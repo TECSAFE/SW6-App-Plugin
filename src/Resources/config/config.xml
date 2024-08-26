@@ -19,12 +19,6 @@
             <label>Shop API Gateway URL</label>
             <defaultValue>http://cockpit.ofcp.test:8080/</defaultValue>
         </input-field>
-        <input-field type="url">
-            <name>appUrl</name>
-            <label>App URL</label>
-            <label lang="de-DE">App URL</label>
-            <defaultValue>http://app.ofcp.test:8080/</defaultValue>
-        </input-field>
     </card>
 
     <card>
