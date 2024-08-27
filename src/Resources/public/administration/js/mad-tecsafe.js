@@ -1,11 +1,1 @@
-(()=>{var e=`{% block sw_cms_block_tecsafe_ofcp %}
-    <div style="display: flex; justify-content: center; background-color: #ffcccc; padding: 10px; border: 1px solid #ff0000; margin-top: 1rem; margin-bottom: 1rem">
-        <p>TECSAFE OFCP</p>
-    </div>
-{% endblock %}
-`;Shopware.Component.register("sw-cms-block-tecsafe-ofcp",{template:e});var c=`{% block sw_cms_preview_tecsafe_ofcp %}
-    <div style="display: flex; justify-content: center; background-color: #ffcccc; padding: 10px; border: 1px solid #ff0000">
-        <p>TECSAFE OFCP</p>
-    </div>
-{% endblock %}
-`;Shopware.Component.register("sw-cms-preview-tecsafe-ofcp",{template:c});Shopware.Service("cmsService").registerCmsBlock({name:"tecsafe-ofcp",category:"commerce",label:"Tecsafe OFCP",component:"sw-cms-block-tecsafe-ofcp",previewComponent:"sw-cms-preview-tecsafe-ofcp",defaultConfig:{},slots:{}});})();
+(function(){"use strict";var e={};e.p="bundles/madtecsafe/",window?.__sw__?.assetPath&&(e.p=window.__sw__.assetPath+"/bundles/madtecsafe/"),Shopware.Component.register("sw-cms-block-tecsafe-ofcp",{template:'{% block sw_cms_block_tecsafe_ofcp %}\n    <div style="display: flex; justify-content: center; background-color: #ffcccc; padding: 10px; border: 1px solid #ff0000; margin-top: 1rem; margin-bottom: 1rem">\n        <p>TECSAFE OFCP</p>\n    </div>\n{% endblock %}\n'}),Shopware.Component.register("sw-cms-preview-tecsafe-ofcp",{template:'{% block sw_cms_preview_tecsafe_ofcp %}\n    <div style="display: flex; justify-content: center; background-color: #ffcccc; padding: 10px; border: 1px solid #ff0000">\n        <p>TECSAFE OFCP</p>\n    </div>\n{% endblock %}\n'}),Shopware.Service("cmsService").registerCmsBlock({name:"tecsafe-ofcp",category:"commerce",label:"Tecsafe OFCP",component:"sw-cms-block-tecsafe-ofcp",previewComponent:"sw-cms-preview-tecsafe-ofcp",defaultConfig:{},slots:{}})})();

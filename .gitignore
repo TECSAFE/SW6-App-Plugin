@@ -4,3 +4,5 @@ var
 vendor
 .php-cs-fixer.cache
 src/Resources/app/storefront/node_modules
+docker-compose.override.yaml
+act
