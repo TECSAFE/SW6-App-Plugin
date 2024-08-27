@@ -10,9 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@tecsafe/app-js-sdk": "^1.0.0-alpha.1",
-    "events": "^3.3.0"
-  },
-  "devDependencies": {
+    "events": "^3.3.0",
     "@babel/core": "^7.23.2",
     "@babel/preset-typescript": "^7.23.2"
   }
