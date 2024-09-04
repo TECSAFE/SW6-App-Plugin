@@ -85,7 +85,7 @@ docker compose exec shopware bash
 ### 8. Install and activate plugin
 
 ```bash
-bin/console plugin:install --activate MadTecsafe
+bin/console plugin:refresh && bin/console plugin:install --activate MadTecsafe
 ```
 
 ### 9. Plugin configuration via env vars
