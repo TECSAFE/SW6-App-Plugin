@@ -1,5 +1,5 @@
 import { COOKIE_CONFIGURATION_UPDATE, COOKIE_CONFIGURATION_CLOSE_OFF_CANVAS } from 'src/plugin/cookie/cookie-configuration.plugin';
-import CookieStorageHelper from '/src/helper/storage/cookie-storage.helper';
+import CookieStorageHelper from 'src/helper/storage/cookie-storage.helper';
 import Plugin from '@shopware-storefront-sdk/plugin-system/plugin.class';
 
 import TecsafeSdk from '@tecsafe/app-js-sdk/src/index.ts';
