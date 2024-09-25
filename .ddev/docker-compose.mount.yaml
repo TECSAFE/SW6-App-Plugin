@@ -1,0 +1,6 @@
+services:
+  web:
+    volumes:
+        - "./../.env.local:/var/www/html/.env.local"
+        - "./../:/var/www/html/custom/plugins/MadTecsafe"
+        - "./public/media:/var/www/html/public/media"

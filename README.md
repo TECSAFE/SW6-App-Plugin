@@ -1,88 +1,47 @@
 # SW6-App-Plugin
 Provides a Plugin to integrate the TECSAFE App into a Shopware 6 Shop.
 
-## Set up development environment
+## ddev environment
 
-### 1. Comment plugin volume in `docker-compose.yaml`
+In a ddev environment, the entire project is usually mounted in the web container.
 
-```diff
-    shopware:
-    image: dockware/dev:6.5.0.0
-    container_name: tecsafe-sw6-plugin-shopware
-    ports:
-      - "80:80"
-      - "3306:3306"
-      - "22:22"
-      - "8888:8888"
-      - "9999:9999"
-      - "9998:9998"
-    networks:
-      - web
-    environment:
-      - XDEBUG_ENABLED=1
--   volumes:
--     - ".:/var/www/html/custom/plugins/MadTecsafe"
-+   #volumes:
-+   #  - ".:/var/www/html/custom/plugins/MadTecsafe"
-```
+However, this procedure is not suitable for the development of a Shopware plugin because a running Shopware instance 
+is required and only the plugin from the source code needs to be mounted in the `custom/plugins` directory.
 
-### 2. Start docker containers
+For the running Shopware instance, a copy of Shopware is imported from the **dockerware** project into the web container 
+in the document root `/var/www/html` in `.ddev/web-build/Dockerfile.shopware`.
 
-```bash 
-docker compose up -d
-``` 
+To prevent the entire project from being mounted in the web container, the value `no_project_mount` is set to `true` 
+in `.ddev/config.yaml`.
 
-### 3. Copy shopware source from container
+The project directory is then mounted in the web container via docker-mount 
+as `/var/www/html/custom/plugins/MadTecsafe` in `.ddev/docker-compose.mount.yaml`.
 
-```bash 
-docker cp tecsafe-sw6-plugin-shopware:/var/www/html/. ./shopware-source
-```
+This procedure means that there is no shared `public/assets` folder and the plugin assets have to be rebuilt 
+manually each time ddev is started.
 
-### 4. Stop docker containers
+### Spin up ddev-development environment
 
-```bash 
-docker compose stop
-```
-
-### 5. Uncomment plugin volume in `docker-compose.yaml`
-
-```diff
-    shopware:
-    image: dockware/dev:6.5.0.0
-    container_name: tecsafe-sw6-plugin-shopware
-    ports:
-      - "80:80"
-      - "3306:3306"
-      - "22:22"
-      - "8888:8888"
-      - "9999:9999"
-      - "9998:9998"
-    networks:
-      - web
-    environment:
-      - XDEBUG_ENABLED=1
--   #volumes:
--   #  - ".:/var/www/html/custom/plugins/MadTecsafe"
-+   volumes:
-+     - ".:/var/www/html/custom/plugins/MadTecsafe"
-
-```
-
-### 6. Start containers
-
-```bash 
-docker compose up -d
-```
+    ddev start
 
 The project root is now mounted as Plugin `MadTecsafe` in /var/www/html/custom/plugins/MadTecsafe
 
-### Login to shopware container
+The shop is available under https://tecsafe-sw6-plugin.ddev.site
+
+### (optional) Copy Shopware sources for auto-completion
+
+    docker cp ddev-tecsafe-sw6-plugin-web:/var/www/html/vendor/ ./shopware-source/
+
+
+### Login to web-container
 
 ```bash
-docker compose exec shopware bash
+ddev ssh
 ```
 
 ### 8. Install and activate plugin
+
+The `MadTecsafe`-Plugin should be installed already. Otherwise, install it manually: 
 
 ```bash
 bin/console plugin:refresh && bin/console plugin:install --activate MadTecsafe
@@ -96,3 +55,33 @@ TECSAFE_SALES_CHANNEL_SECRET_KEY
 TECSAFE_SHOP_API_GATEWAY_URL
 TECSAFE_APP_URL
 ```
+
+## webpack-watcher
+
+You can use the watcher scripts provided by shopware for hot module reloading during development.
+The storefront and administration musst be accessed via different urls.
+
+### Admin-watcher
+
+```bash
+ddev ssh
+bin/build-administration.sh     # Copies static assets like images to public/bundles
+bin/watch-administration.sh
+```
+
+Admin-Url: http://tecsafe-sw6-plugin.ddev.site:9997/
+
+Beware: You have to use a private browser tab because of `http` and skip the `/admin` suffix.
+
+
+### Storefront-watcher
+
+```bash
+ddev ssh
+bin/build-storefront.sh         # Copies static assets like images to public/bundles
+bin/watch-storefront.sh
+```
+
+Storefront-Url: http://tecsafe-sw6-plugin.ddev.site:9998/ 
+
+Beware: You have to use a private browser tab because of `http`.
