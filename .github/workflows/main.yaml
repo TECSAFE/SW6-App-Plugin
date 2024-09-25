@@ -28,7 +28,7 @@ jobs:
       matrix:
         include:
           - shopware: '6.6.5.0'
-            php: '8.3'
+            php: '8.2'
           - shopware: '6.6.5.0'
             php: '8.3'
     steps:
