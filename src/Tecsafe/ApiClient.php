@@ -7,20 +7,111 @@ namespace Madco\Tecsafe\Tecsafe;
 use Madco\Tecsafe\Config\PluginConfig;
 use Psr\Cache\CacheItemPoolInterface;
 use Shopware\Core\System\SalesChannel\SalesChannelContext;
+use Symfony\Component\HttpClient\Psr18Client;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
+use Madco\Tecsafe\Tecsafe\Api\Generated\Client as GeneratedClient;
 
-class ApiClient
+final class ApiClient
 {
+    private readonly GeneratedClient $generatedClient;
+
+    /**
+     * @todo Symfony configurator verwenden https://symfony.com/doc/7.0/service_container/configurators.html
+     */
     public function __construct(
-        private readonly HttpClientInterface $httpClient,
+        HttpClientInterface $httpClient,
         private readonly PluginConfig $pluginConfig,
-        private readonly CacheItemPoolInterface $cacheItemPool
-    ) {}
+        private readonly CacheItemPoolInterface $cacheItemPool,
+    ) {
+        $baseUri = $this->pluginConfig->shopApiGatewayUrl;
+
+        $psr17Factory = new \Nyholm\Psr7\Factory\Psr17Factory();
+
+        $symfonyHttpClient = $httpClient->withOptions([
+            'base_uri' => $baseUri->__toString(),
+        ]);
+
+        $psr18Client = new Psr18Client($symfonyHttpClient);
+
+        $psr18Client = $psr18Client->withOptions([
+            'verify_peer' => false,
+            'verify_host' => false,
+        ]);
+
+        $normalizers = [
+            new \Symfony\Component\Serializer\Normalizer\ArrayDenormalizer(),
+            new \Madco\Tecsafe\Tecsafe\Api\Generated\Normalizer\JaneObjectNormalizer(),
+        ];
+
+        $serializer = new \Symfony\Component\Serializer\Serializer(
+            $normalizers,
+            [
+                new \Symfony\Component\Serializer\Encoder\JsonEncoder(
+                    new \Symfony\Component\Serializer\Encoder\JsonEncode(),
+                    new \Symfony\Component\Serializer\Encoder\JsonDecode(['json_decode_associative' => true])
+                )
+            ]
+        );
+
+        $this->generatedClient = new GeneratedClient($psr18Client, $psr17Factory, $serializer, $psr17Factory);
+    }
+
+    public function getJwks(string $fetch = GeneratedClient::FETCH_OBJECT)
+    {
+        return $this->generatedClient->keyGetJwks($fetch);
+    }
+
+    /**
+     *
+     *
+     * @param \Madco\Tecsafe\Tecsafe\Api\Generated\Model\SalesChannelLoginRequest $requestBody
+     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+     * @throws \Madco\Tecsafe\Tecsafe\Api\Generated\Exception\AuthLoginSalesChannelBadRequestException
+     * @throws \Madco\Tecsafe\Tecsafe\Api\Generated\Exception\AuthLoginSalesChannelTooManyRequestsException
+     *
+     * @return null|\Psr\Http\Message\ResponseInterface
+     */
+    public function loginSalesChannel(\Madco\Tecsafe\Tecsafe\Api\Generated\Model\SalesChannelLoginRequest $requestBody): string
+    {
+        $response = $this->generatedClient->authLoginSalesChannel($requestBody);
+
+        return $response->getBody()->getContents();
+    }
+    /**
+     *
+     *
+     * @param \Madco\Tecsafe\Tecsafe\Api\Generated\Model\CustomerLoginRequest $requestBody
+     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+     * @throws \Madco\Tecsafe\Tecsafe\Api\Generated\Exception\AuthLoginCustomerBadRequestException
+     * @throws \Madco\Tecsafe\Tecsafe\Api\Generated\Exception\AuthLoginCustomerTooManyRequestsException
+     *
+     * @return null|\Psr\Http\Message\ResponseInterface
+     */
+    public function loginCustomer(\Madco\Tecsafe\Tecsafe\Api\Generated\Model\CustomerLoginRequest $requestBody)
+    {
+        $this->generatedClient->authLoginCustomer($requestBody);
+    }
+
+    /**
+     *
+     *
+     * @param \Madco\Tecsafe\Tecsafe\Api\Generated\Model\LoginRequest $requestBody
+     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+     * @throws \Madco\Tecsafe\Tecsafe\Api\Generated\Exception\AuthLoginInternalBadRequestException
+     * @throws \Madco\Tecsafe\Tecsafe\Api\Generated\Exception\AuthLoginInternalTooManyRequestsException
+     *
+     * @return null|\Psr\Http\Message\ResponseInterface
+     */
+    public function loginInternal(\Madco\Tecsafe\Tecsafe\Api\Generated\Model\LoginRequest $requestBody)
+    {
+        return $this->generatedClient->authLoginInternal($requestBody);
+    }
 
     /**
      * @throws ClientExceptionInterface

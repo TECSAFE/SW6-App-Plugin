@@ -5,6 +5,6 @@
     {#  <iframe src="{{ ofcp_app_checkout_cart_url() }}" id="tecsafe-ofcp-cart" class="tecsafe-ofcp-fullscreen tecsafe-ofcp-hidden"></iframe> #}
 
     {#  % if context.customer %#}
-        <template data-tecsafe-plugin></template>
+        <template data-tecsafe-init data-app-url="{{ ofcp_app_url() }}"></template>
     {#% endif %#}
 {% endblock %}

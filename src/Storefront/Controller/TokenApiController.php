@@ -4,16 +4,20 @@ declare(strict_types=1);
 
 namespace Madco\Tecsafe\Storefront\Controller;
 
-use Madco\Tecsafe\Tecsafe\ApiClient as CockpitApiClient;
+use Madco\Tecsafe\Config\PluginConfig;
+use Madco\Tecsafe\Tecsafe\Api\Generated\Model\CustomerLoginRequest;
+use Madco\Tecsafe\Tecsafe\Api\Generated\Model\SalesChannelLoginRequest;
+use Madco\Tecsafe\Tecsafe\ApiClient;
 use Shopware\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 
 #[Route(defaults: ['_routeScope' => ['storefront']])]
-class TokenApiController
+readonly class TokenApiController
 {
     public function __construct(
-        private readonly CockpitApiClient $cockpitApiClient
+        private ApiClient $client,
+        private PluginConfig $pluginConfig
     ) {}
 
     #[Route(
@@ -28,7 +32,14 @@ class TokenApiController
     public function index(SalesChannelContext $salesChannelContext): JsonResponse
     {
         /* @todo Rework with Shop-Gateway */
-        $token = $this->cockpitApiClient->obtainCustomerTokenFromCockpit($salesChannelContext);
+        #$token = $this->cockpitApiClient->obtainCustomerTokenFromCockpit($salesChannelContext);
+        $customerLoginRequest = new CustomerLoginRequest();
+
+        $salesChannelLoginRequest = (new SalesChannelLoginRequest())
+            ->setId($this->pluginConfig->salesChannelSecretId)
+            ->setSecret($this->pluginConfig->salesChannelSecretKey)
+        ;
+        $token = $this->client->loginSalesChannel($salesChannelLoginRequest);
 
         return new JsonResponse([
             'token' => $token,
