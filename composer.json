@@ -1,5 +1,5 @@
 {
-  "name": "madco/tecsafe-sw6-plugin",
+  "name": "mad/tecsafe",
   "description": "Tecsafe Integration for Shopware 6",
   "version": "0.1.0",
   "type": "shopware-platform-plugin",
@@ -11,8 +11,7 @@
   ],
   "require": {
     "php": "~8.2.0 || ~8.3.0",
-    "shopware/core": "~6.5.0@dev || ~6.6",
-    "shopware/storefront": "~6.5.0@dev || ~6.6",
+    "shopware/core": "6.5.* || 6.6.*",
     "jane-php/open-api-runtime": "^7.8"
   },
   "require-dev": {
