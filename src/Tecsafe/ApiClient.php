@@ -6,14 +6,8 @@ namespace Madco\Tecsafe\Tecsafe;
 
 use Madco\Tecsafe\Config\PluginConfig;
 use Psr\Cache\CacheItemPoolInterface;
-use Shopware\Core\System\SalesChannel\SalesChannelContext;
+use Psr\Cache\InvalidArgumentException;
 use Symfony\Component\HttpClient\Psr18Client;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\RequestStack;
-use Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
-use Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface;
-use Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface;
-use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Madco\Tecsafe\Tecsafe\Api\Generated\Client as GeneratedClient;
 
@@ -39,6 +33,7 @@ final class ApiClient
 
         $psr18Client = new Psr18Client($symfonyHttpClient);
 
+        /* @todo muss noch refactored werden: nur für dev-umgebung */
         $psr18Client = $psr18Client->withOptions([
             'verify_peer' => false,
             'verify_host' => false,
@@ -68,21 +63,34 @@ final class ApiClient
     }
 
     /**
-     *
-     *
-     * @param \Madco\Tecsafe\Tecsafe\Api\Generated\Model\SalesChannelLoginRequest $requestBody
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
-     * @throws \Madco\Tecsafe\Tecsafe\Api\Generated\Exception\AuthLoginSalesChannelBadRequestException
      * @throws \Madco\Tecsafe\Tecsafe\Api\Generated\Exception\AuthLoginSalesChannelTooManyRequestsException
-     *
-     * @return null|\Psr\Http\Message\ResponseInterface
+     * @throws \Madco\Tecsafe\Tecsafe\Api\Generated\Exception\AuthLoginSalesChannelBadRequestException
+     * @throws \Exception
+     * @throws InvalidArgumentException
      */
-    public function loginSalesChannel(\Madco\Tecsafe\Tecsafe\Api\Generated\Model\SalesChannelLoginRequest $requestBody): string
+    public function loginSalesChannel(\Madco\Tecsafe\Tecsafe\Api\Generated\Model\SalesChannelLoginRequest $requestBody): AccessToken
     {
-        $response = $this->generatedClient->authLoginSalesChannel($requestBody);
+        $cacheKey = $this->pluginConfig->salesChannelId . '_sales-channel-token';
+        $cacheItem = $this->cacheItemPool->getItem($cacheKey);
 
-        return $response->getBody()->getContents();
+        if (!$cacheItem->isHit()) {
+            $response = $this->generatedClient->authLoginSalesChannel($requestBody);
+
+            $responseBody = $response->getBody()->getContents();
+
+            $accessToken = AccessToken::validateAndExtract($responseBody);
+
+            $cacheItem->set($accessToken);
+            $expiresAt = new \DateTime('now');
+            $expiresAt->setTimestamp($accessToken->validUntil);
+
+            $cacheItem->expiresAt($expiresAt);
+            $this->cacheItemPool->save($cacheItem);
+        }
+
+        return $cacheItem->get();
     }
+
     /**
      *
      *
@@ -95,7 +103,7 @@ final class ApiClient
      */
     public function loginCustomer(\Madco\Tecsafe\Tecsafe\Api\Generated\Model\CustomerLoginRequest $requestBody)
     {
-        $this->generatedClient->authLoginCustomer($requestBody);
+        return $this->generatedClient->authLoginCustomer($requestBody);
     }
 
     /**
@@ -111,100 +119,5 @@ final class ApiClient
     public function loginInternal(\Madco\Tecsafe\Tecsafe\Api\Generated\Model\LoginRequest $requestBody)
     {
         return $this->generatedClient->authLoginInternal($requestBody);
-    }
-
-    /**
-     * @throws ClientExceptionInterface
-     * @throws RedirectionExceptionInterface
-     * @throws ServerExceptionInterface
-     * @throws TransportExceptionInterface
-     * @throws \Exception
-     */
-    public function obtainAccessToken(): AccessToken
-    {
-        $cacheKey = $this->pluginConfig->salesChannelId . '_access-token';
-
-        $cacheItem = $this->cacheItemPool->getItem($cacheKey);
-
-        if (!$cacheItem->isHit()) {
-            $tokenUrl = $this->pluginConfig->shopApiGatewayUrl->withPath('/store-api/tecsafe/v1/token/shop');
-
-            $response = $this->httpClient->request(Request::METHOD_POST, $tokenUrl->__toString(), [
-                'json' => [
-                    'salesChannel' => $this->pluginConfig->salesChannelName,
-                    'secret' => $this->pluginConfig->salesChannelSecret,
-                ],
-                'headers' => [
-                    'sw-access-key' => $this->pluginConfig->salesChannelSecret,
-                ],
-                'verify_peer' => false,
-                'verify_host' => false,
-            ]);
-
-            $responseBody = $response->getContent();
-
-            $accessToken = AccessToken::validateAndExtract($responseBody);
-
-            $cacheItem->set($accessToken);
-            $expiresAt = new \DateTime();
-            $expiresAt->setTimestamp($accessToken->validUntil);
-            $cacheItem->expiresAt($expiresAt);
-            $this->cacheItemPool->save($cacheItem);
-        }
-
-        return $cacheItem->get();
-    }
-
-    /**
-     * @throws RedirectionExceptionInterface
-     * @throws ClientExceptionInterface
-     * @throws TransportExceptionInterface
-     * @throws ServerExceptionInterface
-     */
-    public function obtainCustomerTokenFromCockpit(SalesChannelContext $context): string
-    {
-        $accessToken = $this->obtainAccessToken();
-
-        $fields = [
-            'customer' => $context->getToken(),
-            //'callback' => $this->pluginConfig->callbackUrl->withPath('/api/tecsafe/ofcp/webhook')->__toString(),
-            'extra' => ['salesChannel' => $context->getSalesChannel()->getId()],
-            'email' => $context->getCustomer()->getEmail(),
-            'firstname' => $context->getCustomer()->getFirstName(),
-            'lastname' => $context->getCustomer()->getLastName(),
-            'street' => $context->getCustomer()->getDefaultBillingAddress()->getStreet(),
-            'zip' => $context->getCustomer()->getDefaultBillingAddress()->getZipcode(),
-            'city' => $context->getCustomer()->getDefaultBillingAddress()->getCity(),
-            'country' => $context->getCustomer()->getDefaultBillingAddress()->getCountry()->getIso(),
-        ];
-
-        $customerTokenUrl = $this->pluginConfig->shopApiGatewayUrl->withPath('/store-api/tecsafe/v1/token/customer')->__toString();
-        $response = $this->httpClient->request(Request::METHOD_POST, $customerTokenUrl, [
-            'json' => $fields,
-            'auth_bearer' => $accessToken->token,
-            'verify_peer' => false,
-            'verify_host' => false,
-        ]);
-
-        return $response->getContent();
-    }
-
-    /**
-     * @throws RedirectionExceptionInterface
-     * @throws ClientExceptionInterface
-     * @throws TransportExceptionInterface
-     * @throws ServerExceptionInterface
-     */
-    public function createOfcpOrderInApp(array $payload): string
-    {
-        $accessToken = $this->obtainAccessToken();
-
-        //$orderUrl = $this->pluginConfig->internalAppUrl->withPath('api/shop/order');
-        $response = $this->httpClient->request(Request::METHOD_POST, $orderUrl->__toString(), [
-            'json' => $payload,
-            'auth_bearer' => $accessToken->token,
-        ]);
-
-        return $response->getContent();
     }
 }

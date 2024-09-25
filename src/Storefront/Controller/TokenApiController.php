@@ -39,10 +39,11 @@ readonly class TokenApiController
             ->setId($this->pluginConfig->salesChannelSecretId)
             ->setSecret($this->pluginConfig->salesChannelSecretKey)
         ;
-        $token = $this->client->loginSalesChannel($salesChannelLoginRequest);
+
+        $accessToken = $this->client->loginSalesChannel($salesChannelLoginRequest);
 
         return new JsonResponse([
-            'token' => $token,
+            'token' => $accessToken->token,
         ]);
     }
 }

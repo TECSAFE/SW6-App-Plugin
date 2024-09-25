@@ -6,7 +6,6 @@ namespace Madco\Tecsafe\Config;
 
 use Psr\Http\Message\UriFactoryInterface;
 use Shopware\Core\PlatformRequest;
-use Shopware\Core\System\SalesChannel\SalesChannelContext;
 use Shopware\Core\System\SystemConfig\SystemConfigService;
 use Symfony\Component\HttpFoundation\RequestStack;
 
@@ -21,21 +20,18 @@ final class Factory
         private readonly SystemConfigService $systemConfigService,
         private readonly UriFactoryInterface $uriFactory,
         private readonly ?RequestStack $requestStack = null,
-        private ?string $tecsafeSalesChannelSecretIdEnv = null,
-        private ?string $tecsafeSalesChannelSecretKeyEnv = null,
-        private ?string $tecsafeShopApiGatewayUrlEnv = null,
-        private ?string $tecsafeAppUrlEnv = null,
+        private readonly ?string $tecsafeSalesChannelSecretIdEnv = null,
+        private readonly ?string $tecsafeSalesChannelSecretKeyEnv = null,
+        private readonly ?string $tecsafeShopApiGatewayUrlEnv = null,
+        private readonly ?string $tecsafeAppUrlEnv = null,
     ) {}
 
     public function create(): PluginConfig
     {
         $salesChannelId = null;
-        if ($this->requestStack !== null) {
-            $salesChannelContext = $this->requestStack->getCurrentRequest()?->attributes->get(PlatformRequest::ATTRIBUTE_SALES_CHANNEL_CONTEXT_OBJECT);
 
-            if ($salesChannelContext instanceof SalesChannelContext) {
-                $salesChannelId = $salesChannelContext->getSalesChannelId();
-            }
+        if ($this->requestStack !== null) {
+            $salesChannelId = $this->requestStack->getMainRequest()?->attributes->get(PlatformRequest::ATTRIBUTE_SALES_CHANNEL_ID);
         }
 
         $salesChannelSecretId = $this->tecsafeSalesChannelSecretIdEnv ?? $this->systemConfigService->getString(

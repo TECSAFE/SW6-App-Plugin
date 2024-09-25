@@ -1,4 +1,5 @@
 name: tecsafe-sw6-plugin
+timezone: Europe/Berlin
 type: shopware6
 docroot: "public"
 php_version: "8.2"
