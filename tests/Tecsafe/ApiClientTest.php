@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Madco\Tecsafe\Tests\Tecsafe;
 
 use Madco\Tecsafe\Tecsafe\AccessToken;
+use Madco\Tecsafe\Tecsafe\Api\Generated\Model\SalesChannelLoginRequest;
 use Madco\Tecsafe\Tecsafe\ApiClient;
 use Madco\Tecsafe\Config\PluginConfig;
 use Nyholm\Psr7\Uri;
@@ -40,8 +41,6 @@ class ApiClientTest extends TestCase
             'barsecret',
             new Uri('http://app.local'),
             new Uri('http://app.local'),
-            new Uri('http://app.local'),
-            new Uri('http://app.local'),
         );
 
         $cache = new ArrayAdapter();
@@ -49,13 +48,17 @@ class ApiClientTest extends TestCase
         $this->assertCount(0, $cache->getValues());
         $apiClient = new ApiClient($httpClient, $pluginConfig, $cache);
 
-        $firstToken = $apiClient->obtainAccessToken();
+        $salesChannelLoginRequest = (new SalesChannelLoginRequest())
+            ->setId('foobar')
+            ->setSecret('foobaz')
+        ;
+        $firstToken = $apiClient->loginSalesChannel($salesChannelLoginRequest);
 
         $this->assertEquals($expectedToken, $firstToken);
 
         $this->assertCount(1, $cache->getValues());
 
-        $secondToken = $apiClient->obtainAccessToken();
+        $secondToken = $apiClient->loginSalesChannel($salesChannelLoginRequest);
 
         $this->assertEquals($firstToken, $secondToken);
     }
@@ -75,8 +78,6 @@ class ApiClientTest extends TestCase
             'foobar',
             'foo',
             'barsecret',
-            new Uri('http://app.local'),
-            new Uri('http://app.local'),
             new Uri('http://app.local'),
             new Uri('http://app.local'),
         );
@@ -106,7 +107,11 @@ class ApiClientTest extends TestCase
 
         $apiClient = new ApiClient($httpClient, $pluginConfig, $cache);
 
-        $firstToken = $apiClient->obtainAccessToken();
+        $salesChannelLoginRequest = (new SalesChannelLoginRequest())
+            ->setId('foobar')
+            ->setSecret('foobaz')
+        ;
+        $firstToken = $apiClient->loginSalesChannel($salesChannelLoginRequest);
 
         $expectedToken = new AccessToken($newTokenResponse, $newTokenExpiry->getTimestamp());
 

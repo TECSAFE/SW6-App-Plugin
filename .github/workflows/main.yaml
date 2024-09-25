@@ -36,6 +36,14 @@ jobs:
       - name: Clone Code
         uses: actions/checkout@v3
 
+      - name: Composer install
+      - uses: php-actions/composer@v6 # or alternative dependency management
+        with:
+          php_version: ${{ matrix.php }}
+          php_extensions: curl dom fileinfo gd intl json mbstring openssl pdo pdo_mysql session simplexml sodium xml zip zlib
+          args: "--no-plugins"
+          dev: 'no'
+
       - name: Download Docker
         run: |
           docker pull dockware/dev:${{ matrix.shopware }}
