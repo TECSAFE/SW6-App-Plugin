@@ -1,0 +1,2 @@
+RUN curl -1sLf 'https://dl.cloudsmith.io/public/friendsofshopware/stable/setup.deb.sh' | sudo -E bash \
+  && apt install shopware-cli

@@ -2,24 +2,34 @@ changelog:
   enabled: false
 
 build:
+  shopwareVersionConstraint: '~6.5'
   zip:
     composer:
       enabled: true
+      excluded_packages:
+        - shopware/core
+        - shopware/storefront
     assets:
-      enabled: true
-      enable_es_build_for_admin: true
-      enable_es_build_for_storefront: true
+      enabled: false
+      #enable_es_build_for_admin: false
+      #enable_es_build_for_storefront: false
     pack:
       excludes:
         paths:
+          - .ddev
           - .github
           - shopware-source
           - tests
           - .idea
           - .dockerignore
+          - .env.local
+          - .env.test
           - .gitignore
+          - .jane-openapi
           - .php-cs-fixer.dist.php
           - .shopware-extension.yml
+          - act
+          - docker-compose.override.yaml
           - docker-compose.yaml
           - phpstan.neon
           - phpunit.xml
