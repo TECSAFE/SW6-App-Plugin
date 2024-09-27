@@ -34,6 +34,7 @@
         <service id="Madco\Tecsafe\Storefront\Controller\TokenApiController" public="true">
             <argument type="service" id="Madco\Tecsafe\Tecsafe\ApiClient" />
             <argument type="service" id="Madco\Tecsafe\Config\PluginConfig" />
+            <argument type="service" id="logger" />
         </service>
 
         <service id="Madco\Tecsafe\Core\SalesChannel\TokenStoreRoute">

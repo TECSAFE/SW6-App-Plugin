@@ -5,11 +5,14 @@ declare(strict_types=1);
 namespace Madco\Tecsafe\Storefront\Controller;
 
 use Madco\Tecsafe\Config\PluginConfig;
+use Madco\Tecsafe\Tecsafe\Api\Generated\Exception\AuthLoginSalesChannelBadRequestException;
 use Madco\Tecsafe\Tecsafe\Api\Generated\Model\CustomerLoginRequest;
 use Madco\Tecsafe\Tecsafe\Api\Generated\Model\SalesChannelLoginRequest;
 use Madco\Tecsafe\Tecsafe\ApiClient;
+use Psr\Log\LoggerInterface;
 use Shopware\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\Routing\Attribute\Route;
 
 #[Route(defaults: ['_routeScope' => ['storefront']])]
@@ -17,7 +20,8 @@ readonly class TokenApiController
 {
     public function __construct(
         private ApiClient $client,
-        private PluginConfig $pluginConfig
+        private PluginConfig $pluginConfig,
+        private LoggerInterface $logger,
     ) {}
 
     #[Route(
@@ -40,7 +44,16 @@ readonly class TokenApiController
             ->setSecret($this->pluginConfig->salesChannelSecretKey)
         ;
 
-        $accessToken = $this->client->loginSalesChannel($salesChannelLoginRequest);
+        try {
+            $accessToken = $this->client->loginSalesChannel($salesChannelLoginRequest);
+        } catch (AuthLoginSalesChannelBadRequestException $e) {
+            $this->logger->error($e->getMessage());
+
+            throw new HttpException(
+                (int) $e->getErrorValidationResponse()->getStatusCode(),
+                $e->getErrorValidationResponse()->getMessage()
+            );
+        }
 
         return new JsonResponse([
             'token' => $accessToken->token,

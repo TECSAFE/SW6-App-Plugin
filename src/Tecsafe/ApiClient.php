@@ -5,9 +5,12 @@ declare(strict_types=1);
 namespace Madco\Tecsafe\Tecsafe;
 
 use Madco\Tecsafe\Config\PluginConfig;
+use Madco\Tecsafe\Tecsafe\Api\Generated\Exception\AuthLoginSalesChannelBadRequestException;
+use Madco\Tecsafe\Tecsafe\Api\Generated\Model\ErrorValidationResponse;
 use Psr\Cache\CacheItemPoolInterface;
 use Psr\Cache\InvalidArgumentException;
 use Symfony\Component\HttpClient\Psr18Client;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Madco\Tecsafe\Tecsafe\Api\Generated\Client as GeneratedClient;
 
@@ -78,14 +81,23 @@ final class ApiClient
 
             $responseBody = $response->getBody()->getContents();
 
-            $accessToken = AccessToken::validateAndExtract($responseBody);
+            if ($response->getStatusCode() === Response::HTTP_CREATED) {
+                $accessToken = AccessToken::validateAndExtract($responseBody);
 
-            $cacheItem->set($accessToken);
-            $expiresAt = new \DateTime('now');
-            $expiresAt->setTimestamp($accessToken->validUntil);
+                $cacheItem->set($accessToken);
+                $expiresAt = new \DateTime('now');
+                $expiresAt->setTimestamp($accessToken->validUntil);
 
-            $cacheItem->expiresAt($expiresAt);
-            $this->cacheItemPool->save($cacheItem);
+                $cacheItem->expiresAt($expiresAt);
+                $this->cacheItemPool->save($cacheItem);
+            } else {
+                throw new AuthLoginSalesChannelBadRequestException(
+                    (new ErrorValidationResponse())
+                    ->setMessage($response->getReasonPhrase())
+                    ->setStatusCode($response->getStatusCode()),
+                    $response
+                );
+            }
         }
 
         return $cacheItem->get();
