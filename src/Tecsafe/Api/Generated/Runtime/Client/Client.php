@@ -55,7 +55,6 @@ abstract class Client
         $uriGlue = false === strpos($endpoint->getUri(), '?') ? '?' : '&';
         $uri = $queryString !== '' ? $endpoint->getUri() . $uriGlue . $queryString : $endpoint->getUri();
         $request = $this->requestFactory->createRequest($endpoint->getMethod(), $uri);
-
         if ($body) {
             if ($body instanceof StreamInterface) {
                 $request = $request->withBody($body);
@@ -78,8 +77,6 @@ abstract class Client
             }
             $request = $request->withHeader(AuthenticationRegistry::SCOPES_HEADER, $scopes);
         }
-
-
         return $this->httpClient->sendRequest($request);
     }
 }

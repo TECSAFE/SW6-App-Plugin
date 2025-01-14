@@ -30,6 +30,10 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             
             \Madco\Tecsafe\Tecsafe\Api\Generated\Model\LoginRequest::class => \Madco\Tecsafe\Tecsafe\Api\Generated\Normalizer\LoginRequestNormalizer::class,
             
+            \Madco\Tecsafe\Tecsafe\Api\Generated\Model\MergeFromSalesChannelRequest::class => \Madco\Tecsafe\Tecsafe\Api\Generated\Normalizer\MergeFromSalesChannelRequestNormalizer::class,
+            
+            \Madco\Tecsafe\Tecsafe\Api\Generated\Model\MergeFromCustomerRequest::class => \Madco\Tecsafe\Tecsafe\Api\Generated\Normalizer\MergeFromCustomerRequestNormalizer::class,
+            
             \Jane\Component\JsonSchemaRuntime\Reference::class => \Madco\Tecsafe\Tecsafe\Api\Generated\Runtime\Normalizer\ReferenceNormalizer::class,
         ], $normalizersCache = [];
         public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
@@ -73,6 +77,8 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 \Madco\Tecsafe\Tecsafe\Api\Generated\Model\SalesChannelLoginRequest::class => false,
                 \Madco\Tecsafe\Tecsafe\Api\Generated\Model\CustomerLoginRequest::class => false,
                 \Madco\Tecsafe\Tecsafe\Api\Generated\Model\LoginRequest::class => false,
+                \Madco\Tecsafe\Tecsafe\Api\Generated\Model\MergeFromSalesChannelRequest::class => false,
+                \Madco\Tecsafe\Tecsafe\Api\Generated\Model\MergeFromCustomerRequest::class => false,
                 \Jane\Component\JsonSchemaRuntime\Reference::class => false,
             ];
         }
@@ -95,6 +101,10 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             \Madco\Tecsafe\Tecsafe\Api\Generated\Model\CustomerLoginRequest::class => \Madco\Tecsafe\Tecsafe\Api\Generated\Normalizer\CustomerLoginRequestNormalizer::class,
             
             \Madco\Tecsafe\Tecsafe\Api\Generated\Model\LoginRequest::class => \Madco\Tecsafe\Tecsafe\Api\Generated\Normalizer\LoginRequestNormalizer::class,
+            
+            \Madco\Tecsafe\Tecsafe\Api\Generated\Model\MergeFromSalesChannelRequest::class => \Madco\Tecsafe\Tecsafe\Api\Generated\Normalizer\MergeFromSalesChannelRequestNormalizer::class,
+            
+            \Madco\Tecsafe\Tecsafe\Api\Generated\Model\MergeFromCustomerRequest::class => \Madco\Tecsafe\Tecsafe\Api\Generated\Normalizer\MergeFromCustomerRequestNormalizer::class,
             
             \Jane\Component\JsonSchemaRuntime\Reference::class => \Madco\Tecsafe\Tecsafe\Api\Generated\Runtime\Normalizer\ReferenceNormalizer::class,
         ], $normalizersCache = [];
@@ -145,6 +155,8 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 \Madco\Tecsafe\Tecsafe\Api\Generated\Model\SalesChannelLoginRequest::class => false,
                 \Madco\Tecsafe\Tecsafe\Api\Generated\Model\CustomerLoginRequest::class => false,
                 \Madco\Tecsafe\Tecsafe\Api\Generated\Model\LoginRequest::class => false,
+                \Madco\Tecsafe\Tecsafe\Api\Generated\Model\MergeFromSalesChannelRequest::class => false,
+                \Madco\Tecsafe\Tecsafe\Api\Generated\Model\MergeFromCustomerRequest::class => false,
                 \Jane\Component\JsonSchemaRuntime\Reference::class => false,
             ];
         }

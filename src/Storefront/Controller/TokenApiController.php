@@ -45,7 +45,7 @@ readonly class TokenApiController
         ;
 
         try {
-            $accessToken = $this->client->loginSalesChannel($salesChannelLoginRequest);
+            $salesChannelJwt = $this->client->loginSalesChannel($salesChannelLoginRequest);
         } catch (AuthLoginSalesChannelBadRequestException $e) {
             $this->logger->error($e->getMessage());
 
@@ -55,8 +55,30 @@ readonly class TokenApiController
             );
         }
 
+        $customerLoginRequest->setSecret($salesChannelJwt->token)
+            ->setEmail('foo@bar.com')
+            ->setIdentifier($salesChannelContext->getToken())
+            ->setIsGuest(true)
+            ->setCurrency($salesChannelContext->getCurrency()->getIsoCode())
+            ->setFirstName('John')
+            ->setLastName('Doe')
+            ->setCompany('Test Company')
+            ->setGroupIdentifier($salesChannelContext->getCurrentCustomerGroup()->getId())
+        ;
+
+        try {
+            $customerJwt = $this->client->loginCustomer($customerLoginRequest);
+        } catch (\Throwable $e) {
+            $this->logger->error($e->getMessage());
+
+            throw new HttpException(
+                (int) $e->getCode(),
+                $e->getMessage()
+            );
+        }
+
         return new JsonResponse([
-            'token' => $accessToken->token,
+            'token' => $customerJwt->token,
         ]);
     }
 }

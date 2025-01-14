@@ -85,3 +85,15 @@ bin/watch-storefront.sh
 Storefront-Url: http://tecsafe-sw6-plugin.ddev.site:9998/ 
 
 Beware: You have to use a private browser tab because of `http`.
+
+
+## Building Tecsafe-API-Client
+
+```
+ddev ssh
+cd custom/plugins/MadTecsafe
+composer install
+
+vendor/bin/jane-openapi generate
+
+```

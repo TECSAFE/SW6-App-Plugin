@@ -1,7 +1,7 @@
 import { COOKIE_CONFIGURATION_UPDATE } from 'src/plugin/cookie/cookie-configuration.plugin';
 import CookieStorageHelper from 'src/helper/storage/cookie-storage.helper';
 import Plugin from '@shopware-storefront-sdk/plugin-system/plugin.class';
-import TecsafeSdk from '@tecsafe/app-js-sdk/src/index.ts';
+import { TecsafeApi } from '@tecsafe/app-js-sdk';
 const PluginManager = window.PluginManager;
 
 const TOKEN_AVAILABLE = 'Tecsafe_TokenAvailable';
@@ -12,14 +12,13 @@ export default class Tecsafe extends Plugin {
         urlAttribute: 'data-url',
         appUrl: '',
         productWidgetId: 'tecsafe-product-widget-container',
+        allowedOrigins: [],
     };
 
     async init() {
-        this.appUrl = this.el.dataset.appUrl;
         document.$emitter.subscribe(COOKIE_CONFIGURATION_UPDATE, this._handleInit.bind(this));
 
         await this._handleInit();
-
         let productWidgetEl = document.getElementById(this.options.productWidgetId);
 
         if (productWidgetEl) {
@@ -29,31 +28,44 @@ export default class Tecsafe extends Plugin {
         }
     }
 
-    reloadToken() {
-        this.api.reloadToken();
+    refreshToken() {
+        this.api.refreshToken();
     }
 
     logout() {
-        //this.api.logout();
+        this.api.destroyAll();
     }
 
     async initApi() {
-        this.api = await TecsafeSdk.initializeTecsafeApi(async () => {
-            const response = await fetch("/tecsafe/ofcp/token");
+        this.api = new TecsafeApi(async () => {
+            const response = await fetch(window.router['frontend.tecsafe.ofcp.login']);
             const json = await response.json();
 
             return json.token;
         }, {
-            appUrl: this.appUrl,
+            appUrl: this.options.appUrl,
+            widgetBaseURL: this.options.appUrl,
+            /**
+             * A list of allowed origins for the SDK to communicate with
+             */
+            allowedOrigins: this.options.allowedOrigins,
+            /**
+             * Iframe styles.transition property
+             */
+            iframeTransition: 'none',
+            /**
+             * Styles configuration for the apps. TBD.
+             */
+            styles: '',
         });
     }
 
     async _handleInit() {
         if (CookieStorageHelper.getItem(this.options.cookieName)) {
-            const token =  await this.initApi();
+            await this.initApi();
             this.$emitter.publish(TOKEN_AVAILABLE);
 
-            return token;
+            return this.api.getToken();
         } else {
             //console.debug(this);
         }
@@ -66,7 +78,7 @@ export default class Tecsafe extends Plugin {
      */
     createProductDetailWidget(el) {
         if (this.api) {
-            return this.api.productDetailWidget(el);
+            return this.api.createProductDetailWidget(el);
         } else {
             return this.createProductDetailWidgetPlaceholder(el);
         }

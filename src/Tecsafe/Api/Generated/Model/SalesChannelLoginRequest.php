@@ -13,19 +13,19 @@ class SalesChannelLoginRequest extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     * Secret to authenticate, JWT or Static Token
      *
      * @var string
      */
     protected $secret;
     /**
-     * 
+     * Sales Channel identifier
      *
      * @var string
      */
     protected $id;
     /**
-     * 
+     * Secret to authenticate, JWT or Static Token
      *
      * @return string
      */
@@ -34,7 +34,7 @@ class SalesChannelLoginRequest extends \ArrayObject
         return $this->secret;
     }
     /**
-     * 
+     * Secret to authenticate, JWT or Static Token
      *
      * @param string $secret
      *
@@ -47,7 +47,7 @@ class SalesChannelLoginRequest extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     * Sales Channel identifier
      *
      * @return string
      */
@@ -56,7 +56,7 @@ class SalesChannelLoginRequest extends \ArrayObject
         return $this->id;
     }
     /**
-     * 
+     * Sales Channel identifier
      *
      * @param string $id
      *

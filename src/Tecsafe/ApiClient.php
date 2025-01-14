@@ -111,11 +111,16 @@ final class ApiClient
      * @throws \Madco\Tecsafe\Tecsafe\Api\Generated\Exception\AuthLoginCustomerBadRequestException
      * @throws \Madco\Tecsafe\Tecsafe\Api\Generated\Exception\AuthLoginCustomerTooManyRequestsException
      *
-     * @return null|\Psr\Http\Message\ResponseInterface
      */
-    public function loginCustomer(\Madco\Tecsafe\Tecsafe\Api\Generated\Model\CustomerLoginRequest $requestBody)
+    public function loginCustomer(\Madco\Tecsafe\Tecsafe\Api\Generated\Model\CustomerLoginRequest $requestBody): AccessToken
     {
-        return $this->generatedClient->authLoginCustomer($requestBody);
+        $response = $this->generatedClient->authLoginCustomer($requestBody);
+
+        $responseBody = $response->getBody()->getContents();
+
+        if ($response->getStatusCode() === Response::HTTP_CREATED) {
+            return AccessToken::validateAndExtract($responseBody);
+        }
     }
 
     /**

@@ -58,7 +58,37 @@ class Client extends \Madco\Tecsafe\Tecsafe\Api\Generated\Runtime\Client\Client
     {
         return $this->executeRawEndpoint(new \Madco\Tecsafe\Tecsafe\Api\Generated\Endpoint\AuthLoginInternal($requestBody));
     }
-    public static function create($httpClient = null, array $additionalPlugins = [], array $additionalNormalizers = []): self
+
+    /**
+     *
+     *
+     * @param \Madco\Tecsafe\Tecsafe\Api\Generated\Model\MergeFromSalesChannelRequest $requestBody
+     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+     * @throws \Madco\Tecsafe\Tecsafe\Api\Generated\Exception\MergeControllerMigrateFromSalesChannelBadRequestException
+     * @throws \Madco\Tecsafe\Tecsafe\Api\Generated\Exception\MergeControllerMigrateFromSalesChannelTooManyRequestsException
+     *
+     * @return null|\Psr\Http\Message\ResponseInterface
+     */
+    public function mergeControllerMigrateFromSalesChannel(\Madco\Tecsafe\Tecsafe\Api\Generated\Model\MergeFromSalesChannelRequest $requestBody): ?ResponseInterface
+    {
+        return $this->executeRawEndpoint(new \Madco\Tecsafe\Tecsafe\Api\Generated\Endpoint\MergeControllerMigrateFromSalesChannel($requestBody));
+    }
+    /**
+     *
+     *
+     * @param \Madco\Tecsafe\Tecsafe\Api\Generated\Model\MergeFromCustomerRequest $requestBody
+     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+     * @throws \Madco\Tecsafe\Tecsafe\Api\Generated\Exception\MergeControllerMigrateFromCustomerBadRequestException
+     * @throws \Madco\Tecsafe\Tecsafe\Api\Generated\Exception\MergeControllerMigrateFromCustomerTooManyRequestsException
+     *
+     * @return null|\Psr\Http\Message\ResponseInterface
+     */
+    public function mergeControllerMigrateFromCustomer(\Madco\Tecsafe\Tecsafe\Api\Generated\Model\MergeFromCustomerRequest $requestBody): ?ResponseInterface
+    {
+        return $this->executeRawEndpoint(new \Madco\Tecsafe\Tecsafe\Api\Generated\Endpoint\MergeControllerMigrateFromCustomer($requestBody));
+    }
+
+    public static function create($httpClient = null, array $additionalPlugins = [], array $additionalNormalizers = [])
     {
         if (null === $httpClient) {
             $httpClient = \Http\Discovery\Psr18ClientDiscovery::find();

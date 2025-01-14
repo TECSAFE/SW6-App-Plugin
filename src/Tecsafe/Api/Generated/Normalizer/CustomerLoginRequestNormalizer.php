@@ -48,6 +48,18 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setEmail($data['email']);
                 unset($data['email']);
             }
+            if (\array_key_exists('firstName', $data)) {
+                $object->setFirstName($data['firstName']);
+                unset($data['firstName']);
+            }
+            if (\array_key_exists('lastName', $data)) {
+                $object->setLastName($data['lastName']);
+                unset($data['lastName']);
+            }
+            if (\array_key_exists('company', $data)) {
+                $object->setCompany($data['company']);
+                unset($data['company']);
+            }
             if (\array_key_exists('identifier', $data)) {
                 $object->setIdentifier($data['identifier']);
                 unset($data['identifier']);
@@ -55,6 +67,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('isGuest', $data)) {
                 $object->setIsGuest($data['isGuest']);
                 unset($data['isGuest']);
+            }
+            if (\array_key_exists('groupIdentifier', $data)) {
+                $object->setGroupIdentifier($data['groupIdentifier']);
+                unset($data['groupIdentifier']);
+            }
+            if (\array_key_exists('currency', $data)) {
+                $object->setCurrency($data['currency']);
+                unset($data['currency']);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -68,8 +88,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             $data = [];
             $data['secret'] = $object->getSecret();
             $data['email'] = $object->getEmail();
+            $data['firstName'] = $object->getFirstName();
+            $data['lastName'] = $object->getLastName();
+            $data['company'] = $object->getCompany();
             $data['identifier'] = $object->getIdentifier();
             $data['isGuest'] = $object->getIsGuest();
+            $data['groupIdentifier'] = $object->getGroupIdentifier();
+            $data['currency'] = $object->getCurrency();
             foreach ($object as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
                     $data[$key] = $value;
@@ -120,6 +145,18 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setEmail($data['email']);
                 unset($data['email']);
             }
+            if (\array_key_exists('firstName', $data)) {
+                $object->setFirstName($data['firstName']);
+                unset($data['firstName']);
+            }
+            if (\array_key_exists('lastName', $data)) {
+                $object->setLastName($data['lastName']);
+                unset($data['lastName']);
+            }
+            if (\array_key_exists('company', $data)) {
+                $object->setCompany($data['company']);
+                unset($data['company']);
+            }
             if (\array_key_exists('identifier', $data)) {
                 $object->setIdentifier($data['identifier']);
                 unset($data['identifier']);
@@ -127,6 +164,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('isGuest', $data)) {
                 $object->setIsGuest($data['isGuest']);
                 unset($data['isGuest']);
+            }
+            if (\array_key_exists('groupIdentifier', $data)) {
+                $object->setGroupIdentifier($data['groupIdentifier']);
+                unset($data['groupIdentifier']);
+            }
+            if (\array_key_exists('currency', $data)) {
+                $object->setCurrency($data['currency']);
+                unset($data['currency']);
             }
             foreach ($data as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
@@ -143,8 +188,13 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             $data = [];
             $data['secret'] = $object->getSecret();
             $data['email'] = $object->getEmail();
+            $data['firstName'] = $object->getFirstName();
+            $data['lastName'] = $object->getLastName();
+            $data['company'] = $object->getCompany();
             $data['identifier'] = $object->getIdentifier();
             $data['isGuest'] = $object->getIsGuest();
+            $data['groupIdentifier'] = $object->getGroupIdentifier();
+            $data['currency'] = $object->getCurrency();
             foreach ($object as $key => $value) {
                 if (preg_match('/.*/', (string) $key)) {
                     $data[$key] = $value;

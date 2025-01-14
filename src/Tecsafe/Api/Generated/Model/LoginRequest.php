@@ -13,13 +13,13 @@ class LoginRequest extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     * Secret to authenticate, JWT or Static Token
      *
      * @var string
      */
     protected $secret;
     /**
-     * 
+     * Secret to authenticate, JWT or Static Token
      *
      * @return string
      */
@@ -28,7 +28,7 @@ class LoginRequest extends \ArrayObject
         return $this->secret;
     }
     /**
-     * 
+     * Secret to authenticate, JWT or Static Token
      *
      * @param string $secret
      *

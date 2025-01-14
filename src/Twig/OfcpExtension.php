@@ -22,6 +22,7 @@ class OfcpExtension extends AbstractExtension
             new TwigFunction('ofcp_app_checkout_cart_url', [$this, 'getOfcpAppCheckoutCartUrl']),
             new TwigFunction('ofcp_app_widget_url', [$this, 'getOfcpAppWidgetUrl']),
             new TwigFunction('ofcp_is_tecsafe_product', [$this, 'isTecsafeProduct']),
+            new TwigFunction('ofcp_allowed_origins', [$this, 'getOfcpAllowedOrigins']),
         ];
     }
 
@@ -46,5 +47,10 @@ class OfcpExtension extends AbstractExtension
     public function getOfcpAppWidgetUrl(): string
     {
         return $this->pluginConfig->appUrl->withPath('widget')->__toString();
+    }
+
+    public function getOfcpAllowedOrigins(): array
+    {
+        return [$this->pluginConfig->shopApiGatewayUrl->__toString()];
     }
 }

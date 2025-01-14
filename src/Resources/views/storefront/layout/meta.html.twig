@@ -17,3 +17,12 @@
         }
     </style>
 {% endblock %}
+
+{% block layout_head_javascript_router %}
+    {{ parent() }}
+
+    {# Register all routes that will be needed in JavaScript to the window.router object #}
+    <script>
+        window.router['frontend.tecsafe.ofcp.login'] = '{{ path('frontend.tecsafe.ofcp.login') }}';
+    </script>
+{% endblock %}
