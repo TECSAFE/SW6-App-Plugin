@@ -33,7 +33,6 @@
 
         <service id="Madco\Tecsafe\Storefront\Controller\TokenApiController" public="true">
             <argument type="service" id="Madco\Tecsafe\Tecsafe\ApiClient" />
-            <argument type="service" id="Madco\Tecsafe\Config\PluginConfig" />
             <argument type="service" id="logger" />
         </service>
 
@@ -70,6 +69,11 @@
             decorates="Shopware\Storefront\Framework\Cookie\CookieProviderInterface"
             >
             <argument type="service" id="Madco\Tecsafe\Storefront\Framework\Cookie\TecsafeCookieProvider.inner" />
+        </service>
+
+        <service id="Madco\Tecsafe\Command\TestConnectionCommand"
+            autoconfigure="true"
+            autowire="true">
         </service>
     </services>
 </container>

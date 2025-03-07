@@ -7,8 +7,10 @@ namespace Madco\Tecsafe\Tecsafe;
 use Madco\Tecsafe\Config\PluginConfig;
 use Madco\Tecsafe\Tecsafe\Api\Generated\Exception\AuthLoginSalesChannelBadRequestException;
 use Madco\Tecsafe\Tecsafe\Api\Generated\Model\ErrorValidationResponse;
+use Madco\Tecsafe\Tecsafe\Api\Generated\Model\SalesChannelLoginRequest;
 use Psr\Cache\CacheItemPoolInterface;
 use Psr\Cache\InvalidArgumentException;
+use Shopware\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Component\HttpClient\Psr18Client;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
@@ -71,13 +73,18 @@ final class ApiClient
      * @throws \Exception
      * @throws InvalidArgumentException
      */
-    public function loginSalesChannel(\Madco\Tecsafe\Tecsafe\Api\Generated\Model\SalesChannelLoginRequest $requestBody): AccessToken
+    public function loginSalesChannel(SalesChannelContext $salesChannelContext): AccessToken
     {
+        $salesChannelLoginRequest = (new SalesChannelLoginRequest())
+            ->setId($this->pluginConfig->salesChannelSecretId)
+            ->setSecret($this->pluginConfig->salesChannelSecretKey)
+        ;
+
         $cacheKey = $this->pluginConfig->salesChannelId . '_sales-channel-token';
         $cacheItem = $this->cacheItemPool->getItem($cacheKey);
 
         if (!$cacheItem->isHit()) {
-            $response = $this->generatedClient->authLoginSalesChannel($requestBody);
+            $response = $this->generatedClient->authLoginSalesChannel($salesChannelLoginRequest);
 
             $responseBody = $response->getBody()->getContents();
 

@@ -61,6 +61,7 @@
     }
   },
   "scripts": {
+    "openapi:generate": "@php vendor/bin/jane-openapi generate",
     "test": "@php vendor/bin/phpunit -c .",
     "cs": "@php vendor/bin/php-cs-fixer check",
     "cs-fix": "@php vendor/bin/php-cs-fixer fix",

@@ -7,7 +7,6 @@ namespace Madco\Tecsafe\Storefront\Controller;
 use Madco\Tecsafe\Config\PluginConfig;
 use Madco\Tecsafe\Tecsafe\Api\Generated\Exception\AuthLoginSalesChannelBadRequestException;
 use Madco\Tecsafe\Tecsafe\Api\Generated\Model\CustomerLoginRequest;
-use Madco\Tecsafe\Tecsafe\Api\Generated\Model\SalesChannelLoginRequest;
 use Madco\Tecsafe\Tecsafe\ApiClient;
 use Psr\Log\LoggerInterface;
 use Shopware\Core\System\SalesChannel\SalesChannelContext;
@@ -20,7 +19,6 @@ readonly class TokenApiController
 {
     public function __construct(
         private ApiClient $client,
-        private PluginConfig $pluginConfig,
         private LoggerInterface $logger,
     ) {}
 
@@ -35,17 +33,8 @@ readonly class TokenApiController
     )]
     public function index(SalesChannelContext $salesChannelContext): JsonResponse
     {
-        /* @todo Rework with Shop-Gateway */
-        #$token = $this->cockpitApiClient->obtainCustomerTokenFromCockpit($salesChannelContext);
-        $customerLoginRequest = new CustomerLoginRequest();
-
-        $salesChannelLoginRequest = (new SalesChannelLoginRequest())
-            ->setId($this->pluginConfig->salesChannelSecretId)
-            ->setSecret($this->pluginConfig->salesChannelSecretKey)
-        ;
-
         try {
-            $salesChannelJwt = $this->client->loginSalesChannel($salesChannelLoginRequest);
+            $salesChannelJwt = $this->client->loginSalesChannel($salesChannelContext);
         } catch (AuthLoginSalesChannelBadRequestException $e) {
             $this->logger->error($e->getMessage());
 
@@ -55,7 +44,8 @@ readonly class TokenApiController
             );
         }
 
-        $customerLoginRequest->setSecret($salesChannelJwt->token)
+        $customerLoginRequest = (new CustomerLoginRequest())
+            ->setSecret($salesChannelJwt->token)
             ->setEmail('foo@bar.com')
             ->setIdentifier($salesChannelContext->getToken())
             ->setIsGuest(true)
