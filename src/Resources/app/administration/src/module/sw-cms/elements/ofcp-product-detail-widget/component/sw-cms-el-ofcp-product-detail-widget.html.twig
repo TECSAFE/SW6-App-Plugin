@@ -1,0 +1,17 @@
+<!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
+{% block sw_cms_element_ofcp_product_detail_widget %}
+<div
+    class="sw-cms-el-ofcp-product-detail-widget"
+>
+    <!-- eslint-disable-next-line vuejs-accessibility/iframe-has-title -->
+    {#  <iframe
+        class="sw-cms-el-youtube-video__video"
+        :src="videoUrl"
+    ></iframe> #}
+    <img
+        class="sw-cms-el-ofcp-product-detail-widget__img"
+        :src="assetFilter('/madtecsafe/administration/static/img/cms/product-detail-widget-placeholder-en.png')"
+        alt=""
+    >
+</div>
+{% endblock %}

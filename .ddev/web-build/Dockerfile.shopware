@@ -1,0 +1,4 @@
+SHELL ["/bin/bash", "-c"]
+
+COPY --from=dockware/dev:6.6.5.1 --chown=$uid:$gid /var/www/html /var/www/html
+RUN cd /var/www/html && composer require --dev profiler

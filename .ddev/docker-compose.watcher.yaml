@@ -1,0 +1,13 @@
+# .ddev/docker-compose.watcher.yaml
+services:
+  web:
+    expose:
+      - 9997
+      - 9998
+      - 9999
+    environment:
+      - ESLINT_DISABLE=true
+      - HOST=0.0.0.0
+      - PORT=9997
+      - HTTP_EXPOSE=${DDEV_ROUTER_HTTP_PORT}:80,${DDEV_MAILHOG_PORT}:8025,9999:9999,9998:9998,9997:9997
+      - HTTPS_EXPOSE=${DDEV_ROUTER_HTTPS_PORT}:80,${DDEV_MAILHOG_HTTPS_PORT}:8025,8899:9999,8888:9998,8887:9997

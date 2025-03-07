@@ -6,9 +6,12 @@ parameters:
     paths:
         - %currentWorkingDirectory%
     excludePaths:
-        - %currentWorkingDirectory%/vendor
-        - %currentWorkingDirectory%/tests/
         - %currentWorkingDirectory%/shopware-source/
+        - %currentWorkingDirectory%/src/Tecsafe/Api/Generated/
+        - %currentWorkingDirectory%/tests/
+        - %currentWorkingDirectory%/var/
+        - %currentWorkingDirectory%/vendor
+
     ignoreErrors:
         - '#apcu_#'
         - '#ioncube_#'

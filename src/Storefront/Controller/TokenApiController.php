@@ -4,16 +4,22 @@ declare(strict_types=1);
 
 namespace Madco\Tecsafe\Storefront\Controller;
 
-use Madco\Tecsafe\Tecsafe\ApiClient as CockpitApiClient;
+use Madco\Tecsafe\Config\PluginConfig;
+use Madco\Tecsafe\Tecsafe\Api\Generated\Exception\AuthLoginSalesChannelBadRequestException;
+use Madco\Tecsafe\Tecsafe\Api\Generated\Model\CustomerLoginRequest;
+use Madco\Tecsafe\Tecsafe\ApiClient;
+use Psr\Log\LoggerInterface;
 use Shopware\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpKernel\Exception\HttpException;
+use Symfony\Component\Routing\Attribute\Route;
 
 #[Route(defaults: ['_routeScope' => ['storefront']])]
-class TokenApiController
+readonly class TokenApiController
 {
     public function __construct(
-        private readonly CockpitApiClient $cockpitApiClient
+        private ApiClient $client,
+        private LoggerInterface $logger,
     ) {}
 
     #[Route(
@@ -27,11 +33,42 @@ class TokenApiController
     )]
     public function index(SalesChannelContext $salesChannelContext): JsonResponse
     {
-        /* @todo Rework with Shop-Gateway */
-        $token = $this->cockpitApiClient->obtainCustomerTokenFromCockpit($salesChannelContext);
+        try {
+            $salesChannelJwt = $this->client->loginSalesChannel($salesChannelContext);
+        } catch (AuthLoginSalesChannelBadRequestException $e) {
+            $this->logger->error($e->getMessage());
+
+            throw new HttpException(
+                (int) $e->getErrorValidationResponse()->getStatusCode(),
+                $e->getErrorValidationResponse()->getMessage()
+            );
+        }
+
+        $customerLoginRequest = (new CustomerLoginRequest())
+            ->setSecret($salesChannelJwt->token)
+            ->setEmail('foo@bar.com')
+            ->setIdentifier($salesChannelContext->getToken())
+            ->setIsGuest(true)
+            ->setCurrency($salesChannelContext->getCurrency()->getIsoCode())
+            ->setFirstName('John')
+            ->setLastName('Doe')
+            ->setCompany('Test Company')
+            ->setGroupIdentifier($salesChannelContext->getCurrentCustomerGroup()->getId())
+        ;
+
+        try {
+            $customerJwt = $this->client->loginCustomer($customerLoginRequest);
+        } catch (\Throwable $e) {
+            $this->logger->error($e->getMessage());
+
+            throw new HttpException(
+                (int) $e->getCode(),
+                $e->getMessage()
+            );
+        }
 
         return new JsonResponse([
-            'token' => $token,
+            'token' => $customerJwt->token,
         ]);
     }
 }

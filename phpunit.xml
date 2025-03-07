@@ -19,6 +19,8 @@
         <env name="APP_DEBUG" value="1"/>
         <env name="APP_SECRET" value="s$cretf0rt3st"/>
         <env name="SYMFONY_DEPRECATIONS_HELPER" value="weak"/>
+        <!--env name="DATABASE_URL" value="mysql://db:db@db:3306/db" />
+        <env name="TEST_TOKEN" value="none" / -->
     </php>
     <testsuites>
         <testsuite name="MadTecsafe Testsuite">

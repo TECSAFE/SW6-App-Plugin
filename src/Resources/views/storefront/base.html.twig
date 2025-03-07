@@ -2,9 +2,10 @@
 
 {% block base_body_inner %}
     {{ parent() }}
-    {#  <iframe src="{{ ofcp_app_checkout_cart_url() }}" id="tecsafe-ofcp-cart" class="tecsafe-ofcp-fullscreen tecsafe-ofcp-hidden"></iframe> #}
 
-    {#  % if context.customer %#}
-        <template data-tecsafe-plugin></template>
-    {#% endif %#}
+    {% set tecsafePluginOptions = {
+        appUrl: ofcp_app_url(),
+        allowedOrigins: ofcp_allowed_origins()
+    } %}
+    <template data-tecsafe-init data-tecsafe-options="{{ tecsafePluginOptions|json_encode }}"></template>
 {% endblock %}

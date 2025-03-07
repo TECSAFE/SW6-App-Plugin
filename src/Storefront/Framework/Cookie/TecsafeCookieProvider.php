@@ -9,16 +9,11 @@ use Shopware\Storefront\Framework\Cookie\CookieProviderInterface;
 class TecsafeCookieProvider implements CookieProviderInterface
 {
     private const TECSAFE_FOAM_CONFIGURATION_COOKIES = [
-        'snippet_name' => 'cookie.groupComfortFeatures',
-        'entries' => [
-            [
-                'snippet_name' => 'cookie.tecsafeFoamConfigurator.name',
-                'snippet_description' => 'cookie.tecsafeFoamConfigurator.description',
-                'cookie' => 'tecsafe-foam-configurator-enabled',
-                'value' => '1',
-                'expiration' => '30'
-            ],
-        ]
+        'snippet_name' => 'cookie.tecsafeFoamConfigurator.name',
+        'snippet_description' => 'cookie.tecsafeFoamConfigurator.description',
+        'cookie' => 'tecsafe-foam-configurator-enabled',
+        'value' => '1',
+        'expiration' => '30'
     ];
 
     private CookieProviderInterface $originalService;
