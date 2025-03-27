@@ -9,11 +9,18 @@
       "name": "madco GmbH"
     }
   ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/TECSAFE/jwt-sdk-php"
+    }
+  ],
   "require": {
     "php": "~8.2.0 || ~8.3.0",
     "shopware/core": "6.5.* || 6.6.*",
     "shopware/storefront": "6.6.* || 6.6.*",
-    "jane-php/open-api-runtime": "^7.8"
+    "jane-php/open-api-runtime": "^7.8",
+    "tecsafe/jwt-sdk": "0.6.2"
   },
   "require-dev": {
     "phpstan/phpstan": "^1.10.34",

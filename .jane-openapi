@@ -2,7 +2,7 @@
 
 return [
     #'openapi-file' => __DIR__ . '/open-api.json',
-    'openapi-file' => 'https://api-gateway.tecsafe-local.de/swagger-json',
+    'openapi-file' => 'https://ofcp-api-gateway.tecsafe-local.de/swagger-json',
     'namespace' => 'Madco\Tecsafe\Tecsafe\Api\Generated',
     'directory' => __DIR__ . '/src/Tecsafe/Api/Generated',
 ];

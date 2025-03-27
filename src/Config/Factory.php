@@ -9,21 +9,16 @@ use Shopware\Core\PlatformRequest;
 use Shopware\Core\System\SystemConfig\SystemConfigService;
 use Symfony\Component\HttpFoundation\RequestStack;
 
-final class Factory
+final readonly class Factory
 {
-    private const TECSAFE_SALES_CHANNEL_SECRET_ID = 'TECSAFE_SALES_CHANNEL_SECRET_ID';
-    private const TECSAFE_SALES_CHANNEL_SECRET_KEY = 'TECSAFE_SALES_CHANNEL_SECRET_KEY';
-    private const TECSAFE_SHOP_API_GATEWAY_URL = 'TECSAFE_SHOP_API_GATEWAY_URL';
-    private const TECSAFE_APP_URL = 'TECSAFE_APP_URL';
-
     public function __construct(
-        private readonly SystemConfigService $systemConfigService,
-        private readonly UriFactoryInterface $uriFactory,
-        private readonly ?RequestStack $requestStack = null,
-        private readonly ?string $tecsafeSalesChannelSecretIdEnv = null,
-        private readonly ?string $tecsafeSalesChannelSecretKeyEnv = null,
-        private readonly ?string $tecsafeShopApiGatewayUrlEnv = null,
-        private readonly ?string $tecsafeAppUrlEnv = null,
+        private SystemConfigService $systemConfigService,
+        private UriFactoryInterface $uriFactory,
+        private ?RequestStack $requestStack = null,
+        private ?string $tecsafeSalesChannelSecretIdEnv = null,
+        private ?string $tecsafeSalesChannelSecretKeyEnv = null,
+        private ?string $tecsafeShopApiGatewayUrlEnv = null,
+        private ?string $tecsafeAppUrlEnv = null,
     ) {}
 
     public function create(): PluginConfig

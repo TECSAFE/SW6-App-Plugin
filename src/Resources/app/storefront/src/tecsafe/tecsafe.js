@@ -38,7 +38,7 @@ export default class Tecsafe extends Plugin {
 
     async initApi() {
         this.api = new TecsafeApi(async () => {
-            const response = await fetch(window.router['frontend.tecsafe.ofcp.login']);
+            const response = await fetch(window.router['frontend.tecsafe.ofcp.token']);
             const json = await response.json();
 
             return json.token;
@@ -61,6 +61,7 @@ export default class Tecsafe extends Plugin {
     }
 
     async _handleInit() {
+        console.debug(this);
         if (CookieStorageHelper.getItem(this.options.cookieName)) {
             await this.initApi();
             this.$emitter.publish(TOKEN_AVAILABLE);
@@ -93,7 +94,7 @@ export default class Tecsafe extends Plugin {
 
             if (cookieConfigurationPlugins.length > 0) {
                 const cookieConfigurationPlugin = cookieConfigurationPlugins[0];
-                console.debug(cookieConfigurationPlugin);
+
                 if (cookieConfigurationPlugin instanceof Object) {
                     if (typeof cookieConfigurationPlugin.openOffCanvas === 'function') {
                         cookieConfigurationPlugin.openOffCanvas();

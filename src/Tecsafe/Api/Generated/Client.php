@@ -16,6 +16,7 @@ class Client extends \Madco\Tecsafe\Tecsafe\Api\Generated\Runtime\Client\Client
     {
         return $this->executeRawEndpoint(new \Madco\Tecsafe\Tecsafe\Api\Generated\Endpoint\KeyGetJwks());
     }
+
     /**
      * 
      *
@@ -30,6 +31,7 @@ class Client extends \Madco\Tecsafe\Tecsafe\Api\Generated\Runtime\Client\Client
     {
         return $this->executeRawEndpoint(new \Madco\Tecsafe\Tecsafe\Api\Generated\Endpoint\AuthLoginSalesChannel($requestBody));
     }
+
     /**
      * 
      *
@@ -44,6 +46,7 @@ class Client extends \Madco\Tecsafe\Tecsafe\Api\Generated\Runtime\Client\Client
     {
         return $this->executeRawEndpoint(new \Madco\Tecsafe\Tecsafe\Api\Generated\Endpoint\AuthLoginCustomer($requestBody));
     }
+
     /**
      * 
      *
@@ -73,6 +76,7 @@ class Client extends \Madco\Tecsafe\Tecsafe\Api\Generated\Runtime\Client\Client
     {
         return $this->executeRawEndpoint(new \Madco\Tecsafe\Tecsafe\Api\Generated\Endpoint\MergeControllerMigrateFromSalesChannel($requestBody));
     }
+
     /**
      *
      *

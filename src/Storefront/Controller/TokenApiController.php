@@ -4,15 +4,17 @@ declare(strict_types=1);
 
 namespace Madco\Tecsafe\Storefront\Controller;
 
-use Madco\Tecsafe\Config\PluginConfig;
 use Madco\Tecsafe\Tecsafe\Api\Generated\Exception\AuthLoginSalesChannelBadRequestException;
 use Madco\Tecsafe\Tecsafe\Api\Generated\Model\CustomerLoginRequest;
 use Madco\Tecsafe\Tecsafe\ApiClient;
+use Madco\Tecsafe\Tecsafe\CustomerTokenStruct;
 use Psr\Log\LoggerInterface;
 use Shopware\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\Routing\Attribute\Route;
+use Tecsafe\OFCP\JWT\SDK\JWTParser;
 
 #[Route(defaults: ['_routeScope' => ['storefront']])]
 readonly class TokenApiController
@@ -24,14 +26,14 @@ readonly class TokenApiController
 
     #[Route(
         path: '/tecsafe/ofcp/token',
-        name: 'frontend.tecsafe.ofcp.login',
+        name: 'frontend.tecsafe.ofcp.token',
         defaults: [
             '_loginRequired' => false,
             'XmlHttpRequest' => true,
         ],
         methods: ['GET']
     )]
-    public function index(SalesChannelContext $salesChannelContext): JsonResponse
+    public function index(SalesChannelContext $salesChannelContext, Request $request): JsonResponse
     {
         try {
             $salesChannelJwt = $this->client->loginSalesChannel($salesChannelContext);
@@ -44,20 +46,35 @@ readonly class TokenApiController
             );
         }
 
+        $isGuestContext = true;
+
+        $customer = null;
+
+        if ($salesChannelContext->getCustomer() !== null) {
+            $customer = $salesChannelContext->getCustomer();
+            if ($customer->getGuest() !== false) {
+                $isGuestContext = false;
+            }
+        }
+
         $customerLoginRequest = (new CustomerLoginRequest())
             ->setSecret($salesChannelJwt->token)
-            ->setEmail('foo@bar.com')
-            ->setIdentifier($salesChannelContext->getToken())
-            ->setIsGuest(true)
+            ->setEmail($customer?->getEmail() ?? \sprintf('%s@%s', $salesChannelContext->getToken(), $salesChannelContext->getSalesChannel()->getId()))
+            ->setIdentifier($customer?->getId() ?? $salesChannelContext->getToken())
+            ->setIsGuest($isGuestContext)
             ->setCurrency($salesChannelContext->getCurrency()->getIsoCode())
-            ->setFirstName('John')
-            ->setLastName('Doe')
-            ->setCompany('Test Company')
+            ->setFirstName($customer?->getFirstName() ?? 'John')
+            ->setLastName($customer?->getLastName() ?? 'Doe')
             ->setGroupIdentifier($salesChannelContext->getCurrentCustomerGroup()->getId())
+            ->setCompany($customer?->getCompany() ?? '')
         ;
 
         try {
-            $customerJwt = $this->client->loginCustomer($customerLoginRequest);
+            $customerToken = $this->client->loginCustomer($customerLoginRequest);
+            $customerJwt = JWTParser::parseCustomerJwt($customerToken->token, null);
+            $customerJwtStruct = new CustomerTokenStruct($customerJwt);
+
+            $request->getSession()->set(CustomerTokenStruct::API_ALIAS, $customerJwtStruct);
         } catch (\Throwable $e) {
             $this->logger->error($e->getMessage());
 
@@ -68,7 +85,7 @@ readonly class TokenApiController
         }
 
         return new JsonResponse([
-            'token' => $customerJwt->token,
+            'token' => $customerToken->token,
         ]);
     }
 }

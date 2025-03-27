@@ -5,11 +5,14 @@ declare(strict_types=1);
 namespace Madco\Tecsafe\Tecsafe;
 
 use Madco\Tecsafe\Config\PluginConfig;
+use Madco\Tecsafe\Tecsafe\Api\Generated\Exception\AuthLoginCustomerBadRequestException;
 use Madco\Tecsafe\Tecsafe\Api\Generated\Exception\AuthLoginSalesChannelBadRequestException;
 use Madco\Tecsafe\Tecsafe\Api\Generated\Model\ErrorValidationResponse;
 use Madco\Tecsafe\Tecsafe\Api\Generated\Model\SalesChannelLoginRequest;
 use Psr\Cache\CacheItemPoolInterface;
 use Psr\Cache\InvalidArgumentException;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Log\LoggerInterface;
 use Shopware\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Component\HttpClient\Psr18Client;
 use Symfony\Component\HttpFoundation\Response;
@@ -27,6 +30,8 @@ final class ApiClient
         HttpClientInterface $httpClient,
         private readonly PluginConfig $pluginConfig,
         private readonly CacheItemPoolInterface $cacheItemPool,
+        private readonly CacheKeyBuilder $cacheKeyBuilder,
+        private readonly LoggerInterface $logger
     ) {
         $baseUri = $this->pluginConfig->shopApiGatewayUrl;
 
@@ -80,7 +85,7 @@ final class ApiClient
             ->setSecret($this->pluginConfig->salesChannelSecretKey)
         ;
 
-        $cacheKey = $this->pluginConfig->salesChannelId . '_sales-channel-token';
+        $cacheKey = $this->cacheKeyBuilder->buildSalesChannelTokenKey($salesChannelContext->getSalesChannelId());
         $cacheItem = $this->cacheItemPool->getItem($cacheKey);
 
         if (!$cacheItem->isHit()) {
@@ -90,10 +95,11 @@ final class ApiClient
 
             if ($response->getStatusCode() === Response::HTTP_CREATED) {
                 $accessToken = AccessToken::validateAndExtract($responseBody);
+                //$salesChannelToken = \Tecsafe\OFCP\JWT\SDK\JWTParser::parseSalesChannelJwt($responseBody, null);
 
                 $cacheItem->set($accessToken);
                 $expiresAt = new \DateTime('now');
-                $expiresAt->setTimestamp($accessToken->validUntil);
+                $expiresAt->setTimestamp((int) $accessToken->validUntil);
 
                 $cacheItem->expiresAt($expiresAt);
                 $this->cacheItemPool->save($cacheItem);
@@ -111,23 +117,46 @@ final class ApiClient
     }
 
     /**
-     *
-     *
-     * @param \Madco\Tecsafe\Tecsafe\Api\Generated\Model\CustomerLoginRequest $requestBody
-     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
      * @throws \Madco\Tecsafe\Tecsafe\Api\Generated\Exception\AuthLoginCustomerBadRequestException
      * @throws \Madco\Tecsafe\Tecsafe\Api\Generated\Exception\AuthLoginCustomerTooManyRequestsException
-     *
+     * @throws \Exception
      */
     public function loginCustomer(\Madco\Tecsafe\Tecsafe\Api\Generated\Model\CustomerLoginRequest $requestBody): AccessToken
     {
-        $response = $this->generatedClient->authLoginCustomer($requestBody);
+        $cacheKey = $this->cacheKeyBuilder->buildCustomerTokenKey(
+            $this->pluginConfig->salesChannelId,
+            $requestBody->getIdentifier(),
+            $requestBody->getIsGuest()
+        );
 
-        $responseBody = $response->getBody()->getContents();
+        $cacheItem = $this->cacheItemPool->getItem($cacheKey);
 
-        if ($response->getStatusCode() === Response::HTTP_CREATED) {
-            return AccessToken::validateAndExtract($responseBody);
+        if (!$cacheItem->isHit()) {
+            $response = $this->generatedClient->authLoginCustomer($requestBody);
+
+            $responseBody = $response->getBody()->getContents();
+            if ($response->getStatusCode() === Response::HTTP_CREATED) {
+
+                $customerToken = AccessToken::validateAndExtract($responseBody);
+                //$customerToken = JWTParser::parseCustomerJwt($responseBody, null);
+
+                $cacheItem->set($customerToken);
+                $expiresAt = new \DateTime('now');
+                $expiresAt->setTimestamp((int) $customerToken->validUntil);
+
+                $cacheItem->expiresAt($expiresAt);
+                $this->cacheItemPool->save($cacheItem);
+            } else {
+                throw new AuthLoginCustomerBadRequestException(
+                    (new ErrorValidationResponse())
+                        ->setMessage($response->getReasonPhrase())
+                        ->setStatusCode($response->getStatusCode()),
+                    $response
+                );
+            }
         }
+
+        return $cacheItem->get();
     }
 
     /**
@@ -144,4 +173,19 @@ final class ApiClient
     {
         return $this->generatedClient->authLoginInternal($requestBody);
     }
+
+    /**
+     *
+     *
+     * @param \Madco\Tecsafe\Tecsafe\Api\Generated\Model\MergeFromSalesChannelRequest $requestBody
+     * @throws \Madco\Tecsafe\Tecsafe\Api\Generated\Exception\MergeControllerMigrateFromSalesChannelBadRequestException
+     * @throws \Madco\Tecsafe\Tecsafe\Api\Generated\Exception\MergeControllerMigrateFromSalesChannelTooManyRequestsException
+     *
+     * @return null|\Psr\Http\Message\ResponseInterface
+     */
+    public function mergeControllerMigrateFromSalesChannel(\Madco\Tecsafe\Tecsafe\Api\Generated\Model\MergeFromSalesChannelRequest $requestBody): ?ResponseInterface
+    {
+        return $this->generatedClient->mergeControllerMigrateFromSalesChannel($requestBody);
+    }
+
 }

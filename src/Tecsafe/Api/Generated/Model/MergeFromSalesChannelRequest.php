@@ -13,7 +13,7 @@ class MergeFromSalesChannelRequest extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     * The id from JwtCustomer.meta.customerIdentifier
      *
      * @var string
      */
@@ -31,7 +31,7 @@ class MergeFromSalesChannelRequest extends \ArrayObject
      */
     protected $token;
     /**
-     * 
+     * The id from JwtCustomer.meta.customerIdentifier
      *
      * @return string
      */
@@ -40,7 +40,7 @@ class MergeFromSalesChannelRequest extends \ArrayObject
         return $this->fromId;
     }
     /**
-     * 
+     * The id from JwtCustomer.meta.customerIdentifier
      *
      * @param string $fromId
      *

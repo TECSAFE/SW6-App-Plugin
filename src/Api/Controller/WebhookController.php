@@ -12,6 +12,9 @@ use Symfony\Component\Messenger\HandleTrait;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @deprecated
+ */
 #[Route(defaults: ['_routeScope' => ['api']])]
 class WebhookController
 {
