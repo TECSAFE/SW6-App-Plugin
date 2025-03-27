@@ -9,6 +9,9 @@ use Shopware\Core\Checkout\Cart\LineItemFactoryHandler\LineItemFactoryInterface;
 use Shopware\Core\Framework\Uuid\Uuid;
 use Shopware\Core\System\SalesChannel\SalesChannelContext;
 
+/**
+ * @deprecated
+ */
 class LineItemFactory implements LineItemFactoryInterface
 {
     final public const TYPE = 'tecsafe-ofcp';

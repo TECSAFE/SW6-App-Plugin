@@ -1,0 +1,30 @@
+{% block sw_cms_block_ofcp_product_detail %}
+    {% if ofcp_is_tecsafe_product(page.product) %}
+        {% set previewMediaId = block.slots.getSlot('main').config.previewMedia.value %}
+
+        {% set previewMediaUrl = asset('bundles/madtecsafe/storefront/img/product-detail-widget-placeholder-en.png') %}
+
+        {% if previewMediaId %}
+            {# fetch media as batch - optimized for performance #}
+            {% set mediaCollection = searchMedia([previewMediaId], context.context) %}
+
+            {# extract single media object #}
+            {# previewMedia Shopware\Core\Content\Media\MediaEntity #}
+            {% set previewMedia = mediaCollection.get(previewMediaId) %}
+            {% if previewMedia %}
+                {% set previewMediaUrl = previewMedia.url %}
+            {% endif %}
+        {% endif %}
+        <div id="tecsafe-product-widget-container" data-placeholder-image="{{ previewMediaUrl }}">
+
+        </div>
+
+        <template id="product-widget-placeholder">
+            <div class="js-cookie-configuration-button">
+                <a href="{{ url('frontend.cookie.offcanvas') }}">
+                    <img style="width: 100%" src="{{ previewMediaUrl }}" alt="{{ previewMediaUrl }}" />
+                </a>
+            </div>
+        </template>
+    {% endif %}
+{% endblock %}

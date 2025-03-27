@@ -1,0 +1,4 @@
+services:
+  web:
+    external_links:
+      - "ddev-router:tecsafe-api-gateway.ddev.site"

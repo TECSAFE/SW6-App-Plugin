@@ -13,6 +13,8 @@ use Shopware\Core\System\SalesChannel\SalesChannelContext;
 
 /**
  * Cart processor for the Tecsafe line item.
+ *
+ * @deprecated
  */
 class CartProcessor implements CartProcessorInterface
 {

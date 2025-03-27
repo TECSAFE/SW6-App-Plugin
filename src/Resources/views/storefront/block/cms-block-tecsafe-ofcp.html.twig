@@ -1,11 +1,24 @@
 {% block sw_cms_block_preview_tecsafe_ofcp %}
-    {% if page.product.customFields.tecsafe_enabled %}
+    {% if ofcp_is_tecsafe_product(page.product) %}
+        <div id="tecsafe-product-widget-container"></div>
+        <script>
+            /*let event = new CustomEvent('tecsafe:product-widget:init', {
+                el: document.getElementById('tecsafe-product-widget-container'),
+                productId: '{{ page.product.id }}',
+            });
+*/
+
+        </script>
+    {% endif %}
+
+    {#  % if page.product.customFields.tecsafe_enabled %}
         {% set product = {'id': page.product.id, 'name': page.product.translated.name}|json_encode %}
+        <
         <script>
             window.TECSAFE_OFCP_META = {
               product: {{ product|raw }}
             }
         </script>
         <iframe src="{{ ofcp_app_widget_url() }}" width="100%" height="500px" style="margin-right: 20px; margin-left: 20px" id="tecsafe-ofcp-widget"></iframe>
-    {% endif %}
+    {% endif % #}
 {% endblock %}

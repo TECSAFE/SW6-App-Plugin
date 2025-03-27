@@ -4,64 +4,53 @@
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
+    <imports>
+        <import resource="commands.xml"/>
+        <import resource="message_handler.xml" />
+        <import resource="subscriber.xml" />
+        <import resource="twig.xml" />
+    </imports>
+
     <parameters>
-        <parameter key="tecsafe.sales_channel.secret_id">'%env(default::string:TECSAFE_SALES_CHANNEL_SECRET_ID)%</parameter>
-        <parameter key="tecsafe.sales_channel.secret_key">'%env(default::string:TECSAFE_SALES_CHANNEL_SECRET_KEY)%</parameter>
-        <parameter key="tecsafe.shop_api_gateway_url">'%env(default::string:TECSAFE_SHOP_API_GATEWAY_URL)%</parameter>
-        <parameter key="tecsafe.app_url">'%env(default::string:TECSAFE_APP_URL)%</parameter>
+        <parameter key="tecsafe.sales_channel.secret_id">%env(default::string:TECSAFE_SALES_CHANNEL_SECRET_ID)%</parameter>
+        <parameter key="tecsafe.sales_channel.secret_key">%env(default::string:TECSAFE_SALES_CHANNEL_SECRET_KEY)%</parameter>
+        <parameter key="tecsafe.shop_api_gateway_url">%env(default::string:TECSAFE_SHOP_API_GATEWAY_URL)%</parameter>
+        <parameter key="tecsafe.app_url">%env(default::string:TECSAFE_APP_URL)%</parameter>
     </parameters>
+
     <services>
         <service id="Madco\Tecsafe\Config\Factory">
             <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService" />
             <argument type="service" id="Psr\Http\Message\UriFactoryInterface" />
             <argument type="service" id="request_stack" />
-            <argument type="string">%tecsafe.sales_channel.secret_id%'</argument>
-            <argument type="string">%tecsafe.sales_channel.secret_key%'</argument>
-            <argument type="string">%tecsafe.shop_api_gateway_url%'</argument>
-            <argument type="string">%tecsafe.app_url%'</argument>
+            <argument type="string">%tecsafe.sales_channel.secret_id%</argument>
+            <argument type="string">%tecsafe.sales_channel.secret_key%</argument>
+            <argument type="string">%tecsafe.shop_api_gateway_url%</argument>
+            <argument type="string">%tecsafe.app_url%</argument>
         </service>
 
         <service id="Madco\Tecsafe\Config\PluginConfig">
             <factory service="Madco\Tecsafe\Config\Factory" method="create" />
         </service>
 
+        <service id="Madco\Tecsafe\Tecsafe\CacheKeyBuilder">
+        </service>
+
         <service id="Madco\Tecsafe\Tecsafe\ApiClient">
             <argument type="service" id="http_client" />
             <argument type="service" id="Madco\Tecsafe\Config\PluginConfig" />
             <argument type="service" id="cache.object" />
+            <argument type="service" id="Madco\Tecsafe\Tecsafe\CacheKeyBuilder" />
+            <argument type="service" id="logger" />
         </service>
 
         <service id="Madco\Tecsafe\Storefront\Controller\TokenApiController" public="true">
             <argument type="service" id="Madco\Tecsafe\Tecsafe\ApiClient" />
-        </service>
-
-        <service id="Madco\Tecsafe\Core\SalesChannel\TokenStoreRoute">
-            <argument type="service" id="Madco\Tecsafe\Tecsafe\ApiClient" />
+            <argument type="service" id="logger" />
         </service>
 
         <service id="Madco\Tecsafe\Api\Controller\WebhookController">
             <argument type="service" id="message_bus" />
-        </service>
-
-        <service id="Madco\Tecsafe\MessageHandler\Webhook\CartUpdatedEventReceivedHandler">
-            <argument type="service" id="Shopware\Core\System\SalesChannel\Context\SalesChannelContextFactory" />
-            <argument type="service" id="Shopware\Core\Checkout\Cart\SalesChannel\CartService" />
-
-            <tag name="messenger.message_handler" />
-        </service>
-
-        <service id="Madco\Tecsafe\Subscriber\OrderSubscriber">
-            <argument type="service" id="Madco\Tecsafe\Tecsafe\ApiClient" />
-            <argument type="service" id="logger" />
-            <argument type="service" id="request_stack" />
-
-            <tag name="kernel.event_subscriber" />
-        </service>
-
-        <service id="Madco\Tecsafe\Twig\OfcpExtension">
-            <argument type="service" id="Madco\Tecsafe\Config\PluginConfig" />
-
-            <tag name="twig.extension" />
         </service>
 
         <service id="Madco\Tecsafe\Storefront\Framework\Cookie\TecsafeCookieProvider"

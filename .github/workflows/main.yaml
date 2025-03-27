@@ -4,6 +4,10 @@ on:
   pull_request:
   push:
 
+env:
+  ACTIONS_STEP_DEBUG: true
+  RUNNER_DEBUG: true
+
 jobs:
   phpstan:
     runs-on: ubuntu-latest
@@ -11,7 +15,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: php-actions/composer@v6 # or alternative dependency management
         with:
-          php_version: '8.1'
+          php_version: '8.2'
           php_extensions: curl dom fileinfo gd intl json mbstring openssl pdo pdo_mysql session simplexml sodium xml zip zlib
           args: "--no-plugins"
       - uses: php-actions/phpstan@v3
@@ -28,13 +32,25 @@ jobs:
       matrix:
         include:
           - shopware: '6.6.5.0'
-            php: '8.3'
+            php: '8.2'
+            froshCodeQuality: '0.4.0'
+            shopwareDevTools: '1.5.0'
           - shopware: '6.6.5.0'
             php: '8.3'
+            froshCodeQuality: '0.4.0'
+            shopwareDevTools: '1.5.0'
     steps:
 
       - name: Clone Code
         uses: actions/checkout@v3
+
+      - name: Composer install
+        uses: php-actions/composer@v6 # or alternative dependency management
+        with:
+          php_version: ${{ matrix.php }}
+          php_extensions: curl dom fileinfo gd intl json mbstring openssl pdo pdo_mysql session simplexml sodium xml zip zlib
+          args: "--no-plugins"
+          dev: 'no'
 
       - name: Download Docker
         run: |
@@ -50,7 +66,7 @@ jobs:
 
       - name: Install additional dependencies
         run: |
-          docker exec shopware-${{ matrix.shopware }}-${{ matrix.php }} bash -c 'cd /var/www/html/ && composer require -vvv --dev --no-scripts dev-tools code-quality'
+          docker exec shopware-${{ matrix.shopware }}-${{ matrix.php }} bash -c 'cd /var/www/html/ && composer require -vvv --dev --no-scripts shopware/dev-tools:${{ matrix.shopwareDevTools }} frosh/code-quality-meta:${{ matrix.froshCodeQuality }}'
 
       - name: Upload into Docker
         run: |
@@ -77,15 +93,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: '${{ github.token }}'
+      - uses: php-actions/composer@v6 # or alternative dependency management
+        with:
+          php_version: '8.2'
+          args: "--no-plugins --ignore-platform-reqs"
+          dev: 'no'
+
       - name: Install shopware-cli
-        uses: FriendsOfShopware/shopware-cli-action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: FriendsOfShopware/shopware-cli-action@v1.0.4
+        with:
+          version: '0.5.12'
+          token: '${{ github.token }}'
       - name: build plugin
-        run: |
-          mkdir -p build/zip build/release
-          shopware-cli extension zip --release --output-directory ./build/zip .
-          unzip build/zip/*.zip -d build/release/
+        run: shopware-cli extension zip . --disable-git --release
 
       #      - name: Release
       #        uses: softprops/action-gh-release@v1
@@ -94,9 +117,7 @@ jobs:
       #            build/release/*
       #          prerelease: true
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: MadTecsafe.zip
-          path: build/release/*
-    env:
-      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          path: ./MadTecsafe.zip

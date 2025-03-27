@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
-        "types": ["@shopware-ag/storefront-types"]
-    }
+        "types": ["@shopware-ag/storefront-types"],
+        "allowImportingTsExtensions": true,
+    },
 }

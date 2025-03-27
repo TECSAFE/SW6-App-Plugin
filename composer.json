@@ -1,6 +1,6 @@
 {
   "name": "mad/tecsafe",
-  "description": "Skeleton plugin",
+  "description": "Tecsafe Integration for Shopware 6",
   "version": "0.1.0",
   "type": "shopware-platform-plugin",
   "license": "MIT",
@@ -9,18 +9,26 @@
       "name": "madco GmbH"
     }
   ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/TECSAFE/jwt-sdk-php"
+    }
+  ],
   "require": {
-    "php": ">=8.1",
-    "shopware/core": "~6.5.0@dev || ~6.6",
-    "shopware/storefront": "~6.5.0@dev || ~6.6"
+    "php": "~8.2.0 || ~8.3.0",
+    "shopware/core": "6.5.* || 6.6.*",
+    "shopware/storefront": "6.6.* || 6.6.*",
+    "jane-php/open-api-runtime": "^7.8",
+    "tecsafe/jwt-sdk": "0.6.2"
   },
   "require-dev": {
     "phpstan/phpstan": "^1.10.34",
-    "rector/rector": "^0.18.5",
+    "rector/rector": "^1.2",
     "shopware/dev-tools": "^1.1",
-    "frosh/shopware-rector": "^0.2.3",
     "kubawerlos/php-cs-fixer-custom-fixers": "^3.16",
-    "friendsofphp/php-cs-fixer": "^3.35"
+    "friendsofphp/php-cs-fixer": "^3.35",
+    "jane-php/open-api-3": "^7.8"
   },
   "extra": {
     "shopware-plugin-class": "Madco\\Tecsafe\\MadTecsafe",
@@ -55,10 +63,12 @@
     "lock": false,
     "allow-plugins": {
       "symfony/flex": false,
-      "symfony/runtime": false
+      "symfony/runtime": false,
+      "php-http/discovery": true
     }
   },
   "scripts": {
+    "openapi:generate": "@php vendor/bin/jane-openapi generate",
     "test": "@php vendor/bin/phpunit -c .",
     "cs": "@php vendor/bin/php-cs-fixer check",
     "cs-fix": "@php vendor/bin/php-cs-fixer fix",

@@ -15,6 +15,9 @@ use Shopware\Core\Checkout\Cart\Tax\Struct\TaxRuleCollection;
 use Shopware\Core\Framework\Uuid\Uuid;
 use Shopware\Core\System\SalesChannel\Context\AbstractSalesChannelContextFactory;
 
+/**
+ * @deprecated Has to be replaced
+ */
 class CartUpdatedEventReceivedHandler
 {
     public function __construct(

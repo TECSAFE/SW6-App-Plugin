@@ -12,6 +12,16 @@ use Shopware\Core\Framework\Plugin\Context\UninstallContext;
 
 class MadTecsafe extends Plugin
 {
+    /**
+     * Required
+     *
+     * @see https://developer.shopware.com/docs/guides/plugins/plugins/plugin-fundamentals/using-composer-dependencies.html
+     */
+    public function executeComposerCommands(): bool
+    {
+        return true;
+    }
+
     public function install(InstallContext $installContext): void
     {
         $productCustomFieldInstaller = $this->createProductCustomFieldInstaller();

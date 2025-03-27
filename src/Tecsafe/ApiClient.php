@@ -5,115 +5,183 @@ declare(strict_types=1);
 namespace Madco\Tecsafe\Tecsafe;
 
 use Madco\Tecsafe\Config\PluginConfig;
+use Madco\Tecsafe\Tecsafe\Api\Generated\Exception\AuthLoginCustomerBadRequestException;
+use Madco\Tecsafe\Tecsafe\Api\Generated\Exception\AuthLoginSalesChannelBadRequestException;
+use Madco\Tecsafe\Tecsafe\Api\Generated\Model\ErrorValidationResponse;
+use Madco\Tecsafe\Tecsafe\Api\Generated\Model\SalesChannelLoginRequest;
 use Psr\Cache\CacheItemPoolInterface;
+use Psr\Cache\InvalidArgumentException;
+use Psr\Clock\ClockInterface;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Log\LoggerInterface;
 use Shopware\Core\System\SalesChannel\SalesChannelContext;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
-use Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface;
-use Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface;
-use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
+use Symfony\Component\Clock\Clock;
+use Symfony\Component\HttpClient\Psr18Client;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
+use Madco\Tecsafe\Tecsafe\Api\Generated\Client as GeneratedClient;
 
-class ApiClient
+final class ApiClient
 {
-    public function __construct(
-        private readonly HttpClientInterface $httpClient,
-        private readonly PluginConfig $pluginConfig,
-        private readonly CacheItemPoolInterface $cacheItemPool
-    ) {}
+    private readonly GeneratedClient $generatedClient;
 
     /**
-     * @throws ClientExceptionInterface
-     * @throws RedirectionExceptionInterface
-     * @throws ServerExceptionInterface
-     * @throws TransportExceptionInterface
-     * @throws \Exception
+     * @todo Symfony configurator verwenden https://symfony.com/doc/7.0/service_container/configurators.html
      */
-    public function obtainAccessToken(): AccessToken
-    {
-        $cacheKey = $this->pluginConfig->salesChannelId . '_access-token';
+    public function __construct(
+        HttpClientInterface $httpClient,
+        private readonly PluginConfig $pluginConfig,
+        private readonly CacheItemPoolInterface $cacheItemPool,
+        private readonly CacheKeyBuilder $cacheKeyBuilder,
+        private readonly LoggerInterface $logger,
+    ) {
+        $baseUri = $this->pluginConfig->shopApiGatewayUrl;
 
+        $psr17Factory = new \Nyholm\Psr7\Factory\Psr17Factory();
+
+        $symfonyHttpClient = $httpClient->withOptions([
+            'base_uri' => $baseUri->__toString(),
+        ]);
+
+        $psr18Client = new Psr18Client($symfonyHttpClient);
+
+        /* @todo muss noch refactored werden: nur für dev-umgebung */
+        $psr18Client = $psr18Client->withOptions([
+            'verify_peer' => false,
+            'verify_host' => false,
+        ]);
+
+        $normalizers = [
+            new \Symfony\Component\Serializer\Normalizer\ArrayDenormalizer(),
+            new \Madco\Tecsafe\Tecsafe\Api\Generated\Normalizer\JaneObjectNormalizer(),
+        ];
+
+        $serializer = new \Symfony\Component\Serializer\Serializer(
+            $normalizers,
+            [
+                new \Symfony\Component\Serializer\Encoder\JsonEncoder(
+                    new \Symfony\Component\Serializer\Encoder\JsonEncode(),
+                    new \Symfony\Component\Serializer\Encoder\JsonDecode(['json_decode_associative' => true])
+                )
+            ]
+        );
+
+        $this->generatedClient = new GeneratedClient($psr18Client, $psr17Factory, $serializer, $psr17Factory);
+    }
+
+    public function getJwks(string $fetch = GeneratedClient::FETCH_OBJECT)
+    {
+        return $this->generatedClient->keyGetJwks($fetch);
+    }
+
+    /**
+     * @throws \Madco\Tecsafe\Tecsafe\Api\Generated\Exception\AuthLoginSalesChannelTooManyRequestsException
+     * @throws \Madco\Tecsafe\Tecsafe\Api\Generated\Exception\AuthLoginSalesChannelBadRequestException
+     * @throws \Exception
+     * @throws InvalidArgumentException
+     */
+    public function loginSalesChannel(SalesChannelContext $salesChannelContext): AccessToken
+    {
+        $salesChannelLoginRequest = (new SalesChannelLoginRequest())
+            ->setId($this->pluginConfig->salesChannelSecretId)
+            ->setSecret($this->pluginConfig->salesChannelSecretKey)
+        ;
+
+        $cacheKey = $this->cacheKeyBuilder->buildSalesChannelTokenKey($salesChannelContext->getSalesChannelId());
         $cacheItem = $this->cacheItemPool->getItem($cacheKey);
 
         if (!$cacheItem->isHit()) {
-            $tokenUrl = $this->pluginConfig->shopApiGatewayUrl->withPath('/store-api/tecsafe/v1/token/shop');
+            $response = $this->generatedClient->authLoginSalesChannel($salesChannelLoginRequest);
 
-            $response = $this->httpClient->request(Request::METHOD_POST, $tokenUrl->__toString(), [
-                'json' => [
-                    'salesChannel' => $this->pluginConfig->salesChannelName,
-                    'secret' => $this->pluginConfig->salesChannelSecret,
-                ],
-                'headers' => [
-                    'sw-access-key' => $this->pluginConfig->salesChannelSecret,
-                ],
-                'verify_peer' => false,
-                'verify_host' => false,
-            ]);
+            $responseBody = $response->getBody()->getContents();
 
-            $responseBody = $response->getContent();
+            if ($response->getStatusCode() === Response::HTTP_CREATED) {
+                $accessToken = AccessToken::validateAndExtract($responseBody);
+                //$salesChannelToken = \Tecsafe\OFCP\JWT\SDK\JWTParser::parseSalesChannelJwt($responseBody, null);
 
-            $accessToken = AccessToken::validateAndExtract($responseBody);
-
-            $cacheItem->set($accessToken);
-            $expiresAt = new \DateTime();
-            $expiresAt->setTimestamp($accessToken->validUntil);
-            $cacheItem->expiresAt($expiresAt);
-            $this->cacheItemPool->save($cacheItem);
+                $cacheItem->set($accessToken);
+                $cacheItem->expiresAt(\DateTimeImmutable::createFromFormat('U', (string) $accessToken->validUntil));
+                $this->cacheItemPool->save($cacheItem);
+            } else {
+                throw new AuthLoginSalesChannelBadRequestException(
+                    (new ErrorValidationResponse())
+                    ->setMessage($response->getReasonPhrase())
+                    ->setStatusCode($response->getStatusCode()),
+                    $response
+                );
+            }
         }
 
         return $cacheItem->get();
     }
 
     /**
-     * @throws RedirectionExceptionInterface
-     * @throws ClientExceptionInterface
-     * @throws TransportExceptionInterface
-     * @throws ServerExceptionInterface
+     * @throws \Madco\Tecsafe\Tecsafe\Api\Generated\Exception\AuthLoginCustomerBadRequestException
+     * @throws \Madco\Tecsafe\Tecsafe\Api\Generated\Exception\AuthLoginCustomerTooManyRequestsException
+     * @throws \Exception
      */
-    public function obtainCustomerTokenFromCockpit(SalesChannelContext $context): string
+    public function loginCustomer(\Madco\Tecsafe\Tecsafe\Api\Generated\Model\CustomerLoginRequest $requestBody): AccessToken
     {
-        $accessToken = $this->obtainAccessToken();
+        $cacheKey = $this->cacheKeyBuilder->buildCustomerTokenKey(
+            $this->pluginConfig->salesChannelId,
+            $requestBody->getIdentifier(),
+            $requestBody->getIsGuest()
+        );
 
-        $fields = [
-            'customer' => $context->getToken(),
-            //'callback' => $this->pluginConfig->callbackUrl->withPath('/api/tecsafe/ofcp/webhook')->__toString(),
-            'extra' => ['salesChannel' => $context->getSalesChannel()->getId()],
-            'email' => $context->getCustomer()->getEmail(),
-            'firstname' => $context->getCustomer()->getFirstName(),
-            'lastname' => $context->getCustomer()->getLastName(),
-            'street' => $context->getCustomer()->getDefaultBillingAddress()->getStreet(),
-            'zip' => $context->getCustomer()->getDefaultBillingAddress()->getZipcode(),
-            'city' => $context->getCustomer()->getDefaultBillingAddress()->getCity(),
-            'country' => $context->getCustomer()->getDefaultBillingAddress()->getCountry()->getIso(),
-        ];
+        $cacheItem = $this->cacheItemPool->getItem($cacheKey);
 
-        $customerTokenUrl = $this->pluginConfig->shopApiGatewayUrl->withPath('/store-api/tecsafe/v1/token/customer')->__toString();
-        $response = $this->httpClient->request(Request::METHOD_POST, $customerTokenUrl, [
-            'json' => $fields,
-            'auth_bearer' => $accessToken->token,
-            'verify_peer' => false,
-            'verify_host' => false,
-        ]);
+        if (!$cacheItem->isHit()) {
+            $response = $this->generatedClient->authLoginCustomer($requestBody);
 
-        return $response->getContent();
+            $responseBody = $response->getBody()->getContents();
+            if ($response->getStatusCode() === Response::HTTP_CREATED) {
+
+                $customerToken = AccessToken::validateAndExtract($responseBody);
+                //$customerToken = JWTParser::parseCustomerJwt($responseBody, null);
+
+                $cacheItem->set($customerToken);
+                $cacheItem->expiresAt(\DateTimeImmutable::createFromFormat('U', (string) $customerToken->validUntil));
+                $this->cacheItemPool->save($cacheItem);
+            } else {
+                throw new AuthLoginCustomerBadRequestException(
+                    (new ErrorValidationResponse())
+                        ->setMessage($response->getReasonPhrase())
+                        ->setStatusCode($response->getStatusCode()),
+                    $response
+                );
+            }
+        }
+
+        return $cacheItem->get();
     }
 
     /**
-     * @throws RedirectionExceptionInterface
-     * @throws ClientExceptionInterface
-     * @throws TransportExceptionInterface
-     * @throws ServerExceptionInterface
+     *
+     *
+     * @param \Madco\Tecsafe\Tecsafe\Api\Generated\Model\LoginRequest $requestBody
+     * @param string $fetch Fetch mode to use (can be OBJECT or RESPONSE)
+     * @throws \Madco\Tecsafe\Tecsafe\Api\Generated\Exception\AuthLoginInternalBadRequestException
+     * @throws \Madco\Tecsafe\Tecsafe\Api\Generated\Exception\AuthLoginInternalTooManyRequestsException
+     *
+     * @return null|\Psr\Http\Message\ResponseInterface
      */
-    public function createOfcpOrderInApp(array $payload): string
+    public function loginInternal(\Madco\Tecsafe\Tecsafe\Api\Generated\Model\LoginRequest $requestBody)
     {
-        $accessToken = $this->obtainAccessToken();
-
-        //$orderUrl = $this->pluginConfig->internalAppUrl->withPath('api/shop/order');
-        $response = $this->httpClient->request(Request::METHOD_POST, $orderUrl->__toString(), [
-            'json' => $payload,
-            'auth_bearer' => $accessToken->token,
-        ]);
-
-        return $response->getContent();
+        return $this->generatedClient->authLoginInternal($requestBody);
     }
+
+    /**
+     *
+     *
+     * @param \Madco\Tecsafe\Tecsafe\Api\Generated\Model\MergeFromSalesChannelRequest $requestBody
+     * @throws \Madco\Tecsafe\Tecsafe\Api\Generated\Exception\MergeControllerMigrateFromSalesChannelBadRequestException
+     * @throws \Madco\Tecsafe\Tecsafe\Api\Generated\Exception\MergeControllerMigrateFromSalesChannelTooManyRequestsException
+     *
+     * @return null|\Psr\Http\Message\ResponseInterface
+     */
+    public function mergeControllerMigrateFromSalesChannel(\Madco\Tecsafe\Tecsafe\Api\Generated\Model\MergeFromSalesChannelRequest $requestBody): ?ResponseInterface
+    {
+        return $this->generatedClient->mergeControllerMigrateFromSalesChannel($requestBody);
+    }
+
 }
