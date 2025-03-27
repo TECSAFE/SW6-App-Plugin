@@ -20,6 +20,10 @@ hooks:
         - exec: sudo /mnt/ddev_config/hooks/post-start/add-headless-ip-to-hosts.sh
         - exec: /mnt/ddev_config/db-build/import-if-empty.sh
         - exec: "alias ll='ls -lah'"
+        - exec: "composer require -v --dev --no-scripts shopware/dev-tools:1.5.0 frosh/code-quality-meta:0.4.0"
+        - exec: "bin/console plugin:refresh | true"
+        - exec: "bin/console plugin:uninstall MadTecsafe | true"
+        - exec: "bin/console plugin:install --activate MadTecsafe | true"
         - exec: "bin/console theme:compile | true"
 
 #hooks:
