@@ -96,16 +96,19 @@ jobs:
         with:
           fetch-depth: 0
           token: '${{ github.token }}'
+      - uses: php-actions/composer@v6 # or alternative dependency management
+        with:
+          php_version: '8.2'
+          args: "--no-plugins"
+          dev: 'no'
+
       - name: Install shopware-cli
         uses: FriendsOfShopware/shopware-cli-action@v1.0.4
         with:
           version: '0.4.54'
           token: '${{ github.token }}'
       - name: build plugin
-        run: |
-          mkdir -p build/zip build/release
-          shopware-cli extension zip --release --output-directory ./build/zip .
-          unzip build/zip/*.zip -d build/release/
+        run: shopware-cli extension zip . --disable-git --release
 
       #      - name: Release
       #        uses: softprops/action-gh-release@v1
@@ -117,4 +120,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: MadTecsafe.zip
-          path: build/release/*
+          path: ./MadTecsafe.zip
