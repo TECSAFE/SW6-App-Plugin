@@ -99,7 +99,7 @@ jobs:
       - uses: php-actions/composer@v6 # or alternative dependency management
         with:
           php_version: '8.2'
-          args: "--no-plugins"
+          args: "--no-plugins --ignore-platform-reqs"
           dev: 'no'
 
       - name: Install shopware-cli
