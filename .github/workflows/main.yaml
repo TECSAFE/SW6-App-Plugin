@@ -4,6 +4,10 @@ on:
   pull_request:
   push:
 
+env:
+  ACTIONS_STEP_DEBUG: true
+  RUNNER_DEBUG: true
+
 jobs:
   phpstan:
     runs-on: ubuntu-latest
@@ -29,8 +33,12 @@ jobs:
         include:
           - shopware: '6.6.5.0'
             php: '8.2'
+            froshCodeQuality: '0.4.0'
+            shopwareDevTools: '1.5.0'
           - shopware: '6.6.5.0'
             php: '8.3'
+            froshCodeQuality: '0.4.0'
+            shopwareDevTools: '1.5.0'
     steps:
 
       - name: Clone Code
@@ -58,7 +66,7 @@ jobs:
 
       - name: Install additional dependencies
         run: |
-          docker exec shopware-${{ matrix.shopware }}-${{ matrix.php }} bash -c 'cd /var/www/html/ && composer require -vvv --dev --no-scripts dev-tools code-quality'
+          docker exec shopware-${{ matrix.shopware }}-${{ matrix.php }} bash -c 'cd /var/www/html/ && composer require -vvv --dev --no-scripts shopware/dev-tools:${{ matrix.shopwareDevTools }} frosh/code-quality-meta:${{ matrix.froshCodeQuality }}'
 
       - name: Upload into Docker
         run: |
