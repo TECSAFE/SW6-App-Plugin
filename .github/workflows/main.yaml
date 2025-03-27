@@ -105,7 +105,7 @@ jobs:
       - name: Install shopware-cli
         uses: FriendsOfShopware/shopware-cli-action@v1.0.4
         with:
-          version: '0.4.54'
+          version: '0.5.12'
           token: '${{ github.token }}'
       - name: build plugin
         run: shopware-cli extension zip . --disable-git --release
