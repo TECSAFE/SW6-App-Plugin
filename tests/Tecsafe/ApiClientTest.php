@@ -8,14 +8,24 @@ use Madco\Tecsafe\Tecsafe\AccessToken;
 use Madco\Tecsafe\Tecsafe\Api\Generated\Model\SalesChannelLoginRequest;
 use Madco\Tecsafe\Tecsafe\ApiClient;
 use Madco\Tecsafe\Config\PluginConfig;
+use Madco\Tecsafe\Tecsafe\CacheKeyBuilder;
 use Nyholm\Psr7\Uri;
 use PHPUnit\Framework\TestCase;
+use Psr\Log\NullLogger;
+use Shopware\Core\Framework\Script\Execution\Awareness\SalesChannelContextAwareTrait;
+use Shopware\Core\Framework\Test\Seo\StorefrontSalesChannelTestHelper;
+use Shopware\Core\Framework\Test\TestCaseBase\SalesChannelFunctionalTestBehaviour;
+use Shopware\Core\Framework\Uuid\Uuid;
 use Symfony\Component\Cache\Adapter\ArrayAdapter;
 use Symfony\Component\HttpClient\MockHttpClient;
 use Symfony\Component\HttpClient\Response\MockResponse;
+use Symfony\Component\HttpFoundation\Response;
 
 class ApiClientTest extends TestCase
 {
+    use SalesChannelFunctionalTestBehaviour;
+    use StorefrontSalesChannelTestHelper;
+
     public function testCanObtainAndCacheAccessToken(): void
     {
         $now = new \DateTime();
@@ -28,7 +38,9 @@ class ApiClientTest extends TestCase
         ;
 
         $responses = [
-            new MockResponse($tokenResponse),
+            new MockResponse($tokenResponse, [
+                'http_code' => Response::HTTP_CREATED,
+            ]),
         ];
 
         $expectedToken = new AccessToken($tokenResponse, $expiry->getTimestamp());
@@ -46,19 +58,17 @@ class ApiClientTest extends TestCase
         $cache = new ArrayAdapter();
 
         $this->assertCount(0, $cache->getValues());
-        $apiClient = new ApiClient($httpClient, $pluginConfig, $cache);
+        $apiClient = new ApiClient($httpClient, $pluginConfig, $cache, new CacheKeyBuilder(), new NullLogger());
 
-        $salesChannelLoginRequest = (new SalesChannelLoginRequest())
-            ->setId('foobar')
-            ->setSecret('foobaz')
-        ;
-        $firstToken = $apiClient->loginSalesChannel($salesChannelLoginRequest);
+        $salesChannelContext = $this->createStorefrontSalesChannelContext(Uuid::randomHex(), 'foobar');
+
+        $firstToken = $apiClient->loginSalesChannel($salesChannelContext);
 
         $this->assertEquals($expectedToken, $firstToken);
 
         $this->assertCount(1, $cache->getValues());
 
-        $secondToken = $apiClient->loginSalesChannel($salesChannelLoginRequest);
+        $secondToken = $apiClient->loginSalesChannel($salesChannelContext);
 
         $this->assertEquals($firstToken, $secondToken);
     }
@@ -101,17 +111,16 @@ class ApiClientTest extends TestCase
         ;
 
         $responses = [
-            new MockResponse($newTokenResponse),
+            new MockResponse($newTokenResponse, [
+                'http_code' => Response::HTTP_CREATED,
+            ]),
         ];
         $httpClient = new MockHttpClient($responses);
 
-        $apiClient = new ApiClient($httpClient, $pluginConfig, $cache);
+        $apiClient = new ApiClient($httpClient, $pluginConfig, $cache, new CacheKeyBuilder(), new NullLogger());
 
-        $salesChannelLoginRequest = (new SalesChannelLoginRequest())
-            ->setId('foobar')
-            ->setSecret('foobaz')
-        ;
-        $firstToken = $apiClient->loginSalesChannel($salesChannelLoginRequest);
+        $salesChannelContext = $this->createStorefrontSalesChannelContext(Uuid::randomHex(), 'foobar');
+        $firstToken = $apiClient->loginSalesChannel($salesChannelContext);
 
         $expectedToken = new AccessToken($newTokenResponse, $newTokenExpiry->getTimestamp());
 

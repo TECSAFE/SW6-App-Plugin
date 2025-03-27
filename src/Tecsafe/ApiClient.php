@@ -11,9 +11,11 @@ use Madco\Tecsafe\Tecsafe\Api\Generated\Model\ErrorValidationResponse;
 use Madco\Tecsafe\Tecsafe\Api\Generated\Model\SalesChannelLoginRequest;
 use Psr\Cache\CacheItemPoolInterface;
 use Psr\Cache\InvalidArgumentException;
+use Psr\Clock\ClockInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use Shopware\Core\System\SalesChannel\SalesChannelContext;
+use Symfony\Component\Clock\Clock;
 use Symfony\Component\HttpClient\Psr18Client;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
@@ -31,7 +33,7 @@ final class ApiClient
         private readonly PluginConfig $pluginConfig,
         private readonly CacheItemPoolInterface $cacheItemPool,
         private readonly CacheKeyBuilder $cacheKeyBuilder,
-        private readonly LoggerInterface $logger
+        private readonly LoggerInterface $logger,
     ) {
         $baseUri = $this->pluginConfig->shopApiGatewayUrl;
 
@@ -98,10 +100,7 @@ final class ApiClient
                 //$salesChannelToken = \Tecsafe\OFCP\JWT\SDK\JWTParser::parseSalesChannelJwt($responseBody, null);
 
                 $cacheItem->set($accessToken);
-                $expiresAt = new \DateTime('now');
-                $expiresAt->setTimestamp((int) $accessToken->validUntil);
-
-                $cacheItem->expiresAt($expiresAt);
+                $cacheItem->expiresAt(\DateTimeImmutable::createFromFormat('U', (string) $accessToken->validUntil));
                 $this->cacheItemPool->save($cacheItem);
             } else {
                 throw new AuthLoginSalesChannelBadRequestException(
@@ -141,10 +140,7 @@ final class ApiClient
                 //$customerToken = JWTParser::parseCustomerJwt($responseBody, null);
 
                 $cacheItem->set($customerToken);
-                $expiresAt = new \DateTime('now');
-                $expiresAt->setTimestamp((int) $customerToken->validUntil);
-
-                $cacheItem->expiresAt($expiresAt);
+                $cacheItem->expiresAt(\DateTimeImmutable::createFromFormat('U', (string) $customerToken->validUntil));
                 $this->cacheItemPool->save($cacheItem);
             } else {
                 throw new AuthLoginCustomerBadRequestException(
