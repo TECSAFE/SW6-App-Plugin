@@ -97,7 +97,6 @@ jobs:
         uses: FriendsOfShopware/shopware-cli-action@v1
         with:
           version: '0.4.54'
-          token: '${{ github.token }}'
       - name: build plugin
         run: |
           mkdir -p build/zip build/release
