@@ -1,8 +1,8 @@
--- MariaDB dump 10.19  Distrib 10.11.8-MariaDB, for debian-linux-gnu (x86_64)
+-- MariaDB dump 10.19  Distrib 10.11.11-MariaDB, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: db
 -- ------------------------------------------------------
--- Server version	10.11.8-MariaDB-ubu2204-log
+-- Server version	10.11.11-MariaDB-ubu2204-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -21,7 +21,7 @@
 
 DROP TABLE IF EXISTS `acl_role`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `acl_role` (
   `id` binary(16) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -49,7 +49,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `acl_user_role`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `acl_user_role` (
   `user_id` binary(16) NOT NULL,
   `acl_role_id` binary(16) NOT NULL,
@@ -77,7 +77,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `admin_elasticsearch_index_task`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `admin_elasticsearch_index_task` (
   `id` binary(16) NOT NULL,
   `index` varchar(500) NOT NULL,
@@ -103,7 +103,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `app`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `app` (
   `id` binary(16) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -157,7 +157,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `app_action_button`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `app_action_button` (
   `id` binary(16) NOT NULL,
   `entity` varchar(255) NOT NULL,
@@ -189,7 +189,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `app_action_button_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `app_action_button_translation` (
   `label` varchar(255) DEFAULT NULL,
   `created_at` datetime(3) NOT NULL,
@@ -219,7 +219,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `app_administration_snippet`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `app_administration_snippet` (
   `id` binary(16) NOT NULL,
   `app_id` binary(16) NOT NULL,
@@ -250,7 +250,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `app_cms_block`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `app_cms_block` (
   `id` binary(16) NOT NULL,
   `app_id` binary(16) NOT NULL,
@@ -282,7 +282,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `app_cms_block_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `app_cms_block_translation` (
   `label` varchar(255) DEFAULT NULL,
   `app_cms_block_id` binary(16) NOT NULL,
@@ -312,7 +312,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `app_config`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `app_config` (
   `key` varchar(255) NOT NULL,
   `value` longtext NOT NULL,
@@ -337,7 +337,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `app_flow_action`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `app_flow_action` (
   `id` binary(16) NOT NULL,
   `app_id` binary(16) NOT NULL,
@@ -379,7 +379,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `app_flow_action_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `app_flow_action_translation` (
   `app_flow_action_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -412,7 +412,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `app_flow_event`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `app_flow_event` (
   `id` binary(16) NOT NULL,
   `app_id` binary(16) NOT NULL,
@@ -445,7 +445,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `app_payment_method`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `app_payment_method` (
   `id` binary(16) NOT NULL,
   `app_id` binary(16) DEFAULT NULL,
@@ -486,7 +486,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `app_script_condition`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `app_script_condition` (
   `id` binary(16) NOT NULL,
   `app_id` binary(16) NOT NULL,
@@ -519,7 +519,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `app_script_condition_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `app_script_condition_translation` (
   `app_script_condition_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -549,7 +549,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `app_shipping_method`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `app_shipping_method` (
   `id` binary(16) NOT NULL,
   `app_id` binary(16) DEFAULT NULL,
@@ -584,7 +584,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `app_template`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `app_template` (
   `id` binary(16) NOT NULL,
   `template` longtext NOT NULL,
@@ -615,7 +615,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `app_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `app_translation` (
   `app_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -648,7 +648,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `cart`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `cart` (
   `token` varchar(50) NOT NULL,
   `rule_ids` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`rule_ids`)),
@@ -659,7 +659,7 @@ CREATE TABLE `cart` (
   PRIMARY KEY (`token`),
   UNIQUE KEY `auto_increment` (`auto_increment`),
   KEY `idx.cart.created_at` (`created_at`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=205 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -668,6 +668,10 @@ CREATE TABLE `cart` (
 
 LOCK TABLES `cart` WRITE;
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
+INSERT INTO `cart` VALUES
+('3s29KYwxuAfABjzFbRa2GWkDBih3ZEYv','[\"0191fb2e512273c78c25658a13d3a51b\",\"0191fb2e5124722d8eb68aed794651ea\",\"0191fb2e56c772a596a0fdc113c10bad\",\"3858957016644de4ae48c0500bf3ccc8\",\"e1378db7808a478f919e0d740d5d6c1a\",\"0191fb2e512c7395a49385cae3fa5592\",\"28caae75a5624f0d985abd0eb32aa160\"]','2025-03-25 08:16:33.048',20,0,'O:32:\"Shopware\\Core\\Checkout\\Cart\\Cart\":17:{s:13:\"\0*\0extensions\";a:1:{s:15:\"cart-promotions\";O:61:\"Shopware\\Core\\Checkout\\Promotion\\Cart\\Extension\\CartExtension\":3:{s:13:\"\0*\0extensions\";a:0:{}s:13:\"\0*\0addedCodes\";a:0:{}s:22:\"\0*\0blockedPromotionIds\";a:0:{}}}s:8:\"\0*\0price\";O:50:\"Shopware\\Core\\Checkout\\Cart\\Price\\Struct\\CartPrice\":8:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0netPrice\";d:416.76;s:13:\"\0*\0totalPrice\";d:495.95;s:18:\"\0*\0calculatedTaxes\";O:62:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTaxCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:52:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTax\":4:{s:13:\"\0*\0extensions\";a:0:{}s:6:\"\0*\0tax\";d:79.19;s:10:\"\0*\0taxRate\";d:19;s:8:\"\0*\0price\";d:495.95;}}}s:11:\"\0*\0taxRules\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRuleCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:46:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRule\":3:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0taxRate\";d:19;s:13:\"\0*\0percentage\";d:100;}}}s:16:\"\0*\0positionPrice\";d:495.95;s:12:\"\0*\0taxStatus\";s:5:\"gross\";s:11:\"\0*\0rawTotal\";d:495.95;}s:12:\"\0*\0lineItems\";O:55:\"Shopware\\Core\\Checkout\\Cart\\LineItem\\LineItemCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{s:32:\"0191fb7d78e570a2b2923bfc87ccae78\";O:45:\"Shopware\\Core\\Checkout\\Cart\\LineItem\\LineItem\":25:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0payload\";a:19:{s:10:\"isCloseout\";b:0;s:12:\"customFields\";a:0:{}s:9:\"createdAt\";s:23:\"2024-09-16 15:39:49.874\";s:11:\"releaseDate\";s:23:\"2024-09-16 15:31:29.561\";s:5:\"isNew\";b:0;s:15:\"markAsTopseller\";b:0;s:14:\"purchasePrices\";s:155:\"{\"extensions\":[],\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"net\":0,\"gross\":0,\"linked\":true,\"listPrice\":null,\"percentage\":null,\"regulationPrice\":null}\";s:13:\"productNumber\";s:7:\"SW10002\";s:14:\"manufacturerId\";s:32:\"cc1c20c365d34cfb88bfab3c3e81d350\";s:5:\"taxId\";s:32:\"0191fb2e5125724199448d8bbb92a6a5\";s:6:\"tagIds\";N;s:11:\"categoryIds\";a:2:{i:0;s:32:\"0191fb2e5125724199448d8bbc76e575\";i:1;s:32:\"251448b91bc742de85643f5fccd89051\";}s:11:\"propertyIds\";a:4:{i:0;s:32:\"6f9359239c994b48b7de282ee19a714d\";i:1;s:32:\"78c53f3f6dd14eb4927978415bfb74db\";i:2;s:32:\"7cab88165ae5420f921232511b6e8f7d\";i:3;s:32:\"dc6f98beeca44852beb078a9e8e21e7d\";}s:9:\"optionIds\";N;s:7:\"options\";a:0:{}s:9:\"streamIds\";N;s:8:\"parentId\";N;s:5:\"stock\";i:10;s:8:\"features\";a:0:{}}s:8:\"\0*\0label\";s:24:\"Hauptartikel mit Tecsafe\";s:11:\"\0*\0quantity\";i:1;s:18:\"\0*\0priceDefinition\";O:64:\"Shopware\\Core\\Checkout\\Cart\\Price\\Struct\\QuantityPriceDefinition\":8:{s:13:\"\0*\0extensions\";a:0:{}s:8:\"\0*\0price\";d:495.95;s:11:\"\0*\0taxRules\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRuleCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;r:22;}}s:11:\"\0*\0quantity\";i:1;s:15:\"\0*\0isCalculated\";b:1;s:27:\"\0*\0referencePriceDefinition\";N;s:12:\"\0*\0listPrice\";N;s:18:\"\0*\0regulationPrice\";N;}s:8:\"\0*\0price\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Price\\Struct\\CalculatedPrice\":9:{s:13:\"\0*\0extensions\";a:0:{}s:12:\"\0*\0unitPrice\";d:495.95;s:11:\"\0*\0quantity\";i:1;s:13:\"\0*\0totalPrice\";d:495.95;s:18:\"\0*\0calculatedTaxes\";O:62:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTaxCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:52:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTax\":4:{s:13:\"\0*\0extensions\";a:0:{}s:6:\"\0*\0tax\";d:79.19;s:10:\"\0*\0taxRate\";d:19;s:8:\"\0*\0price\";d:495.95;}}}s:11:\"\0*\0taxRules\";r:65;s:17:\"\0*\0referencePrice\";N;s:12:\"\0*\0listPrice\";N;s:18:\"\0*\0regulationPrice\";N;}s:7:\"\0*\0good\";b:1;s:14:\"\0*\0description\";N;s:8:\"\0*\0cover\";O:39:\"Shopware\\Core\\Content\\Media\\MediaEntity\":53:{s:13:\"\0*\0extensions\";a:2:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:28:\"media_foreign_keys_extension\";}s:24:\"internal_mapping_storage\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";N;}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:3:{s:3:\"alt\";N;s:5:\"title\";N;s:12:\"customFields\";a:0:{}}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:39.374000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:39.482000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:5:\"media\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";O:60:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\":1:{s:80:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\0internalProperties\";a:2:{i:0;s:12:\"mediaTypeRaw\";i:1;s:12:\"thumbnailsRo\";}}s:9:\"\0*\0userId\";s:32:\"0191fb2ed2e47212bc8e84acec54e4c9\";s:11:\"\0*\0mimeType\";s:9:\"image/png\";s:16:\"\0*\0fileExtension\";s:3:\"png\";s:11:\"\0*\0fileSize\";i:1260102;s:8:\"\0*\0title\";N;s:14:\"\0*\0metaDataRaw\";N;s:15:\"\0*\0mediaTypeRaw\";s:156:\"O:47:\"Shopware\\Core\\Content\\Media\\MediaType\\ImageType\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0name\";s:5:\"IMAGE\";s:8:\"\0*\0flags\";a:1:{i:0;s:11:\"transparent\";}}\";s:11:\"\0*\0metaData\";a:4:{s:5:\"width\";i:1280;s:6:\"height\";i:1280;s:4:\"type\";i:3;s:4:\"hash\";s:32:\"943d98947b321fac917e57704496c282\";}s:12:\"\0*\0mediaType\";O:47:\"Shopware\\Core\\Content\\Media\\MediaType\\ImageType\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0name\";s:5:\"IMAGE\";s:8:\"\0*\0flags\";a:1:{i:0;s:11:\"transparent\";}}s:13:\"\0*\0uploadedAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:39.480000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:6:\"\0*\0alt\";N;s:6:\"\0*\0url\";s:160:\"https://tecsafe-sw6-plugin.ddev.site:33001/media/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO.png?ts=1726743459\";s:11:\"\0*\0fileName\";s:73:\"TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO\";s:7:\"\0*\0user\";N;s:15:\"\0*\0translations\";N;s:13:\"\0*\0categories\";N;s:23:\"\0*\0productManufacturers\";N;s:15:\"\0*\0productMedia\";N;s:14:\"\0*\0avatarUsers\";N;s:13:\"\0*\0thumbnails\";O:77:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:4:{s:32:\"019209ee4cfd71d3a5c08cb207b08191\";O:73:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailEntity\":16:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:38:\"media_thumbnail_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee4cfd71d3a5c08cb207b08191\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:0:{}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:45.215000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:15:\"media_thumbnail\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";O:60:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\":1:{s:80:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\0internalProperties\";a:0:{}}s:8:\"\0*\0width\";i:400;s:7:\"\0*\0path\";s:115:\"thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_400x400.png\";s:9:\"\0*\0height\";i:400;s:6:\"\0*\0url\";s:172:\"https://tecsafe-sw6-plugin.ddev.site:33001/thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_400x400.png?ts=1726743465\";s:10:\"\0*\0mediaId\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:8:\"\0*\0media\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee4cfd71d3a5c08cb207b08191\";}s:32:\"019209ee4cfd71d3a5c08cb208b032c3\";O:73:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailEntity\":16:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:38:\"media_thumbnail_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee4cfd71d3a5c08cb208b032c3\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:0:{}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:45.215000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:15:\"media_thumbnail\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";r:170;s:8:\"\0*\0width\";i:800;s:7:\"\0*\0path\";s:115:\"thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_800x800.png\";s:9:\"\0*\0height\";i:800;s:6:\"\0*\0url\";s:172:\"https://tecsafe-sw6-plugin.ddev.site:33001/thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_800x800.png?ts=1726743465\";s:10:\"\0*\0mediaId\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:8:\"\0*\0media\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee4cfd71d3a5c08cb208b032c3\";}s:32:\"019209ee4cfd71d3a5c08cb20904db63\";O:73:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailEntity\":16:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:38:\"media_thumbnail_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee4cfd71d3a5c08cb20904db63\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:0:{}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:45.215000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:15:\"media_thumbnail\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";r:170;s:8:\"\0*\0width\";i:1920;s:7:\"\0*\0path\";s:117:\"thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_1920x1920.png\";s:9:\"\0*\0height\";i:1920;s:6:\"\0*\0url\";s:174:\"https://tecsafe-sw6-plugin.ddev.site:33001/thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_1920x1920.png?ts=1726743465\";s:10:\"\0*\0mediaId\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:8:\"\0*\0media\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee4cfd71d3a5c08cb20904db63\";}s:32:\"019209ee4cfd71d3a5c08cb209e233b5\";O:73:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailEntity\":16:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:38:\"media_thumbnail_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee4cfd71d3a5c08cb209e233b5\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:0:{}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:45.216000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:15:\"media_thumbnail\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";r:170;s:8:\"\0*\0width\";i:280;s:7:\"\0*\0path\";s:115:\"thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_280x280.png\";s:9:\"\0*\0height\";i:280;s:6:\"\0*\0url\";s:172:\"https://tecsafe-sw6-plugin.ddev.site:33001/thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_280x280.png?ts=1726743465\";s:10:\"\0*\0mediaId\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:8:\"\0*\0media\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee4cfd71d3a5c08cb209e233b5\";}}}s:16:\"\0*\0mediaFolderId\";s:32:\"0191fb2e512c7395a49385cae05fee79\";s:14:\"\0*\0mediaFolder\";N;s:10:\"\0*\0hasFile\";b:0;s:10:\"\0*\0private\";b:0;s:23:\"\0*\0propertyGroupOptions\";N;s:20:\"\0*\0mailTemplateMedia\";N;s:7:\"\0*\0tags\";N;s:15:\"\0*\0thumbnailsRo\";s:0:\"\";s:7:\"\0*\0path\";s:103:\"media/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO.png\";s:22:\"\0*\0documentBaseConfigs\";N;s:18:\"\0*\0shippingMethods\";N;s:17:\"\0*\0paymentMethods\";N;s:30:\"\0*\0productConfiguratorSettings\";N;s:17:\"\0*\0orderLineItems\";N;s:12:\"\0*\0cmsBlocks\";N;s:14:\"\0*\0cmsSections\";N;s:11:\"\0*\0cmsPages\";N;s:12:\"\0*\0documents\";N;s:20:\"\0*\0appPaymentMethods\";N;s:21:\"\0*\0appShippingMethods\";N;s:19:\"\0*\0productDownloads\";N;s:25:\"\0*\0orderLineItemDownloads\";N;s:9:\"\0*\0config\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee3602704e919b55ce831b43b5\";}s:22:\"\0*\0deliveryInformation\";O:63:\"Shopware\\Core\\Checkout\\Cart\\Delivery\\Struct\\DeliveryInformation\":9:{s:13:\"\0*\0extensions\";a:0:{}s:8:\"\0*\0stock\";i:10;s:9:\"\0*\0weight\";d:0.17;s:15:\"\0*\0freeDelivery\";b:0;s:14:\"\0*\0restockTime\";N;s:15:\"\0*\0deliveryTime\";N;s:9:\"\0*\0height\";N;s:8:\"\0*\0width\";N;s:9:\"\0*\0length\";N;}s:11:\"\0*\0children\";O:55:\"Shopware\\Core\\Checkout\\Cart\\LineItem\\LineItemCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:0:{}}s:14:\"\0*\0requirement\";N;s:12:\"\0*\0removable\";b:1;s:12:\"\0*\0stackable\";b:1;s:22:\"\0*\0quantityInformation\";O:56:\"Shopware\\Core\\Checkout\\Cart\\LineItem\\QuantityInformation\":4:{s:13:\"\0*\0extensions\";a:0:{}s:14:\"\0*\0minPurchase\";i:1;s:14:\"\0*\0maxPurchase\";i:100;s:16:\"\0*\0purchaseSteps\";i:1;}s:11:\"\0*\0modified\";b:0;s:16:\"\0*\0dataTimestamp\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2025-03-25 08:16:33.039851\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:18:\"\0*\0dataContextHash\";s:32:\"65c3e9c0357cd311efb66596396aed1b\";s:19:\"\0*\0uniqueIdentifier\";s:32:\"0195c9dc181b72d59b7e798b96ae5a64\";s:9:\"\0*\0states\";a:1:{i:0;s:11:\"is-physical\";}s:16:\"\0*\0modifiedByApp\";b:0;s:64:\"\0Shopware\\Core\\Checkout\\Cart\\LineItem\\LineItem\0payloadProtection\";a:2:{s:14:\"purchasePrices\";b:1;s:12:\"customFields\";b:0;}s:5:\"\0*\0id\";s:32:\"0191fb7d78e570a2b2923bfc87ccae78\";s:7:\"\0*\0type\";s:7:\"product\";s:15:\"\0*\0referencedId\";s:32:\"0191fb7d78e570a2b2923bfc87ccae78\";}}}s:9:\"\0*\0errors\";O:49:\"Shopware\\Core\\Checkout\\Cart\\Error\\ErrorCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:0:{}}s:13:\"\0*\0deliveries\";O:62:\"Shopware\\Core\\Checkout\\Cart\\Delivery\\Struct\\DeliveryCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:0;O:52:\"Shopware\\Core\\Checkout\\Cart\\Delivery\\Struct\\Delivery\":6:{s:13:\"\0*\0extensions\";a:0:{}s:12:\"\0*\0positions\";O:70:\"Shopware\\Core\\Checkout\\Cart\\Delivery\\Struct\\DeliveryPositionCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{s:32:\"0191fb7d78e570a2b2923bfc87ccae78\";O:60:\"Shopware\\Core\\Checkout\\Cart\\Delivery\\Struct\\DeliveryPosition\":6:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0lineItem\";O:45:\"Shopware\\Core\\Checkout\\Cart\\LineItem\\LineItem\":25:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0payload\";a:19:{s:10:\"isCloseout\";b:0;s:12:\"customFields\";a:0:{}s:9:\"createdAt\";s:23:\"2024-09-16 15:39:49.874\";s:11:\"releaseDate\";s:23:\"2024-09-16 15:31:29.561\";s:5:\"isNew\";b:0;s:15:\"markAsTopseller\";b:0;s:14:\"purchasePrices\";s:155:\"{\"extensions\":[],\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"net\":0,\"gross\":0,\"linked\":true,\"listPrice\":null,\"percentage\":null,\"regulationPrice\":null}\";s:13:\"productNumber\";s:7:\"SW10002\";s:14:\"manufacturerId\";s:32:\"cc1c20c365d34cfb88bfab3c3e81d350\";s:5:\"taxId\";s:32:\"0191fb2e5125724199448d8bbb92a6a5\";s:6:\"tagIds\";N;s:11:\"categoryIds\";a:2:{i:0;s:32:\"0191fb2e5125724199448d8bbc76e575\";i:1;s:32:\"251448b91bc742de85643f5fccd89051\";}s:11:\"propertyIds\";a:4:{i:0;s:32:\"6f9359239c994b48b7de282ee19a714d\";i:1;s:32:\"78c53f3f6dd14eb4927978415bfb74db\";i:2;s:32:\"7cab88165ae5420f921232511b6e8f7d\";i:3;s:32:\"dc6f98beeca44852beb078a9e8e21e7d\";}s:9:\"optionIds\";N;s:7:\"options\";a:0:{}s:9:\"streamIds\";N;s:8:\"parentId\";N;s:5:\"stock\";i:10;s:8:\"features\";a:0:{}}s:8:\"\0*\0label\";s:24:\"Hauptartikel mit Tecsafe\";s:11:\"\0*\0quantity\";i:1;s:18:\"\0*\0priceDefinition\";O:64:\"Shopware\\Core\\Checkout\\Cart\\Price\\Struct\\QuantityPriceDefinition\":8:{s:13:\"\0*\0extensions\";a:0:{}s:8:\"\0*\0price\";d:495.95;s:11:\"\0*\0taxRules\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRuleCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:46:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRule\":3:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0taxRate\";d:19;s:13:\"\0*\0percentage\";d:100;}}}s:11:\"\0*\0quantity\";i:1;s:15:\"\0*\0isCalculated\";b:1;s:27:\"\0*\0referencePriceDefinition\";N;s:12:\"\0*\0listPrice\";N;s:18:\"\0*\0regulationPrice\";N;}s:8:\"\0*\0price\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Price\\Struct\\CalculatedPrice\":9:{s:13:\"\0*\0extensions\";a:0:{}s:12:\"\0*\0unitPrice\";d:495.95;s:11:\"\0*\0quantity\";i:1;s:13:\"\0*\0totalPrice\";d:495.95;s:18:\"\0*\0calculatedTaxes\";O:62:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTaxCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:52:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTax\":4:{s:13:\"\0*\0extensions\";a:0:{}s:6:\"\0*\0tax\";d:79.19;s:10:\"\0*\0taxRate\";d:19;s:8:\"\0*\0price\";d:495.95;}}}s:11:\"\0*\0taxRules\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRuleCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:46:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRule\":3:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0taxRate\";d:19;s:13:\"\0*\0percentage\";d:100;}}}s:17:\"\0*\0referencePrice\";N;s:12:\"\0*\0listPrice\";N;s:18:\"\0*\0regulationPrice\";N;}s:7:\"\0*\0good\";b:1;s:14:\"\0*\0description\";N;s:8:\"\0*\0cover\";O:39:\"Shopware\\Core\\Content\\Media\\MediaEntity\":53:{s:13:\"\0*\0extensions\";a:2:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:28:\"media_foreign_keys_extension\";}s:24:\"internal_mapping_storage\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";N;}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:3:{s:3:\"alt\";N;s:5:\"title\";N;s:12:\"customFields\";a:0:{}}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:39.374000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:39.482000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:5:\"media\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";r:118;s:9:\"\0*\0userId\";s:32:\"0191fb2ed2e47212bc8e84acec54e4c9\";s:11:\"\0*\0mimeType\";s:9:\"image/png\";s:16:\"\0*\0fileExtension\";s:3:\"png\";s:11:\"\0*\0fileSize\";i:1260102;s:8:\"\0*\0title\";N;s:14:\"\0*\0metaDataRaw\";N;s:15:\"\0*\0mediaTypeRaw\";s:156:\"O:47:\"Shopware\\Core\\Content\\Media\\MediaType\\ImageType\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0name\";s:5:\"IMAGE\";s:8:\"\0*\0flags\";a:1:{i:0;s:11:\"transparent\";}}\";s:11:\"\0*\0metaData\";a:4:{s:5:\"width\";i:1280;s:6:\"height\";i:1280;s:4:\"type\";i:3;s:4:\"hash\";s:32:\"943d98947b321fac917e57704496c282\";}s:12:\"\0*\0mediaType\";O:47:\"Shopware\\Core\\Content\\Media\\MediaType\\ImageType\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0name\";s:5:\"IMAGE\";s:8:\"\0*\0flags\";a:1:{i:0;s:11:\"transparent\";}}s:13:\"\0*\0uploadedAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:39.480000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:6:\"\0*\0alt\";N;s:6:\"\0*\0url\";s:160:\"https://tecsafe-sw6-plugin.ddev.site:33001/media/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO.png?ts=1726743459\";s:11:\"\0*\0fileName\";s:73:\"TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO\";s:7:\"\0*\0user\";N;s:15:\"\0*\0translations\";N;s:13:\"\0*\0categories\";N;s:23:\"\0*\0productManufacturers\";N;s:15:\"\0*\0productMedia\";N;s:14:\"\0*\0avatarUsers\";N;s:13:\"\0*\0thumbnails\";O:77:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:4:{s:32:\"019209ee4cfd71d3a5c08cb207b08191\";O:73:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailEntity\":16:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:38:\"media_thumbnail_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee4cfd71d3a5c08cb207b08191\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:0:{}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:45.215000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:15:\"media_thumbnail\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";r:170;s:8:\"\0*\0width\";i:400;s:7:\"\0*\0path\";s:115:\"thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_400x400.png\";s:9:\"\0*\0height\";i:400;s:6:\"\0*\0url\";s:172:\"https://tecsafe-sw6-plugin.ddev.site:33001/thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_400x400.png?ts=1726743465\";s:10:\"\0*\0mediaId\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:8:\"\0*\0media\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee4cfd71d3a5c08cb207b08191\";}s:32:\"019209ee4cfd71d3a5c08cb208b032c3\";O:73:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailEntity\":16:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:38:\"media_thumbnail_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee4cfd71d3a5c08cb208b032c3\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:0:{}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:45.215000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:15:\"media_thumbnail\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";r:170;s:8:\"\0*\0width\";i:800;s:7:\"\0*\0path\";s:115:\"thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_800x800.png\";s:9:\"\0*\0height\";i:800;s:6:\"\0*\0url\";s:172:\"https://tecsafe-sw6-plugin.ddev.site:33001/thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_800x800.png?ts=1726743465\";s:10:\"\0*\0mediaId\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:8:\"\0*\0media\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee4cfd71d3a5c08cb208b032c3\";}s:32:\"019209ee4cfd71d3a5c08cb20904db63\";O:73:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailEntity\":16:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:38:\"media_thumbnail_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee4cfd71d3a5c08cb20904db63\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:0:{}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:45.215000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:15:\"media_thumbnail\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";r:170;s:8:\"\0*\0width\";i:1920;s:7:\"\0*\0path\";s:117:\"thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_1920x1920.png\";s:9:\"\0*\0height\";i:1920;s:6:\"\0*\0url\";s:174:\"https://tecsafe-sw6-plugin.ddev.site:33001/thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_1920x1920.png?ts=1726743465\";s:10:\"\0*\0mediaId\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:8:\"\0*\0media\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee4cfd71d3a5c08cb20904db63\";}s:32:\"019209ee4cfd71d3a5c08cb209e233b5\";O:73:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailEntity\":16:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:38:\"media_thumbnail_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee4cfd71d3a5c08cb209e233b5\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:0:{}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:45.216000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:15:\"media_thumbnail\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";r:170;s:8:\"\0*\0width\";i:280;s:7:\"\0*\0path\";s:115:\"thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_280x280.png\";s:9:\"\0*\0height\";i:280;s:6:\"\0*\0url\";s:172:\"https://tecsafe-sw6-plugin.ddev.site:33001/thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_280x280.png?ts=1726743465\";s:10:\"\0*\0mediaId\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:8:\"\0*\0media\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee4cfd71d3a5c08cb209e233b5\";}}}s:16:\"\0*\0mediaFolderId\";s:32:\"0191fb2e512c7395a49385cae05fee79\";s:14:\"\0*\0mediaFolder\";N;s:10:\"\0*\0hasFile\";b:0;s:10:\"\0*\0private\";b:0;s:23:\"\0*\0propertyGroupOptions\";N;s:20:\"\0*\0mailTemplateMedia\";N;s:7:\"\0*\0tags\";N;s:15:\"\0*\0thumbnailsRo\";s:0:\"\";s:7:\"\0*\0path\";s:103:\"media/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO.png\";s:22:\"\0*\0documentBaseConfigs\";N;s:18:\"\0*\0shippingMethods\";N;s:17:\"\0*\0paymentMethods\";N;s:30:\"\0*\0productConfiguratorSettings\";N;s:17:\"\0*\0orderLineItems\";N;s:12:\"\0*\0cmsBlocks\";N;s:14:\"\0*\0cmsSections\";N;s:11:\"\0*\0cmsPages\";N;s:12:\"\0*\0documents\";N;s:20:\"\0*\0appPaymentMethods\";N;s:21:\"\0*\0appShippingMethods\";N;s:19:\"\0*\0productDownloads\";N;s:25:\"\0*\0orderLineItemDownloads\";N;s:9:\"\0*\0config\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee3602704e919b55ce831b43b5\";}s:22:\"\0*\0deliveryInformation\";O:63:\"Shopware\\Core\\Checkout\\Cart\\Delivery\\Struct\\DeliveryInformation\":9:{s:13:\"\0*\0extensions\";a:0:{}s:8:\"\0*\0stock\";i:10;s:9:\"\0*\0weight\";d:0.17;s:15:\"\0*\0freeDelivery\";b:0;s:14:\"\0*\0restockTime\";N;s:15:\"\0*\0deliveryTime\";N;s:9:\"\0*\0height\";N;s:8:\"\0*\0width\";N;s:9:\"\0*\0length\";N;}s:11:\"\0*\0children\";O:55:\"Shopware\\Core\\Checkout\\Cart\\LineItem\\LineItemCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:0:{}}s:14:\"\0*\0requirement\";N;s:12:\"\0*\0removable\";b:1;s:12:\"\0*\0stackable\";b:1;s:22:\"\0*\0quantityInformation\";O:56:\"Shopware\\Core\\Checkout\\Cart\\LineItem\\QuantityInformation\":4:{s:13:\"\0*\0extensions\";a:0:{}s:14:\"\0*\0minPurchase\";i:1;s:14:\"\0*\0maxPurchase\";i:100;s:16:\"\0*\0purchaseSteps\";i:1;}s:11:\"\0*\0modified\";b:0;s:16:\"\0*\0dataTimestamp\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2025-03-25 08:16:33.039851\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:18:\"\0*\0dataContextHash\";s:32:\"65c3e9c0357cd311efb66596396aed1b\";s:19:\"\0*\0uniqueIdentifier\";s:32:\"0195c9dc181b72d59b7e798b96ae5a64\";s:9:\"\0*\0states\";a:1:{i:0;s:11:\"is-physical\";}s:16:\"\0*\0modifiedByApp\";b:0;s:64:\"\0Shopware\\Core\\Checkout\\Cart\\LineItem\\LineItem\0payloadProtection\";a:2:{s:14:\"purchasePrices\";b:1;s:12:\"customFields\";b:0;}s:5:\"\0*\0id\";s:32:\"0191fb7d78e570a2b2923bfc87ccae78\";s:7:\"\0*\0type\";s:7:\"product\";s:15:\"\0*\0referencedId\";s:32:\"0191fb7d78e570a2b2923bfc87ccae78\";}s:11:\"\0*\0quantity\";i:1;s:8:\"\0*\0price\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Price\\Struct\\CalculatedPrice\":9:{s:13:\"\0*\0extensions\";a:0:{}s:12:\"\0*\0unitPrice\";d:495.95;s:11:\"\0*\0quantity\";i:1;s:13:\"\0*\0totalPrice\";d:495.95;s:18:\"\0*\0calculatedTaxes\";O:62:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTaxCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:52:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTax\":4:{s:13:\"\0*\0extensions\";a:0:{}s:6:\"\0*\0tax\";d:79.19;s:10:\"\0*\0taxRate\";d:19;s:8:\"\0*\0price\";d:495.95;}}}s:11:\"\0*\0taxRules\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRuleCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:46:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRule\":3:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0taxRate\";d:19;s:13:\"\0*\0percentage\";d:100;}}}s:17:\"\0*\0referencePrice\";N;s:12:\"\0*\0listPrice\";N;s:18:\"\0*\0regulationPrice\";N;}s:13:\"\0*\0identifier\";s:32:\"0191fb7d78e570a2b2923bfc87ccae78\";s:15:\"\0*\0deliveryDate\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Delivery\\Struct\\DeliveryDate\":3:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0earliest\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2025-03-26 16:00:00.000000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:9:\"\0*\0latest\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2025-03-28 16:00:00.000000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}}}}}s:11:\"\0*\0location\";O:60:\"Shopware\\Core\\Checkout\\Cart\\Delivery\\Struct\\ShippingLocation\":4:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0country\";O:42:\"Shopware\\Core\\System\\Country\\CountryEntity\":38:{s:13:\"\0*\0extensions\";a:2:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:30:\"country_foreign_keys_extension\";}s:24:\"internal_mapping_storage\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";N;}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"0191fb2e510270b796b27f002fd9613a\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:3:{s:4:\"name\";s:11:\"Deutschland\";s:12:\"customFields\";a:0:{}s:13:\"addressFormat\";a:5:{i:0;a:3:{i:0;s:15:\"address/company\";i:1;s:11:\"symbol/dash\";i:2;s:18:\"address/department\";}i:1;a:2:{i:0;s:18:\"address/first_name\";i:1;s:17:\"address/last_name\";}i:2;a:1:{i:0;s:14:\"address/street\";}i:3;a:2:{i:0;s:15:\"address/zipcode\";i:1;s:12:\"address/city\";}i:4;a:1:{i:0;s:15:\"address/country\";}}}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-16 14:13:22.306000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:7:\"country\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";O:60:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\":1:{s:80:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\0internalProperties\";a:0:{}}s:7:\"\0*\0name\";s:11:\"Deutschland\";s:6:\"\0*\0iso\";s:2:\"DE\";s:11:\"\0*\0position\";i:1;s:9:\"\0*\0active\";b:1;s:20:\"\0*\0shippingAvailable\";b:1;s:7:\"\0*\0iso3\";s:3:\"DEU\";s:29:\"\0*\0displayStateInRegistration\";b:0;s:27:\"\0*\0forceStateInRegistration\";b:0;s:20:\"\0*\0checkVatIdPattern\";b:0;s:15:\"\0*\0vatIdPattern\";s:13:\"(DE)?[0-9]{9}\";s:16:\"\0*\0vatIdRequired\";b:0;s:14:\"\0*\0customerTax\";O:58:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\TaxFreeConfig\":4:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0enabled\";b:0;s:13:\"\0*\0currencyId\";s:32:\"b7d2554b0ce847cd82f3ac9bd1c0dfca\";s:9:\"\0*\0amount\";d:0;}s:13:\"\0*\0companyTax\";O:58:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\TaxFreeConfig\":4:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0enabled\";b:0;s:13:\"\0*\0currencyId\";s:32:\"b7d2554b0ce847cd82f3ac9bd1c0dfca\";s:9:\"\0*\0amount\";d:0;}s:9:\"\0*\0states\";N;s:15:\"\0*\0translations\";N;s:17:\"\0*\0orderAddresses\";N;s:20:\"\0*\0customerAddresses\";N;s:33:\"\0*\0salesChannelDefaultAssignments\";N;s:16:\"\0*\0salesChannels\";N;s:11:\"\0*\0taxRules\";N;s:27:\"\0*\0currencyCountryRoundings\";N;s:21:\"\0*\0postalCodeRequired\";b:0;s:7:\"\0*\0isEu\";b:1;s:25:\"\0*\0checkPostalCodePattern\";b:0;s:33:\"\0*\0checkAdvancedPostalCodePattern\";b:0;s:28:\"\0*\0advancedPostalCodePattern\";N;s:27:\"\0*\0defaultPostalCodePattern\";s:5:\"\\d{5}\";s:16:\"\0*\0addressFormat\";a:5:{i:0;a:3:{i:0;s:15:\"address/company\";i:1;s:11:\"symbol/dash\";i:2;s:18:\"address/department\";}i:1;a:2:{i:0;s:18:\"address/first_name\";i:1;s:17:\"address/last_name\";}i:2;a:1:{i:0;s:14:\"address/street\";}i:3;a:2:{i:0;s:15:\"address/zipcode\";i:1;s:12:\"address/city\";}i:4;a:1:{i:0;s:15:\"address/country\";}}s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"0191fb2e510270b796b27f002fd9613a\";}s:8:\"\0*\0state\";N;s:10:\"\0*\0address\";O:79:\"Shopware\\Core\\Checkout\\Customer\\Aggregate\\CustomerAddress\\CustomerAddressEntity\":29:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:39:\"customer_address_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"0195c9dc94fe70e7b23bfd988ff29bea\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:0:{}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2025-03-24 20:33:51.410000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:16:\"customer_address\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";O:60:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\":1:{s:80:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\0internalProperties\";a:0:{}}s:13:\"\0*\0customerId\";s:32:\"0195c9dc94fe70e7b23bfd988fc965a4\";s:12:\"\0*\0countryId\";s:32:\"0191fb2e510270b796b27f002fd9613a\";s:17:\"\0*\0countryStateId\";N;s:15:\"\0*\0salutationId\";s:32:\"0191fb2e510270b796b27f002edb5a3d\";s:12:\"\0*\0firstName\";s:3:\"Foo\";s:11:\"\0*\0lastName\";s:3:\"Bar\";s:10:\"\0*\0zipcode\";s:2:\"23\";s:7:\"\0*\0city\";s:3:\"bar\";s:10:\"\0*\0company\";N;s:13:\"\0*\0department\";N;s:8:\"\0*\0title\";N;s:9:\"\0*\0street\";s:2:\"fo\";s:14:\"\0*\0phoneNumber\";N;s:25:\"\0*\0additionalAddressLine1\";N;s:25:\"\0*\0additionalAddressLine2\";N;s:10:\"\0*\0country\";r:651;s:15:\"\0*\0countryState\";N;s:13:\"\0*\0salutation\";O:48:\"Shopware\\Core\\System\\Salutation\\SalutationEntity\":19:{s:13:\"\0*\0extensions\";a:2:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:33:\"salutation_foreign_keys_extension\";}s:24:\"internal_mapping_storage\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";N;}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"0191fb2e510270b796b27f002edb5a3d\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:3:{s:11:\"displayName\";s:12:\"Keine Angabe\";s:10:\"letterName\";s:1:\" \";s:12:\"customFields\";a:0:{}}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-16 14:13:22.306000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:10:\"salutation\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";O:60:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\":1:{s:80:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\0internalProperties\";a:0:{}}s:16:\"\0*\0salutationKey\";s:13:\"not_specified\";s:14:\"\0*\0displayName\";s:12:\"Keine Angabe\";s:13:\"\0*\0letterName\";s:1:\" \";s:15:\"\0*\0translations\";N;s:12:\"\0*\0customers\";N;s:20:\"\0*\0customerAddresses\";N;s:17:\"\0*\0orderCustomers\";N;s:17:\"\0*\0orderAddresses\";N;s:23:\"\0*\0newsletterRecipients\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"0191fb2e510270b796b27f002edb5a3d\";}s:11:\"\0*\0customer\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"0195c9dc94fe70e7b23bfd988ff29bea\";}}s:15:\"\0*\0deliveryDate\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Delivery\\Struct\\DeliveryDate\":3:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0earliest\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2025-03-26 16:00:00.000000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:9:\"\0*\0latest\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2025-03-28 16:00:00.000000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}}s:17:\"\0*\0shippingMethod\";O:52:\"Shopware\\Core\\Checkout\\Shipping\\ShippingMethodEntity\":32:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:38:\"shipping_method_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"0191fb2e5124722d8eb68aed7825002b\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:4:{s:4:\"name\";s:8:\"Standard\";s:12:\"customFields\";a:0:{}s:11:\"description\";N;s:11:\"trackingUrl\";N;}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-16 14:13:22.340000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-16 15:31:29.691000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:15:\"shipping_method\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";O:60:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\":1:{s:80:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\0internalProperties\";a:0:{}}s:7:\"\0*\0name\";s:8:\"Standard\";s:9:\"\0*\0active\";b:1;s:11:\"\0*\0position\";i:1;s:14:\"\0*\0description\";N;s:14:\"\0*\0trackingUrl\";N;s:17:\"\0*\0deliveryTimeId\";s:32:\"0191fb2e5123719d8859106e88ac8487\";s:15:\"\0*\0deliveryTime\";O:52:\"Shopware\\Core\\System\\DeliveryTime\\DeliveryTimeEntity\":17:{s:13:\"\0*\0extensions\";a:2:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:36:\"delivery_time_foreign_keys_extension\";}s:24:\"internal_mapping_storage\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";N;}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"0191fb2e5123719d8859106e88ac8487\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:2:{s:4:\"name\";s:8:\"1-3 Tage\";s:12:\"customFields\";a:0:{}}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-16 14:13:22.000000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:13:\"delivery_time\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";O:60:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\":1:{s:80:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\0internalProperties\";a:0:{}}s:7:\"\0*\0name\";s:8:\"1-3 Tage\";s:6:\"\0*\0min\";i:1;s:6:\"\0*\0max\";i:3;s:7:\"\0*\0unit\";s:3:\"day\";s:18:\"\0*\0shippingMethods\";N;s:15:\"\0*\0translations\";N;s:11:\"\0*\0products\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"0191fb2e5123719d8859106e88ac8487\";}s:15:\"\0*\0translations\";N;s:18:\"\0*\0orderDeliveries\";N;s:33:\"\0*\0salesChannelDefaultAssignments\";N;s:16:\"\0*\0salesChannels\";N;s:19:\"\0*\0availabilityRule\";N;s:21:\"\0*\0availabilityRuleId\";s:32:\"0191fb2e512273c78c25658a13d3a51b\";s:9:\"\0*\0prices\";O:91:\"Shopware\\Core\\Checkout\\Shipping\\Aggregate\\ShippingMethodPrice\\ShippingMethodPriceCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{s:32:\"0191fb2e5125724199448d8bbaa106ce\";O:87:\"Shopware\\Core\\Checkout\\Shipping\\Aggregate\\ShippingMethodPrice\\ShippingMethodPriceEntity\":20:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:44:\"shipping_method_price_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"0191fb2e5125724199448d8bbaa106ce\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:0:{}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-16 14:13:22.341000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:21:\"shipping_method_price\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";O:60:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\":1:{s:80:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\0internalProperties\";a:0:{}}s:19:\"\0*\0shippingMethodId\";s:32:\"0191fb2e5124722d8eb68aed7825002b\";s:9:\"\0*\0ruleId\";N;s:14:\"\0*\0calculation\";i:1;s:16:\"\0*\0quantityStart\";d:0;s:14:\"\0*\0quantityEnd\";N;s:17:\"\0*\0shippingMethod\";N;s:7:\"\0*\0rule\";N;s:20:\"\0*\0calculationRuleId\";N;s:18:\"\0*\0calculationRule\";N;s:16:\"\0*\0currencyPrice\";O:68:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\Pricing\\PriceCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{s:32:\"b7d2554b0ce847cd82f3ac9bd1c0dfca\";O:58:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\Pricing\\Price\":8:{s:13:\"\0*\0extensions\";a:0:{}s:13:\"\0*\0currencyId\";s:32:\"b7d2554b0ce847cd82f3ac9bd1c0dfca\";s:6:\"\0*\0net\";d:0;s:8:\"\0*\0gross\";d:0;s:9:\"\0*\0linked\";b:0;s:12:\"\0*\0listPrice\";N;s:13:\"\0*\0percentage\";N;s:18:\"\0*\0regulationPrice\";N;}}}s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"0191fb2e5125724199448d8bbaa106ce\";}}}s:10:\"\0*\0mediaId\";N;s:8:\"\0*\0taxId\";N;s:8:\"\0*\0media\";N;s:7:\"\0*\0tags\";N;s:10:\"\0*\0taxType\";s:4:\"auto\";s:16:\"\0*\0technicalName\";s:17:\"shipping_standard\";s:6:\"\0*\0tax\";N;s:20:\"\0*\0appShippingMethod\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"0191fb2e5124722d8eb68aed7825002b\";}s:16:\"\0*\0shippingCosts\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Price\\Struct\\CalculatedPrice\":9:{s:13:\"\0*\0extensions\";a:0:{}s:12:\"\0*\0unitPrice\";d:0;s:11:\"\0*\0quantity\";i:1;s:13:\"\0*\0totalPrice\";d:0;s:18:\"\0*\0calculatedTaxes\";O:62:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTaxCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:52:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTax\":4:{s:13:\"\0*\0extensions\";a:0:{}s:6:\"\0*\0tax\";d:0;s:10:\"\0*\0taxRate\";d:19;s:8:\"\0*\0price\";d:0;}}}s:11:\"\0*\0taxRules\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRuleCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:46:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRule\":3:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0taxRate\";d:19;s:13:\"\0*\0percentage\";d:100;}}}s:17:\"\0*\0referencePrice\";N;s:12:\"\0*\0listPrice\";N;s:18:\"\0*\0regulationPrice\";N;}}}}s:15:\"\0*\0transactions\";O:68:\"Shopware\\Core\\Checkout\\Cart\\Transaction\\Struct\\TransactionCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:0;O:58:\"Shopware\\Core\\Checkout\\Cart\\Transaction\\Struct\\Transaction\":4:{s:13:\"\0*\0extensions\";a:0:{}s:9:\"\0*\0amount\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Price\\Struct\\CalculatedPrice\":9:{s:13:\"\0*\0extensions\";a:0:{}s:12:\"\0*\0unitPrice\";d:495.95;s:11:\"\0*\0quantity\";i:1;s:13:\"\0*\0totalPrice\";d:495.95;s:18:\"\0*\0calculatedTaxes\";r:11;s:11:\"\0*\0taxRules\";r:19;s:17:\"\0*\0referencePrice\";N;s:12:\"\0*\0listPrice\";N;s:18:\"\0*\0regulationPrice\";N;}s:18:\"\0*\0paymentMethodId\";s:32:\"0191fb2e512273c78c25658a14e24422\";s:19:\"\0*\0validationStruct\";N;}}}s:11:\"\0*\0modified\";b:0;s:18:\"\0*\0customerComment\";N;s:16:\"\0*\0affiliateCode\";N;s:15:\"\0*\0campaignCode\";N;s:9:\"\0*\0source\";N;s:7:\"\0*\0hash\";N;s:38:\"\0Shopware\\Core\\Checkout\\Cart\\Cart\0data\";N;s:41:\"\0Shopware\\Core\\Checkout\\Cart\\Cart\0ruleIds\";a:7:{i:0;s:32:\"0191fb2e512273c78c25658a13d3a51b\";i:1;s:32:\"0191fb2e5124722d8eb68aed794651ea\";i:2;s:32:\"0191fb2e56c772a596a0fdc113c10bad\";i:3;s:32:\"3858957016644de4ae48c0500bf3ccc8\";i:4;s:32:\"e1378db7808a478f919e0d740d5d6c1a\";i:5;s:32:\"0191fb2e512c7395a49385cae3fa5592\";i:6;s:32:\"28caae75a5624f0d985abd0eb32aa160\";}s:42:\"\0Shopware\\Core\\Checkout\\Cart\\Cart\0behavior\";O:40:\"Shopware\\Core\\Checkout\\Cart\\CartBehavior\":4:{s:13:\"\0*\0extensions\";a:0:{}s:53:\"\0Shopware\\Core\\Checkout\\Cart\\CartBehavior\0permissions\";a:0:{}s:51:\"\0Shopware\\Core\\Checkout\\Cart\\CartBehavior\0hookAware\";b:1;s:57:\"\0Shopware\\Core\\Checkout\\Cart\\CartBehavior\0isRecalculation\";b:0;}s:8:\"\0*\0token\";s:32:\"tCtyrVyLNTpiiu8h2NQ2eBQbtd2TYuls\";s:40:\"\0Shopware\\Core\\Checkout\\Cart\\Cart\0states\";a:0:{}}'),
+('M7tEt3V6Hl8Q2v2EaxDcmrDBiUcfSlkN','[\"0191fb2e512273c78c25658a13d3a51b\",\"0191fb2e5124722d8eb68aed794651ea\",\"0191fb2e56c772a596a0fdc113c10bad\",\"3858957016644de4ae48c0500bf3ccc8\",\"e1378db7808a478f919e0d740d5d6c1a\",\"0191fb2e512c7395a49385cae3fa5592\",\"28caae75a5624f0d985abd0eb32aa160\"]','2025-01-13 14:13:29.361',1,0,'O:32:\"Shopware\\Core\\Checkout\\Cart\\Cart\":17:{s:13:\"\0*\0extensions\";a:1:{s:15:\"cart-promotions\";O:61:\"Shopware\\Core\\Checkout\\Promotion\\Cart\\Extension\\CartExtension\":3:{s:13:\"\0*\0extensions\";a:0:{}s:13:\"\0*\0addedCodes\";a:0:{}s:22:\"\0*\0blockedPromotionIds\";a:0:{}}}s:8:\"\0*\0price\";O:50:\"Shopware\\Core\\Checkout\\Cart\\Price\\Struct\\CartPrice\":8:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0netPrice\";d:416.76;s:13:\"\0*\0totalPrice\";d:495.95;s:18:\"\0*\0calculatedTaxes\";O:62:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTaxCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:52:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTax\":4:{s:13:\"\0*\0extensions\";a:0:{}s:6:\"\0*\0tax\";d:79.19;s:10:\"\0*\0taxRate\";d:19;s:8:\"\0*\0price\";d:495.95;}}}s:11:\"\0*\0taxRules\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRuleCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:46:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRule\":3:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0taxRate\";d:19;s:13:\"\0*\0percentage\";d:100;}}}s:16:\"\0*\0positionPrice\";d:495.95;s:12:\"\0*\0taxStatus\";s:5:\"gross\";s:11:\"\0*\0rawTotal\";d:495.95;}s:12:\"\0*\0lineItems\";O:55:\"Shopware\\Core\\Checkout\\Cart\\LineItem\\LineItemCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{s:32:\"0191fb7d78e570a2b2923bfc87ccae78\";O:45:\"Shopware\\Core\\Checkout\\Cart\\LineItem\\LineItem\":25:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0payload\";a:19:{s:10:\"isCloseout\";b:0;s:12:\"customFields\";a:0:{}s:9:\"createdAt\";s:23:\"2024-09-16 15:39:49.874\";s:11:\"releaseDate\";s:23:\"2024-09-16 15:31:29.561\";s:5:\"isNew\";b:0;s:15:\"markAsTopseller\";b:0;s:14:\"purchasePrices\";s:155:\"{\"extensions\":[],\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"net\":0,\"gross\":0,\"linked\":true,\"listPrice\":null,\"percentage\":null,\"regulationPrice\":null}\";s:13:\"productNumber\";s:7:\"SW10002\";s:14:\"manufacturerId\";s:32:\"cc1c20c365d34cfb88bfab3c3e81d350\";s:5:\"taxId\";s:32:\"0191fb2e5125724199448d8bbb92a6a5\";s:6:\"tagIds\";N;s:11:\"categoryIds\";a:2:{i:0;s:32:\"0191fb2e5125724199448d8bbc76e575\";i:1;s:32:\"251448b91bc742de85643f5fccd89051\";}s:11:\"propertyIds\";a:4:{i:0;s:32:\"6f9359239c994b48b7de282ee19a714d\";i:1;s:32:\"78c53f3f6dd14eb4927978415bfb74db\";i:2;s:32:\"7cab88165ae5420f921232511b6e8f7d\";i:3;s:32:\"dc6f98beeca44852beb078a9e8e21e7d\";}s:9:\"optionIds\";N;s:7:\"options\";a:0:{}s:9:\"streamIds\";N;s:8:\"parentId\";N;s:5:\"stock\";i:10;s:8:\"features\";a:0:{}}s:8:\"\0*\0label\";s:24:\"Hauptartikel mit Tecsafe\";s:11:\"\0*\0quantity\";i:1;s:18:\"\0*\0priceDefinition\";O:64:\"Shopware\\Core\\Checkout\\Cart\\Price\\Struct\\QuantityPriceDefinition\":8:{s:13:\"\0*\0extensions\";a:0:{}s:8:\"\0*\0price\";d:495.95;s:11:\"\0*\0taxRules\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRuleCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;r:22;}}s:11:\"\0*\0quantity\";i:1;s:15:\"\0*\0isCalculated\";b:1;s:27:\"\0*\0referencePriceDefinition\";N;s:12:\"\0*\0listPrice\";N;s:18:\"\0*\0regulationPrice\";N;}s:8:\"\0*\0price\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Price\\Struct\\CalculatedPrice\":9:{s:13:\"\0*\0extensions\";a:0:{}s:12:\"\0*\0unitPrice\";d:495.95;s:11:\"\0*\0quantity\";i:1;s:13:\"\0*\0totalPrice\";d:495.95;s:18:\"\0*\0calculatedTaxes\";O:62:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTaxCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:52:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTax\":4:{s:13:\"\0*\0extensions\";a:0:{}s:6:\"\0*\0tax\";d:79.19;s:10:\"\0*\0taxRate\";d:19;s:8:\"\0*\0price\";d:495.95;}}}s:11:\"\0*\0taxRules\";r:65;s:17:\"\0*\0referencePrice\";N;s:12:\"\0*\0listPrice\";N;s:18:\"\0*\0regulationPrice\";N;}s:7:\"\0*\0good\";b:1;s:14:\"\0*\0description\";N;s:8:\"\0*\0cover\";O:39:\"Shopware\\Core\\Content\\Media\\MediaEntity\":53:{s:13:\"\0*\0extensions\";a:2:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:28:\"media_foreign_keys_extension\";}s:24:\"internal_mapping_storage\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";N;}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:3:{s:3:\"alt\";N;s:5:\"title\";N;s:12:\"customFields\";a:0:{}}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:39.374000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:39.482000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:5:\"media\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";O:60:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\":1:{s:80:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\0internalProperties\";a:2:{i:0;s:12:\"mediaTypeRaw\";i:1;s:12:\"thumbnailsRo\";}}s:9:\"\0*\0userId\";s:32:\"0191fb2ed2e47212bc8e84acec54e4c9\";s:11:\"\0*\0mimeType\";s:9:\"image/png\";s:16:\"\0*\0fileExtension\";s:3:\"png\";s:11:\"\0*\0fileSize\";i:1260102;s:8:\"\0*\0title\";N;s:14:\"\0*\0metaDataRaw\";N;s:15:\"\0*\0mediaTypeRaw\";s:156:\"O:47:\"Shopware\\Core\\Content\\Media\\MediaType\\ImageType\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0name\";s:5:\"IMAGE\";s:8:\"\0*\0flags\";a:1:{i:0;s:11:\"transparent\";}}\";s:11:\"\0*\0metaData\";a:4:{s:5:\"width\";i:1280;s:6:\"height\";i:1280;s:4:\"type\";i:3;s:4:\"hash\";s:32:\"943d98947b321fac917e57704496c282\";}s:12:\"\0*\0mediaType\";O:47:\"Shopware\\Core\\Content\\Media\\MediaType\\ImageType\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0name\";s:5:\"IMAGE\";s:8:\"\0*\0flags\";a:1:{i:0;s:11:\"transparent\";}}s:13:\"\0*\0uploadedAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:39.480000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:6:\"\0*\0alt\";N;s:6:\"\0*\0url\";s:154:\"https://tecsafe-sw6-plugin.ddev.site/media/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO.png?ts=1726743459\";s:11:\"\0*\0fileName\";s:73:\"TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO\";s:7:\"\0*\0user\";N;s:15:\"\0*\0translations\";N;s:13:\"\0*\0categories\";N;s:23:\"\0*\0productManufacturers\";N;s:15:\"\0*\0productMedia\";N;s:14:\"\0*\0avatarUsers\";N;s:13:\"\0*\0thumbnails\";O:77:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:4:{s:32:\"019209ee4cfd71d3a5c08cb207b08191\";O:73:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailEntity\":16:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:38:\"media_thumbnail_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee4cfd71d3a5c08cb207b08191\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:0:{}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:45.215000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:15:\"media_thumbnail\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";O:60:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\":1:{s:80:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\0internalProperties\";a:0:{}}s:8:\"\0*\0width\";i:400;s:7:\"\0*\0path\";s:115:\"thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_400x400.png\";s:9:\"\0*\0height\";i:400;s:6:\"\0*\0url\";s:166:\"https://tecsafe-sw6-plugin.ddev.site/thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_400x400.png?ts=1726743465\";s:10:\"\0*\0mediaId\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:8:\"\0*\0media\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee4cfd71d3a5c08cb207b08191\";}s:32:\"019209ee4cfd71d3a5c08cb208b032c3\";O:73:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailEntity\":16:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:38:\"media_thumbnail_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee4cfd71d3a5c08cb208b032c3\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:0:{}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:45.215000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:15:\"media_thumbnail\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";r:170;s:8:\"\0*\0width\";i:800;s:7:\"\0*\0path\";s:115:\"thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_800x800.png\";s:9:\"\0*\0height\";i:800;s:6:\"\0*\0url\";s:166:\"https://tecsafe-sw6-plugin.ddev.site/thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_800x800.png?ts=1726743465\";s:10:\"\0*\0mediaId\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:8:\"\0*\0media\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee4cfd71d3a5c08cb208b032c3\";}s:32:\"019209ee4cfd71d3a5c08cb20904db63\";O:73:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailEntity\":16:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:38:\"media_thumbnail_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee4cfd71d3a5c08cb20904db63\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:0:{}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:45.215000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:15:\"media_thumbnail\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";r:170;s:8:\"\0*\0width\";i:1920;s:7:\"\0*\0path\";s:117:\"thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_1920x1920.png\";s:9:\"\0*\0height\";i:1920;s:6:\"\0*\0url\";s:168:\"https://tecsafe-sw6-plugin.ddev.site/thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_1920x1920.png?ts=1726743465\";s:10:\"\0*\0mediaId\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:8:\"\0*\0media\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee4cfd71d3a5c08cb20904db63\";}s:32:\"019209ee4cfd71d3a5c08cb209e233b5\";O:73:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailEntity\":16:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:38:\"media_thumbnail_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee4cfd71d3a5c08cb209e233b5\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:0:{}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:45.216000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:15:\"media_thumbnail\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";r:170;s:8:\"\0*\0width\";i:280;s:7:\"\0*\0path\";s:115:\"thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_280x280.png\";s:9:\"\0*\0height\";i:280;s:6:\"\0*\0url\";s:166:\"https://tecsafe-sw6-plugin.ddev.site/thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_280x280.png?ts=1726743465\";s:10:\"\0*\0mediaId\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:8:\"\0*\0media\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee4cfd71d3a5c08cb209e233b5\";}}}s:16:\"\0*\0mediaFolderId\";s:32:\"0191fb2e512c7395a49385cae05fee79\";s:14:\"\0*\0mediaFolder\";N;s:10:\"\0*\0hasFile\";b:0;s:10:\"\0*\0private\";b:0;s:23:\"\0*\0propertyGroupOptions\";N;s:20:\"\0*\0mailTemplateMedia\";N;s:7:\"\0*\0tags\";N;s:15:\"\0*\0thumbnailsRo\";s:0:\"\";s:7:\"\0*\0path\";s:103:\"media/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO.png\";s:22:\"\0*\0documentBaseConfigs\";N;s:18:\"\0*\0shippingMethods\";N;s:17:\"\0*\0paymentMethods\";N;s:30:\"\0*\0productConfiguratorSettings\";N;s:17:\"\0*\0orderLineItems\";N;s:12:\"\0*\0cmsBlocks\";N;s:14:\"\0*\0cmsSections\";N;s:11:\"\0*\0cmsPages\";N;s:12:\"\0*\0documents\";N;s:20:\"\0*\0appPaymentMethods\";N;s:21:\"\0*\0appShippingMethods\";N;s:19:\"\0*\0productDownloads\";N;s:25:\"\0*\0orderLineItemDownloads\";N;s:9:\"\0*\0config\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee3602704e919b55ce831b43b5\";}s:22:\"\0*\0deliveryInformation\";O:63:\"Shopware\\Core\\Checkout\\Cart\\Delivery\\Struct\\DeliveryInformation\":9:{s:13:\"\0*\0extensions\";a:0:{}s:8:\"\0*\0stock\";i:10;s:9:\"\0*\0weight\";d:0.17;s:15:\"\0*\0freeDelivery\";b:0;s:14:\"\0*\0restockTime\";N;s:15:\"\0*\0deliveryTime\";N;s:9:\"\0*\0height\";N;s:8:\"\0*\0width\";N;s:9:\"\0*\0length\";N;}s:11:\"\0*\0children\";O:55:\"Shopware\\Core\\Checkout\\Cart\\LineItem\\LineItemCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:0:{}}s:14:\"\0*\0requirement\";N;s:12:\"\0*\0removable\";b:1;s:12:\"\0*\0stackable\";b:1;s:22:\"\0*\0quantityInformation\";O:56:\"Shopware\\Core\\Checkout\\Cart\\LineItem\\QuantityInformation\":4:{s:13:\"\0*\0extensions\";a:0:{}s:14:\"\0*\0minPurchase\";i:1;s:14:\"\0*\0maxPurchase\";i:100;s:16:\"\0*\0purchaseSteps\";i:1;}s:11:\"\0*\0modified\";b:0;s:16:\"\0*\0dataTimestamp\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2025-01-13 14:13:29.351101\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:18:\"\0*\0dataContextHash\";s:32:\"617f1ff5e02d3d971516db7f6c406a6c\";s:19:\"\0*\0uniqueIdentifier\";s:32:\"01945fea3f877035999f3fb7fdbe89de\";s:9:\"\0*\0states\";a:1:{i:0;s:11:\"is-physical\";}s:16:\"\0*\0modifiedByApp\";b:0;s:64:\"\0Shopware\\Core\\Checkout\\Cart\\LineItem\\LineItem\0payloadProtection\";a:2:{s:14:\"purchasePrices\";b:1;s:12:\"customFields\";b:0;}s:5:\"\0*\0id\";s:32:\"0191fb7d78e570a2b2923bfc87ccae78\";s:7:\"\0*\0type\";s:7:\"product\";s:15:\"\0*\0referencedId\";s:32:\"0191fb7d78e570a2b2923bfc87ccae78\";}}}s:9:\"\0*\0errors\";O:49:\"Shopware\\Core\\Checkout\\Cart\\Error\\ErrorCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:0:{}}s:13:\"\0*\0deliveries\";O:62:\"Shopware\\Core\\Checkout\\Cart\\Delivery\\Struct\\DeliveryCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:0;O:52:\"Shopware\\Core\\Checkout\\Cart\\Delivery\\Struct\\Delivery\":6:{s:13:\"\0*\0extensions\";a:0:{}s:12:\"\0*\0positions\";O:70:\"Shopware\\Core\\Checkout\\Cart\\Delivery\\Struct\\DeliveryPositionCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{s:32:\"0191fb7d78e570a2b2923bfc87ccae78\";O:60:\"Shopware\\Core\\Checkout\\Cart\\Delivery\\Struct\\DeliveryPosition\":6:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0lineItem\";O:45:\"Shopware\\Core\\Checkout\\Cart\\LineItem\\LineItem\":25:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0payload\";a:19:{s:10:\"isCloseout\";b:0;s:12:\"customFields\";a:0:{}s:9:\"createdAt\";s:23:\"2024-09-16 15:39:49.874\";s:11:\"releaseDate\";s:23:\"2024-09-16 15:31:29.561\";s:5:\"isNew\";b:0;s:15:\"markAsTopseller\";b:0;s:14:\"purchasePrices\";s:155:\"{\"extensions\":[],\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"net\":0,\"gross\":0,\"linked\":true,\"listPrice\":null,\"percentage\":null,\"regulationPrice\":null}\";s:13:\"productNumber\";s:7:\"SW10002\";s:14:\"manufacturerId\";s:32:\"cc1c20c365d34cfb88bfab3c3e81d350\";s:5:\"taxId\";s:32:\"0191fb2e5125724199448d8bbb92a6a5\";s:6:\"tagIds\";N;s:11:\"categoryIds\";a:2:{i:0;s:32:\"0191fb2e5125724199448d8bbc76e575\";i:1;s:32:\"251448b91bc742de85643f5fccd89051\";}s:11:\"propertyIds\";a:4:{i:0;s:32:\"6f9359239c994b48b7de282ee19a714d\";i:1;s:32:\"78c53f3f6dd14eb4927978415bfb74db\";i:2;s:32:\"7cab88165ae5420f921232511b6e8f7d\";i:3;s:32:\"dc6f98beeca44852beb078a9e8e21e7d\";}s:9:\"optionIds\";N;s:7:\"options\";a:0:{}s:9:\"streamIds\";N;s:8:\"parentId\";N;s:5:\"stock\";i:10;s:8:\"features\";a:0:{}}s:8:\"\0*\0label\";s:24:\"Hauptartikel mit Tecsafe\";s:11:\"\0*\0quantity\";i:1;s:18:\"\0*\0priceDefinition\";O:64:\"Shopware\\Core\\Checkout\\Cart\\Price\\Struct\\QuantityPriceDefinition\":8:{s:13:\"\0*\0extensions\";a:0:{}s:8:\"\0*\0price\";d:495.95;s:11:\"\0*\0taxRules\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRuleCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:46:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRule\":3:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0taxRate\";d:19;s:13:\"\0*\0percentage\";d:100;}}}s:11:\"\0*\0quantity\";i:1;s:15:\"\0*\0isCalculated\";b:1;s:27:\"\0*\0referencePriceDefinition\";N;s:12:\"\0*\0listPrice\";N;s:18:\"\0*\0regulationPrice\";N;}s:8:\"\0*\0price\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Price\\Struct\\CalculatedPrice\":9:{s:13:\"\0*\0extensions\";a:0:{}s:12:\"\0*\0unitPrice\";d:495.95;s:11:\"\0*\0quantity\";i:1;s:13:\"\0*\0totalPrice\";d:495.95;s:18:\"\0*\0calculatedTaxes\";O:62:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTaxCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:52:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTax\":4:{s:13:\"\0*\0extensions\";a:0:{}s:6:\"\0*\0tax\";d:79.19;s:10:\"\0*\0taxRate\";d:19;s:8:\"\0*\0price\";d:495.95;}}}s:11:\"\0*\0taxRules\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRuleCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:46:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRule\":3:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0taxRate\";d:19;s:13:\"\0*\0percentage\";d:100;}}}s:17:\"\0*\0referencePrice\";N;s:12:\"\0*\0listPrice\";N;s:18:\"\0*\0regulationPrice\";N;}s:7:\"\0*\0good\";b:1;s:14:\"\0*\0description\";N;s:8:\"\0*\0cover\";O:39:\"Shopware\\Core\\Content\\Media\\MediaEntity\":53:{s:13:\"\0*\0extensions\";a:2:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:28:\"media_foreign_keys_extension\";}s:24:\"internal_mapping_storage\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";N;}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:3:{s:3:\"alt\";N;s:5:\"title\";N;s:12:\"customFields\";a:0:{}}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:39.374000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:39.482000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:5:\"media\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";r:118;s:9:\"\0*\0userId\";s:32:\"0191fb2ed2e47212bc8e84acec54e4c9\";s:11:\"\0*\0mimeType\";s:9:\"image/png\";s:16:\"\0*\0fileExtension\";s:3:\"png\";s:11:\"\0*\0fileSize\";i:1260102;s:8:\"\0*\0title\";N;s:14:\"\0*\0metaDataRaw\";N;s:15:\"\0*\0mediaTypeRaw\";s:156:\"O:47:\"Shopware\\Core\\Content\\Media\\MediaType\\ImageType\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0name\";s:5:\"IMAGE\";s:8:\"\0*\0flags\";a:1:{i:0;s:11:\"transparent\";}}\";s:11:\"\0*\0metaData\";a:4:{s:5:\"width\";i:1280;s:6:\"height\";i:1280;s:4:\"type\";i:3;s:4:\"hash\";s:32:\"943d98947b321fac917e57704496c282\";}s:12:\"\0*\0mediaType\";O:47:\"Shopware\\Core\\Content\\Media\\MediaType\\ImageType\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0name\";s:5:\"IMAGE\";s:8:\"\0*\0flags\";a:1:{i:0;s:11:\"transparent\";}}s:13:\"\0*\0uploadedAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:39.480000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:6:\"\0*\0alt\";N;s:6:\"\0*\0url\";s:154:\"https://tecsafe-sw6-plugin.ddev.site/media/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO.png?ts=1726743459\";s:11:\"\0*\0fileName\";s:73:\"TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO\";s:7:\"\0*\0user\";N;s:15:\"\0*\0translations\";N;s:13:\"\0*\0categories\";N;s:23:\"\0*\0productManufacturers\";N;s:15:\"\0*\0productMedia\";N;s:14:\"\0*\0avatarUsers\";N;s:13:\"\0*\0thumbnails\";O:77:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:4:{s:32:\"019209ee4cfd71d3a5c08cb207b08191\";O:73:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailEntity\":16:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:38:\"media_thumbnail_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee4cfd71d3a5c08cb207b08191\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:0:{}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:45.215000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:15:\"media_thumbnail\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";r:170;s:8:\"\0*\0width\";i:400;s:7:\"\0*\0path\";s:115:\"thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_400x400.png\";s:9:\"\0*\0height\";i:400;s:6:\"\0*\0url\";s:166:\"https://tecsafe-sw6-plugin.ddev.site/thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_400x400.png?ts=1726743465\";s:10:\"\0*\0mediaId\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:8:\"\0*\0media\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee4cfd71d3a5c08cb207b08191\";}s:32:\"019209ee4cfd71d3a5c08cb208b032c3\";O:73:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailEntity\":16:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:38:\"media_thumbnail_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee4cfd71d3a5c08cb208b032c3\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:0:{}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:45.215000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:15:\"media_thumbnail\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";r:170;s:8:\"\0*\0width\";i:800;s:7:\"\0*\0path\";s:115:\"thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_800x800.png\";s:9:\"\0*\0height\";i:800;s:6:\"\0*\0url\";s:166:\"https://tecsafe-sw6-plugin.ddev.site/thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_800x800.png?ts=1726743465\";s:10:\"\0*\0mediaId\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:8:\"\0*\0media\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee4cfd71d3a5c08cb208b032c3\";}s:32:\"019209ee4cfd71d3a5c08cb20904db63\";O:73:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailEntity\":16:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:38:\"media_thumbnail_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee4cfd71d3a5c08cb20904db63\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:0:{}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:45.215000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:15:\"media_thumbnail\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";r:170;s:8:\"\0*\0width\";i:1920;s:7:\"\0*\0path\";s:117:\"thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_1920x1920.png\";s:9:\"\0*\0height\";i:1920;s:6:\"\0*\0url\";s:168:\"https://tecsafe-sw6-plugin.ddev.site/thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_1920x1920.png?ts=1726743465\";s:10:\"\0*\0mediaId\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:8:\"\0*\0media\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee4cfd71d3a5c08cb20904db63\";}s:32:\"019209ee4cfd71d3a5c08cb209e233b5\";O:73:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailEntity\":16:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:38:\"media_thumbnail_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee4cfd71d3a5c08cb209e233b5\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:0:{}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:45.216000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:15:\"media_thumbnail\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";r:170;s:8:\"\0*\0width\";i:280;s:7:\"\0*\0path\";s:115:\"thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_280x280.png\";s:9:\"\0*\0height\";i:280;s:6:\"\0*\0url\";s:166:\"https://tecsafe-sw6-plugin.ddev.site/thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_280x280.png?ts=1726743465\";s:10:\"\0*\0mediaId\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:8:\"\0*\0media\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee4cfd71d3a5c08cb209e233b5\";}}}s:16:\"\0*\0mediaFolderId\";s:32:\"0191fb2e512c7395a49385cae05fee79\";s:14:\"\0*\0mediaFolder\";N;s:10:\"\0*\0hasFile\";b:0;s:10:\"\0*\0private\";b:0;s:23:\"\0*\0propertyGroupOptions\";N;s:20:\"\0*\0mailTemplateMedia\";N;s:7:\"\0*\0tags\";N;s:15:\"\0*\0thumbnailsRo\";s:0:\"\";s:7:\"\0*\0path\";s:103:\"media/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO.png\";s:22:\"\0*\0documentBaseConfigs\";N;s:18:\"\0*\0shippingMethods\";N;s:17:\"\0*\0paymentMethods\";N;s:30:\"\0*\0productConfiguratorSettings\";N;s:17:\"\0*\0orderLineItems\";N;s:12:\"\0*\0cmsBlocks\";N;s:14:\"\0*\0cmsSections\";N;s:11:\"\0*\0cmsPages\";N;s:12:\"\0*\0documents\";N;s:20:\"\0*\0appPaymentMethods\";N;s:21:\"\0*\0appShippingMethods\";N;s:19:\"\0*\0productDownloads\";N;s:25:\"\0*\0orderLineItemDownloads\";N;s:9:\"\0*\0config\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee3602704e919b55ce831b43b5\";}s:22:\"\0*\0deliveryInformation\";O:63:\"Shopware\\Core\\Checkout\\Cart\\Delivery\\Struct\\DeliveryInformation\":9:{s:13:\"\0*\0extensions\";a:0:{}s:8:\"\0*\0stock\";i:10;s:9:\"\0*\0weight\";d:0.17;s:15:\"\0*\0freeDelivery\";b:0;s:14:\"\0*\0restockTime\";N;s:15:\"\0*\0deliveryTime\";N;s:9:\"\0*\0height\";N;s:8:\"\0*\0width\";N;s:9:\"\0*\0length\";N;}s:11:\"\0*\0children\";O:55:\"Shopware\\Core\\Checkout\\Cart\\LineItem\\LineItemCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:0:{}}s:14:\"\0*\0requirement\";N;s:12:\"\0*\0removable\";b:1;s:12:\"\0*\0stackable\";b:1;s:22:\"\0*\0quantityInformation\";O:56:\"Shopware\\Core\\Checkout\\Cart\\LineItem\\QuantityInformation\":4:{s:13:\"\0*\0extensions\";a:0:{}s:14:\"\0*\0minPurchase\";i:1;s:14:\"\0*\0maxPurchase\";i:100;s:16:\"\0*\0purchaseSteps\";i:1;}s:11:\"\0*\0modified\";b:0;s:16:\"\0*\0dataTimestamp\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2025-01-13 14:13:29.351101\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:18:\"\0*\0dataContextHash\";s:32:\"617f1ff5e02d3d971516db7f6c406a6c\";s:19:\"\0*\0uniqueIdentifier\";s:32:\"01945fea3f877035999f3fb7fdbe89de\";s:9:\"\0*\0states\";a:1:{i:0;s:11:\"is-physical\";}s:16:\"\0*\0modifiedByApp\";b:0;s:64:\"\0Shopware\\Core\\Checkout\\Cart\\LineItem\\LineItem\0payloadProtection\";a:2:{s:14:\"purchasePrices\";b:1;s:12:\"customFields\";b:0;}s:5:\"\0*\0id\";s:32:\"0191fb7d78e570a2b2923bfc87ccae78\";s:7:\"\0*\0type\";s:7:\"product\";s:15:\"\0*\0referencedId\";s:32:\"0191fb7d78e570a2b2923bfc87ccae78\";}s:11:\"\0*\0quantity\";i:1;s:8:\"\0*\0price\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Price\\Struct\\CalculatedPrice\":9:{s:13:\"\0*\0extensions\";a:0:{}s:12:\"\0*\0unitPrice\";d:495.95;s:11:\"\0*\0quantity\";i:1;s:13:\"\0*\0totalPrice\";d:495.95;s:18:\"\0*\0calculatedTaxes\";O:62:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTaxCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:52:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTax\":4:{s:13:\"\0*\0extensions\";a:0:{}s:6:\"\0*\0tax\";d:79.19;s:10:\"\0*\0taxRate\";d:19;s:8:\"\0*\0price\";d:495.95;}}}s:11:\"\0*\0taxRules\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRuleCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:46:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRule\":3:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0taxRate\";d:19;s:13:\"\0*\0percentage\";d:100;}}}s:17:\"\0*\0referencePrice\";N;s:12:\"\0*\0listPrice\";N;s:18:\"\0*\0regulationPrice\";N;}s:13:\"\0*\0identifier\";s:32:\"0191fb7d78e570a2b2923bfc87ccae78\";s:15:\"\0*\0deliveryDate\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Delivery\\Struct\\DeliveryDate\":3:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0earliest\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2025-01-14 16:00:00.000000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:9:\"\0*\0latest\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2025-01-16 16:00:00.000000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}}}}}s:11:\"\0*\0location\";O:60:\"Shopware\\Core\\Checkout\\Cart\\Delivery\\Struct\\ShippingLocation\":4:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0country\";O:42:\"Shopware\\Core\\System\\Country\\CountryEntity\":38:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:30:\"country_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"0191fb2e510270b796b27f002fd9613a\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:3:{s:4:\"name\";s:11:\"Deutschland\";s:12:\"customFields\";a:0:{}s:13:\"addressFormat\";a:5:{i:0;a:3:{i:0;s:15:\"address/company\";i:1;s:11:\"symbol/dash\";i:2;s:18:\"address/department\";}i:1;a:2:{i:0;s:18:\"address/first_name\";i:1;s:17:\"address/last_name\";}i:2;a:1:{i:0;s:14:\"address/street\";}i:3;a:2:{i:0;s:15:\"address/zipcode\";i:1;s:12:\"address/city\";}i:4;a:1:{i:0;s:15:\"address/country\";}}}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-16 14:13:22.306000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:7:\"country\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";O:60:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\":1:{s:80:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\0internalProperties\";a:0:{}}s:7:\"\0*\0name\";s:11:\"Deutschland\";s:6:\"\0*\0iso\";s:2:\"DE\";s:11:\"\0*\0position\";i:1;s:9:\"\0*\0active\";b:1;s:20:\"\0*\0shippingAvailable\";b:1;s:7:\"\0*\0iso3\";s:3:\"DEU\";s:29:\"\0*\0displayStateInRegistration\";b:0;s:27:\"\0*\0forceStateInRegistration\";b:0;s:20:\"\0*\0checkVatIdPattern\";b:0;s:15:\"\0*\0vatIdPattern\";s:13:\"(DE)?[0-9]{9}\";s:16:\"\0*\0vatIdRequired\";b:0;s:14:\"\0*\0customerTax\";O:58:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\TaxFreeConfig\":4:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0enabled\";b:0;s:13:\"\0*\0currencyId\";s:32:\"b7d2554b0ce847cd82f3ac9bd1c0dfca\";s:9:\"\0*\0amount\";d:0;}s:13:\"\0*\0companyTax\";O:58:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\TaxFreeConfig\":4:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0enabled\";b:0;s:13:\"\0*\0currencyId\";s:32:\"b7d2554b0ce847cd82f3ac9bd1c0dfca\";s:9:\"\0*\0amount\";d:0;}s:9:\"\0*\0states\";N;s:15:\"\0*\0translations\";N;s:17:\"\0*\0orderAddresses\";N;s:20:\"\0*\0customerAddresses\";N;s:33:\"\0*\0salesChannelDefaultAssignments\";N;s:16:\"\0*\0salesChannels\";N;s:11:\"\0*\0taxRules\";N;s:27:\"\0*\0currencyCountryRoundings\";N;s:21:\"\0*\0postalCodeRequired\";b:0;s:7:\"\0*\0isEu\";b:1;s:25:\"\0*\0checkPostalCodePattern\";b:0;s:33:\"\0*\0checkAdvancedPostalCodePattern\";b:0;s:28:\"\0*\0advancedPostalCodePattern\";N;s:27:\"\0*\0defaultPostalCodePattern\";s:5:\"\\d{5}\";s:16:\"\0*\0addressFormat\";a:5:{i:0;a:3:{i:0;s:15:\"address/company\";i:1;s:11:\"symbol/dash\";i:2;s:18:\"address/department\";}i:1;a:2:{i:0;s:18:\"address/first_name\";i:1;s:17:\"address/last_name\";}i:2;a:1:{i:0;s:14:\"address/street\";}i:3;a:2:{i:0;s:15:\"address/zipcode\";i:1;s:12:\"address/city\";}i:4;a:1:{i:0;s:15:\"address/country\";}}s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"0191fb2e510270b796b27f002fd9613a\";}s:8:\"\0*\0state\";N;s:10:\"\0*\0address\";N;}s:15:\"\0*\0deliveryDate\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Delivery\\Struct\\DeliveryDate\":3:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0earliest\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2025-01-14 16:00:00.000000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:9:\"\0*\0latest\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2025-01-16 16:00:00.000000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}}s:17:\"\0*\0shippingMethod\";O:52:\"Shopware\\Core\\Checkout\\Shipping\\ShippingMethodEntity\":32:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:38:\"shipping_method_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"0191fb2e5124722d8eb68aed7825002b\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:4:{s:4:\"name\";s:8:\"Standard\";s:12:\"customFields\";a:0:{}s:11:\"description\";N;s:11:\"trackingUrl\";N;}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-16 14:13:22.340000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-16 15:31:29.691000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:15:\"shipping_method\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";O:60:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\":1:{s:80:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\0internalProperties\";a:0:{}}s:7:\"\0*\0name\";s:8:\"Standard\";s:9:\"\0*\0active\";b:1;s:11:\"\0*\0position\";i:1;s:14:\"\0*\0description\";N;s:14:\"\0*\0trackingUrl\";N;s:17:\"\0*\0deliveryTimeId\";s:32:\"0191fb2e5123719d8859106e88ac8487\";s:15:\"\0*\0deliveryTime\";O:52:\"Shopware\\Core\\System\\DeliveryTime\\DeliveryTimeEntity\":17:{s:13:\"\0*\0extensions\";a:2:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:36:\"delivery_time_foreign_keys_extension\";}s:24:\"internal_mapping_storage\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";N;}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"0191fb2e5123719d8859106e88ac8487\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:2:{s:4:\"name\";s:8:\"1-3 Tage\";s:12:\"customFields\";a:0:{}}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-16 14:13:22.000000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:13:\"delivery_time\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";O:60:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\":1:{s:80:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\0internalProperties\";a:0:{}}s:7:\"\0*\0name\";s:8:\"1-3 Tage\";s:6:\"\0*\0min\";i:1;s:6:\"\0*\0max\";i:3;s:7:\"\0*\0unit\";s:3:\"day\";s:18:\"\0*\0shippingMethods\";N;s:15:\"\0*\0translations\";N;s:11:\"\0*\0products\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"0191fb2e5123719d8859106e88ac8487\";}s:15:\"\0*\0translations\";N;s:18:\"\0*\0orderDeliveries\";N;s:33:\"\0*\0salesChannelDefaultAssignments\";N;s:16:\"\0*\0salesChannels\";N;s:19:\"\0*\0availabilityRule\";N;s:21:\"\0*\0availabilityRuleId\";s:32:\"0191fb2e512273c78c25658a13d3a51b\";s:9:\"\0*\0prices\";O:91:\"Shopware\\Core\\Checkout\\Shipping\\Aggregate\\ShippingMethodPrice\\ShippingMethodPriceCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{s:32:\"0191fb2e5125724199448d8bbaa106ce\";O:87:\"Shopware\\Core\\Checkout\\Shipping\\Aggregate\\ShippingMethodPrice\\ShippingMethodPriceEntity\":20:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:44:\"shipping_method_price_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"0191fb2e5125724199448d8bbaa106ce\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:0:{}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-16 14:13:22.341000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:21:\"shipping_method_price\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";O:60:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\":1:{s:80:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\0internalProperties\";a:0:{}}s:19:\"\0*\0shippingMethodId\";s:32:\"0191fb2e5124722d8eb68aed7825002b\";s:9:\"\0*\0ruleId\";N;s:14:\"\0*\0calculation\";i:1;s:16:\"\0*\0quantityStart\";d:0;s:14:\"\0*\0quantityEnd\";N;s:17:\"\0*\0shippingMethod\";N;s:7:\"\0*\0rule\";N;s:20:\"\0*\0calculationRuleId\";N;s:18:\"\0*\0calculationRule\";N;s:16:\"\0*\0currencyPrice\";O:68:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\Pricing\\PriceCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{s:32:\"b7d2554b0ce847cd82f3ac9bd1c0dfca\";O:58:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\Pricing\\Price\":8:{s:13:\"\0*\0extensions\";a:0:{}s:13:\"\0*\0currencyId\";s:32:\"b7d2554b0ce847cd82f3ac9bd1c0dfca\";s:6:\"\0*\0net\";d:0;s:8:\"\0*\0gross\";d:0;s:9:\"\0*\0linked\";b:0;s:12:\"\0*\0listPrice\";N;s:13:\"\0*\0percentage\";N;s:18:\"\0*\0regulationPrice\";N;}}}s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"0191fb2e5125724199448d8bbaa106ce\";}}}s:10:\"\0*\0mediaId\";N;s:8:\"\0*\0taxId\";N;s:8:\"\0*\0media\";N;s:7:\"\0*\0tags\";N;s:10:\"\0*\0taxType\";s:4:\"auto\";s:16:\"\0*\0technicalName\";s:17:\"shipping_standard\";s:6:\"\0*\0tax\";N;s:20:\"\0*\0appShippingMethod\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"0191fb2e5124722d8eb68aed7825002b\";}s:16:\"\0*\0shippingCosts\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Price\\Struct\\CalculatedPrice\":9:{s:13:\"\0*\0extensions\";a:0:{}s:12:\"\0*\0unitPrice\";d:0;s:11:\"\0*\0quantity\";i:1;s:13:\"\0*\0totalPrice\";d:0;s:18:\"\0*\0calculatedTaxes\";O:62:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTaxCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:52:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTax\":4:{s:13:\"\0*\0extensions\";a:0:{}s:6:\"\0*\0tax\";d:0;s:10:\"\0*\0taxRate\";d:19;s:8:\"\0*\0price\";d:0;}}}s:11:\"\0*\0taxRules\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRuleCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:46:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRule\":3:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0taxRate\";d:19;s:13:\"\0*\0percentage\";d:100;}}}s:17:\"\0*\0referencePrice\";N;s:12:\"\0*\0listPrice\";N;s:18:\"\0*\0regulationPrice\";N;}}}}s:15:\"\0*\0transactions\";O:68:\"Shopware\\Core\\Checkout\\Cart\\Transaction\\Struct\\TransactionCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:0;O:58:\"Shopware\\Core\\Checkout\\Cart\\Transaction\\Struct\\Transaction\":4:{s:13:\"\0*\0extensions\";a:0:{}s:9:\"\0*\0amount\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Price\\Struct\\CalculatedPrice\":9:{s:13:\"\0*\0extensions\";a:0:{}s:12:\"\0*\0unitPrice\";d:495.95;s:11:\"\0*\0quantity\";i:1;s:13:\"\0*\0totalPrice\";d:495.95;s:18:\"\0*\0calculatedTaxes\";r:11;s:11:\"\0*\0taxRules\";r:19;s:17:\"\0*\0referencePrice\";N;s:12:\"\0*\0listPrice\";N;s:18:\"\0*\0regulationPrice\";N;}s:18:\"\0*\0paymentMethodId\";s:32:\"0191fb2e512273c78c25658a14e24422\";s:19:\"\0*\0validationStruct\";N;}}}s:11:\"\0*\0modified\";b:0;s:18:\"\0*\0customerComment\";N;s:16:\"\0*\0affiliateCode\";N;s:15:\"\0*\0campaignCode\";N;s:9:\"\0*\0source\";N;s:7:\"\0*\0hash\";N;s:38:\"\0Shopware\\Core\\Checkout\\Cart\\Cart\0data\";N;s:41:\"\0Shopware\\Core\\Checkout\\Cart\\Cart\0ruleIds\";a:7:{i:0;s:32:\"0191fb2e512273c78c25658a13d3a51b\";i:1;s:32:\"0191fb2e5124722d8eb68aed794651ea\";i:2;s:32:\"0191fb2e56c772a596a0fdc113c10bad\";i:3;s:32:\"3858957016644de4ae48c0500bf3ccc8\";i:4;s:32:\"e1378db7808a478f919e0d740d5d6c1a\";i:5;s:32:\"0191fb2e512c7395a49385cae3fa5592\";i:6;s:32:\"28caae75a5624f0d985abd0eb32aa160\";}s:42:\"\0Shopware\\Core\\Checkout\\Cart\\Cart\0behavior\";O:40:\"Shopware\\Core\\Checkout\\Cart\\CartBehavior\":4:{s:13:\"\0*\0extensions\";a:0:{}s:53:\"\0Shopware\\Core\\Checkout\\Cart\\CartBehavior\0permissions\";a:0:{}s:51:\"\0Shopware\\Core\\Checkout\\Cart\\CartBehavior\0hookAware\";b:1;s:57:\"\0Shopware\\Core\\Checkout\\Cart\\CartBehavior\0isRecalculation\";b:0;}s:8:\"\0*\0token\";s:32:\"M7tEt3V6Hl8Q2v2EaxDcmrDBiUcfSlkN\";s:40:\"\0Shopware\\Core\\Checkout\\Cart\\Cart\0states\";a:0:{}}'),
+('ywktChfC969DVTRckMS0xoD5tSmX4y0i','[\"0191fb2e512273c78c25658a13d3a51b\",\"0191fb2e5124722d8eb68aed794651ea\",\"0191fb2e56c772a596a0fdc113c10bad\",\"3858957016644de4ae48c0500bf3ccc8\",\"e1378db7808a478f919e0d740d5d6c1a\",\"0191fb2e512c7395a49385cae3fa5592\",\"28caae75a5624f0d985abd0eb32aa160\"]','2025-03-27 08:23:11.555',45,0,'O:32:\"Shopware\\Core\\Checkout\\Cart\\Cart\":17:{s:13:\"\0*\0extensions\";a:1:{s:15:\"cart-promotions\";O:61:\"Shopware\\Core\\Checkout\\Promotion\\Cart\\Extension\\CartExtension\":3:{s:13:\"\0*\0extensions\";a:0:{}s:13:\"\0*\0addedCodes\";a:0:{}s:22:\"\0*\0blockedPromotionIds\";a:0:{}}}s:8:\"\0*\0price\";O:50:\"Shopware\\Core\\Checkout\\Cart\\Price\\Struct\\CartPrice\":8:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0netPrice\";d:1250.29;s:13:\"\0*\0totalPrice\";d:1487.85;s:18:\"\0*\0calculatedTaxes\";O:62:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTaxCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:52:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTax\":4:{s:13:\"\0*\0extensions\";a:0:{}s:6:\"\0*\0tax\";d:237.56;s:10:\"\0*\0taxRate\";d:19;s:8:\"\0*\0price\";d:1487.85;}}}s:11:\"\0*\0taxRules\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRuleCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:46:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRule\":3:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0taxRate\";d:19;s:13:\"\0*\0percentage\";d:100;}}}s:16:\"\0*\0positionPrice\";d:1487.85;s:12:\"\0*\0taxStatus\";s:5:\"gross\";s:11:\"\0*\0rawTotal\";d:1487.85;}s:12:\"\0*\0lineItems\";O:55:\"Shopware\\Core\\Checkout\\Cart\\LineItem\\LineItemCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{s:32:\"0191fb7d78e570a2b2923bfc87ccae78\";O:45:\"Shopware\\Core\\Checkout\\Cart\\LineItem\\LineItem\":25:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0payload\";a:19:{s:10:\"isCloseout\";b:0;s:12:\"customFields\";a:0:{}s:9:\"createdAt\";s:23:\"2024-09-16 15:39:49.874\";s:11:\"releaseDate\";s:23:\"2024-09-16 15:31:29.561\";s:5:\"isNew\";b:0;s:15:\"markAsTopseller\";b:0;s:14:\"purchasePrices\";s:155:\"{\"extensions\":[],\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"net\":0,\"gross\":0,\"linked\":true,\"listPrice\":null,\"percentage\":null,\"regulationPrice\":null}\";s:13:\"productNumber\";s:7:\"SW10002\";s:14:\"manufacturerId\";s:32:\"cc1c20c365d34cfb88bfab3c3e81d350\";s:5:\"taxId\";s:32:\"0191fb2e5125724199448d8bbb92a6a5\";s:6:\"tagIds\";N;s:11:\"categoryIds\";a:2:{i:0;s:32:\"0191fb2e5125724199448d8bbc76e575\";i:1;s:32:\"251448b91bc742de85643f5fccd89051\";}s:11:\"propertyIds\";a:4:{i:0;s:32:\"6f9359239c994b48b7de282ee19a714d\";i:1;s:32:\"78c53f3f6dd14eb4927978415bfb74db\";i:2;s:32:\"7cab88165ae5420f921232511b6e8f7d\";i:3;s:32:\"dc6f98beeca44852beb078a9e8e21e7d\";}s:9:\"optionIds\";N;s:7:\"options\";a:0:{}s:9:\"streamIds\";N;s:8:\"parentId\";N;s:5:\"stock\";i:10;s:8:\"features\";a:0:{}}s:8:\"\0*\0label\";s:24:\"Hauptartikel mit Tecsafe\";s:11:\"\0*\0quantity\";i:3;s:18:\"\0*\0priceDefinition\";O:64:\"Shopware\\Core\\Checkout\\Cart\\Price\\Struct\\QuantityPriceDefinition\":8:{s:13:\"\0*\0extensions\";a:0:{}s:8:\"\0*\0price\";d:495.95;s:11:\"\0*\0taxRules\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRuleCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;r:22;}}s:11:\"\0*\0quantity\";i:3;s:15:\"\0*\0isCalculated\";b:1;s:27:\"\0*\0referencePriceDefinition\";N;s:12:\"\0*\0listPrice\";N;s:18:\"\0*\0regulationPrice\";N;}s:8:\"\0*\0price\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Price\\Struct\\CalculatedPrice\":9:{s:13:\"\0*\0extensions\";a:0:{}s:12:\"\0*\0unitPrice\";d:495.95;s:11:\"\0*\0quantity\";i:3;s:13:\"\0*\0totalPrice\";d:1487.85;s:18:\"\0*\0calculatedTaxes\";O:62:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTaxCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:52:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTax\":4:{s:13:\"\0*\0extensions\";a:0:{}s:6:\"\0*\0tax\";d:237.56;s:10:\"\0*\0taxRate\";d:19;s:8:\"\0*\0price\";d:1487.85;}}}s:11:\"\0*\0taxRules\";r:65;s:17:\"\0*\0referencePrice\";N;s:12:\"\0*\0listPrice\";N;s:18:\"\0*\0regulationPrice\";N;}s:7:\"\0*\0good\";b:1;s:14:\"\0*\0description\";N;s:8:\"\0*\0cover\";O:39:\"Shopware\\Core\\Content\\Media\\MediaEntity\":53:{s:13:\"\0*\0extensions\";a:2:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:28:\"media_foreign_keys_extension\";}s:24:\"internal_mapping_storage\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";N;}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:3:{s:3:\"alt\";N;s:5:\"title\";N;s:12:\"customFields\";a:0:{}}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:39.374000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:39.482000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:5:\"media\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";O:60:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\":1:{s:80:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\0internalProperties\";a:2:{i:0;s:12:\"mediaTypeRaw\";i:1;s:12:\"thumbnailsRo\";}}s:9:\"\0*\0userId\";s:32:\"0191fb2ed2e47212bc8e84acec54e4c9\";s:11:\"\0*\0mimeType\";s:9:\"image/png\";s:16:\"\0*\0fileExtension\";s:3:\"png\";s:11:\"\0*\0fileSize\";i:1260102;s:8:\"\0*\0title\";N;s:14:\"\0*\0metaDataRaw\";N;s:15:\"\0*\0mediaTypeRaw\";s:156:\"O:47:\"Shopware\\Core\\Content\\Media\\MediaType\\ImageType\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0name\";s:5:\"IMAGE\";s:8:\"\0*\0flags\";a:1:{i:0;s:11:\"transparent\";}}\";s:11:\"\0*\0metaData\";a:4:{s:5:\"width\";i:1280;s:6:\"height\";i:1280;s:4:\"type\";i:3;s:4:\"hash\";s:32:\"943d98947b321fac917e57704496c282\";}s:12:\"\0*\0mediaType\";O:47:\"Shopware\\Core\\Content\\Media\\MediaType\\ImageType\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0name\";s:5:\"IMAGE\";s:8:\"\0*\0flags\";a:1:{i:0;s:11:\"transparent\";}}s:13:\"\0*\0uploadedAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:39.480000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:6:\"\0*\0alt\";N;s:6:\"\0*\0url\";s:160:\"https://tecsafe-sw6-plugin.ddev.site:33001/media/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO.png?ts=1726743459\";s:11:\"\0*\0fileName\";s:73:\"TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO\";s:7:\"\0*\0user\";N;s:15:\"\0*\0translations\";N;s:13:\"\0*\0categories\";N;s:23:\"\0*\0productManufacturers\";N;s:15:\"\0*\0productMedia\";N;s:14:\"\0*\0avatarUsers\";N;s:13:\"\0*\0thumbnails\";O:77:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:4:{s:32:\"019209ee4cfd71d3a5c08cb207b08191\";O:73:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailEntity\":16:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:38:\"media_thumbnail_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee4cfd71d3a5c08cb207b08191\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:0:{}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:45.215000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:15:\"media_thumbnail\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";O:60:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\":1:{s:80:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\0internalProperties\";a:0:{}}s:8:\"\0*\0width\";i:400;s:7:\"\0*\0path\";s:115:\"thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_400x400.png\";s:9:\"\0*\0height\";i:400;s:6:\"\0*\0url\";s:172:\"https://tecsafe-sw6-plugin.ddev.site:33001/thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_400x400.png?ts=1726743465\";s:10:\"\0*\0mediaId\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:8:\"\0*\0media\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee4cfd71d3a5c08cb207b08191\";}s:32:\"019209ee4cfd71d3a5c08cb208b032c3\";O:73:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailEntity\":16:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:38:\"media_thumbnail_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee4cfd71d3a5c08cb208b032c3\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:0:{}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:45.215000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:15:\"media_thumbnail\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";r:170;s:8:\"\0*\0width\";i:800;s:7:\"\0*\0path\";s:115:\"thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_800x800.png\";s:9:\"\0*\0height\";i:800;s:6:\"\0*\0url\";s:172:\"https://tecsafe-sw6-plugin.ddev.site:33001/thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_800x800.png?ts=1726743465\";s:10:\"\0*\0mediaId\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:8:\"\0*\0media\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee4cfd71d3a5c08cb208b032c3\";}s:32:\"019209ee4cfd71d3a5c08cb20904db63\";O:73:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailEntity\":16:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:38:\"media_thumbnail_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee4cfd71d3a5c08cb20904db63\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:0:{}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:45.215000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:15:\"media_thumbnail\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";r:170;s:8:\"\0*\0width\";i:1920;s:7:\"\0*\0path\";s:117:\"thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_1920x1920.png\";s:9:\"\0*\0height\";i:1920;s:6:\"\0*\0url\";s:174:\"https://tecsafe-sw6-plugin.ddev.site:33001/thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_1920x1920.png?ts=1726743465\";s:10:\"\0*\0mediaId\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:8:\"\0*\0media\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee4cfd71d3a5c08cb20904db63\";}s:32:\"019209ee4cfd71d3a5c08cb209e233b5\";O:73:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailEntity\":16:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:38:\"media_thumbnail_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee4cfd71d3a5c08cb209e233b5\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:0:{}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:45.216000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:15:\"media_thumbnail\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";r:170;s:8:\"\0*\0width\";i:280;s:7:\"\0*\0path\";s:115:\"thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_280x280.png\";s:9:\"\0*\0height\";i:280;s:6:\"\0*\0url\";s:172:\"https://tecsafe-sw6-plugin.ddev.site:33001/thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_280x280.png?ts=1726743465\";s:10:\"\0*\0mediaId\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:8:\"\0*\0media\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee4cfd71d3a5c08cb209e233b5\";}}}s:16:\"\0*\0mediaFolderId\";s:32:\"0191fb2e512c7395a49385cae05fee79\";s:14:\"\0*\0mediaFolder\";N;s:10:\"\0*\0hasFile\";b:0;s:10:\"\0*\0private\";b:0;s:23:\"\0*\0propertyGroupOptions\";N;s:20:\"\0*\0mailTemplateMedia\";N;s:7:\"\0*\0tags\";N;s:15:\"\0*\0thumbnailsRo\";s:0:\"\";s:7:\"\0*\0path\";s:103:\"media/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO.png\";s:22:\"\0*\0documentBaseConfigs\";N;s:18:\"\0*\0shippingMethods\";N;s:17:\"\0*\0paymentMethods\";N;s:30:\"\0*\0productConfiguratorSettings\";N;s:17:\"\0*\0orderLineItems\";N;s:12:\"\0*\0cmsBlocks\";N;s:14:\"\0*\0cmsSections\";N;s:11:\"\0*\0cmsPages\";N;s:12:\"\0*\0documents\";N;s:20:\"\0*\0appPaymentMethods\";N;s:21:\"\0*\0appShippingMethods\";N;s:19:\"\0*\0productDownloads\";N;s:25:\"\0*\0orderLineItemDownloads\";N;s:9:\"\0*\0config\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee3602704e919b55ce831b43b5\";}s:22:\"\0*\0deliveryInformation\";O:63:\"Shopware\\Core\\Checkout\\Cart\\Delivery\\Struct\\DeliveryInformation\":9:{s:13:\"\0*\0extensions\";a:0:{}s:8:\"\0*\0stock\";i:10;s:9:\"\0*\0weight\";d:0.17;s:15:\"\0*\0freeDelivery\";b:0;s:14:\"\0*\0restockTime\";N;s:15:\"\0*\0deliveryTime\";N;s:9:\"\0*\0height\";N;s:8:\"\0*\0width\";N;s:9:\"\0*\0length\";N;}s:11:\"\0*\0children\";O:55:\"Shopware\\Core\\Checkout\\Cart\\LineItem\\LineItemCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:0:{}}s:14:\"\0*\0requirement\";N;s:12:\"\0*\0removable\";b:1;s:12:\"\0*\0stackable\";b:1;s:22:\"\0*\0quantityInformation\";O:56:\"Shopware\\Core\\Checkout\\Cart\\LineItem\\QuantityInformation\":4:{s:13:\"\0*\0extensions\";a:0:{}s:14:\"\0*\0minPurchase\";i:1;s:14:\"\0*\0maxPurchase\";i:100;s:16:\"\0*\0purchaseSteps\";i:1;}s:11:\"\0*\0modified\";b:0;s:16:\"\0*\0dataTimestamp\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2025-03-27 08:23:11.545471\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:18:\"\0*\0dataContextHash\";s:32:\"65c3e9c0357cd311efb66596396aed1b\";s:19:\"\0*\0uniqueIdentifier\";s:32:\"0195cc60856a7213a459a38120b5a962\";s:9:\"\0*\0states\";a:1:{i:0;s:11:\"is-physical\";}s:16:\"\0*\0modifiedByApp\";b:0;s:64:\"\0Shopware\\Core\\Checkout\\Cart\\LineItem\\LineItem\0payloadProtection\";a:2:{s:14:\"purchasePrices\";b:1;s:12:\"customFields\";b:0;}s:5:\"\0*\0id\";s:32:\"0191fb7d78e570a2b2923bfc87ccae78\";s:7:\"\0*\0type\";s:7:\"product\";s:15:\"\0*\0referencedId\";s:32:\"0191fb7d78e570a2b2923bfc87ccae78\";}}}s:9:\"\0*\0errors\";O:49:\"Shopware\\Core\\Checkout\\Cart\\Error\\ErrorCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:0:{}}s:13:\"\0*\0deliveries\";O:62:\"Shopware\\Core\\Checkout\\Cart\\Delivery\\Struct\\DeliveryCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:0;O:52:\"Shopware\\Core\\Checkout\\Cart\\Delivery\\Struct\\Delivery\":6:{s:13:\"\0*\0extensions\";a:0:{}s:12:\"\0*\0positions\";O:70:\"Shopware\\Core\\Checkout\\Cart\\Delivery\\Struct\\DeliveryPositionCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{s:32:\"0191fb7d78e570a2b2923bfc87ccae78\";O:60:\"Shopware\\Core\\Checkout\\Cart\\Delivery\\Struct\\DeliveryPosition\":6:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0lineItem\";O:45:\"Shopware\\Core\\Checkout\\Cart\\LineItem\\LineItem\":25:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0payload\";a:19:{s:10:\"isCloseout\";b:0;s:12:\"customFields\";a:0:{}s:9:\"createdAt\";s:23:\"2024-09-16 15:39:49.874\";s:11:\"releaseDate\";s:23:\"2024-09-16 15:31:29.561\";s:5:\"isNew\";b:0;s:15:\"markAsTopseller\";b:0;s:14:\"purchasePrices\";s:155:\"{\"extensions\":[],\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"net\":0,\"gross\":0,\"linked\":true,\"listPrice\":null,\"percentage\":null,\"regulationPrice\":null}\";s:13:\"productNumber\";s:7:\"SW10002\";s:14:\"manufacturerId\";s:32:\"cc1c20c365d34cfb88bfab3c3e81d350\";s:5:\"taxId\";s:32:\"0191fb2e5125724199448d8bbb92a6a5\";s:6:\"tagIds\";N;s:11:\"categoryIds\";a:2:{i:0;s:32:\"0191fb2e5125724199448d8bbc76e575\";i:1;s:32:\"251448b91bc742de85643f5fccd89051\";}s:11:\"propertyIds\";a:4:{i:0;s:32:\"6f9359239c994b48b7de282ee19a714d\";i:1;s:32:\"78c53f3f6dd14eb4927978415bfb74db\";i:2;s:32:\"7cab88165ae5420f921232511b6e8f7d\";i:3;s:32:\"dc6f98beeca44852beb078a9e8e21e7d\";}s:9:\"optionIds\";N;s:7:\"options\";a:0:{}s:9:\"streamIds\";N;s:8:\"parentId\";N;s:5:\"stock\";i:10;s:8:\"features\";a:0:{}}s:8:\"\0*\0label\";s:24:\"Hauptartikel mit Tecsafe\";s:11:\"\0*\0quantity\";i:3;s:18:\"\0*\0priceDefinition\";O:64:\"Shopware\\Core\\Checkout\\Cart\\Price\\Struct\\QuantityPriceDefinition\":8:{s:13:\"\0*\0extensions\";a:0:{}s:8:\"\0*\0price\";d:495.95;s:11:\"\0*\0taxRules\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRuleCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:46:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRule\":3:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0taxRate\";d:19;s:13:\"\0*\0percentage\";d:100;}}}s:11:\"\0*\0quantity\";i:3;s:15:\"\0*\0isCalculated\";b:1;s:27:\"\0*\0referencePriceDefinition\";N;s:12:\"\0*\0listPrice\";N;s:18:\"\0*\0regulationPrice\";N;}s:8:\"\0*\0price\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Price\\Struct\\CalculatedPrice\":9:{s:13:\"\0*\0extensions\";a:0:{}s:12:\"\0*\0unitPrice\";d:495.95;s:11:\"\0*\0quantity\";i:3;s:13:\"\0*\0totalPrice\";d:1487.85;s:18:\"\0*\0calculatedTaxes\";O:62:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTaxCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:52:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTax\":4:{s:13:\"\0*\0extensions\";a:0:{}s:6:\"\0*\0tax\";d:237.56;s:10:\"\0*\0taxRate\";d:19;s:8:\"\0*\0price\";d:1487.85;}}}s:11:\"\0*\0taxRules\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRuleCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:46:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRule\":3:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0taxRate\";d:19;s:13:\"\0*\0percentage\";d:100;}}}s:17:\"\0*\0referencePrice\";N;s:12:\"\0*\0listPrice\";N;s:18:\"\0*\0regulationPrice\";N;}s:7:\"\0*\0good\";b:1;s:14:\"\0*\0description\";N;s:8:\"\0*\0cover\";O:39:\"Shopware\\Core\\Content\\Media\\MediaEntity\":53:{s:13:\"\0*\0extensions\";a:2:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:28:\"media_foreign_keys_extension\";}s:24:\"internal_mapping_storage\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";N;}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:3:{s:3:\"alt\";N;s:5:\"title\";N;s:12:\"customFields\";a:0:{}}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:39.374000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:39.482000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:5:\"media\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";r:118;s:9:\"\0*\0userId\";s:32:\"0191fb2ed2e47212bc8e84acec54e4c9\";s:11:\"\0*\0mimeType\";s:9:\"image/png\";s:16:\"\0*\0fileExtension\";s:3:\"png\";s:11:\"\0*\0fileSize\";i:1260102;s:8:\"\0*\0title\";N;s:14:\"\0*\0metaDataRaw\";N;s:15:\"\0*\0mediaTypeRaw\";s:156:\"O:47:\"Shopware\\Core\\Content\\Media\\MediaType\\ImageType\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0name\";s:5:\"IMAGE\";s:8:\"\0*\0flags\";a:1:{i:0;s:11:\"transparent\";}}\";s:11:\"\0*\0metaData\";a:4:{s:5:\"width\";i:1280;s:6:\"height\";i:1280;s:4:\"type\";i:3;s:4:\"hash\";s:32:\"943d98947b321fac917e57704496c282\";}s:12:\"\0*\0mediaType\";O:47:\"Shopware\\Core\\Content\\Media\\MediaType\\ImageType\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0name\";s:5:\"IMAGE\";s:8:\"\0*\0flags\";a:1:{i:0;s:11:\"transparent\";}}s:13:\"\0*\0uploadedAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:39.480000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:6:\"\0*\0alt\";N;s:6:\"\0*\0url\";s:160:\"https://tecsafe-sw6-plugin.ddev.site:33001/media/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO.png?ts=1726743459\";s:11:\"\0*\0fileName\";s:73:\"TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO\";s:7:\"\0*\0user\";N;s:15:\"\0*\0translations\";N;s:13:\"\0*\0categories\";N;s:23:\"\0*\0productManufacturers\";N;s:15:\"\0*\0productMedia\";N;s:14:\"\0*\0avatarUsers\";N;s:13:\"\0*\0thumbnails\";O:77:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:4:{s:32:\"019209ee4cfd71d3a5c08cb207b08191\";O:73:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailEntity\":16:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:38:\"media_thumbnail_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee4cfd71d3a5c08cb207b08191\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:0:{}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:45.215000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:15:\"media_thumbnail\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";r:170;s:8:\"\0*\0width\";i:400;s:7:\"\0*\0path\";s:115:\"thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_400x400.png\";s:9:\"\0*\0height\";i:400;s:6:\"\0*\0url\";s:172:\"https://tecsafe-sw6-plugin.ddev.site:33001/thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_400x400.png?ts=1726743465\";s:10:\"\0*\0mediaId\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:8:\"\0*\0media\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee4cfd71d3a5c08cb207b08191\";}s:32:\"019209ee4cfd71d3a5c08cb208b032c3\";O:73:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailEntity\":16:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:38:\"media_thumbnail_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee4cfd71d3a5c08cb208b032c3\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:0:{}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:45.215000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:15:\"media_thumbnail\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";r:170;s:8:\"\0*\0width\";i:800;s:7:\"\0*\0path\";s:115:\"thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_800x800.png\";s:9:\"\0*\0height\";i:800;s:6:\"\0*\0url\";s:172:\"https://tecsafe-sw6-plugin.ddev.site:33001/thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_800x800.png?ts=1726743465\";s:10:\"\0*\0mediaId\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:8:\"\0*\0media\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee4cfd71d3a5c08cb208b032c3\";}s:32:\"019209ee4cfd71d3a5c08cb20904db63\";O:73:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailEntity\":16:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:38:\"media_thumbnail_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee4cfd71d3a5c08cb20904db63\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:0:{}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:45.215000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:15:\"media_thumbnail\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";r:170;s:8:\"\0*\0width\";i:1920;s:7:\"\0*\0path\";s:117:\"thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_1920x1920.png\";s:9:\"\0*\0height\";i:1920;s:6:\"\0*\0url\";s:174:\"https://tecsafe-sw6-plugin.ddev.site:33001/thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_1920x1920.png?ts=1726743465\";s:10:\"\0*\0mediaId\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:8:\"\0*\0media\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee4cfd71d3a5c08cb20904db63\";}s:32:\"019209ee4cfd71d3a5c08cb209e233b5\";O:73:\"Shopware\\Core\\Content\\Media\\Aggregate\\MediaThumbnail\\MediaThumbnailEntity\":16:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:38:\"media_thumbnail_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"019209ee4cfd71d3a5c08cb209e233b5\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:0:{}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-19 10:57:45.216000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:15:\"media_thumbnail\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";r:170;s:8:\"\0*\0width\";i:280;s:7:\"\0*\0path\";s:115:\"thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_280x280.png\";s:9:\"\0*\0height\";i:280;s:6:\"\0*\0url\";s:172:\"https://tecsafe-sw6-plugin.ddev.site:33001/thumbnail/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO_280x280.png?ts=1726743465\";s:10:\"\0*\0mediaId\";s:32:\"019209ee3602704e919b55ce831b43b5\";s:8:\"\0*\0media\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee4cfd71d3a5c08cb209e233b5\";}}}s:16:\"\0*\0mediaFolderId\";s:32:\"0191fb2e512c7395a49385cae05fee79\";s:14:\"\0*\0mediaFolder\";N;s:10:\"\0*\0hasFile\";b:0;s:10:\"\0*\0private\";b:0;s:23:\"\0*\0propertyGroupOptions\";N;s:20:\"\0*\0mailTemplateMedia\";N;s:7:\"\0*\0tags\";N;s:15:\"\0*\0thumbnailsRo\";s:0:\"\";s:7:\"\0*\0path\";s:103:\"media/f8/01/87/1726743459/TECsafe_Bildmaterial_Konfigurator_Schaum-schraeg-mit_schwarz0pC91QD9XB3IO.png\";s:22:\"\0*\0documentBaseConfigs\";N;s:18:\"\0*\0shippingMethods\";N;s:17:\"\0*\0paymentMethods\";N;s:30:\"\0*\0productConfiguratorSettings\";N;s:17:\"\0*\0orderLineItems\";N;s:12:\"\0*\0cmsBlocks\";N;s:14:\"\0*\0cmsSections\";N;s:11:\"\0*\0cmsPages\";N;s:12:\"\0*\0documents\";N;s:20:\"\0*\0appPaymentMethods\";N;s:21:\"\0*\0appShippingMethods\";N;s:19:\"\0*\0productDownloads\";N;s:25:\"\0*\0orderLineItemDownloads\";N;s:9:\"\0*\0config\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"019209ee3602704e919b55ce831b43b5\";}s:22:\"\0*\0deliveryInformation\";O:63:\"Shopware\\Core\\Checkout\\Cart\\Delivery\\Struct\\DeliveryInformation\":9:{s:13:\"\0*\0extensions\";a:0:{}s:8:\"\0*\0stock\";i:10;s:9:\"\0*\0weight\";d:0.17;s:15:\"\0*\0freeDelivery\";b:0;s:14:\"\0*\0restockTime\";N;s:15:\"\0*\0deliveryTime\";N;s:9:\"\0*\0height\";N;s:8:\"\0*\0width\";N;s:9:\"\0*\0length\";N;}s:11:\"\0*\0children\";O:55:\"Shopware\\Core\\Checkout\\Cart\\LineItem\\LineItemCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:0:{}}s:14:\"\0*\0requirement\";N;s:12:\"\0*\0removable\";b:1;s:12:\"\0*\0stackable\";b:1;s:22:\"\0*\0quantityInformation\";O:56:\"Shopware\\Core\\Checkout\\Cart\\LineItem\\QuantityInformation\":4:{s:13:\"\0*\0extensions\";a:0:{}s:14:\"\0*\0minPurchase\";i:1;s:14:\"\0*\0maxPurchase\";i:100;s:16:\"\0*\0purchaseSteps\";i:1;}s:11:\"\0*\0modified\";b:0;s:16:\"\0*\0dataTimestamp\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2025-03-27 08:23:11.545471\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:18:\"\0*\0dataContextHash\";s:32:\"65c3e9c0357cd311efb66596396aed1b\";s:19:\"\0*\0uniqueIdentifier\";s:32:\"0195cc60856a7213a459a38120b5a962\";s:9:\"\0*\0states\";a:1:{i:0;s:11:\"is-physical\";}s:16:\"\0*\0modifiedByApp\";b:0;s:64:\"\0Shopware\\Core\\Checkout\\Cart\\LineItem\\LineItem\0payloadProtection\";a:2:{s:14:\"purchasePrices\";b:1;s:12:\"customFields\";b:0;}s:5:\"\0*\0id\";s:32:\"0191fb7d78e570a2b2923bfc87ccae78\";s:7:\"\0*\0type\";s:7:\"product\";s:15:\"\0*\0referencedId\";s:32:\"0191fb7d78e570a2b2923bfc87ccae78\";}s:11:\"\0*\0quantity\";i:3;s:8:\"\0*\0price\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Price\\Struct\\CalculatedPrice\":9:{s:13:\"\0*\0extensions\";a:0:{}s:12:\"\0*\0unitPrice\";d:495.95;s:11:\"\0*\0quantity\";i:3;s:13:\"\0*\0totalPrice\";d:1487.85;s:18:\"\0*\0calculatedTaxes\";O:62:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTaxCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:52:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTax\":4:{s:13:\"\0*\0extensions\";a:0:{}s:6:\"\0*\0tax\";d:237.56;s:10:\"\0*\0taxRate\";d:19;s:8:\"\0*\0price\";d:1487.85;}}}s:11:\"\0*\0taxRules\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRuleCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:46:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRule\":3:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0taxRate\";d:19;s:13:\"\0*\0percentage\";d:100;}}}s:17:\"\0*\0referencePrice\";N;s:12:\"\0*\0listPrice\";N;s:18:\"\0*\0regulationPrice\";N;}s:13:\"\0*\0identifier\";s:32:\"0191fb7d78e570a2b2923bfc87ccae78\";s:15:\"\0*\0deliveryDate\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Delivery\\Struct\\DeliveryDate\":3:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0earliest\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2025-03-28 16:00:00.000000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:9:\"\0*\0latest\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2025-03-30 16:00:00.000000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}}}}}s:11:\"\0*\0location\";O:60:\"Shopware\\Core\\Checkout\\Cart\\Delivery\\Struct\\ShippingLocation\":4:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0country\";O:42:\"Shopware\\Core\\System\\Country\\CountryEntity\":38:{s:13:\"\0*\0extensions\";a:2:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:30:\"country_foreign_keys_extension\";}s:24:\"internal_mapping_storage\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";N;}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"0191fb2e510270b796b27f002fd9613a\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:3:{s:4:\"name\";s:11:\"Deutschland\";s:12:\"customFields\";a:0:{}s:13:\"addressFormat\";a:5:{i:0;a:3:{i:0;s:15:\"address/company\";i:1;s:11:\"symbol/dash\";i:2;s:18:\"address/department\";}i:1;a:2:{i:0;s:18:\"address/first_name\";i:1;s:17:\"address/last_name\";}i:2;a:1:{i:0;s:14:\"address/street\";}i:3;a:2:{i:0;s:15:\"address/zipcode\";i:1;s:12:\"address/city\";}i:4;a:1:{i:0;s:15:\"address/country\";}}}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-16 14:13:22.306000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:7:\"country\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";O:60:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\":1:{s:80:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\0internalProperties\";a:0:{}}s:7:\"\0*\0name\";s:11:\"Deutschland\";s:6:\"\0*\0iso\";s:2:\"DE\";s:11:\"\0*\0position\";i:1;s:9:\"\0*\0active\";b:1;s:20:\"\0*\0shippingAvailable\";b:1;s:7:\"\0*\0iso3\";s:3:\"DEU\";s:29:\"\0*\0displayStateInRegistration\";b:0;s:27:\"\0*\0forceStateInRegistration\";b:0;s:20:\"\0*\0checkVatIdPattern\";b:0;s:15:\"\0*\0vatIdPattern\";s:13:\"(DE)?[0-9]{9}\";s:16:\"\0*\0vatIdRequired\";b:0;s:14:\"\0*\0customerTax\";O:58:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\TaxFreeConfig\":4:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0enabled\";b:0;s:13:\"\0*\0currencyId\";s:32:\"b7d2554b0ce847cd82f3ac9bd1c0dfca\";s:9:\"\0*\0amount\";d:0;}s:13:\"\0*\0companyTax\";O:58:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\TaxFreeConfig\":4:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0enabled\";b:0;s:13:\"\0*\0currencyId\";s:32:\"b7d2554b0ce847cd82f3ac9bd1c0dfca\";s:9:\"\0*\0amount\";d:0;}s:9:\"\0*\0states\";N;s:15:\"\0*\0translations\";N;s:17:\"\0*\0orderAddresses\";N;s:20:\"\0*\0customerAddresses\";N;s:33:\"\0*\0salesChannelDefaultAssignments\";N;s:16:\"\0*\0salesChannels\";N;s:11:\"\0*\0taxRules\";N;s:27:\"\0*\0currencyCountryRoundings\";N;s:21:\"\0*\0postalCodeRequired\";b:0;s:7:\"\0*\0isEu\";b:1;s:25:\"\0*\0checkPostalCodePattern\";b:0;s:33:\"\0*\0checkAdvancedPostalCodePattern\";b:0;s:28:\"\0*\0advancedPostalCodePattern\";N;s:27:\"\0*\0defaultPostalCodePattern\";s:5:\"\\d{5}\";s:16:\"\0*\0addressFormat\";a:5:{i:0;a:3:{i:0;s:15:\"address/company\";i:1;s:11:\"symbol/dash\";i:2;s:18:\"address/department\";}i:1;a:2:{i:0;s:18:\"address/first_name\";i:1;s:17:\"address/last_name\";}i:2;a:1:{i:0;s:14:\"address/street\";}i:3;a:2:{i:0;s:15:\"address/zipcode\";i:1;s:12:\"address/city\";}i:4;a:1:{i:0;s:15:\"address/country\";}}s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"0191fb2e510270b796b27f002fd9613a\";}s:8:\"\0*\0state\";N;s:10:\"\0*\0address\";O:79:\"Shopware\\Core\\Checkout\\Customer\\Aggregate\\CustomerAddress\\CustomerAddressEntity\":29:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:39:\"customer_address_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"0195cc605f6f7333bb6a22872fb1903b\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:0:{}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2025-03-25 08:17:02.885000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:16:\"customer_address\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";O:60:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\":1:{s:80:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\0internalProperties\";a:0:{}}s:13:\"\0*\0customerId\";s:32:\"0195cc605f6f7333bb6a22872f4ba2e3\";s:12:\"\0*\0countryId\";s:32:\"0191fb2e510270b796b27f002fd9613a\";s:17:\"\0*\0countryStateId\";N;s:15:\"\0*\0salutationId\";s:32:\"0191fb2e510270b796b27f002e149c31\";s:12:\"\0*\0firstName\";s:4:\"Test\";s:11:\"\0*\0lastName\";s:5:\"madco\";s:10:\"\0*\0zipcode\";s:5:\"66121\";s:7:\"\0*\0city\";s:11:\"Sarbr√ºcken\";s:10:\"\0*\0company\";N;s:13:\"\0*\0department\";N;s:8:\"\0*\0title\";N;s:9:\"\0*\0street\";s:11:\"Teststra√üe\";s:14:\"\0*\0phoneNumber\";N;s:25:\"\0*\0additionalAddressLine1\";N;s:25:\"\0*\0additionalAddressLine2\";N;s:10:\"\0*\0country\";r:651;s:15:\"\0*\0countryState\";N;s:13:\"\0*\0salutation\";O:48:\"Shopware\\Core\\System\\Salutation\\SalutationEntity\":19:{s:13:\"\0*\0extensions\";a:2:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:33:\"salutation_foreign_keys_extension\";}s:24:\"internal_mapping_storage\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";N;}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"0191fb2e510270b796b27f002e149c31\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:3:{s:11:\"displayName\";s:4:\"Frau\";s:10:\"letterName\";s:17:\"Sehr geehrte Frau\";s:12:\"customFields\";a:0:{}}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-16 14:13:22.306000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:10:\"salutation\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";O:60:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\":1:{s:80:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\0internalProperties\";a:0:{}}s:16:\"\0*\0salutationKey\";s:3:\"mrs\";s:14:\"\0*\0displayName\";s:4:\"Frau\";s:13:\"\0*\0letterName\";s:17:\"Sehr geehrte Frau\";s:15:\"\0*\0translations\";N;s:12:\"\0*\0customers\";N;s:20:\"\0*\0customerAddresses\";N;s:17:\"\0*\0orderCustomers\";N;s:17:\"\0*\0orderAddresses\";N;s:23:\"\0*\0newsletterRecipients\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"0191fb2e510270b796b27f002e149c31\";}s:11:\"\0*\0customer\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"0195cc605f6f7333bb6a22872fb1903b\";}}s:15:\"\0*\0deliveryDate\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Delivery\\Struct\\DeliveryDate\":3:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0earliest\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2025-03-28 16:00:00.000000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:9:\"\0*\0latest\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2025-03-30 16:00:00.000000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}}s:17:\"\0*\0shippingMethod\";O:52:\"Shopware\\Core\\Checkout\\Shipping\\ShippingMethodEntity\":32:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:38:\"shipping_method_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"0191fb2e5124722d8eb68aed7825002b\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:4:{s:4:\"name\";s:8:\"Standard\";s:12:\"customFields\";a:0:{}s:11:\"description\";N;s:11:\"trackingUrl\";N;}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-16 14:13:22.340000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-16 15:31:29.691000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:15:\"shipping_method\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";O:60:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\":1:{s:80:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\0internalProperties\";a:0:{}}s:7:\"\0*\0name\";s:8:\"Standard\";s:9:\"\0*\0active\";b:1;s:11:\"\0*\0position\";i:1;s:14:\"\0*\0description\";N;s:14:\"\0*\0trackingUrl\";N;s:17:\"\0*\0deliveryTimeId\";s:32:\"0191fb2e5123719d8859106e88ac8487\";s:15:\"\0*\0deliveryTime\";O:52:\"Shopware\\Core\\System\\DeliveryTime\\DeliveryTimeEntity\":17:{s:13:\"\0*\0extensions\";a:2:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:36:\"delivery_time_foreign_keys_extension\";}s:24:\"internal_mapping_storage\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";N;}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"0191fb2e5123719d8859106e88ac8487\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:2:{s:4:\"name\";s:8:\"1-3 Tage\";s:12:\"customFields\";a:0:{}}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-16 14:13:22.000000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:13:\"delivery_time\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";O:60:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\":1:{s:80:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\0internalProperties\";a:0:{}}s:7:\"\0*\0name\";s:8:\"1-3 Tage\";s:6:\"\0*\0min\";i:1;s:6:\"\0*\0max\";i:3;s:7:\"\0*\0unit\";s:3:\"day\";s:18:\"\0*\0shippingMethods\";N;s:15:\"\0*\0translations\";N;s:11:\"\0*\0products\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"0191fb2e5123719d8859106e88ac8487\";}s:15:\"\0*\0translations\";N;s:18:\"\0*\0orderDeliveries\";N;s:33:\"\0*\0salesChannelDefaultAssignments\";N;s:16:\"\0*\0salesChannels\";N;s:19:\"\0*\0availabilityRule\";N;s:21:\"\0*\0availabilityRuleId\";s:32:\"0191fb2e512273c78c25658a13d3a51b\";s:9:\"\0*\0prices\";O:91:\"Shopware\\Core\\Checkout\\Shipping\\Aggregate\\ShippingMethodPrice\\ShippingMethodPriceCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{s:32:\"0191fb2e5125724199448d8bbaa106ce\";O:87:\"Shopware\\Core\\Checkout\\Shipping\\Aggregate\\ShippingMethodPrice\\ShippingMethodPriceEntity\":20:{s:13:\"\0*\0extensions\";a:1:{s:11:\"foreignKeys\";O:42:\"Shopware\\Core\\Framework\\Struct\\ArrayStruct\":3:{s:13:\"\0*\0extensions\";a:0:{}s:7:\"\0*\0data\";a:0:{}s:11:\"\0*\0apiAlias\";s:44:\"shipping_method_price_foreign_keys_extension\";}}s:20:\"\0*\0_uniqueIdentifier\";s:32:\"0191fb2e5125724199448d8bbaa106ce\";s:12:\"\0*\0versionId\";N;s:13:\"\0*\0translated\";a:0:{}s:12:\"\0*\0createdAt\";O:17:\"DateTimeImmutable\":3:{s:4:\"date\";s:26:\"2024-09-16 14:13:22.341000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:3:\"UTC\";}s:12:\"\0*\0updatedAt\";N;s:64:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_entityName\";s:21:\"shipping_method_price\";s:69:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\Entity\0_fieldVisibility\";O:60:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\":1:{s:80:\"\0Shopware\\Core\\Framework\\DataAbstractionLayer\\FieldVisibility\0internalProperties\";a:0:{}}s:19:\"\0*\0shippingMethodId\";s:32:\"0191fb2e5124722d8eb68aed7825002b\";s:9:\"\0*\0ruleId\";N;s:14:\"\0*\0calculation\";i:1;s:16:\"\0*\0quantityStart\";d:0;s:14:\"\0*\0quantityEnd\";N;s:17:\"\0*\0shippingMethod\";N;s:7:\"\0*\0rule\";N;s:20:\"\0*\0calculationRuleId\";N;s:18:\"\0*\0calculationRule\";N;s:16:\"\0*\0currencyPrice\";O:68:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\Pricing\\PriceCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{s:32:\"b7d2554b0ce847cd82f3ac9bd1c0dfca\";O:58:\"Shopware\\Core\\Framework\\DataAbstractionLayer\\Pricing\\Price\":8:{s:13:\"\0*\0extensions\";a:0:{}s:13:\"\0*\0currencyId\";s:32:\"b7d2554b0ce847cd82f3ac9bd1c0dfca\";s:6:\"\0*\0net\";d:0;s:8:\"\0*\0gross\";d:0;s:9:\"\0*\0linked\";b:0;s:12:\"\0*\0listPrice\";N;s:13:\"\0*\0percentage\";N;s:18:\"\0*\0regulationPrice\";N;}}}s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"0191fb2e5125724199448d8bbaa106ce\";}}}s:10:\"\0*\0mediaId\";N;s:8:\"\0*\0taxId\";N;s:8:\"\0*\0media\";N;s:7:\"\0*\0tags\";N;s:10:\"\0*\0taxType\";s:4:\"auto\";s:16:\"\0*\0technicalName\";s:17:\"shipping_standard\";s:6:\"\0*\0tax\";N;s:20:\"\0*\0appShippingMethod\";N;s:15:\"\0*\0customFields\";N;s:5:\"\0*\0id\";s:32:\"0191fb2e5124722d8eb68aed7825002b\";}s:16:\"\0*\0shippingCosts\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Price\\Struct\\CalculatedPrice\":9:{s:13:\"\0*\0extensions\";a:0:{}s:12:\"\0*\0unitPrice\";d:0;s:11:\"\0*\0quantity\";i:1;s:13:\"\0*\0totalPrice\";d:0;s:18:\"\0*\0calculatedTaxes\";O:62:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTaxCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:52:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\CalculatedTax\":4:{s:13:\"\0*\0extensions\";a:0:{}s:6:\"\0*\0tax\";d:0;s:10:\"\0*\0taxRate\";d:19;s:8:\"\0*\0price\";d:0;}}}s:11:\"\0*\0taxRules\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRuleCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:19;O:46:\"Shopware\\Core\\Checkout\\Cart\\Tax\\Struct\\TaxRule\":3:{s:13:\"\0*\0extensions\";a:0:{}s:10:\"\0*\0taxRate\";d:19;s:13:\"\0*\0percentage\";d:100;}}}s:17:\"\0*\0referencePrice\";N;s:12:\"\0*\0listPrice\";N;s:18:\"\0*\0regulationPrice\";N;}}}}s:15:\"\0*\0transactions\";O:68:\"Shopware\\Core\\Checkout\\Cart\\Transaction\\Struct\\TransactionCollection\":2:{s:13:\"\0*\0extensions\";a:0:{}s:11:\"\0*\0elements\";a:1:{i:0;O:58:\"Shopware\\Core\\Checkout\\Cart\\Transaction\\Struct\\Transaction\":4:{s:13:\"\0*\0extensions\";a:0:{}s:9:\"\0*\0amount\";O:56:\"Shopware\\Core\\Checkout\\Cart\\Price\\Struct\\CalculatedPrice\":9:{s:13:\"\0*\0extensions\";a:0:{}s:12:\"\0*\0unitPrice\";d:1487.85;s:11:\"\0*\0quantity\";i:1;s:13:\"\0*\0totalPrice\";d:1487.85;s:18:\"\0*\0calculatedTaxes\";r:11;s:11:\"\0*\0taxRules\";r:19;s:17:\"\0*\0referencePrice\";N;s:12:\"\0*\0listPrice\";N;s:18:\"\0*\0regulationPrice\";N;}s:18:\"\0*\0paymentMethodId\";s:32:\"0191fb2e512273c78c25658a14e24422\";s:19:\"\0*\0validationStruct\";N;}}}s:11:\"\0*\0modified\";b:0;s:18:\"\0*\0customerComment\";N;s:16:\"\0*\0affiliateCode\";N;s:15:\"\0*\0campaignCode\";N;s:9:\"\0*\0source\";N;s:7:\"\0*\0hash\";N;s:38:\"\0Shopware\\Core\\Checkout\\Cart\\Cart\0data\";N;s:41:\"\0Shopware\\Core\\Checkout\\Cart\\Cart\0ruleIds\";a:7:{i:0;s:32:\"0191fb2e512273c78c25658a13d3a51b\";i:1;s:32:\"0191fb2e5124722d8eb68aed794651ea\";i:2;s:32:\"0191fb2e56c772a596a0fdc113c10bad\";i:3;s:32:\"3858957016644de4ae48c0500bf3ccc8\";i:4;s:32:\"e1378db7808a478f919e0d740d5d6c1a\";i:5;s:32:\"0191fb2e512c7395a49385cae3fa5592\";i:6;s:32:\"28caae75a5624f0d985abd0eb32aa160\";}s:42:\"\0Shopware\\Core\\Checkout\\Cart\\Cart\0behavior\";O:40:\"Shopware\\Core\\Checkout\\Cart\\CartBehavior\":4:{s:13:\"\0*\0extensions\";a:0:{}s:53:\"\0Shopware\\Core\\Checkout\\Cart\\CartBehavior\0permissions\";a:0:{}s:51:\"\0Shopware\\Core\\Checkout\\Cart\\CartBehavior\0hookAware\";b:1;s:57:\"\0Shopware\\Core\\Checkout\\Cart\\CartBehavior\0isRecalculation\";b:0;}s:8:\"\0*\0token\";s:32:\"ywktChfC969DVTRckMS0xoD5tSmX4y0i\";s:40:\"\0Shopware\\Core\\Checkout\\Cart\\Cart\0states\";a:0:{}}');
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -677,7 +681,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `category` (
   `id` binary(16) NOT NULL,
   `version_id` binary(16) NOT NULL,
@@ -744,7 +748,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `category_tag`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `category_tag` (
   `category_id` binary(16) NOT NULL,
   `category_version_id` binary(16) NOT NULL,
@@ -771,7 +775,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `category_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `category_translation` (
   `category_id` binary(16) NOT NULL,
   `category_version_id` binary(16) NOT NULL,
@@ -833,7 +837,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `cms_block`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `cms_block` (
   `id` binary(16) NOT NULL,
   `version_id` binary(16) NOT NULL DEFAULT '©„ÈjK¬æKŸŒu,4%',
@@ -892,8 +896,8 @@ INSERT INTO `cms_block` VALUES
 ('ë˚.]yr8Ä5-ë˙ƒi','©„ÈjK¬æKŸŒu,4%','ë˚.]vqı∑!·÷î∑QË','©„ÈjK¬æKŸŒu,4%',3,'main','cross-selling','Cross selling',1,'0','0','0','0',NULL,NULL,'cover',NULL,NULL,NULL,'2024-09-16 14:13:25.497',NULL),
 ('ë˚û±∞sï±¯Ë‘…Âô','©„ÈjK¬æKŸŒu,4%','ë˚û[„zûû≥ 9lJ^','©„ÈjK¬æKŸŒu,4%',0,'main','product-three-column',NULL,0,'20px','20px','20px','20px',NULL,NULL,'cover','{\"mobile\":1,\"desktop\":1,\"tablet\":1}',NULL,NULL,'2024-09-16 16:16:48.542',NULL),
 ('ë˚†ﬁQpÒçw⁄‚ål€ÿ','©„ÈjK¬æKŸŒu,4%','ë˚†ﬁQpÒçw⁄‚ãpm†','©„ÈjK¬æKŸŒu,4%',0,'main','product-heading','Product heading',0,'0','20px','0','0',NULL,NULL,'cover','{\"mobile\":1,\"desktop\":1,\"tablet\":1}',NULL,NULL,'2024-09-16 14:13:25.497','2024-09-16 16:18:59.458'),
-('ë˚†ﬁQpÒçw⁄‚ç?á','©„ÈjK¬æKŸŒu,4%','ë˚†ﬁQpÒçw⁄‚ãpm†','©„ÈjK¬æKŸŒu,4%',1,'main','gallery-buybox','Gallery buy box',0,'20px','0','0','0',NULL,NULL,'cover','{\"mobile\":1,\"desktop\":1,\"tablet\":1}',NULL,NULL,'2024-09-16 14:13:25.497','2024-09-19 15:04:55.534'),
-('ë˚†ﬁQpÒçw⁄‚é5¸¯','©„ÈjK¬æKŸŒu,4%','ë˚†ﬁQpÒçw⁄‚ãpm†','©„ÈjK¬æKŸŒu,4%',3,'main','product-description-reviews','Product description and reviews',0,'20px','20px','0','0',NULL,NULL,'cover','{\"mobile\":1,\"desktop\":1,\"tablet\":1}',NULL,NULL,'2024-09-16 14:13:25.497','2024-09-19 15:04:55.536'),
+('ë˚†ﬁQpÒçw⁄‚ç?á','©„ÈjK¬æKŸŒu,4%','ë˚†ﬁQpÒçw⁄‚ãpm†','©„ÈjK¬æKŸŒu,4%',1,'main','gallery-buybox','Gallery buy box',0,'20px','0','0','0',NULL,NULL,'cover','{\"mobile\":1,\"desktop\":1,\"tablet\":1}',NULL,NULL,'2024-09-16 14:13:25.497','2025-01-23 14:23:02.626'),
+('ë˚†ﬁQpÒçw⁄‚é5¸¯','©„ÈjK¬æKŸŒu,4%','ë˚†ﬁQpÒçw⁄‚ãpm†','©„ÈjK¬æKŸŒu,4%',3,'main','product-description-reviews','Product description and reviews',0,'20px','20px','0','0',NULL,NULL,'cover','{\"mobile\":1,\"desktop\":1,\"tablet\":1}',NULL,NULL,'2024-09-16 14:13:25.497','2025-01-23 14:23:02.628'),
 ('ë˚†ﬁQpÒçw⁄‚éó¶Ü','©„ÈjK¬æKŸŒu,4%','ë˚†ﬁQpÒçw⁄‚ãpm†','©„ÈjK¬æKŸŒu,4%',4,'main','cross-selling','Cross selling',0,'0','0','0','0',NULL,NULL,'cover','{\"mobile\":1,\"desktop\":1,\"tablet\":1}',NULL,NULL,'2024-09-16 14:13:25.497','2024-09-19 14:07:19.702'),
 ('í\nõµ|¶á“wåÚú‡','©„ÈjK¬æKŸŒu,4%','ë˚†ﬁQpÒçw⁄‚ãpm†','©„ÈjK¬æKŸŒu,4%',2,'main','ofcp-product-detail','foobar',0,'20px','20px','20px','20px',NULL,NULL,'cover','{\"mobile\":1,\"desktop\":1,\"tablet\":1}',NULL,NULL,'2024-09-19 14:07:19.701',NULL);
 /*!40000 ALTER TABLE `cms_block` ENABLE KEYS */;
@@ -905,7 +909,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `cms_page`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `cms_page` (
   `id` binary(16) NOT NULL,
   `version_id` binary(16) NOT NULL DEFAULT '©„ÈjK¬æKŸŒu,4%',
@@ -940,7 +944,7 @@ INSERT INTO `cms_page` VALUES
 ('ë˚.VÑp’Ω…œ\0MíL','©„ÈjK¬æKŸŒu,4%','page',NULL,NULL,0,NULL,NULL,'2024-09-16 14:13:23.717',NULL),
 ('ë˚.VÖp\rá»ªF≥@Î','©„ÈjK¬æKŸŒu,4%','page',NULL,NULL,0,NULL,NULL,'2024-09-16 14:13:23.717',NULL),
 ('ë˚.VÜry∂ø<hbÙâ:','©„ÈjK¬æKŸŒu,4%','page',NULL,NULL,0,NULL,NULL,'2024-09-16 14:13:23.718',NULL),
-('ë˚†ﬁHs5Ä|ÜüX–û‡','©„ÈjK¬æKŸŒu,4%','product_detail',NULL,NULL,0,NULL,NULL,'2024-09-16 16:18:29.584','2024-09-19 15:04:55.536'),
+('ë˚†ﬁHs5Ä|ÜüX–û‡','©„ÈjK¬æKŸŒu,4%','product_detail',NULL,NULL,0,NULL,NULL,'2024-09-16 16:18:29.584','2025-01-23 14:23:02.628'),
 ('iTw‡.ˆCÂ†∏>‘Õˆ:','©„ÈjK¬æKŸŒu,4%','landingpage',NULL,NULL,0,NULL,NULL,'2024-09-16 15:31:28.396','2024-09-16 16:16:48.542'),
 ('zm%:g @7ñoB∞ó’','©„ÈjK¬æKŸŒu,4%','product_detail',NULL,NULL,1,NULL,NULL,'2024-09-16 14:13:25.476',NULL);
 /*!40000 ALTER TABLE `cms_page` ENABLE KEYS */;
@@ -952,7 +956,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `cms_page_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `cms_page_translation` (
   `cms_page_id` binary(16) NOT NULL,
   `cms_page_version_id` binary(16) NOT NULL DEFAULT '©„ÈjK¬æKŸŒu,4%',
@@ -1010,7 +1014,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `cms_section`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `cms_section` (
   `id` binary(16) NOT NULL,
   `version_id` binary(16) NOT NULL DEFAULT '©„ÈjK¬æKŸŒu,4%',
@@ -1058,7 +1062,7 @@ INSERT INTO `cms_section` VALUES
 ('ë˚.VÜry∂ø<hc\0ÑE','©„ÈjK¬æKŸŒu,4%','ë˚.VÜry∂ø<hbÙâ:','©„ÈjK¬æKŸŒu,4%',0,'default',NULL,0,'boxed','wrap',NULL,NULL,NULL,NULL,NULL,NULL,'2024-09-16 14:13:23.718',NULL),
 ('ë˚.]vqı∑!·÷î∑QË','©„ÈjK¬æKŸŒu,4%','zm%:g @7ñoB∞ó’','©„ÈjK¬æKŸŒu,4%',0,'default',NULL,0,'boxed','wrap',NULL,NULL,NULL,NULL,NULL,NULL,'2024-09-16 14:13:25.494',NULL),
 ('ë˚û[„zûû≥ 9lJ^','©„ÈjK¬æKŸŒu,4%','iTw‡.ˆCÂ†∏>‘Õˆ:','©„ÈjK¬æKŸŒu,4%',1,'default',NULL,0,'boxed','wrap',NULL,NULL,'cover','{\"mobile\":1,\"desktop\":1,\"tablet\":1}',NULL,NULL,'2024-09-16 16:15:45.170','2024-09-16 16:16:48.542'),
-('ë˚†ﬁQpÒçw⁄‚ãpm†','©„ÈjK¬æKŸŒu,4%','ë˚†ﬁHs5Ä|ÜüX–û‡','©„ÈjK¬æKŸŒu,4%',0,'default',NULL,0,'boxed','wrap',NULL,NULL,'cover','{\"mobile\":1,\"desktop\":1,\"tablet\":1}',NULL,NULL,'2024-09-16 14:13:25.494','2024-09-19 15:04:55.536'),
+('ë˚†ﬁQpÒçw⁄‚ãpm†','©„ÈjK¬æKŸŒu,4%','ë˚†ﬁHs5Ä|ÜüX–û‡','©„ÈjK¬æKŸŒu,4%',0,'default',NULL,0,'boxed','wrap',NULL,NULL,'cover','{\"mobile\":1,\"desktop\":1,\"tablet\":1}',NULL,NULL,'2024-09-16 14:13:25.494','2025-01-23 14:23:02.628'),
 ('ìTw‡.ˆCÂ†∏>‘Õˆ:','©„ÈjK¬æKŸŒu,4%','iTw‡.ˆCÂ†∏>‘Õˆ:','©„ÈjK¬æKŸŒu,4%',0,'default',NULL,0,'boxed','wrap',NULL,NULL,'cover','{\"mobile\":1,\"desktop\":1,\"tablet\":1}',NULL,NULL,'2024-09-16 15:31:28.396','2024-09-16 16:15:45.169');
 /*!40000 ALTER TABLE `cms_section` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1069,7 +1073,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `cms_slot`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `cms_slot` (
   `id` binary(16) NOT NULL,
   `version_id` binary(16) NOT NULL,
@@ -1121,9 +1125,9 @@ INSERT INTO `cms_slot` VALUES
 ('ë˚û±≥pﬂõi@åUà','©„ÈjK¬æKŸŒu,4%','ë˚û±∞sï±¯Ë‘…Âô','©„ÈjK¬æKŸŒu,4%','product-box','right',0,'2024-09-16 16:16:48.541',NULL),
 ('ë˚†ﬁQpÒçw⁄‚å ›⁄','©„ÈjK¬æKŸŒu,4%','ë˚†ﬁQpÒçw⁄‚ål€ÿ','©„ÈjK¬æKŸŒu,4%','product-name','left',0,'2024-09-16 14:13:25.508',NULL),
 ('ë˚†ﬁQpÒçw⁄‚çqø','©„ÈjK¬æKŸŒu,4%','ë˚†ﬁQpÒçw⁄‚ål€ÿ','©„ÈjK¬æKŸŒu,4%','manufacturer-logo','right',0,'2024-09-16 14:13:25.509','2024-09-16 16:18:59.457'),
-('ë˚†ﬁQpÒçw⁄‚çpÚ∞','©„ÈjK¬æKŸŒu,4%','ë˚†ﬁQpÒçw⁄‚ç?á','©„ÈjK¬æKŸŒu,4%','image-gallery','left',0,'2024-09-16 14:13:25.509','2024-09-19 15:04:55.514'),
-('ë˚†ﬁQpÒçw⁄‚çq€É','©„ÈjK¬æKŸŒu,4%','ë˚†ﬁQpÒçw⁄‚ç?á','©„ÈjK¬æKŸŒu,4%','buy-box','right',0,'2024-09-16 14:13:25.509','2024-09-19 15:04:55.534'),
-('ë˚†ﬁQpÒçw⁄‚ér™≈','©„ÈjK¬æKŸŒu,4%','ë˚†ﬁQpÒçw⁄‚é5¸¯','©„ÈjK¬æKŸŒu,4%','product-description-reviews','content',0,'2024-09-16 14:13:25.509','2024-09-19 15:04:55.536'),
+('ë˚†ﬁQpÒçw⁄‚çpÚ∞','©„ÈjK¬æKŸŒu,4%','ë˚†ﬁQpÒçw⁄‚ç?á','©„ÈjK¬æKŸŒu,4%','image-gallery','left',0,'2024-09-16 14:13:25.509','2025-01-23 14:23:02.588'),
+('ë˚†ﬁQpÒçw⁄‚çq€É','©„ÈjK¬æKŸŒu,4%','ë˚†ﬁQpÒçw⁄‚ç?á','©„ÈjK¬æKŸŒu,4%','buy-box','right',0,'2024-09-16 14:13:25.509','2025-01-23 14:23:02.626'),
+('ë˚†ﬁQpÒçw⁄‚ér™≈','©„ÈjK¬æKŸŒu,4%','ë˚†ﬁQpÒçw⁄‚é5¸¯','©„ÈjK¬æKŸŒu,4%','product-description-reviews','content',0,'2024-09-16 14:13:25.509','2025-01-23 14:23:02.628'),
 ('ë˚†ﬁQpÒçw⁄‚éŸcD','©„ÈjK¬æKŸŒu,4%','ë˚†ﬁQpÒçw⁄‚éó¶Ü','©„ÈjK¬æKŸŒu,4%','cross-selling','content',0,'2024-09-16 14:13:25.509',NULL),
 ('í\nõµ!wñÄ˘∆Ë)\nÌ','©„ÈjK¬æKŸŒu,4%','í\nõµ|¶á“wåÚú‡','©„ÈjK¬æKŸŒu,4%','ofcp-product-detail-widget','main',0,'2024-09-19 14:07:19.700',NULL);
 /*!40000 ALTER TABLE `cms_slot` ENABLE KEYS */;
@@ -1135,7 +1139,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `cms_slot_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `cms_slot_translation` (
   `cms_slot_id` binary(16) NOT NULL,
   `cms_slot_version_id` binary(16) NOT NULL,
@@ -1209,7 +1213,7 @@ INSERT INTO `cms_slot_translation` VALUES
 ('ë˚†ﬁQpÒçw⁄‚çqø','©„ÈjK¬æKŸŒu,4%','ë˚.Œ&ps§xu’s√?µ','{\"displayMode\":{\"source\":\"static\",\"value\":\"standard\"},\"media\":{\"value\":\"product.manufacturer.media\",\"source\":\"mapped\"},\"minHeight\":{\"value\":null,\"source\":\"static\"},\"newTab\":{\"value\":true,\"source\":\"static\"},\"url\":{\"value\":null,\"source\":\"static\"},\"verticalAlign\":{\"value\":null,\"source\":\"static\"}}',NULL,'2024-09-16 14:13:25.550',NULL),
 ('ë˚†ﬁQpÒçw⁄‚çqø','©„ÈjK¬æKŸŒu,4%','/ª_‚‚öMp™XTŒ|„‚','{\"media\":{\"source\":\"mapped\",\"value\":\"product.manufacturer.media\"},\"displayMode\":{\"source\":\"static\",\"value\":\"standard\"},\"url\":{\"source\":\"static\",\"value\":null},\"newTab\":{\"source\":\"static\",\"value\":true},\"minHeight\":{\"source\":\"static\",\"value\":null},\"verticalAlign\":{\"source\":\"static\",\"value\":null},\"horizontalAlign\":{\"source\":\"static\",\"value\":null}}',NULL,'2024-09-16 16:18:29.589','2024-09-16 16:18:59.458'),
 ('ë˚†ﬁQpÒçw⁄‚çpÚ∞','©„ÈjK¬æKŸŒu,4%','ë˚.Œ&ps§xu’s√?µ','{\"displayMode\":{\"value\":\"contain\",\"source\":\"static\"},\"fullScreen\":{\"value\":true,\"source\":\"static\"},\"galleryPosition\":{\"value\":\"left\",\"source\":\"static\"},\"minHeight\":{\"value\":\"430px\",\"source\":\"static\"},\"navigationArrows\":{\"value\":\"inside\",\"source\":\"static\"},\"navigationDots\":{\"value\":\"inside\",\"source\":\"static\"},\"sliderItems\":{\"value\":\"product.media\",\"source\":\"mapped\"},\"verticalAlign\":{\"value\":null,\"source\":\"static\"},\"zoom\":{\"value\":true,\"source\":\"static\"}}',NULL,'2024-09-16 14:13:25.565',NULL),
-('ë˚†ﬁQpÒçw⁄‚çpÚ∞','©„ÈjK¬æKŸŒu,4%','/ª_‚‚öMp™XTŒ|„‚','{\"sliderItems\":{\"source\":\"mapped\",\"value\":\"product.media\"},\"navigationArrows\":{\"source\":\"static\",\"value\":\"inside\"},\"navigationDots\":{\"source\":\"static\",\"value\":\"inside\"},\"displayMode\":{\"source\":\"static\",\"value\":\"contain\"},\"minHeight\":{\"source\":\"static\",\"value\":\"430px\"},\"verticalAlign\":{\"source\":\"static\",\"value\":null},\"speed\":{\"value\":300,\"source\":\"static\"},\"autoSlide\":{\"value\":false,\"source\":\"static\"},\"autoplayTimeout\":{\"value\":5000,\"source\":\"static\"},\"galleryPosition\":{\"source\":\"static\",\"value\":\"left\"},\"zoom\":{\"source\":\"static\",\"value\":true},\"fullScreen\":{\"source\":\"static\",\"value\":true},\"keepAspectRatioOnZoom\":{\"source\":\"static\",\"value\":true},\"magnifierOverGallery\":{\"source\":\"static\",\"value\":false}}',NULL,'2024-09-16 16:18:29.590','2024-09-19 15:04:55.533'),
+('ë˚†ﬁQpÒçw⁄‚çpÚ∞','©„ÈjK¬æKŸŒu,4%','/ª_‚‚öMp™XTŒ|„‚','{\"sliderItems\":{\"source\":\"mapped\",\"value\":\"product.media\"},\"navigationArrows\":{\"source\":\"static\",\"value\":\"inside\"},\"navigationDots\":{\"source\":\"static\",\"value\":\"inside\"},\"displayMode\":{\"source\":\"static\",\"value\":\"contain\"},\"minHeight\":{\"source\":\"static\",\"value\":\"430px\"},\"verticalAlign\":{\"source\":\"static\",\"value\":null},\"speed\":{\"value\":300,\"source\":\"static\"},\"autoSlide\":{\"value\":false,\"source\":\"static\"},\"autoplayTimeout\":{\"value\":5000,\"source\":\"static\"},\"galleryPosition\":{\"source\":\"static\",\"value\":\"left\"},\"zoom\":{\"source\":\"static\",\"value\":true},\"fullScreen\":{\"source\":\"static\",\"value\":true},\"keepAspectRatioOnZoom\":{\"source\":\"static\",\"value\":true},\"magnifierOverGallery\":{\"source\":\"static\",\"value\":false}}',NULL,'2024-09-16 16:18:29.590','2025-01-23 14:23:02.622'),
 ('ë˚†ﬁQpÒçw⁄‚çq€É','©„ÈjK¬æKŸŒu,4%','ë˚.Œ&ps§xu’s√?µ','{\"product\":{\"value\":null,\"source\":\"static\"},\"alignment\":{\"value\":null,\"source\":\"static\"}}',NULL,'2024-09-16 14:13:25.581',NULL),
 ('ë˚†ﬁQpÒçw⁄‚çq€É','©„ÈjK¬æKŸŒu,4%','/ª_‚‚öMp™XTŒ|„‚','{\"product\":{\"value\":null,\"source\":\"static\"},\"alignment\":{\"value\":null,\"source\":\"static\"}}',NULL,'2024-09-16 16:18:29.591',NULL),
 ('ë˚†ﬁQpÒçw⁄‚ér™≈','©„ÈjK¬æKŸŒu,4%','ë˚.Œ&ps§xu’s√?µ','{\"product\":{\"value\":null,\"source\":\"static\"},\"alignment\":{\"value\":null,\"source\":\"static\"}}',NULL,'2024-09-16 14:13:25.596',NULL),
@@ -1226,7 +1230,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `country`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `country` (
   `id` binary(16) NOT NULL,
   `iso` varchar(255) DEFAULT NULL,
@@ -1519,7 +1523,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `country_state`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `country_state` (
   `id` binary(16) NOT NULL,
   `country_id` binary(16) NOT NULL,
@@ -1854,7 +1858,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `country_state_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `country_state_translation` (
   `country_state_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -2494,7 +2498,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `country_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `country_translation` (
   `country_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -3027,7 +3031,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `currency`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `currency` (
   `id` binary(16) NOT NULL,
   `iso_code` char(3) NOT NULL,
@@ -3069,7 +3073,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `currency_country_rounding`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `currency_country_rounding` (
   `id` binary(16) NOT NULL,
   `currency_id` binary(16) NOT NULL,
@@ -3101,7 +3105,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `currency_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `currency_translation` (
   `currency_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -3152,7 +3156,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `custom_entity`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `custom_entity` (
   `id` binary(16) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -3190,7 +3194,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `custom_field`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `custom_field` (
   `id` binary(16) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -3217,7 +3221,7 @@ CREATE TABLE `custom_field` (
 LOCK TABLES `custom_field` WRITE;
 /*!40000 ALTER TABLE `custom_field` DISABLE KEYS */;
 INSERT INTO `custom_field` VALUES
-('ë˚yπqsb±”M\'’ı˚C','tecsafe_enabled','bool','{\"label\":{\"en-GB\":\"Enable OFCP\",\"de-DE\":\"OFCP aktivieren\"},\"customFieldPosition\":0}',1,'ë˚yπqsb±”M\'’J_˝','2024-09-16 15:35:44.242',NULL,0,0);
+('ï”L¿sIö\nÓ√«jwi','tecsafe_enabled','bool','{\"label\":{\"en-GB\":\"Enable OFCP\",\"de-DE\":\"OFCP aktivieren\"},\"customFieldPosition\":0}',1,'ï”L¿sIö\nÓ√∆rÈß','2025-03-26 16:32:14.528',NULL,0,0);
 /*!40000 ALTER TABLE `custom_field` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3227,7 +3231,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `custom_field_set`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `custom_field_set` (
   `id` binary(16) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -3252,7 +3256,7 @@ CREATE TABLE `custom_field_set` (
 LOCK TABLES `custom_field_set` WRITE;
 /*!40000 ALTER TABLE `custom_field_set` DISABLE KEYS */;
 INSERT INTO `custom_field_set` VALUES
-('ë˚yπqsb±”M\'’J_˝','tecsafe_ofcp_set','{\"label\":{\"en-GB\":\"Tecsafe OFCP\",\"de-DE\":\"Tecsafe OFCP\"}}',1,NULL,1,0,'2024-09-16 15:35:44.243',NULL);
+('ï”L¿sIö\nÓ√∆rÈß','tecsafe_ofcp_set','{\"label\":{\"en-GB\":\"Tecsafe OFCP\",\"de-DE\":\"Tecsafe OFCP\"}}',1,NULL,1,0,'2025-03-26 16:32:14.529',NULL);
 /*!40000 ALTER TABLE `custom_field_set` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3262,7 +3266,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `custom_field_set_relation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `custom_field_set_relation` (
   `id` binary(16) NOT NULL,
   `set_id` binary(16) NOT NULL,
@@ -3282,7 +3286,7 @@ CREATE TABLE `custom_field_set_relation` (
 LOCK TABLES `custom_field_set_relation` WRITE;
 /*!40000 ALTER TABLE `custom_field_set_relation` DISABLE KEYS */;
 INSERT INTO `custom_field_set_relation` VALUES
-('ë˚yπqsb±”M\'‘Éàè','ë˚yπqsb±”M\'’J_˝','product','2024-09-16 15:35:44.243',NULL);
+('ï”Løp€Üä∑‹∑Êø','ï”L¿sIö\nÓ√∆rÈß','product','2025-03-26 16:32:14.529',NULL);
 /*!40000 ALTER TABLE `custom_field_set_relation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3292,7 +3296,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `customer`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `customer` (
   `id` binary(16) NOT NULL,
   `auto_increment` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -3367,7 +3371,7 @@ CREATE TABLE `customer` (
   CONSTRAINT `fk.customer.updated_by_id` FOREIGN KEY (`updated_by_id`) REFERENCES `user` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `json.customer.custom_fields` CHECK (json_valid(`custom_fields`)),
   CONSTRAINT `json.customer.tag_ids` CHECK (json_valid(`tag_ids`))
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3377,6 +3381,8 @@ CREATE TABLE `customer` (
 LOCK TABLES `customer` WRITE;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
 INSERT INTO `customer` VALUES
+('ï…‹î˛pÁ≤;˝òè…e§',2,'œΩP”çAÿ≠ ŸO»Ω÷',NULL,'ë˚.Q\"s«å%eä‚D\"','ë˚.”qêDˆıÁ','/ª_‚‚öMp™XTŒ|„‚',NULL,'ï…‹î˛pÁ≤;˝òèÚõÍ','ï…‹î˛pÁ≤;˝òèÚõÍ','10000','ë˚.Qp∑ñ≤\0.€Z=','Foo','Bar',NULL,'$2y$10$h8l46fH/GQVjHgJ.sepb4OC8LSQJdAV1WMo9QZEvSH/P9L9jYpUOq',NULL,NULL,'foo@bar.com',NULL,NULL,1,0,NULL,NULL,NULL,0,'2025-03-24 20:33:51.358',NULL,NULL,NULL,NULL,0,0,NULL,NULL,NULL,'2025-03-24 20:33:51.411','2025-03-24 20:33:51.539','172.19.0.0',NULL,NULL,NULL,NULL,'private',0),
+('ïÃ`_os3ªj\"á/K¢„',3,'œΩP”çAÿ≠ ŸO»Ω÷',NULL,'ë˚.Q\"s«å%eä‚D\"','ë˚.”qêDˆıÁ','/ª_‚‚öMp™XTŒ|„‚',NULL,'ïÃ`_os3ªj\"á/±ê;','ïÃ`_os3ªj\"á/±ê;','10001','ë˚.Qp∑ñ≤\0.ú1','Test','madco',NULL,'$2y$10$gxIKl17XpZYMvPBfZC71eetifTdHM0yHTPJPauTom/J208jwnBgyG',NULL,NULL,'test@madco.de',NULL,NULL,1,0,NULL,NULL,NULL,0,'2025-03-25 08:17:02.831','2025-03-26 17:51:54.918',NULL,NULL,NULL,0,0,NULL,NULL,NULL,'2025-03-25 08:17:02.885','2025-03-26 17:51:54.985','172.19.0.0',NULL,NULL,NULL,NULL,'private',0),
 ('lóSL,GÛûáQ‰<≤∞',1,'œΩP”çAÿ≠ ŸO»Ω÷',NULL,'ë˚.Q\"s«å%eäÀÛ','ë˚.”qêDˆıÁ','/ª_‚‚öMp™XTŒ|„‚',NULL,'ÿﬂ˜Ô9GóöÉƒ/e	Ú,','ÿﬂ˜Ô9GóöÉƒ/e	Ú,','SWDEMO10000','ë˚.Qp∑ñ≤\0-jNØ','Max','Mustermann',NULL,'$2y$10$qYoCQe2r3h/tiGIqwsq7YuuKBGCEmgtM/U4v182xtKDrFv5vSNFJO',NULL,NULL,'test@example.com',NULL,NULL,1,0,NULL,NULL,NULL,0,NULL,'2019-06-12 07:13:39.641',NULL,'1996-06-06',NULL,0,0,NULL,NULL,NULL,'2024-09-16 15:31:28.742',NULL,NULL,NULL,NULL,'ë˚.“‰rºéÑ¨ÏT‰…',NULL,'private',0);
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -3387,7 +3393,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `customer_address`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `customer_address` (
   `id` binary(16) NOT NULL,
   `customer_id` binary(16) NOT NULL,
@@ -3428,6 +3434,8 @@ CREATE TABLE `customer_address` (
 LOCK TABLES `customer_address` WRITE;
 /*!40000 ALTER TABLE `customer_address` DISABLE KEYS */;
 INSERT INTO `customer_address` VALUES
+('ï…‹î˛pÁ≤;˝òèÚõÍ','ï…‹î˛pÁ≤;˝òè…e§','ë˚.Qp∑ñ≤\0/Ÿa:',NULL,NULL,NULL,'ë˚.Qp∑ñ≤\0.€Z=',NULL,'Foo','Bar','fo','23','bar',NULL,NULL,NULL,NULL,'2025-03-24 20:33:51.410',NULL),
+('ïÃ`_os3ªj\"á/±ê;','ïÃ`_os3ªj\"á/K¢„','ë˚.Qp∑ñ≤\0/Ÿa:',NULL,NULL,NULL,'ë˚.Qp∑ñ≤\0.ú1',NULL,'Test','madco','Teststra√üe','66121','Sarbr√ºcken',NULL,NULL,NULL,NULL,'2025-03-25 08:17:02.885',NULL),
 ('ÿﬂ˜Ô9GóöÉƒ/e	Ú,','lóSL,GÛûáQ‰<≤∞','ë˚.Qp∑ñ≤\0/Ÿa:',NULL,NULL,NULL,'ë˚.Qp∑ñ≤\0-jNØ',NULL,'Max','Mustermann','Musterstra√üe 1','12345','Musterstadt',NULL,NULL,NULL,NULL,'2024-09-16 15:31:28.742',NULL);
 /*!40000 ALTER TABLE `customer_address` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -3438,7 +3446,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `customer_group`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `customer_group` (
   `id` binary(16) NOT NULL,
   `display_gross` tinyint(1) NOT NULL DEFAULT 1,
@@ -3466,7 +3474,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `customer_group_registration_sales_channels`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `customer_group_registration_sales_channels` (
   `customer_group_id` binary(16) NOT NULL,
   `sales_channel_id` binary(16) NOT NULL,
@@ -3494,7 +3502,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `customer_group_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `customer_group_translation` (
   `customer_group_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -3532,7 +3540,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `customer_recovery`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `customer_recovery` (
   `id` binary(16) NOT NULL,
   `customer_id` binary(16) NOT NULL,
@@ -3560,7 +3568,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `customer_tag`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `customer_tag` (
   `customer_id` binary(16) NOT NULL,
   `tag_id` binary(16) NOT NULL,
@@ -3586,7 +3594,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `customer_wishlist`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `customer_wishlist` (
   `id` binary(16) NOT NULL,
   `customer_id` binary(16) NOT NULL,
@@ -3618,7 +3626,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `customer_wishlist_product`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `customer_wishlist_product` (
   `id` binary(16) NOT NULL,
   `customer_wishlist_id` binary(16) NOT NULL,
@@ -3650,7 +3658,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `delivery_time`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `delivery_time` (
   `id` binary(16) NOT NULL,
   `min` int(3) NOT NULL,
@@ -3683,7 +3691,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `delivery_time_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `delivery_time_translation` (
   `delivery_time_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -3724,7 +3732,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `document`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `document` (
   `id` binary(16) NOT NULL,
   `document_type_id` binary(16) NOT NULL,
@@ -3772,7 +3780,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `document_base_config`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `document_base_config` (
   `id` binary(16) NOT NULL,
   `name` varchar(64) NOT NULL,
@@ -3816,7 +3824,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `document_base_config_sales_channel`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `document_base_config_sales_channel` (
   `id` binary(16) NOT NULL,
   `document_base_config_id` binary(16) NOT NULL,
@@ -3854,7 +3862,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `document_type`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `document_type` (
   `id` binary(16) NOT NULL,
   `technical_name` varchar(255) NOT NULL,
@@ -3885,7 +3893,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `document_type_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `document_type_translation` (
   `document_type_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -3925,7 +3933,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `elasticsearch_index_task`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `elasticsearch_index_task` (
   `id` binary(16) NOT NULL,
   `index` varchar(500) NOT NULL,
@@ -3951,7 +3959,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `flow`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `flow` (
   `id` binary(16) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -4020,7 +4028,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `flow_sequence`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `flow_sequence` (
   `id` binary(16) NOT NULL,
   `flow_id` binary(16) NOT NULL,
@@ -4098,7 +4106,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `flow_template`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `flow_template` (
   `id` binary(16) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -4156,7 +4164,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `import_export_file`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `import_export_file` (
   `id` binary(16) NOT NULL,
   `original_name` varchar(255) NOT NULL,
@@ -4185,7 +4193,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `import_export_log`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `import_export_log` (
   `id` binary(16) NOT NULL,
   `activity` varchar(255) NOT NULL,
@@ -4229,7 +4237,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `import_export_profile`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `import_export_profile` (
   `id` binary(16) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
@@ -4279,7 +4287,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `import_export_profile_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `import_export_profile_translation` (
   `import_export_profile_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -4333,7 +4341,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `increment`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `increment` (
   `pool` varchar(255) NOT NULL,
   `cluster` varchar(255) NOT NULL,
@@ -4352,42 +4360,45 @@ CREATE TABLE `increment` (
 LOCK TABLES `increment` WRITE;
 /*!40000 ALTER TABLE `increment` DISABLE KEYS */;
 INSERT INTO `increment` VALUES
-('message_queue','message_queue_stats','Shopware\\Core\\Checkout\\Cart\\Cleanup\\CleanupCartTask',0,'2024-09-16 15:31:00.622','2024-09-18 20:42:36.638'),
+('message_queue','message_queue_stats','Madco\\Tecsafe\\Messages\\TecsafeApi\\MergeCustomerCommand',0,'2025-03-26 17:36:21.895','2025-03-26 17:51:56.550'),
+('message_queue','message_queue_stats','Shopware\\Core\\Checkout\\Cart\\Cleanup\\CleanupCartTask',0,'2024-09-16 15:31:00.622','2025-03-27 09:06:51.715'),
 ('message_queue','message_queue_stats','Shopware\\Core\\Checkout\\Payment\\DataAbstractionLayer\\PaymentMethodIndexingMessage',0,'2024-09-16 15:32:14.739','2024-09-16 15:32:15.105'),
 ('message_queue','message_queue_stats','Shopware\\Core\\Content\\Category\\DataAbstractionLayer\\CategoryIndexingMessage',0,'2024-09-16 15:31:00.463','2024-09-16 16:11:05.175'),
-('message_queue','message_queue_stats','Shopware\\Core\\Content\\Flow\\Indexing\\FlowIndexingMessage',0,'2024-09-16 15:31:41.537','2024-09-16 15:39:06.549'),
-('message_queue','message_queue_stats','Shopware\\Core\\Content\\ImportExport\\ScheduledTask\\CleanupImportExportFileTask',0,'2024-09-16 15:31:00.614','2024-09-18 20:42:36.617'),
+('message_queue','message_queue_stats','Shopware\\Core\\Content\\Flow\\Indexing\\FlowIndexingMessage',0,'2024-09-16 15:31:41.537','2025-03-24 19:11:19.894'),
+('message_queue','message_queue_stats','Shopware\\Core\\Content\\ImportExport\\ScheduledTask\\CleanupImportExportFileTask',0,'2024-09-16 15:31:00.614','2025-03-27 09:06:51.697'),
 ('message_queue','message_queue_stats','Shopware\\Core\\Content\\Media\\DataAbstractionLayer\\MediaIndexingMessage',0,'2024-09-16 15:32:14.748','2024-09-16 15:32:15.169'),
 ('message_queue','message_queue_stats','Shopware\\Core\\Content\\Media\\Message\\DeleteFileMessage',0,'2024-09-18 21:09:07.574','2024-09-19 10:32:37.305'),
 ('message_queue','message_queue_stats','Shopware\\Core\\Content\\Media\\Message\\GenerateThumbnailsMessage',0,'2024-09-16 14:13:55.495','2024-09-19 10:57:45.898'),
-('message_queue','message_queue_stats','Shopware\\Core\\Content\\Newsletter\\ScheduledTask\\NewsletterRecipientTask',0,'2024-09-16 15:31:00.601','2024-09-18 20:42:36.572'),
-('message_queue','message_queue_stats','Shopware\\Core\\Content\\Product\\Cleanup\\CleanupProductKeywordDictionaryTask',0,'2024-09-16 15:31:00.594','2024-09-16 15:31:00.899'),
-('message_queue','message_queue_stats','Shopware\\Core\\Content\\Product\\Cleanup\\CleanupUnusedDownloadMediaTask',0,'2024-09-16 15:31:00.598','2024-09-16 15:31:00.917'),
+('message_queue','message_queue_stats','Shopware\\Core\\Content\\Newsletter\\ScheduledTask\\NewsletterRecipientTask',0,'2024-09-16 15:31:00.601','2025-03-27 09:06:51.656'),
+('message_queue','message_queue_stats','Shopware\\Core\\Content\\Product\\Cleanup\\CleanupProductKeywordDictionaryTask',0,'2024-09-16 15:31:00.594','2025-03-24 19:12:21.207'),
+('message_queue','message_queue_stats','Shopware\\Core\\Content\\Product\\Cleanup\\CleanupUnusedDownloadMediaTask',0,'2024-09-16 15:31:00.598','2025-03-24 19:11:20.235'),
 ('message_queue','message_queue_stats','Shopware\\Core\\Content\\Product\\DataAbstractionLayer\\ProductIndexingMessage',0,'2024-09-16 15:31:29.626','2024-09-16 16:11:05.239'),
-('message_queue','message_queue_stats','Shopware\\Core\\Content\\ProductExport\\ScheduledTask\\ProductExportGenerateTask',0,'2024-09-16 15:31:00.609','2024-09-19 15:34:11.359'),
-('message_queue','message_queue_stats','Shopware\\Core\\Content\\ProductStream\\ScheduledTask\\UpdateProductStreamMappingTask',0,'2024-09-16 15:31:00.605','2024-09-18 20:42:36.582'),
+('message_queue','message_queue_stats','Shopware\\Core\\Content\\ProductExport\\ScheduledTask\\ProductExportGenerateTask',0,'2024-09-16 15:31:00.609','2025-03-27 09:12:58.465'),
+('message_queue','message_queue_stats','Shopware\\Core\\Content\\ProductStream\\ScheduledTask\\UpdateProductStreamMappingTask',0,'2024-09-16 15:31:00.605','2025-03-27 09:06:51.665'),
 ('message_queue','message_queue_stats','Shopware\\Core\\Content\\Rule\\DataAbstractionLayer\\RuleIndexingMessage',0,'2024-09-16 15:32:14.751','2024-09-16 15:32:15.156'),
-('message_queue','message_queue_stats','Shopware\\Core\\Content\\Sitemap\\ScheduledTask\\SitemapGenerateTask',0,'2024-09-16 15:31:00.618','2024-09-18 20:42:36.629'),
-('message_queue','message_queue_stats','Shopware\\Core\\Content\\Sitemap\\ScheduledTask\\SitemapMessage',0,'2024-09-16 15:31:00.980','2024-09-18 20:42:36.659'),
-('message_queue','message_queue_stats','Shopware\\Core\\Framework\\App\\ScheduledTask\\DeleteCascadeAppsTask',0,'2024-09-16 15:31:00.575','2024-09-18 20:42:36.524'),
-('message_queue','message_queue_stats','Shopware\\Core\\Framework\\App\\ScheduledTask\\UpdateAppsTask',0,'2024-09-16 15:31:00.572','2024-09-18 20:42:36.513'),
-('message_queue','message_queue_stats','Shopware\\Core\\Framework\\DataAbstractionLayer\\Indexing\\MessageQueue\\IterateEntityIndexerMessage',0,'2024-09-16 14:13:55.640','2024-09-16 16:11:05.243'),
-('message_queue','message_queue_stats','Shopware\\Core\\Framework\\DataAbstractionLayer\\Version\\Cleanup\\CleanupVersionTask',0,'2024-09-16 15:31:00.579','2024-09-18 20:42:36.532'),
-('message_queue','message_queue_stats','Shopware\\Core\\Framework\\Log\\ScheduledTask\\LogCleanupTask',0,'2024-09-16 15:31:00.565','2024-09-18 20:42:36.149'),
-('message_queue','message_queue_stats','Shopware\\Core\\Framework\\Webhook\\ScheduledTask\\CleanupWebhookEventLogTask',0,'2024-09-16 15:31:00.582','2024-09-18 20:42:36.539'),
-('message_queue','message_queue_stats','Shopware\\Core\\System\\SalesChannel\\Context\\Cleanup\\CleanupSalesChannelContextTask',0,'2024-09-16 15:31:00.586','2024-09-18 20:42:36.546'),
+('message_queue','message_queue_stats','Shopware\\Core\\Content\\Sitemap\\ScheduledTask\\SitemapGenerateTask',0,'2024-09-16 15:31:00.618','2025-03-27 09:06:51.707'),
+('message_queue','message_queue_stats','Shopware\\Core\\Content\\Sitemap\\ScheduledTask\\SitemapMessage',0,'2024-09-16 15:31:00.980','2025-03-27 09:06:51.734'),
+('message_queue','message_queue_stats','Shopware\\Core\\Framework\\App\\ScheduledTask\\DeleteCascadeAppsTask',0,'2024-09-16 15:31:00.575','2025-03-27 09:06:51.616'),
+('message_queue','message_queue_stats','Shopware\\Core\\Framework\\App\\ScheduledTask\\UpdateAppsTask',0,'2024-09-16 15:31:00.572','2025-03-27 09:06:51.596'),
+('message_queue','message_queue_stats','Shopware\\Core\\Framework\\DataAbstractionLayer\\Indexing\\MessageQueue\\IterateEntityIndexerMessage',8,'2024-09-16 14:13:55.640','2025-03-26 16:32:15.736'),
+('message_queue','message_queue_stats','Shopware\\Core\\Framework\\DataAbstractionLayer\\Version\\Cleanup\\CleanupVersionTask',0,'2024-09-16 15:31:00.579','2025-03-27 09:06:51.624'),
+('message_queue','message_queue_stats','Shopware\\Core\\Framework\\Log\\ScheduledTask\\LogCleanupTask',0,'2024-09-16 15:31:00.565','2025-03-27 09:06:51.335'),
+('message_queue','message_queue_stats','Shopware\\Core\\Framework\\Webhook\\ScheduledTask\\CleanupWebhookEventLogTask',0,'2024-09-16 15:31:00.582','2025-03-27 09:06:51.630'),
+('message_queue','message_queue_stats','Shopware\\Core\\System\\SalesChannel\\Context\\Cleanup\\CleanupSalesChannelContextTask',0,'2024-09-16 15:31:00.586','2025-03-27 09:06:51.635'),
 ('message_queue','message_queue_stats','Shopware\\Core\\System\\SalesChannel\\DataAbstractionLayer\\SalesChannelIndexingMessage',0,'2024-09-16 15:32:14.729','2024-09-16 15:32:14.762'),
-('message_queue','message_queue_stats','Shopware\\Core\\System\\UsageData\\EntitySync\\CollectEntityDataMessage',0,'2024-09-16 15:31:00.885','2024-09-18 20:42:56.752'),
-('message_queue','message_queue_stats','Shopware\\Core\\System\\UsageData\\ScheduledTask\\CollectEntityDataTask',0,'2024-09-16 15:31:00.590','2024-09-18 20:42:36.563'),
-('message_queue','message_queue_stats','Shopware\\Storefront\\Theme\\Message\\DeleteThemeFilesMessage',13,'2024-09-16 14:13:58.324','2024-09-25 07:06:37.120'),
+('message_queue','message_queue_stats','Shopware\\Core\\System\\UsageData\\EntitySync\\CollectEntityDataMessage',0,'2024-09-16 15:31:00.885','2025-03-27 09:07:31.535'),
+('message_queue','message_queue_stats','Shopware\\Core\\System\\UsageData\\ScheduledTask\\CollectEntityDataTask',0,'2024-09-16 15:31:00.590','2025-03-27 09:06:51.648'),
+('message_queue','message_queue_stats','Shopware\\Storefront\\Theme\\Message\\DeleteThemeFilesMessage',13,'2024-09-16 14:13:58.324','2025-03-27 10:17:15.362'),
 ('user_activity','0191fb2ed2e47212bc8e84acec54e4c9','category@sw.category.index',3,'2024-09-16 16:09:11.900','2024-09-18 21:10:42.518'),
-('user_activity','0191fb2ed2e47212bc8e84acec54e4c9','cms@sw.cms.index',17,'2024-09-16 16:18:15.905','2024-09-19 15:05:48.115'),
+('user_activity','0191fb2ed2e47212bc8e84acec54e4c9','cms@sw.cms.index',21,'2024-09-16 16:18:15.905','2025-01-23 14:26:59.461'),
 ('user_activity','0191fb2ed2e47212bc8e84acec54e4c9','dashboard@sw.dashboard.index',2,'2024-09-16 16:18:07.128','2024-09-18 21:10:56.286'),
 ('user_activity','0191fb2ed2e47212bc8e84acec54e4c9','first-run-wizard@sw.first.run.wizard.index',5,'2024-09-16 15:31:09.230','2024-09-16 15:32:11.766'),
 ('user_activity','0191fb2ed2e47212bc8e84acec54e4c9','media@sw.media.index',1,'2024-09-19 10:32:12.164',NULL),
 ('user_activity','0191fb2ed2e47212bc8e84acec54e4c9','order@sw.order.index',1,'2024-09-18 21:10:59.766',NULL),
 ('user_activity','0191fb2ed2e47212bc8e84acec54e4c9','product@sw.product.index',6,'2024-09-16 15:34:07.230','2024-09-19 15:05:55.069'),
-('user_activity','0191fb2ed2e47212bc8e84acec54e4c9','settings@sw.settings.index',16,'2024-09-16 15:32:21.979','2024-09-19 09:37:32.750');
+('user_activity','0191fb2ed2e47212bc8e84acec54e4c9','property@sw.property.index',1,'2025-03-06 14:04:23.113',NULL),
+('user_activity','0191fb2ed2e47212bc8e84acec54e4c9','settings-login-registration@sw.settings.login.registration.index',1,'2024-09-25 15:40:29.509',NULL),
+('user_activity','0191fb2ed2e47212bc8e84acec54e4c9','settings@sw.settings.index',17,'2024-09-16 15:32:21.979','2024-09-25 15:40:24.916');
 /*!40000 ALTER TABLE `increment` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4397,7 +4408,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `integration`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `integration` (
   `id` binary(16) NOT NULL,
   `access_key` varchar(255) NOT NULL,
@@ -4430,7 +4441,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `integration_role`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `integration_role` (
   `integration_id` binary(16) NOT NULL,
   `acl_role_id` binary(16) NOT NULL,
@@ -4456,7 +4467,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `landing_page`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `landing_page` (
   `id` binary(16) NOT NULL,
   `version_id` binary(16) NOT NULL,
@@ -4486,7 +4497,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `landing_page_sales_channel`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `landing_page_sales_channel` (
   `landing_page_id` binary(16) NOT NULL,
   `landing_page_version_id` binary(16) NOT NULL,
@@ -4513,7 +4524,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `landing_page_tag`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `landing_page_tag` (
   `landing_page_id` binary(16) NOT NULL,
   `landing_page_version_id` binary(16) NOT NULL,
@@ -4540,7 +4551,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `landing_page_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `landing_page_translation` (
   `landing_page_id` binary(16) NOT NULL,
   `landing_page_version_id` binary(16) NOT NULL,
@@ -4578,7 +4589,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `language`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `language` (
   `id` binary(16) NOT NULL,
   `name` varchar(50) NOT NULL,
@@ -4618,7 +4629,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `locale`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `locale` (
   `id` binary(16) NOT NULL,
   `code` varchar(255) NOT NULL,
@@ -4897,7 +4908,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `locale_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `locale_translation` (
   `locale_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -5434,7 +5445,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `log_entry`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `log_entry` (
   `id` binary(16) NOT NULL,
   `message` longtext NOT NULL,
@@ -5458,20 +5469,56 @@ CREATE TABLE `log_entry` (
 LOCK TABLES `log_entry` WRITE;
 /*!40000 ALTER TABLE `log_entry` DISABLE KEYS */;
 INSERT INTO `log_entry` VALUES
-('ë˚u◊5sãù˝.ÚÂÃÒ4','checkout.customer.register',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2024-09-16 15:31:29.717',NULL),
-('ë˚u◊5sãù˝.ÚÊr§¨','mail.before.send',200,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":{\"data\":{\"recipients\":{\"test@example.com\":\"Max Mustermann\"},\"senderName\":\"{{ salesChannel.name }}\",\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"languageId\":null,\"templateId\":\"0191fb2e5136724bb1e5a5fe4a1e758d\",\"customFields\":null,\"contentHtml\":\"<div style=\\\"font-family:arial; font-size:12px;\\\">\\n            <p>\\n                {{ customer.salutation.translated.letterName }} {{customer.firstName}} {{ customer.lastName }},<br\\/>\\n                <br\\/>\\n                vielen Dank f\\u00fcr Ihre Anmeldung in unserem Shop.<br\\/>\\n                Sie erhalten Zugriff \\u00fcber Ihre E-Mail-Adresse <strong>{{ customer.email }}<\\/strong> und dem von Ihnen gew\\u00e4hlten Kennwort.<br\\/>\\n                Sie k\\u00f6nnen Ihr Kennwort jederzeit nachtr\\u00e4glich \\u00e4ndern.\\n            <\\/p>\\n        <\\/div>\",\"contentPlain\":\"{{ customer.salutation.translated.letterName }} {{customer.firstName}} {{ customer.lastName }},\\n\\n                vielen Dank f\\u00fcr Ihre Anmeldung in unserem Shop.\\n                Sie erhalten Zugriff \\u00fcber Ihre E-Mail-Adresse {{ customer.email }} und dem von Ihnen gew\\u00e4hlten Kennwort.\\n                Sie k\\u00f6nnen Ihr Kennwort jederzeit nachtr\\u00e4glich \\u00e4ndern.\\n\",\"subject\":\"Deine Registrierung bei {{ salesChannel.name }}\",\"mediaIds\":[],\"attachmentsConfig\":{}},\"eventName\":\"checkout.customer.register\",\"templateData\":{\"eventName\":\"checkout.customer.register\",\"customerId\":\"6c97534c2c0747f39e8751e43cb2b013\",\"customer\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"customer_foreign_keys_extension\"}},\"_uniqueIdentifier\":\"6c97534c2c0747f39e8751e43cb2b013\",\"versionId\":null,\"translated\":[],\"createdAt\":\"2024-09-16T15:31:28.742+00:00\",\"updatedAt\":null,\"groupId\":\"cfbd5018d38d41d8adca10d94fc8bdd6\",\"defaultPaymentMethodId\":\"0191fb2e512273c78c25658a14cb08f3\",\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"languageId\":\"2fbb5fe2e29a4d70aa5854ce7ce3e20b\",\"lastPaymentMethodId\":null,\"defaultBillingAddressId\":\"d8f0dff7ef3947979a83c42f6509f22c\",\"defaultShippingAddressId\":\"d8f0dff7ef3947979a83c42f6509f22c\",\"customerNumber\":\"SWDEMO10000\",\"salutationId\":\"0191fb2e510270b796b27f002d6a4eaf\",\"firstName\":\"Max\",\"lastName\":\"Mustermann\",\"company\":null,\"password\":\"$2y$10$qYoCQe2r3h\\/tiGIqwsq7YuuKBGCEmgtM\\/U4v182xtKDrFv5vSNFJO\",\"email\":\"test@example.com\",\"title\":null,\"vatIds\":null,\"affiliateCode\":null,\"campaignCode\":null,\"active\":true,\"doubleOptInRegistration\":false,\"doubleOptInEmailSentDate\":null,\"doubleOptInConfirmDate\":null,\"hash\":null,\"guest\":false,\"firstLogin\":null,\"lastLogin\":\"2019-06-12T07:13:39.641+00:00\",\"accountType\":\"private\",\"newsletterSalesChannelIds\":null,\"birthday\":\"1996-06-06T00:00:00.000+00:00\",\"lastOrderDate\":null,\"orderCount\":0,\"orderTotalAmount\":0,\"reviewCount\":0,\"legacyEncoder\":null,\"legacyPassword\":null,\"group\":null,\"defaultPaymentMethod\":null,\"salesChannel\":null,\"language\":null,\"lastPaymentMethod\":null,\"salutation\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"salutation_foreign_keys_extension\"},\"internal_mapping_storage\":{\"extensions\":[],\"apiAlias\":null}},\"_uniqueIdentifier\":\"0191fb2e510270b796b27f002d6a4eaf\",\"versionId\":null,\"translated\":{\"displayName\":\"Herr\",\"letterName\":\"Sehr geehrter Herr\",\"customFields\":[]},\"createdAt\":\"2024-09-16T14:13:22.306+00:00\",\"updatedAt\":null,\"salutationKey\":\"mr\",\"displayName\":\"Herr\",\"letterName\":\"Sehr geehrter Herr\",\"translations\":null,\"customers\":null,\"customerAddresses\":null,\"orderCustomers\":null,\"orderAddresses\":null,\"newsletterRecipients\":null,\"customFields\":null,\"id\":\"0191fb2e510270b796b27f002d6a4eaf\"},\"defaultBillingAddress\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"customer_address_foreign_keys_extension\"}},\"_uniqueIdentifier\":\"d8f0dff7ef3947979a83c42f6509f22c\",\"versionId\":null,\"translated\":[],\"createdAt\":\"2024-09-16T15:31:28.742+00:00\",\"updatedAt\":null,\"customerId\":\"6c97534c2c0747f39e8751e43cb2b013\",\"countryId\":\"0191fb2e510270b796b27f002fd9613a\",\"countryStateId\":null,\"salutationId\":\"0191fb2e510270b796b27f002d6a4eaf\",\"firstName\":\"Max\",\"lastName\":\"Mustermann\",\"zipcode\":\"12345\",\"city\":\"Musterstadt\",\"company\":null,\"department\":null,\"title\":null,\"street\":\"Musterstra\\u00dfe 1\",\"phoneNumber\":null,\"additionalAddressLine1\":null,\"additionalAddressLine2\":null,\"country\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"country_foreign_keys_extension\"},\"internal_mapping_storage\":{\"extensions\":[],\"apiAlias\":null}},\"_uniqueIdentifier\":\"0191fb2e510270b796b27f002fd9613a\",\"versionId\":null,\"translated\":{\"name\":\"Deutschland\",\"customFields\":[],\"addressFormat\":[[\"address\\/company\",\"symbol\\/dash\",\"address\\/department\"],[\"address\\/first_name\",\"address\\/last_name\"],[\"address\\/street\"],[\"address\\/zipcode\",\"address\\/city\"],[\"address\\/country\"]]},\"createdAt\":\"2024-09-16T14:13:22.306+00:00\",\"updatedAt\":null,\"name\":\"Deutschland\",\"iso\":\"DE\",\"position\":1,\"active\":true,\"shippingAvailable\":true,\"iso3\":\"DEU\",\"displayStateInRegistration\":false,\"forceStateInRegistration\":false,\"checkVatIdPattern\":false,\"vatIdPattern\":\"(DE)?[0-9]{9}\",\"vatIdRequired\":false,\"customerTax\":{\"extensions\":[],\"enabled\":false,\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"amount\":0},\"companyTax\":{\"extensions\":[],\"enabled\":false,\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"amount\":0},\"states\":null,\"translations\":null,\"orderAddresses\":null,\"customerAddresses\":null,\"salesChannelDefaultAssignments\":null,\"salesChannels\":null,\"taxRules\":null,\"currencyCountryRoundings\":null,\"postalCodeRequired\":false,\"isEu\":true,\"checkPostalCodePattern\":false,\"checkAdvancedPostalCodePattern\":false,\"advancedPostalCodePattern\":null,\"defaultPostalCodePattern\":\"\\\\d{5}\",\"addressFormat\":[[\"address\\/company\",\"symbol\\/dash\",\"address\\/department\"],[\"address\\/first_name\",\"address\\/last_name\"],[\"address\\/street\"],[\"address\\/zipcode\",\"address\\/city\"],[\"address\\/country\"]],\"customFields\":null,\"id\":\"0191fb2e510270b796b27f002fd9613a\"},\"countryState\":null,\"salutation\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"salutation_foreign_keys_extension\"},\"internal_mapping_storage\":{\"extensions\":[],\"apiAlias\":null}},\"_uniqueIdentifier\":\"0191fb2e510270b796b27f002d6a4eaf\",\"versionId\":null,\"translated\":{\"displayName\":\"Herr\",\"letterName\":\"Sehr geehrter Herr\",\"customFields\":[]},\"createdAt\":\"2024-09-16T14:13:22.306+00:00\",\"updatedAt\":null,\"salutationKey\":\"mr\",\"displayName\":\"Herr\",\"letterName\":\"Sehr geehrter Herr\",\"translations\":null,\"customers\":null,\"customerAddresses\":null,\"orderCustomers\":null,\"orderAddresses\":null,\"newsletterRecipients\":null,\"customFields\":null,\"id\":\"0191fb2e510270b796b27f002d6a4eaf\"},\"customer\":null,\"customFields\":null,\"id\":\"d8f0dff7ef3947979a83c42f6509f22c\"},\"defaultShippingAddress\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"customer_address_foreign_keys_extension\"}},\"_uniqueIdentifier\":\"d8f0dff7ef3947979a83c42f6509f22c\",\"versionId\":null,\"translated\":[],\"createdAt\":\"2024-09-16T15:31:28.742+00:00\",\"updatedAt\":null,\"customerId\":\"6c97534c2c0747f39e8751e43cb2b013\",\"countryId\":\"0191fb2e510270b796b27f002fd9613a\",\"countryStateId\":null,\"salutationId\":\"0191fb2e510270b796b27f002d6a4eaf\",\"firstName\":\"Max\",\"lastName\":\"Mustermann\",\"zipcode\":\"12345\",\"city\":\"Musterstadt\",\"company\":null,\"department\":null,\"title\":null,\"street\":\"Musterstra\\u00dfe 1\",\"phoneNumber\":null,\"additionalAddressLine1\":null,\"additionalAddressLine2\":null,\"country\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"country_foreign_keys_extension\"},\"internal_mapping_storage\":{\"extensions\":[],\"apiAlias\":null}},\"_uniqueIdentifier\":\"0191fb2e510270b796b27f002fd9613a\",\"versionId\":null,\"translated\":{\"name\":\"Deutschland\",\"customFields\":[],\"addressFormat\":[[\"address\\/company\",\"symbol\\/dash\",\"address\\/department\"],[\"address\\/first_name\",\"address\\/last_name\"],[\"address\\/street\"],[\"address\\/zipcode\",\"address\\/city\"],[\"address\\/country\"]]},\"createdAt\":\"2024-09-16T14:13:22.306+00:00\",\"updatedAt\":null,\"name\":\"Deutschland\",\"iso\":\"DE\",\"position\":1,\"active\":true,\"shippingAvailable\":true,\"iso3\":\"DEU\",\"displayStateInRegistration\":false,\"forceStateInRegistration\":false,\"checkVatIdPattern\":false,\"vatIdPattern\":\"(DE)?[0-9]{9}\",\"vatIdRequired\":false,\"customerTax\":{\"extensions\":[],\"enabled\":false,\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"amount\":0},\"companyTax\":{\"extensions\":[],\"enabled\":false,\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"amount\":0},\"states\":null,\"translations\":null,\"orderAddresses\":null,\"customerAddresses\":null,\"salesChannelDefaultAssignments\":null,\"salesChannels\":null,\"taxRules\":null,\"currencyCountryRoundings\":null,\"postalCodeRequired\":false,\"isEu\":true,\"checkPostalCodePattern\":false,\"checkAdvancedPostalCodePattern\":false,\"advancedPostalCodePattern\":null,\"defaultPostalCodePattern\":\"\\\\d{5}\",\"addressFormat\":[[\"address\\/company\",\"symbol\\/dash\",\"address\\/department\"],[\"address\\/first_name\",\"address\\/last_name\"],[\"address\\/street\"],[\"address\\/zipcode\",\"address\\/city\"],[\"address\\/country\"]],\"customFields\":null,\"id\":\"0191fb2e510270b796b27f002fd9613a\"},\"countryState\":null,\"salutation\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"salutation_foreign_keys_extension\"},\"internal_mapping_storage\":{\"extensions\":[],\"apiAlias\":null}},\"_uniqueIdentifier\":\"0191fb2e510270b796b27f002d6a4eaf\",\"versionId\":null,\"translated\":{\"displayName\":\"Herr\",\"letterName\":\"Sehr geehrter Herr\",\"customFields\":[]},\"createdAt\":\"2024-09-16T14:13:22.306+00:00\",\"updatedAt\":null,\"salutationKey\":\"mr\",\"displayName\":\"Herr\",\"letterName\":\"Sehr geehrter Herr\",\"translations\":null,\"customers\":null,\"customerAddresses\":null,\"orderCustomers\":null,\"orderAddresses\":null,\"newsletterRecipients\":null,\"customFields\":null,\"id\":\"0191fb2e510270b796b27f002d6a4eaf\"},\"customer\":null,\"customFields\":null,\"id\":\"d8f0dff7ef3947979a83c42f6509f22c\"},\"activeBillingAddress\":null,\"activeShippingAddress\":null,\"addresses\":null,\"orderCustomers\":null,\"autoIncrement\":1,\"tags\":null,\"tagIds\":null,\"promotions\":null,\"recoveryCustomer\":null,\"productReviews\":null,\"remoteAddress\":null,\"requestedGroupId\":null,\"requestedGroup\":null,\"boundSalesChannelId\":null,\"boundSalesChannel\":null,\"wishlists\":null,\"createdById\":\"0191fb2ed2e47212bc8e84acec54e4c9\",\"createdBy\":null,\"updatedById\":null,\"updatedBy\":null,\"customFields\":null,\"id\":\"6c97534c2c0747f39e8751e43cb2b013\"},\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"mailStruct\":{}}}}','[]','2024-09-16 15:31:29.717',NULL),
-('ë˚u◊6psÖ–÷√chI','mail.after.create.message',200,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":{\"data\":{\"recipients\":{\"test@example.com\":\"Max Mustermann\"},\"senderName\":\"ddev\",\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"languageId\":null,\"templateId\":\"0191fb2e5136724bb1e5a5fe4a1e758d\",\"customFields\":null,\"contentHtml\":\"<div style=\\\"font-family:arial; font-size:12px;\\\">\\n            <p>\\n                {{ customer.salutation.translated.letterName }} {{customer.firstName}} {{ customer.lastName }},<br\\/>\\n                <br\\/>\\n                vielen Dank f\\u00fcr Ihre Anmeldung in unserem Shop.<br\\/>\\n                Sie erhalten Zugriff \\u00fcber Ihre E-Mail-Adresse <strong>{{ customer.email }}<\\/strong> und dem von Ihnen gew\\u00e4hlten Kennwort.<br\\/>\\n                Sie k\\u00f6nnen Ihr Kennwort jederzeit nachtr\\u00e4glich \\u00e4ndern.\\n            <\\/p>\\n        <\\/div>\",\"contentPlain\":\"{{ customer.salutation.translated.letterName }} {{customer.firstName}} {{ customer.lastName }},\\n\\n                vielen Dank f\\u00fcr Ihre Anmeldung in unserem Shop.\\n                Sie erhalten Zugriff \\u00fcber Ihre E-Mail-Adresse {{ customer.email }} und dem von Ihnen gew\\u00e4hlten Kennwort.\\n                Sie k\\u00f6nnen Ihr Kennwort jederzeit nachtr\\u00e4glich \\u00e4ndern.\\n\",\"subject\":\"Deine Registrierung bei ddev\",\"mediaIds\":[],\"attachmentsConfig\":{}},\"eventName\":\"checkout.customer.register\",\"message\":{}}}','[]','2024-09-16 15:31:29.718',NULL),
-('ë˚u◊6psÖ–÷√cîì$','mail.sent',200,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":{\"eventName\":\"checkout.customer.register\",\"subject\":\"Deine Registrierung bei ddev\",\"recipients\":{\"test@example.com\":\"Max Mustermann\"},\"contents\":{\"text\\/html\":\"<div style=\\\"font-family:arial; font-size:12px;\\\">\\n            <p>\\n                Sehr geehrter Herr Max Mustermann,<br\\/>\\n                <br\\/>\\n                vielen Dank f\\u00fcr Ihre Anmeldung in unserem Shop.<br\\/>\\n                Sie erhalten Zugriff \\u00fcber Ihre E-Mail-Adresse <strong>test@example.com<\\/strong> und dem von Ihnen gew\\u00e4hlten Kennwort.<br\\/>\\n                Sie k\\u00f6nnen Ihr Kennwort jederzeit nachtr\\u00e4glich \\u00e4ndern.\\n            <\\/p>\\n        <\\/div>\",\"text\\/plain\":\"Sehr geehrter Herr Max Mustermann,\\n\\n                vielen Dank f\\u00fcr Ihre Anmeldung in unserem Shop.\\n                Sie erhalten Zugriff \\u00fcber Ihre E-Mail-Adresse test@example.com und dem von Ihnen gew\\u00e4hlten Kennwort.\\n                Sie k\\u00f6nnen Ihr Kennwort jederzeit nachtr\\u00e4glich \\u00e4ndern.\\n\"}}}','[]','2024-09-16 15:31:29.718',NULL),
-('íÙ‘ q’í\Z:˝XKX','media.uploaded',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2024-09-18 21:06:01.546',NULL),
-('í˜´£rÿ∞nœø™»','media.uploaded',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2024-09-18 21:09:07.619',NULL),
-('í¯iŒrd¥ç∆LkJF','media.uploaded',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2024-09-18 21:09:56.302',NULL),
-('í	^Úr2Ç˜GLÎ','media.uploaded',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2024-09-19 08:21:10.512',NULL),
-('í	ÿü≈qvºv´-}ûg','media.uploaded',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2024-09-19 10:34:04.613',NULL),
-('í	Ó7\nqﬁû§,πÄ','media.uploaded',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2024-09-19 10:57:39.594',NULL),
-('í\nVPw•Ü`¡7LÁk','TypeError: (intermediate value).assetFilter is not a function',400,'Administration','{\"component\":\"Unknown component\",\"stack\":\"render@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249 line 61 > Function:15:12\\nnK@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:5784\\nl@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:6885\\nrun@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:12788\\n583802\\/r$\\/X\\/e.update@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7320\\nX@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7347\\nY@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5224\\nz@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5006\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1898\\nl@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:6336\\nrun@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:12788\\n583802\\/r$\\/X\\/e.update@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7320\\nt2@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:672\\ne@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:1723\\npromise callback*ns@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:1617\\nno@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:1576\\n583802\\/r$\\/X\\/e.effect<@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7280\\neV@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:13346\\neq@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:14034\\ntP@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:20911\\nset value@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:21391\\n583802\\/iU\\/setup\\/<@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:15189\\npromise callback*setup@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:15179\\nt2@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:664\\n583802\\/a8\\/a<@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:31913\\na8@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:32063\\nY@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5146\\nz@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5006\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1898\\n$@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:3362\\nP@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:2675\\nM@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:2503\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1873\\nl@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:6892\\nrun@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:12788\\n583802\\/r$\\/X\\/e.update@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7320\\nX@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7347\\nY@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5224\\nz@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5006\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1898\\nl@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:6336\\nrun@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:12788\\n583802\\/r$\\/X\\/e.update@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7320\\nt2@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:672\\ne@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:1723\\npromise callback*ns@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:1617\\nno@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:1576\\n583802\\/r$\\/X\\/e.effect<@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7280\\neV@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:13346\\neq@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:14034\\ntP@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:20911\\nset value@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:21391\\n\",\"url\":\"https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/admin#\\/sw\\/cms\\/detail\\/0191fba0de487335807c869f58d09ee0\"}',NULL,'2024-09-19 12:51:04.562',NULL),
-('í\nV.N{<≠GÁz…]Ô$','TypeError: (intermediate value).assetFilter is not a function',400,'Administration','{\"component\":\"Unknown component\",\"stack\":\"render@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249 line 61 > Function:15:12\\nnK@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:5784\\nl@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:6308\\nrun@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:12788\\n583802\\/r$\\/X\\/e.update@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7320\\nJ@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5820\\nz@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5023\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1898\\nl@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:6336\\nrun@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:12788\\n583802\\/r$\\/X\\/e.update@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7320\\nJ@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5820\\nz@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5023\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1898\\nK@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:4292\\nV@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:3676\\nM@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:2522\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1873\\nl@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:6336\\nrun@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:12788\\n583802\\/r$\\/X\\/e.update@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7320\\nJ@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5820\\nz@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5023\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1898\\nl@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:6336\\nrun@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:12788\\n583802\\/r$\\/X\\/e.update@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7320\\nJ@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5820\\nz@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5023\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1898\\neo@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:8804\\nei@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:8391\\nG@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:4892\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1835\\nK@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:4292\\nV@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:3676\\nM@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:2522\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1873\\nl@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:6336\\nrun@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:12788\\n583802\\/r$\\/X\\/e.update@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7320\\nJ@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5820\\nz@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5023\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1898\\nl@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:6336\\nrun@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:12788\\n583802\\/r$\\/X\\/e.update@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7320\\nJ@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5820\\nz@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5023\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1898\\neo@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:8804\\nei@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:8391\\nG@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:4892\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1835\\nK@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:4292\\nV@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:3676\\nM@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:2522\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1873\\nK@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:4292\\nV@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:3676\\nM@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:2522\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1873\\nl@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:6336\\nrun@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:12788\\n583802\\/r$\\/X\\/e.update@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7320\\nJ@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5820\\nz@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5023\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1898\\nl@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:6336\\nrun@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:12788\\n583802\\/r$\\/X\\/e.update@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7320\\nJ@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5820\\nz@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5023\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1898\\nK@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:4292\\nG@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:4814\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1835\\neo@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:8804\\nei@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:8278\\nG@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:4892\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1835\\nK@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:4292\\nG@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:4814\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1835\\nK@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:4292\\nV@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:3676\\nM@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:2522\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1873\\nK@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:4292\\nV@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:3676\\nM@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:2522\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1873\\nl@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:6336\\nrun@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:12788\\n583802\\/r$\\/X\\/e.update@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7320\\nt2@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:672\\ne@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:1723\\npromise callback*ns@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:1617\\nno@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:1576\\n583802\\/r$\\/X\\/e.effect<@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7280\\neV@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:13346\\neJ@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:14760\\nset@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:16219\\nset value@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:22110\\nset@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:16110\\nsetSelectedBlock@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:196:9749\\nna\\/r@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:264:26275\\nsetBlock@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:196:10172\\nna\\/r@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:264:26275\\nonBlockSelection@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/3b97bfeb2747e0133bf9.js:1:11278\\nonBlockOverlayClick@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249 line 61 > Function:116:67\\nt2@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:664\\nt5@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:734\\nnD@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:4709\\nonBlockOverlayClick@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/94017fcdf8aaec1d7f9c.js:1:3054\\nt2@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:664\\nt5@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:734\\nn@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:52361\\nEventListener.handleEvent*oz@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:42743\\n583802\\/patchProp\\/<@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:52260\\npatchProp@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:52669\\nP@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:2796\\nM@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:2503\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1873\\n$@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:3362\\nP@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:2675\\nM@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:2503\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1873\\nl@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:6892\\n\",\"url\":\"https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/admin#\\/sw\\/cms\\/detail\\/0191fba0de487335807c869f58d09ee0\"}',NULL,'2024-09-19 12:51:13.169',NULL),
-('í\nW}åx1ó9h·]*™<','TypeError: (intermediate value).assetFilter is not a function',400,'Administration','{\"component\":\"Unknown component\",\"stack\":\"render@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249 line 61 > Function:15:12\\nnK@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:5784\\nl@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:6885\\nrun@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:12788\\n583802\\/r$\\/X\\/e.update@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7320\\nX@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7347\\nY@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5224\\nz@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5006\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1898\\nl@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:6892\\nrun@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:12788\\n583802\\/r$\\/X\\/e.update@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7320\\nX@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7347\\nY@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5224\\nz@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5006\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1898\\n$@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:3362\\nP@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:2675\\nM@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:2503\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1873\\nl@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:6892\\nrun@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:12788\\n583802\\/r$\\/X\\/e.update@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7320\\nX@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7347\\nY@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5224\\nz@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5006\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1898\\nl@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:6892\\nrun@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:12788\\n583802\\/r$\\/X\\/e.update@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7320\\nX@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7347\\nY@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5224\\nz@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5006\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1898\\n$@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:3362\\nG@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:4748\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1835\\n$@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:3362\\nP@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:2675\\nM@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:2503\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1873\\nl@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:6892\\nrun@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:12788\\n583802\\/r$\\/X\\/e.update@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7320\\nX@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7347\\nY@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5224\\nz@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5006\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1898\\nl@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:6892\\nrun@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:12788\\n583802\\/r$\\/X\\/e.update@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7320\\nX@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7347\\nY@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5224\\nz@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5006\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1898\\n$@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:3362\\nG@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:4748\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1835\\n$@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:3362\\nP@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:2675\\nM@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:2503\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1873\\n$@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:3362\\nP@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:2675\\nM@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:2503\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1873\\nl@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:6892\\nrun@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:12788\\n583802\\/r$\\/X\\/e.update@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7320\\nX@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7347\\nY@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5224\\nz@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5006\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1898\\nl@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:6892\\nrun@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:12788\\n583802\\/r$\\/X\\/e.update@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7320\\nX@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7347\\nY@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5224\\nz@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5006\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1898\\n$@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:3362\\nG@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:4748\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1835\\neo@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:9007\\nei@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:8278\\nG@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:4892\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1835\\nK@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:4292\\nG@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:4814\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1835\\nK@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:4292\\nV@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:3676\\nM@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:2522\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1873\\nK@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:4292\\nV@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:3676\\nM@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:2522\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1873\\nl@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:6336\\nrun@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:12788\\n583802\\/r$\\/X\\/e.update@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7320\\nt2@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:672\\ne@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:1723\\npromise callback*ns@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:1617\\nno@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:1576\\nd@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:17130\\neV@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:13346\\n583802\\/e1<\\/e[t]@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:15271\\nonBlockStageDrop@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/b647beae8f7caa970124.js:1:36516\\nw@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:97:281885\\nEventListener.handleEvent*m@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:97:280220\\nEventListener.handleEvent*mounted@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:97:284018\\nt2@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:664\\nt5@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:734\\nig@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:11060\\n583802\\/r$\\/P\\/<@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:3134\\nnc@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:2216\\ne@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:1763\\npromise callback*ns@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:1617\\nno@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:1576\\n583802\\/r$\\/X\\/e.effect<@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7280\\neV@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:13346\\neJ@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:14760\\nset@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:16219\\nset@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:19729\\nonChange@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:96:111828\\nt2@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:664\\nt5@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:734\\nn@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:52361\\n\",\"url\":\"https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/admin#\\/sw\\/cms\\/detail\\/0191fba0de487335807c869f58d09ee0\"}',NULL,'2024-09-19 12:52:38.992',NULL),
-('í\n]´sì§˚Ô˙;ç','TypeError: (intermediate value).assetFilter is not a function',400,'Administration','{\"component\":\"Unknown component\",\"stack\":\"render@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249 line 61 > Function:15:12\\nnK@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:5784\\nl@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:6885\\nrun@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:12788\\n583802\\/r$\\/X\\/e.update@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7320\\nX@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7347\\nY@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5224\\nz@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5006\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1898\\nl@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:6336\\nrun@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:12788\\n583802\\/r$\\/X\\/e.update@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7320\\nt2@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:672\\ne@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:1723\\npromise callback*ns@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:1617\\nno@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:1576\\n583802\\/r$\\/X\\/e.effect<@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7280\\neV@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:13346\\neq@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:14034\\ntP@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:20911\\nset value@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:21391\\n583802\\/iU\\/setup\\/<@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:15189\\npromise callback*setup@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:15179\\nt2@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:664\\n583802\\/a8\\/a<@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:31913\\na8@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:32063\\nY@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5146\\nz@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5006\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1898\\n$@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:3362\\nP@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:2675\\nM@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:2503\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1873\\nl@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:6892\\nrun@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:12788\\n583802\\/r$\\/X\\/e.update@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7320\\nX@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7347\\nY@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5224\\nz@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:5006\\nI@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:1898\\nl@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:6336\\nrun@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:12788\\n583802\\/r$\\/X\\/e.update@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7320\\nt2@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:672\\ne@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:1723\\npromise callback*ns@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:1617\\nno@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:45:1576\\n583802\\/r$\\/X\\/e.effect<@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:57:7280\\neV@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:13346\\neq@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:14034\\ntP@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:20911\\nset value@https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/bundles\\/administration\\/static\\/js\\/app.js?1726750249:43:21391\\n\",\"url\":\"https:\\/\\/tecsafe-sw6-plugin.ddev.site\\/admin#\\/sw\\/cms\\/detail\\/0191fba0de487335807c869f58d09ee0\"}',NULL,'2024-09-19 12:58:41.584',NULL);
+('ï…‹ï„s™Öéb\Z\nä','checkout.customer.register',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-24 20:33:51.587',NULL),
+('ï…‹ï„s™Öéb\Z¿r’','mail.before.send',200,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":{\"data\":{\"recipients\":{\"foo@bar.com\":\"Foo Bar\"},\"senderName\":\"{{ salesChannel.name }}\",\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"languageId\":null,\"templateId\":\"0191fb2e5136724bb1e5a5fe4a1e758d\",\"customFields\":null,\"contentHtml\":\"<div style=\\\"font-family:arial; font-size:12px;\\\">\\n            <p>\\n                {{ customer.salutation.translated.letterName }} {{customer.firstName}} {{ customer.lastName }},<br\\/>\\n                <br\\/>\\n                vielen Dank f\\u00fcr Ihre Anmeldung in unserem Shop.<br\\/>\\n                Sie erhalten Zugriff \\u00fcber Ihre E-Mail-Adresse <strong>{{ customer.email }}<\\/strong> und dem von Ihnen gew\\u00e4hlten Kennwort.<br\\/>\\n                Sie k\\u00f6nnen Ihr Kennwort jederzeit nachtr\\u00e4glich \\u00e4ndern.\\n            <\\/p>\\n        <\\/div>\",\"contentPlain\":\"{{ customer.salutation.translated.letterName }} {{customer.firstName}} {{ customer.lastName }},\\n\\n                vielen Dank f\\u00fcr Ihre Anmeldung in unserem Shop.\\n                Sie erhalten Zugriff \\u00fcber Ihre E-Mail-Adresse {{ customer.email }} und dem von Ihnen gew\\u00e4hlten Kennwort.\\n                Sie k\\u00f6nnen Ihr Kennwort jederzeit nachtr\\u00e4glich \\u00e4ndern.\\n\",\"subject\":\"Deine Registrierung bei {{ salesChannel.name }}\",\"mediaIds\":[],\"attachmentsConfig\":{}},\"eventName\":\"checkout.customer.register\",\"templateData\":{\"eventName\":\"checkout.customer.register\",\"customerId\":\"0195c9dc94fe70e7b23bfd988fc965a4\",\"customer\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"customer_foreign_keys_extension\"}},\"_uniqueIdentifier\":\"0195c9dc94fe70e7b23bfd988fc965a4\",\"versionId\":null,\"translated\":[],\"createdAt\":\"2025-03-24T20:33:51.411+00:00\",\"updatedAt\":null,\"groupId\":\"cfbd5018d38d41d8adca10d94fc8bdd6\",\"defaultPaymentMethodId\":\"0191fb2e512273c78c25658a14e24422\",\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"languageId\":\"2fbb5fe2e29a4d70aa5854ce7ce3e20b\",\"lastPaymentMethodId\":null,\"defaultBillingAddressId\":\"0195c9dc94fe70e7b23bfd988ff29bea\",\"defaultShippingAddressId\":\"0195c9dc94fe70e7b23bfd988ff29bea\",\"customerNumber\":\"10000\",\"salutationId\":\"0191fb2e510270b796b27f002edb5a3d\",\"firstName\":\"Foo\",\"lastName\":\"Bar\",\"company\":null,\"password\":\"$2y$10$h8l46fH\\/GQVjHgJ.sepb4OC8LSQJdAV1WMo9QZEvSH\\/P9L9jYpUOq\",\"email\":\"foo@bar.com\",\"title\":null,\"vatIds\":null,\"affiliateCode\":null,\"campaignCode\":null,\"active\":true,\"doubleOptInRegistration\":false,\"doubleOptInEmailSentDate\":null,\"doubleOptInConfirmDate\":null,\"hash\":null,\"guest\":false,\"firstLogin\":\"2025-03-24T20:33:51.358+00:00\",\"lastLogin\":null,\"accountType\":\"private\",\"newsletterSalesChannelIds\":null,\"birthday\":null,\"lastOrderDate\":null,\"orderCount\":0,\"orderTotalAmount\":0,\"reviewCount\":0,\"legacyEncoder\":null,\"legacyPassword\":null,\"group\":null,\"defaultPaymentMethod\":null,\"salesChannel\":null,\"language\":null,\"lastPaymentMethod\":null,\"salutation\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"salutation_foreign_keys_extension\"},\"internal_mapping_storage\":{\"extensions\":[],\"apiAlias\":null}},\"_uniqueIdentifier\":\"0191fb2e510270b796b27f002edb5a3d\",\"versionId\":null,\"translated\":{\"displayName\":\"Keine Angabe\",\"letterName\":\" \",\"customFields\":[]},\"createdAt\":\"2024-09-16T14:13:22.306+00:00\",\"updatedAt\":null,\"salutationKey\":\"not_specified\",\"displayName\":\"Keine Angabe\",\"letterName\":\" \",\"translations\":null,\"customers\":null,\"customerAddresses\":null,\"orderCustomers\":null,\"orderAddresses\":null,\"newsletterRecipients\":null,\"customFields\":null,\"id\":\"0191fb2e510270b796b27f002edb5a3d\"},\"defaultBillingAddress\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"customer_address_foreign_keys_extension\"}},\"_uniqueIdentifier\":\"0195c9dc94fe70e7b23bfd988ff29bea\",\"versionId\":null,\"translated\":[],\"createdAt\":\"2025-03-24T20:33:51.410+00:00\",\"updatedAt\":null,\"customerId\":\"0195c9dc94fe70e7b23bfd988fc965a4\",\"countryId\":\"0191fb2e510270b796b27f002fd9613a\",\"countryStateId\":null,\"salutationId\":\"0191fb2e510270b796b27f002edb5a3d\",\"firstName\":\"Foo\",\"lastName\":\"Bar\",\"zipcode\":\"23\",\"city\":\"bar\",\"company\":null,\"department\":null,\"title\":null,\"street\":\"fo\",\"phoneNumber\":null,\"additionalAddressLine1\":null,\"additionalAddressLine2\":null,\"country\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"country_foreign_keys_extension\"},\"internal_mapping_storage\":{\"extensions\":[],\"apiAlias\":null}},\"_uniqueIdentifier\":\"0191fb2e510270b796b27f002fd9613a\",\"versionId\":null,\"translated\":{\"name\":\"Deutschland\",\"customFields\":[],\"addressFormat\":[[\"address\\/company\",\"symbol\\/dash\",\"address\\/department\"],[\"address\\/first_name\",\"address\\/last_name\"],[\"address\\/street\"],[\"address\\/zipcode\",\"address\\/city\"],[\"address\\/country\"]]},\"createdAt\":\"2024-09-16T14:13:22.306+00:00\",\"updatedAt\":null,\"name\":\"Deutschland\",\"iso\":\"DE\",\"position\":1,\"active\":true,\"shippingAvailable\":true,\"iso3\":\"DEU\",\"displayStateInRegistration\":false,\"forceStateInRegistration\":false,\"checkVatIdPattern\":false,\"vatIdPattern\":\"(DE)?[0-9]{9}\",\"vatIdRequired\":false,\"customerTax\":{\"extensions\":[],\"enabled\":false,\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"amount\":0},\"companyTax\":{\"extensions\":[],\"enabled\":false,\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"amount\":0},\"states\":null,\"translations\":null,\"orderAddresses\":null,\"customerAddresses\":null,\"salesChannelDefaultAssignments\":null,\"salesChannels\":null,\"taxRules\":null,\"currencyCountryRoundings\":null,\"postalCodeRequired\":false,\"isEu\":true,\"checkPostalCodePattern\":false,\"checkAdvancedPostalCodePattern\":false,\"advancedPostalCodePattern\":null,\"defaultPostalCodePattern\":\"\\\\d{5}\",\"addressFormat\":[[\"address\\/company\",\"symbol\\/dash\",\"address\\/department\"],[\"address\\/first_name\",\"address\\/last_name\"],[\"address\\/street\"],[\"address\\/zipcode\",\"address\\/city\"],[\"address\\/country\"]],\"customFields\":null,\"id\":\"0191fb2e510270b796b27f002fd9613a\"},\"countryState\":null,\"salutation\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"salutation_foreign_keys_extension\"},\"internal_mapping_storage\":{\"extensions\":[],\"apiAlias\":null}},\"_uniqueIdentifier\":\"0191fb2e510270b796b27f002edb5a3d\",\"versionId\":null,\"translated\":{\"displayName\":\"Keine Angabe\",\"letterName\":\" \",\"customFields\":[]},\"createdAt\":\"2024-09-16T14:13:22.306+00:00\",\"updatedAt\":null,\"salutationKey\":\"not_specified\",\"displayName\":\"Keine Angabe\",\"letterName\":\" \",\"translations\":null,\"customers\":null,\"customerAddresses\":null,\"orderCustomers\":null,\"orderAddresses\":null,\"newsletterRecipients\":null,\"customFields\":null,\"id\":\"0191fb2e510270b796b27f002edb5a3d\"},\"customer\":null,\"customFields\":null,\"id\":\"0195c9dc94fe70e7b23bfd988ff29bea\"},\"defaultShippingAddress\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"customer_address_foreign_keys_extension\"}},\"_uniqueIdentifier\":\"0195c9dc94fe70e7b23bfd988ff29bea\",\"versionId\":null,\"translated\":[],\"createdAt\":\"2025-03-24T20:33:51.410+00:00\",\"updatedAt\":null,\"customerId\":\"0195c9dc94fe70e7b23bfd988fc965a4\",\"countryId\":\"0191fb2e510270b796b27f002fd9613a\",\"countryStateId\":null,\"salutationId\":\"0191fb2e510270b796b27f002edb5a3d\",\"firstName\":\"Foo\",\"lastName\":\"Bar\",\"zipcode\":\"23\",\"city\":\"bar\",\"company\":null,\"department\":null,\"title\":null,\"street\":\"fo\",\"phoneNumber\":null,\"additionalAddressLine1\":null,\"additionalAddressLine2\":null,\"country\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"country_foreign_keys_extension\"},\"internal_mapping_storage\":{\"extensions\":[],\"apiAlias\":null}},\"_uniqueIdentifier\":\"0191fb2e510270b796b27f002fd9613a\",\"versionId\":null,\"translated\":{\"name\":\"Deutschland\",\"customFields\":[],\"addressFormat\":[[\"address\\/company\",\"symbol\\/dash\",\"address\\/department\"],[\"address\\/first_name\",\"address\\/last_name\"],[\"address\\/street\"],[\"address\\/zipcode\",\"address\\/city\"],[\"address\\/country\"]]},\"createdAt\":\"2024-09-16T14:13:22.306+00:00\",\"updatedAt\":null,\"name\":\"Deutschland\",\"iso\":\"DE\",\"position\":1,\"active\":true,\"shippingAvailable\":true,\"iso3\":\"DEU\",\"displayStateInRegistration\":false,\"forceStateInRegistration\":false,\"checkVatIdPattern\":false,\"vatIdPattern\":\"(DE)?[0-9]{9}\",\"vatIdRequired\":false,\"customerTax\":{\"extensions\":[],\"enabled\":false,\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"amount\":0},\"companyTax\":{\"extensions\":[],\"enabled\":false,\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"amount\":0},\"states\":null,\"translations\":null,\"orderAddresses\":null,\"customerAddresses\":null,\"salesChannelDefaultAssignments\":null,\"salesChannels\":null,\"taxRules\":null,\"currencyCountryRoundings\":null,\"postalCodeRequired\":false,\"isEu\":true,\"checkPostalCodePattern\":false,\"checkAdvancedPostalCodePattern\":false,\"advancedPostalCodePattern\":null,\"defaultPostalCodePattern\":\"\\\\d{5}\",\"addressFormat\":[[\"address\\/company\",\"symbol\\/dash\",\"address\\/department\"],[\"address\\/first_name\",\"address\\/last_name\"],[\"address\\/street\"],[\"address\\/zipcode\",\"address\\/city\"],[\"address\\/country\"]],\"customFields\":null,\"id\":\"0191fb2e510270b796b27f002fd9613a\"},\"countryState\":null,\"salutation\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"salutation_foreign_keys_extension\"},\"internal_mapping_storage\":{\"extensions\":[],\"apiAlias\":null}},\"_uniqueIdentifier\":\"0191fb2e510270b796b27f002edb5a3d\",\"versionId\":null,\"translated\":{\"displayName\":\"Keine Angabe\",\"letterName\":\" \",\"customFields\":[]},\"createdAt\":\"2024-09-16T14:13:22.306+00:00\",\"updatedAt\":null,\"salutationKey\":\"not_specified\",\"displayName\":\"Keine Angabe\",\"letterName\":\" \",\"translations\":null,\"customers\":null,\"customerAddresses\":null,\"orderCustomers\":null,\"orderAddresses\":null,\"newsletterRecipients\":null,\"customFields\":null,\"id\":\"0191fb2e510270b796b27f002edb5a3d\"},\"customer\":null,\"customFields\":null,\"id\":\"0195c9dc94fe70e7b23bfd988ff29bea\"},\"activeBillingAddress\":null,\"activeShippingAddress\":null,\"addresses\":null,\"orderCustomers\":null,\"autoIncrement\":2,\"tags\":null,\"tagIds\":null,\"promotions\":null,\"recoveryCustomer\":null,\"productReviews\":null,\"remoteAddress\":null,\"requestedGroupId\":null,\"requestedGroup\":null,\"boundSalesChannelId\":null,\"boundSalesChannel\":null,\"wishlists\":null,\"createdById\":null,\"createdBy\":null,\"updatedById\":null,\"updatedBy\":null,\"customFields\":null,\"id\":\"0195c9dc94fe70e7b23bfd988fc965a4\"},\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"mailStruct\":{}}}}','[]','2025-03-24 20:33:51.587',NULL),
+('ï…‹ï‰r¡ë£ç˛sa','mail.after.create.message',200,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":{\"data\":{\"recipients\":{\"foo@bar.com\":\"Foo Bar\"},\"senderName\":\"ddev\",\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"languageId\":null,\"templateId\":\"0191fb2e5136724bb1e5a5fe4a1e758d\",\"customFields\":null,\"contentHtml\":\"<div style=\\\"font-family:arial; font-size:12px;\\\">\\n            <p>\\n                {{ customer.salutation.translated.letterName }} {{customer.firstName}} {{ customer.lastName }},<br\\/>\\n                <br\\/>\\n                vielen Dank f\\u00fcr Ihre Anmeldung in unserem Shop.<br\\/>\\n                Sie erhalten Zugriff \\u00fcber Ihre E-Mail-Adresse <strong>{{ customer.email }}<\\/strong> und dem von Ihnen gew\\u00e4hlten Kennwort.<br\\/>\\n                Sie k\\u00f6nnen Ihr Kennwort jederzeit nachtr\\u00e4glich \\u00e4ndern.\\n            <\\/p>\\n        <\\/div>\",\"contentPlain\":\"{{ customer.salutation.translated.letterName }} {{customer.firstName}} {{ customer.lastName }},\\n\\n                vielen Dank f\\u00fcr Ihre Anmeldung in unserem Shop.\\n                Sie erhalten Zugriff \\u00fcber Ihre E-Mail-Adresse {{ customer.email }} und dem von Ihnen gew\\u00e4hlten Kennwort.\\n                Sie k\\u00f6nnen Ihr Kennwort jederzeit nachtr\\u00e4glich \\u00e4ndern.\\n\",\"subject\":\"Deine Registrierung bei ddev\",\"mediaIds\":[],\"attachmentsConfig\":{}},\"eventName\":\"checkout.customer.register\",\"message\":{}}}','[]','2025-03-24 20:33:51.588',NULL),
+('ï…‹ï‰r¡ë£çÆÜà','mail.sent',200,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":{\"eventName\":\"checkout.customer.register\",\"subject\":\"Deine Registrierung bei ddev\",\"recipients\":{\"foo@bar.com\":\"Foo Bar\"},\"contents\":{\"text\\/html\":\"<div style=\\\"font-family:arial; font-size:12px;\\\">\\n            <p>\\n                  Foo Bar,<br\\/>\\n                <br\\/>\\n                vielen Dank f\\u00fcr Ihre Anmeldung in unserem Shop.<br\\/>\\n                Sie erhalten Zugriff \\u00fcber Ihre E-Mail-Adresse <strong>foo@bar.com<\\/strong> und dem von Ihnen gew\\u00e4hlten Kennwort.<br\\/>\\n                Sie k\\u00f6nnen Ihr Kennwort jederzeit nachtr\\u00e4glich \\u00e4ndern.\\n            <\\/p>\\n        <\\/div>\",\"text\\/plain\":\"  Foo Bar,\\n\\n                vielen Dank f\\u00fcr Ihre Anmeldung in unserem Shop.\\n                Sie erhalten Zugriff \\u00fcber Ihre E-Mail-Adresse foo@bar.com und dem von Ihnen gew\\u00e4hlten Kennwort.\\n                Sie k\\u00f6nnen Ihr Kennwort jederzeit nachtr\\u00e4glich \\u00e4ndern.\\n\"}}}','[]','2025-03-24 20:33:51.588',NULL),
+('ï…‹ï‰r¡ë£ç	è‡','checkout.customer.login',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-24 20:33:51.588',NULL),
+('ïÃ_ÎMpÀô”<©K','checkout.customer.logout',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-25 08:16:33.101',NULL),
+('ïÃ``)s™ü¡ˆç˛F=ò','checkout.customer.register',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-25 08:17:03.018',NULL),
+('ïÃ``*sÜ®*}ÜÈè\n','mail.before.send',200,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":{\"data\":{\"recipients\":{\"test@madco.de\":\"Test madco\"},\"senderName\":\"{{ salesChannel.name }}\",\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"languageId\":null,\"templateId\":\"0191fb2e5136724bb1e5a5fe4a1e758d\",\"customFields\":null,\"contentHtml\":\"<div style=\\\"font-family:arial; font-size:12px;\\\">\\n            <p>\\n                {{ customer.salutation.translated.letterName }} {{customer.firstName}} {{ customer.lastName }},<br\\/>\\n                <br\\/>\\n                vielen Dank f\\u00fcr Ihre Anmeldung in unserem Shop.<br\\/>\\n                Sie erhalten Zugriff \\u00fcber Ihre E-Mail-Adresse <strong>{{ customer.email }}<\\/strong> und dem von Ihnen gew\\u00e4hlten Kennwort.<br\\/>\\n                Sie k\\u00f6nnen Ihr Kennwort jederzeit nachtr\\u00e4glich \\u00e4ndern.\\n            <\\/p>\\n        <\\/div>\",\"contentPlain\":\"{{ customer.salutation.translated.letterName }} {{customer.firstName}} {{ customer.lastName }},\\n\\n                vielen Dank f\\u00fcr Ihre Anmeldung in unserem Shop.\\n                Sie erhalten Zugriff \\u00fcber Ihre E-Mail-Adresse {{ customer.email }} und dem von Ihnen gew\\u00e4hlten Kennwort.\\n                Sie k\\u00f6nnen Ihr Kennwort jederzeit nachtr\\u00e4glich \\u00e4ndern.\\n\",\"subject\":\"Deine Registrierung bei {{ salesChannel.name }}\",\"mediaIds\":[],\"attachmentsConfig\":{}},\"eventName\":\"checkout.customer.register\",\"templateData\":{\"eventName\":\"checkout.customer.register\",\"customerId\":\"0195cc605f6f7333bb6a22872f4ba2e3\",\"customer\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"customer_foreign_keys_extension\"}},\"_uniqueIdentifier\":\"0195cc605f6f7333bb6a22872f4ba2e3\",\"versionId\":null,\"translated\":[],\"createdAt\":\"2025-03-25T08:17:02.885+00:00\",\"updatedAt\":null,\"groupId\":\"cfbd5018d38d41d8adca10d94fc8bdd6\",\"defaultPaymentMethodId\":\"0191fb2e512273c78c25658a14e24422\",\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"languageId\":\"2fbb5fe2e29a4d70aa5854ce7ce3e20b\",\"lastPaymentMethodId\":null,\"defaultBillingAddressId\":\"0195cc605f6f7333bb6a22872fb1903b\",\"defaultShippingAddressId\":\"0195cc605f6f7333bb6a22872fb1903b\",\"customerNumber\":\"10001\",\"salutationId\":\"0191fb2e510270b796b27f002e149c31\",\"firstName\":\"Test\",\"lastName\":\"madco\",\"company\":null,\"password\":\"$2y$10$gxIKl17XpZYMvPBfZC71eetifTdHM0yHTPJPauTom\\/J208jwnBgyG\",\"email\":\"test@madco.de\",\"title\":null,\"vatIds\":null,\"affiliateCode\":null,\"campaignCode\":null,\"active\":true,\"doubleOptInRegistration\":false,\"doubleOptInEmailSentDate\":null,\"doubleOptInConfirmDate\":null,\"hash\":null,\"guest\":false,\"firstLogin\":\"2025-03-25T08:17:02.831+00:00\",\"lastLogin\":null,\"accountType\":\"private\",\"newsletterSalesChannelIds\":null,\"birthday\":null,\"lastOrderDate\":null,\"orderCount\":0,\"orderTotalAmount\":0,\"reviewCount\":0,\"legacyEncoder\":null,\"legacyPassword\":null,\"group\":null,\"defaultPaymentMethod\":null,\"salesChannel\":null,\"language\":null,\"lastPaymentMethod\":null,\"salutation\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"salutation_foreign_keys_extension\"},\"internal_mapping_storage\":{\"extensions\":[],\"apiAlias\":null}},\"_uniqueIdentifier\":\"0191fb2e510270b796b27f002e149c31\",\"versionId\":null,\"translated\":{\"displayName\":\"Frau\",\"letterName\":\"Sehr geehrte Frau\",\"customFields\":[]},\"createdAt\":\"2024-09-16T14:13:22.306+00:00\",\"updatedAt\":null,\"salutationKey\":\"mrs\",\"displayName\":\"Frau\",\"letterName\":\"Sehr geehrte Frau\",\"translations\":null,\"customers\":null,\"customerAddresses\":null,\"orderCustomers\":null,\"orderAddresses\":null,\"newsletterRecipients\":null,\"customFields\":null,\"id\":\"0191fb2e510270b796b27f002e149c31\"},\"defaultBillingAddress\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"customer_address_foreign_keys_extension\"}},\"_uniqueIdentifier\":\"0195cc605f6f7333bb6a22872fb1903b\",\"versionId\":null,\"translated\":[],\"createdAt\":\"2025-03-25T08:17:02.885+00:00\",\"updatedAt\":null,\"customerId\":\"0195cc605f6f7333bb6a22872f4ba2e3\",\"countryId\":\"0191fb2e510270b796b27f002fd9613a\",\"countryStateId\":null,\"salutationId\":\"0191fb2e510270b796b27f002e149c31\",\"firstName\":\"Test\",\"lastName\":\"madco\",\"zipcode\":\"66121\",\"city\":\"Sarbr\\u00fccken\",\"company\":null,\"department\":null,\"title\":null,\"street\":\"Teststra\\u00dfe\",\"phoneNumber\":null,\"additionalAddressLine1\":null,\"additionalAddressLine2\":null,\"country\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"country_foreign_keys_extension\"},\"internal_mapping_storage\":{\"extensions\":[],\"apiAlias\":null}},\"_uniqueIdentifier\":\"0191fb2e510270b796b27f002fd9613a\",\"versionId\":null,\"translated\":{\"name\":\"Deutschland\",\"customFields\":[],\"addressFormat\":[[\"address\\/company\",\"symbol\\/dash\",\"address\\/department\"],[\"address\\/first_name\",\"address\\/last_name\"],[\"address\\/street\"],[\"address\\/zipcode\",\"address\\/city\"],[\"address\\/country\"]]},\"createdAt\":\"2024-09-16T14:13:22.306+00:00\",\"updatedAt\":null,\"name\":\"Deutschland\",\"iso\":\"DE\",\"position\":1,\"active\":true,\"shippingAvailable\":true,\"iso3\":\"DEU\",\"displayStateInRegistration\":false,\"forceStateInRegistration\":false,\"checkVatIdPattern\":false,\"vatIdPattern\":\"(DE)?[0-9]{9}\",\"vatIdRequired\":false,\"customerTax\":{\"extensions\":[],\"enabled\":false,\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"amount\":0},\"companyTax\":{\"extensions\":[],\"enabled\":false,\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"amount\":0},\"states\":null,\"translations\":null,\"orderAddresses\":null,\"customerAddresses\":null,\"salesChannelDefaultAssignments\":null,\"salesChannels\":null,\"taxRules\":null,\"currencyCountryRoundings\":null,\"postalCodeRequired\":false,\"isEu\":true,\"checkPostalCodePattern\":false,\"checkAdvancedPostalCodePattern\":false,\"advancedPostalCodePattern\":null,\"defaultPostalCodePattern\":\"\\\\d{5}\",\"addressFormat\":[[\"address\\/company\",\"symbol\\/dash\",\"address\\/department\"],[\"address\\/first_name\",\"address\\/last_name\"],[\"address\\/street\"],[\"address\\/zipcode\",\"address\\/city\"],[\"address\\/country\"]],\"customFields\":null,\"id\":\"0191fb2e510270b796b27f002fd9613a\"},\"countryState\":null,\"salutation\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"salutation_foreign_keys_extension\"},\"internal_mapping_storage\":{\"extensions\":[],\"apiAlias\":null}},\"_uniqueIdentifier\":\"0191fb2e510270b796b27f002e149c31\",\"versionId\":null,\"translated\":{\"displayName\":\"Frau\",\"letterName\":\"Sehr geehrte Frau\",\"customFields\":[]},\"createdAt\":\"2024-09-16T14:13:22.306+00:00\",\"updatedAt\":null,\"salutationKey\":\"mrs\",\"displayName\":\"Frau\",\"letterName\":\"Sehr geehrte Frau\",\"translations\":null,\"customers\":null,\"customerAddresses\":null,\"orderCustomers\":null,\"orderAddresses\":null,\"newsletterRecipients\":null,\"customFields\":null,\"id\":\"0191fb2e510270b796b27f002e149c31\"},\"customer\":null,\"customFields\":null,\"id\":\"0195cc605f6f7333bb6a22872fb1903b\"},\"defaultShippingAddress\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"customer_address_foreign_keys_extension\"}},\"_uniqueIdentifier\":\"0195cc605f6f7333bb6a22872fb1903b\",\"versionId\":null,\"translated\":[],\"createdAt\":\"2025-03-25T08:17:02.885+00:00\",\"updatedAt\":null,\"customerId\":\"0195cc605f6f7333bb6a22872f4ba2e3\",\"countryId\":\"0191fb2e510270b796b27f002fd9613a\",\"countryStateId\":null,\"salutationId\":\"0191fb2e510270b796b27f002e149c31\",\"firstName\":\"Test\",\"lastName\":\"madco\",\"zipcode\":\"66121\",\"city\":\"Sarbr\\u00fccken\",\"company\":null,\"department\":null,\"title\":null,\"street\":\"Teststra\\u00dfe\",\"phoneNumber\":null,\"additionalAddressLine1\":null,\"additionalAddressLine2\":null,\"country\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"country_foreign_keys_extension\"},\"internal_mapping_storage\":{\"extensions\":[],\"apiAlias\":null}},\"_uniqueIdentifier\":\"0191fb2e510270b796b27f002fd9613a\",\"versionId\":null,\"translated\":{\"name\":\"Deutschland\",\"customFields\":[],\"addressFormat\":[[\"address\\/company\",\"symbol\\/dash\",\"address\\/department\"],[\"address\\/first_name\",\"address\\/last_name\"],[\"address\\/street\"],[\"address\\/zipcode\",\"address\\/city\"],[\"address\\/country\"]]},\"createdAt\":\"2024-09-16T14:13:22.306+00:00\",\"updatedAt\":null,\"name\":\"Deutschland\",\"iso\":\"DE\",\"position\":1,\"active\":true,\"shippingAvailable\":true,\"iso3\":\"DEU\",\"displayStateInRegistration\":false,\"forceStateInRegistration\":false,\"checkVatIdPattern\":false,\"vatIdPattern\":\"(DE)?[0-9]{9}\",\"vatIdRequired\":false,\"customerTax\":{\"extensions\":[],\"enabled\":false,\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"amount\":0},\"companyTax\":{\"extensions\":[],\"enabled\":false,\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"amount\":0},\"states\":null,\"translations\":null,\"orderAddresses\":null,\"customerAddresses\":null,\"salesChannelDefaultAssignments\":null,\"salesChannels\":null,\"taxRules\":null,\"currencyCountryRoundings\":null,\"postalCodeRequired\":false,\"isEu\":true,\"checkPostalCodePattern\":false,\"checkAdvancedPostalCodePattern\":false,\"advancedPostalCodePattern\":null,\"defaultPostalCodePattern\":\"\\\\d{5}\",\"addressFormat\":[[\"address\\/company\",\"symbol\\/dash\",\"address\\/department\"],[\"address\\/first_name\",\"address\\/last_name\"],[\"address\\/street\"],[\"address\\/zipcode\",\"address\\/city\"],[\"address\\/country\"]],\"customFields\":null,\"id\":\"0191fb2e510270b796b27f002fd9613a\"},\"countryState\":null,\"salutation\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"salutation_foreign_keys_extension\"},\"internal_mapping_storage\":{\"extensions\":[],\"apiAlias\":null}},\"_uniqueIdentifier\":\"0191fb2e510270b796b27f002e149c31\",\"versionId\":null,\"translated\":{\"displayName\":\"Frau\",\"letterName\":\"Sehr geehrte Frau\",\"customFields\":[]},\"createdAt\":\"2024-09-16T14:13:22.306+00:00\",\"updatedAt\":null,\"salutationKey\":\"mrs\",\"displayName\":\"Frau\",\"letterName\":\"Sehr geehrte Frau\",\"translations\":null,\"customers\":null,\"customerAddresses\":null,\"orderCustomers\":null,\"orderAddresses\":null,\"newsletterRecipients\":null,\"customFields\":null,\"id\":\"0191fb2e510270b796b27f002e149c31\"},\"customer\":null,\"customFields\":null,\"id\":\"0195cc605f6f7333bb6a22872fb1903b\"},\"activeBillingAddress\":null,\"activeShippingAddress\":null,\"addresses\":null,\"orderCustomers\":null,\"autoIncrement\":3,\"tags\":null,\"tagIds\":null,\"promotions\":null,\"recoveryCustomer\":null,\"productReviews\":null,\"remoteAddress\":null,\"requestedGroupId\":null,\"requestedGroup\":null,\"boundSalesChannelId\":null,\"boundSalesChannel\":null,\"wishlists\":null,\"createdById\":null,\"createdBy\":null,\"updatedById\":null,\"updatedBy\":null,\"customFields\":null,\"id\":\"0195cc605f6f7333bb6a22872f4ba2e3\"},\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"mailStruct\":{}}}}','[]','2025-03-25 08:17:03.018',NULL),
+('ïÃ``+r,Ü$Ùír‘]z','mail.after.create.message',200,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":{\"data\":{\"recipients\":{\"test@madco.de\":\"Test madco\"},\"senderName\":\"ddev\",\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"languageId\":null,\"templateId\":\"0191fb2e5136724bb1e5a5fe4a1e758d\",\"customFields\":null,\"contentHtml\":\"<div style=\\\"font-family:arial; font-size:12px;\\\">\\n            <p>\\n                {{ customer.salutation.translated.letterName }} {{customer.firstName}} {{ customer.lastName }},<br\\/>\\n                <br\\/>\\n                vielen Dank f\\u00fcr Ihre Anmeldung in unserem Shop.<br\\/>\\n                Sie erhalten Zugriff \\u00fcber Ihre E-Mail-Adresse <strong>{{ customer.email }}<\\/strong> und dem von Ihnen gew\\u00e4hlten Kennwort.<br\\/>\\n                Sie k\\u00f6nnen Ihr Kennwort jederzeit nachtr\\u00e4glich \\u00e4ndern.\\n            <\\/p>\\n        <\\/div>\",\"contentPlain\":\"{{ customer.salutation.translated.letterName }} {{customer.firstName}} {{ customer.lastName }},\\n\\n                vielen Dank f\\u00fcr Ihre Anmeldung in unserem Shop.\\n                Sie erhalten Zugriff \\u00fcber Ihre E-Mail-Adresse {{ customer.email }} und dem von Ihnen gew\\u00e4hlten Kennwort.\\n                Sie k\\u00f6nnen Ihr Kennwort jederzeit nachtr\\u00e4glich \\u00e4ndern.\\n\",\"subject\":\"Deine Registrierung bei ddev\",\"mediaIds\":[],\"attachmentsConfig\":{}},\"eventName\":\"checkout.customer.register\",\"message\":{}}}','[]','2025-03-25 08:17:03.019',NULL),
+('ïÃ``+r,Ü$ÙísêuÍ','mail.sent',200,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":{\"eventName\":\"checkout.customer.register\",\"subject\":\"Deine Registrierung bei ddev\",\"recipients\":{\"test@madco.de\":\"Test madco\"},\"contents\":{\"text\\/html\":\"<div style=\\\"font-family:arial; font-size:12px;\\\">\\n            <p>\\n                Sehr geehrte Frau Test madco,<br\\/>\\n                <br\\/>\\n                vielen Dank f\\u00fcr Ihre Anmeldung in unserem Shop.<br\\/>\\n                Sie erhalten Zugriff \\u00fcber Ihre E-Mail-Adresse <strong>test@madco.de<\\/strong> und dem von Ihnen gew\\u00e4hlten Kennwort.<br\\/>\\n                Sie k\\u00f6nnen Ihr Kennwort jederzeit nachtr\\u00e4glich \\u00e4ndern.\\n            <\\/p>\\n        <\\/div>\",\"text\\/plain\":\"Sehr geehrte Frau Test madco,\\n\\n                vielen Dank f\\u00fcr Ihre Anmeldung in unserem Shop.\\n                Sie erhalten Zugriff \\u00fcber Ihre E-Mail-Adresse test@madco.de und dem von Ihnen gew\\u00e4hlten Kennwort.\\n                Sie k\\u00f6nnen Ihr Kennwort jederzeit nachtr\\u00e4glich \\u00e4ndern.\\n\"}}}','[]','2025-03-25 08:17:03.019',NULL),
+('ïÃ``+r,Ü$ÙítaXI','checkout.customer.login',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-25 08:17:03.019',NULL),
+('ïÃ`t8qŒµ,‘¥Q£V','checkout.customer.logout',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-25 08:17:08.152',NULL),
+('ïÃa©rÕû)th?˜ø','checkout.customer.before.login',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-25 08:17:44.617',NULL),
+('ïÃa©rÕû)ti2Œ','checkout.customer.login',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-25 08:17:44.617',NULL),
+('ïÕ)ÜÕqŸÅÀSëòhúF','checkout.customer.logout',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-25 11:56:45.645',NULL),
+('ïÕ)Ω£púè	%—Åj','checkout.customer.before.login',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-25 11:56:59.683',NULL),
+('ïÕ)Ω£púè	%—í3Ø','checkout.customer.login',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-25 11:56:59.683',NULL),
+('ïÕ*O;pÂ∏^Ï[M¿A','checkout.customer.logout',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-25 11:57:36.955',NULL),
+('ïÕ*nXp˝¥Ëáaπ∫®','checkout.customer.before.login',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-25 11:57:44.920',NULL),
+('ïÕ*nXp˝¥Ëábô/H','checkout.customer.login',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-25 11:57:44.920',NULL),
+('ïÕ/∫osΩ∑¯21ü‰','checkout.customer.logout',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-25 12:03:32.079',NULL),
+('ïÕ:26r\\¨í>Ï˝*kΩ','checkout.customer.before.login',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-25 12:14:58.102',NULL),
+('ïÕ:¿Jp£∫d*r2 ','checkout.customer.logout',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-25 12:15:34.474',NULL),
+('ïÕ;≈sÆ¨œ	=RÈá”','checkout.customer.before.login',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-25 12:15:54.821',NULL),
+('ïÕ;#éqn†Ω,V,À‘','checkout.customer.before.login',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-25 12:15:59.886',NULL),
+('ïÕ< Mq≥bU¿åÀ	1','checkout.customer.logout',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-25 12:17:48.109',NULL),
+('ïÕ<Ús@´â í–Ω›','checkout.customer.before.login',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-25 12:17:58.275',NULL),
+('ïÕ<Ús@´â ì@≈','checkout.customer.login',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-25 12:17:58.275',NULL),
+('ï“F®siã1bbÖ','checkout.customer.before.login',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-26 11:46:04.328',NULL),
+('ï“F©rùí˘Ω˜Ñ’r','checkout.customer.login',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-26 11:46:04.329',NULL),
+('ï“J±QpTÆ8˝ä}Ó_','checkout.customer.logout',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-26 11:51:05.297',NULL),
+('ï“J«rqÊΩ‰yI	]˝Ò','checkout.customer.before.login',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-26 11:51:10.962',NULL),
+('ï“J«rqÊΩ‰yI	«zX','checkout.customer.login',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-26 11:51:10.962',NULL),
+('ï“Lvp*Ñ!Û–“Øò‚','checkout.customer.logout',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-26 11:53:03.606',NULL),
+('ï“Lñ?r∂ê§ﬂjDC∞I','checkout.customer.before.login',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-26 11:53:09.439',NULL),
+('ï“Lñ?r∂ê§ﬂjDo´Ê','checkout.customer.login',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-26 11:53:09.439',NULL),
+('ï“„Zs≤ú!êXôø9)','checkout.customer.logout',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-26 14:37:31.098',NULL),
+('ï“„,er+à—^ü8ÇÉ','checkout.customer.before.login',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-26 14:37:38.277',NULL),
+('ï“„,er+à—^ü9b\r8','checkout.customer.login',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-26 14:37:38.277',NULL),
+('ï“Â£:s”ó◊\0‰ãAÿt','checkout.customer.logout',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-26 14:40:19.770',NULL),
+('ï“Â”Ïsw°ÑÑ€@˛µé','checkout.customer.before.login',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-26 14:40:32.236',NULL),
+('ï“Â”Ïsw°ÑÑ€Alur','checkout.customer.login',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-26 14:40:32.236',NULL),
+('ï”ÜÕ¥rÈël≈5∑”¥','checkout.customer.before.login',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-26 17:36:21.940',NULL),
+('ï”ÜÕ¥rÈël≈5éy','checkout.customer.login',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-26 17:36:21.940',NULL),
+('ï”ëÌÖqÕ¥Û:0µ¶','checkout.customer.logout',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-26 17:48:30.981',NULL),
+('ï”íñpGÉcã(Êb','checkout.customer.before.login',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-26 17:48:40.214',NULL),
+('ï”íñpGÉcã(ÊM\'\n','checkout.customer.login',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-26 17:48:40.214',NULL),
+('ï”îınr‰ôZ€Øà∑∏Æ','checkout.customer.logout',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-26 17:51:49.614',NULL),
+('ï”ï\núsÁ¨	,”.z','checkout.customer.before.login',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-26 17:51:55.036',NULL),
+('ï”ï\núsÁ¨	,”`q∑','checkout.customer.login',100,'business_events','{\"source\":\"core\",\"environment\":\"dev\",\"additionalData\":[]}','[]','2025-03-26 17:51:55.036',NULL);
 /*!40000 ALTER TABLE `log_entry` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -5481,7 +5528,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `mail_header_footer`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `mail_header_footer` (
   `id` binary(16) NOT NULL,
   `system_default` tinyint(1) unsigned NOT NULL DEFAULT 0,
@@ -5508,7 +5555,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `mail_header_footer_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `mail_header_footer_translation` (
   `mail_header_footer_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -5545,7 +5592,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `mail_template`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `mail_template` (
   `id` binary(16) NOT NULL,
   `mail_template_type_id` binary(16) DEFAULT NULL,
@@ -5613,7 +5660,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `mail_template_media`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `mail_template_media` (
   `id` binary(16) NOT NULL,
   `mail_template_id` binary(16) NOT NULL,
@@ -5645,7 +5692,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `mail_template_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `mail_template_translation` (
   `mail_template_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -5759,7 +5806,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `mail_template_type`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `mail_template_type` (
   `id` binary(16) NOT NULL,
   `technical_name` varchar(255) NOT NULL,
@@ -5780,7 +5827,7 @@ CREATE TABLE `mail_template_type` (
 LOCK TABLES `mail_template_type` WRITE;
 /*!40000 ALTER TABLE `mail_template_type` DISABLE KEYS */;
 INSERT INTO `mail_template_type` VALUES
-('ë˚.Q-r1úhº∂\'','customer_register','{\"customer\":\"customer\",\"salesChannel\":\"sales_channel\"}','2024-09-16 14:13:22.349','2024-09-16 15:31:28.823','{\"customerId\":\"6c97534c2c0747f39e8751e43cb2b013\",\"customer\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"customer_foreign_keys_extension\"}},\"_uniqueIdentifier\":\"6c97534c2c0747f39e8751e43cb2b013\",\"versionId\":null,\"translated\":[],\"createdAt\":\"2024-09-16T15:31:28.742+00:00\",\"updatedAt\":null,\"groupId\":\"cfbd5018d38d41d8adca10d94fc8bdd6\",\"defaultPaymentMethodId\":\"0191fb2e512273c78c25658a14cb08f3\",\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"languageId\":\"2fbb5fe2e29a4d70aa5854ce7ce3e20b\",\"lastPaymentMethodId\":null,\"defaultBillingAddressId\":\"d8f0dff7ef3947979a83c42f6509f22c\",\"defaultShippingAddressId\":\"d8f0dff7ef3947979a83c42f6509f22c\",\"customerNumber\":\"SWDEMO10000\",\"salutationId\":\"0191fb2e510270b796b27f002d6a4eaf\",\"firstName\":\"Max\",\"lastName\":\"Mustermann\",\"company\":null,\"password\":\"$2y$10$qYoCQe2r3h\\/tiGIqwsq7YuuKBGCEmgtM\\/U4v182xtKDrFv5vSNFJO\",\"email\":\"test@example.com\",\"title\":null,\"vatIds\":null,\"affiliateCode\":null,\"campaignCode\":null,\"active\":true,\"doubleOptInRegistration\":false,\"doubleOptInEmailSentDate\":null,\"doubleOptInConfirmDate\":null,\"hash\":null,\"guest\":false,\"firstLogin\":null,\"lastLogin\":\"2019-06-12T07:13:39.641+00:00\",\"accountType\":\"private\",\"newsletterSalesChannelIds\":null,\"birthday\":\"1996-06-06T00:00:00.000+00:00\",\"lastOrderDate\":null,\"orderCount\":0,\"orderTotalAmount\":0.0,\"reviewCount\":0,\"legacyEncoder\":null,\"legacyPassword\":null,\"group\":null,\"defaultPaymentMethod\":null,\"salesChannel\":null,\"language\":null,\"lastPaymentMethod\":null,\"salutation\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"salutation_foreign_keys_extension\"},\"internal_mapping_storage\":{\"extensions\":[],\"apiAlias\":null}},\"_uniqueIdentifier\":\"0191fb2e510270b796b27f002d6a4eaf\",\"versionId\":null,\"translated\":{\"displayName\":\"Herr\",\"letterName\":\"Sehr geehrter Herr\",\"customFields\":[]},\"createdAt\":\"2024-09-16T14:13:22.306+00:00\",\"updatedAt\":null,\"salutationKey\":\"mr\",\"displayName\":\"Herr\",\"letterName\":\"Sehr geehrter Herr\",\"translations\":null,\"customers\":null,\"customerAddresses\":null,\"orderCustomers\":null,\"orderAddresses\":null,\"newsletterRecipients\":null,\"customFields\":null,\"id\":\"0191fb2e510270b796b27f002d6a4eaf\"},\"defaultBillingAddress\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"customer_address_foreign_keys_extension\"}},\"_uniqueIdentifier\":\"d8f0dff7ef3947979a83c42f6509f22c\",\"versionId\":null,\"translated\":[],\"createdAt\":\"2024-09-16T15:31:28.742+00:00\",\"updatedAt\":null,\"customerId\":\"6c97534c2c0747f39e8751e43cb2b013\",\"countryId\":\"0191fb2e510270b796b27f002fd9613a\",\"countryStateId\":null,\"salutationId\":\"0191fb2e510270b796b27f002d6a4eaf\",\"firstName\":\"Max\",\"lastName\":\"Mustermann\",\"zipcode\":\"12345\",\"city\":\"Musterstadt\",\"company\":null,\"department\":null,\"title\":null,\"street\":\"Musterstra√üe 1\",\"phoneNumber\":null,\"additionalAddressLine1\":null,\"additionalAddressLine2\":null,\"country\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"country_foreign_keys_extension\"},\"internal_mapping_storage\":{\"extensions\":[],\"apiAlias\":null}},\"_uniqueIdentifier\":\"0191fb2e510270b796b27f002fd9613a\",\"versionId\":null,\"translated\":{\"name\":\"Deutschland\",\"customFields\":[],\"addressFormat\":[[\"address\\/company\",\"symbol\\/dash\",\"address\\/department\"],[\"address\\/first_name\",\"address\\/last_name\"],[\"address\\/street\"],[\"address\\/zipcode\",\"address\\/city\"],[\"address\\/country\"]]},\"createdAt\":\"2024-09-16T14:13:22.306+00:00\",\"updatedAt\":null,\"name\":\"Deutschland\",\"iso\":\"DE\",\"position\":1,\"active\":true,\"shippingAvailable\":true,\"iso3\":\"DEU\",\"displayStateInRegistration\":false,\"forceStateInRegistration\":false,\"checkVatIdPattern\":false,\"vatIdPattern\":\"(DE)?[0-9]{9}\",\"vatIdRequired\":false,\"customerTax\":{\"extensions\":[],\"enabled\":false,\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"amount\":0.0},\"companyTax\":{\"extensions\":[],\"enabled\":false,\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"amount\":0.0},\"states\":null,\"translations\":null,\"orderAddresses\":null,\"customerAddresses\":null,\"salesChannelDefaultAssignments\":null,\"salesChannels\":null,\"taxRules\":null,\"currencyCountryRoundings\":null,\"postalCodeRequired\":false,\"isEu\":true,\"checkPostalCodePattern\":false,\"checkAdvancedPostalCodePattern\":false,\"advancedPostalCodePattern\":null,\"defaultPostalCodePattern\":\"\\\\d{5}\",\"addressFormat\":[[\"address\\/company\",\"symbol\\/dash\",\"address\\/department\"],[\"address\\/first_name\",\"address\\/last_name\"],[\"address\\/street\"],[\"address\\/zipcode\",\"address\\/city\"],[\"address\\/country\"]],\"customFields\":null,\"id\":\"0191fb2e510270b796b27f002fd9613a\"},\"countryState\":null,\"salutation\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"salutation_foreign_keys_extension\"},\"internal_mapping_storage\":{\"extensions\":[],\"apiAlias\":null}},\"_uniqueIdentifier\":\"0191fb2e510270b796b27f002d6a4eaf\",\"versionId\":null,\"translated\":{\"displayName\":\"Herr\",\"letterName\":\"Sehr geehrter Herr\",\"customFields\":[]},\"createdAt\":\"2024-09-16T14:13:22.306+00:00\",\"updatedAt\":null,\"salutationKey\":\"mr\",\"displayName\":\"Herr\",\"letterName\":\"Sehr geehrter Herr\",\"translations\":null,\"customers\":null,\"customerAddresses\":null,\"orderCustomers\":null,\"orderAddresses\":null,\"newsletterRecipients\":null,\"customFields\":null,\"id\":\"0191fb2e510270b796b27f002d6a4eaf\"},\"customer\":null,\"customFields\":null,\"id\":\"d8f0dff7ef3947979a83c42f6509f22c\"},\"defaultShippingAddress\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"customer_address_foreign_keys_extension\"}},\"_uniqueIdentifier\":\"d8f0dff7ef3947979a83c42f6509f22c\",\"versionId\":null,\"translated\":[],\"createdAt\":\"2024-09-16T15:31:28.742+00:00\",\"updatedAt\":null,\"customerId\":\"6c97534c2c0747f39e8751e43cb2b013\",\"countryId\":\"0191fb2e510270b796b27f002fd9613a\",\"countryStateId\":null,\"salutationId\":\"0191fb2e510270b796b27f002d6a4eaf\",\"firstName\":\"Max\",\"lastName\":\"Mustermann\",\"zipcode\":\"12345\",\"city\":\"Musterstadt\",\"company\":null,\"department\":null,\"title\":null,\"street\":\"Musterstra√üe 1\",\"phoneNumber\":null,\"additionalAddressLine1\":null,\"additionalAddressLine2\":null,\"country\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"country_foreign_keys_extension\"},\"internal_mapping_storage\":{\"extensions\":[],\"apiAlias\":null}},\"_uniqueIdentifier\":\"0191fb2e510270b796b27f002fd9613a\",\"versionId\":null,\"translated\":{\"name\":\"Deutschland\",\"customFields\":[],\"addressFormat\":[[\"address\\/company\",\"symbol\\/dash\",\"address\\/department\"],[\"address\\/first_name\",\"address\\/last_name\"],[\"address\\/street\"],[\"address\\/zipcode\",\"address\\/city\"],[\"address\\/country\"]]},\"createdAt\":\"2024-09-16T14:13:22.306+00:00\",\"updatedAt\":null,\"name\":\"Deutschland\",\"iso\":\"DE\",\"position\":1,\"active\":true,\"shippingAvailable\":true,\"iso3\":\"DEU\",\"displayStateInRegistration\":false,\"forceStateInRegistration\":false,\"checkVatIdPattern\":false,\"vatIdPattern\":\"(DE)?[0-9]{9}\",\"vatIdRequired\":false,\"customerTax\":{\"extensions\":[],\"enabled\":false,\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"amount\":0.0},\"companyTax\":{\"extensions\":[],\"enabled\":false,\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"amount\":0.0},\"states\":null,\"translations\":null,\"orderAddresses\":null,\"customerAddresses\":null,\"salesChannelDefaultAssignments\":null,\"salesChannels\":null,\"taxRules\":null,\"currencyCountryRoundings\":null,\"postalCodeRequired\":false,\"isEu\":true,\"checkPostalCodePattern\":false,\"checkAdvancedPostalCodePattern\":false,\"advancedPostalCodePattern\":null,\"defaultPostalCodePattern\":\"\\\\d{5}\",\"addressFormat\":[[\"address\\/company\",\"symbol\\/dash\",\"address\\/department\"],[\"address\\/first_name\",\"address\\/last_name\"],[\"address\\/street\"],[\"address\\/zipcode\",\"address\\/city\"],[\"address\\/country\"]],\"customFields\":null,\"id\":\"0191fb2e510270b796b27f002fd9613a\"},\"countryState\":null,\"salutation\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"salutation_foreign_keys_extension\"},\"internal_mapping_storage\":{\"extensions\":[],\"apiAlias\":null}},\"_uniqueIdentifier\":\"0191fb2e510270b796b27f002d6a4eaf\",\"versionId\":null,\"translated\":{\"displayName\":\"Herr\",\"letterName\":\"Sehr geehrter Herr\",\"customFields\":[]},\"createdAt\":\"2024-09-16T14:13:22.306+00:00\",\"updatedAt\":null,\"salutationKey\":\"mr\",\"displayName\":\"Herr\",\"letterName\":\"Sehr geehrter Herr\",\"translations\":null,\"customers\":null,\"customerAddresses\":null,\"orderCustomers\":null,\"orderAddresses\":null,\"newsletterRecipients\":null,\"customFields\":null,\"id\":\"0191fb2e510270b796b27f002d6a4eaf\"},\"customer\":null,\"customFields\":null,\"id\":\"d8f0dff7ef3947979a83c42f6509f22c\"},\"activeBillingAddress\":null,\"activeShippingAddress\":null,\"addresses\":null,\"orderCustomers\":null,\"autoIncrement\":1,\"tags\":null,\"tagIds\":null,\"promotions\":null,\"recoveryCustomer\":null,\"productReviews\":null,\"remoteAddress\":null,\"requestedGroupId\":null,\"requestedGroup\":null,\"boundSalesChannelId\":null,\"boundSalesChannel\":null,\"wishlists\":null,\"createdById\":\"0191fb2ed2e47212bc8e84acec54e4c9\",\"createdBy\":null,\"updatedById\":null,\"updatedBy\":null,\"customFields\":null,\"id\":\"6c97534c2c0747f39e8751e43cb2b013\"},\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"mailStruct\":{}}'),
+('ë˚.Q-r1úhº∂\'','customer_register','{\"customer\":\"customer\",\"salesChannel\":\"sales_channel\"}','2024-09-16 14:13:22.349','2025-03-25 08:17:02.924','{\"customerId\":\"0195cc605f6f7333bb6a22872f4ba2e3\",\"customer\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"customer_foreign_keys_extension\"}},\"_uniqueIdentifier\":\"0195cc605f6f7333bb6a22872f4ba2e3\",\"versionId\":null,\"translated\":[],\"createdAt\":\"2025-03-25T08:17:02.885+00:00\",\"updatedAt\":null,\"groupId\":\"cfbd5018d38d41d8adca10d94fc8bdd6\",\"defaultPaymentMethodId\":\"0191fb2e512273c78c25658a14e24422\",\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"languageId\":\"2fbb5fe2e29a4d70aa5854ce7ce3e20b\",\"lastPaymentMethodId\":null,\"defaultBillingAddressId\":\"0195cc605f6f7333bb6a22872fb1903b\",\"defaultShippingAddressId\":\"0195cc605f6f7333bb6a22872fb1903b\",\"customerNumber\":\"10001\",\"salutationId\":\"0191fb2e510270b796b27f002e149c31\",\"firstName\":\"Test\",\"lastName\":\"madco\",\"company\":null,\"password\":\"$2y$10$gxIKl17XpZYMvPBfZC71eetifTdHM0yHTPJPauTom\\/J208jwnBgyG\",\"email\":\"test@madco.de\",\"title\":null,\"vatIds\":null,\"affiliateCode\":null,\"campaignCode\":null,\"active\":true,\"doubleOptInRegistration\":false,\"doubleOptInEmailSentDate\":null,\"doubleOptInConfirmDate\":null,\"hash\":null,\"guest\":false,\"firstLogin\":\"2025-03-25T08:17:02.831+00:00\",\"lastLogin\":null,\"accountType\":\"private\",\"newsletterSalesChannelIds\":null,\"birthday\":null,\"lastOrderDate\":null,\"orderCount\":0,\"orderTotalAmount\":0.0,\"reviewCount\":0,\"legacyEncoder\":null,\"legacyPassword\":null,\"group\":null,\"defaultPaymentMethod\":null,\"salesChannel\":null,\"language\":null,\"lastPaymentMethod\":null,\"salutation\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"salutation_foreign_keys_extension\"},\"internal_mapping_storage\":{\"extensions\":[],\"apiAlias\":null}},\"_uniqueIdentifier\":\"0191fb2e510270b796b27f002e149c31\",\"versionId\":null,\"translated\":{\"displayName\":\"Frau\",\"letterName\":\"Sehr geehrte Frau\",\"customFields\":[]},\"createdAt\":\"2024-09-16T14:13:22.306+00:00\",\"updatedAt\":null,\"salutationKey\":\"mrs\",\"displayName\":\"Frau\",\"letterName\":\"Sehr geehrte Frau\",\"translations\":null,\"customers\":null,\"customerAddresses\":null,\"orderCustomers\":null,\"orderAddresses\":null,\"newsletterRecipients\":null,\"customFields\":null,\"id\":\"0191fb2e510270b796b27f002e149c31\"},\"defaultBillingAddress\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"customer_address_foreign_keys_extension\"}},\"_uniqueIdentifier\":\"0195cc605f6f7333bb6a22872fb1903b\",\"versionId\":null,\"translated\":[],\"createdAt\":\"2025-03-25T08:17:02.885+00:00\",\"updatedAt\":null,\"customerId\":\"0195cc605f6f7333bb6a22872f4ba2e3\",\"countryId\":\"0191fb2e510270b796b27f002fd9613a\",\"countryStateId\":null,\"salutationId\":\"0191fb2e510270b796b27f002e149c31\",\"firstName\":\"Test\",\"lastName\":\"madco\",\"zipcode\":\"66121\",\"city\":\"Sarbr√ºcken\",\"company\":null,\"department\":null,\"title\":null,\"street\":\"Teststra√üe\",\"phoneNumber\":null,\"additionalAddressLine1\":null,\"additionalAddressLine2\":null,\"country\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"country_foreign_keys_extension\"},\"internal_mapping_storage\":{\"extensions\":[],\"apiAlias\":null}},\"_uniqueIdentifier\":\"0191fb2e510270b796b27f002fd9613a\",\"versionId\":null,\"translated\":{\"name\":\"Deutschland\",\"customFields\":[],\"addressFormat\":[[\"address\\/company\",\"symbol\\/dash\",\"address\\/department\"],[\"address\\/first_name\",\"address\\/last_name\"],[\"address\\/street\"],[\"address\\/zipcode\",\"address\\/city\"],[\"address\\/country\"]]},\"createdAt\":\"2024-09-16T14:13:22.306+00:00\",\"updatedAt\":null,\"name\":\"Deutschland\",\"iso\":\"DE\",\"position\":1,\"active\":true,\"shippingAvailable\":true,\"iso3\":\"DEU\",\"displayStateInRegistration\":false,\"forceStateInRegistration\":false,\"checkVatIdPattern\":false,\"vatIdPattern\":\"(DE)?[0-9]{9}\",\"vatIdRequired\":false,\"customerTax\":{\"extensions\":[],\"enabled\":false,\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"amount\":0.0},\"companyTax\":{\"extensions\":[],\"enabled\":false,\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"amount\":0.0},\"states\":null,\"translations\":null,\"orderAddresses\":null,\"customerAddresses\":null,\"salesChannelDefaultAssignments\":null,\"salesChannels\":null,\"taxRules\":null,\"currencyCountryRoundings\":null,\"postalCodeRequired\":false,\"isEu\":true,\"checkPostalCodePattern\":false,\"checkAdvancedPostalCodePattern\":false,\"advancedPostalCodePattern\":null,\"defaultPostalCodePattern\":\"\\\\d{5}\",\"addressFormat\":[[\"address\\/company\",\"symbol\\/dash\",\"address\\/department\"],[\"address\\/first_name\",\"address\\/last_name\"],[\"address\\/street\"],[\"address\\/zipcode\",\"address\\/city\"],[\"address\\/country\"]],\"customFields\":null,\"id\":\"0191fb2e510270b796b27f002fd9613a\"},\"countryState\":null,\"salutation\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"salutation_foreign_keys_extension\"},\"internal_mapping_storage\":{\"extensions\":[],\"apiAlias\":null}},\"_uniqueIdentifier\":\"0191fb2e510270b796b27f002e149c31\",\"versionId\":null,\"translated\":{\"displayName\":\"Frau\",\"letterName\":\"Sehr geehrte Frau\",\"customFields\":[]},\"createdAt\":\"2024-09-16T14:13:22.306+00:00\",\"updatedAt\":null,\"salutationKey\":\"mrs\",\"displayName\":\"Frau\",\"letterName\":\"Sehr geehrte Frau\",\"translations\":null,\"customers\":null,\"customerAddresses\":null,\"orderCustomers\":null,\"orderAddresses\":null,\"newsletterRecipients\":null,\"customFields\":null,\"id\":\"0191fb2e510270b796b27f002e149c31\"},\"customer\":null,\"customFields\":null,\"id\":\"0195cc605f6f7333bb6a22872fb1903b\"},\"defaultShippingAddress\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"customer_address_foreign_keys_extension\"}},\"_uniqueIdentifier\":\"0195cc605f6f7333bb6a22872fb1903b\",\"versionId\":null,\"translated\":[],\"createdAt\":\"2025-03-25T08:17:02.885+00:00\",\"updatedAt\":null,\"customerId\":\"0195cc605f6f7333bb6a22872f4ba2e3\",\"countryId\":\"0191fb2e510270b796b27f002fd9613a\",\"countryStateId\":null,\"salutationId\":\"0191fb2e510270b796b27f002e149c31\",\"firstName\":\"Test\",\"lastName\":\"madco\",\"zipcode\":\"66121\",\"city\":\"Sarbr√ºcken\",\"company\":null,\"department\":null,\"title\":null,\"street\":\"Teststra√üe\",\"phoneNumber\":null,\"additionalAddressLine1\":null,\"additionalAddressLine2\":null,\"country\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"country_foreign_keys_extension\"},\"internal_mapping_storage\":{\"extensions\":[],\"apiAlias\":null}},\"_uniqueIdentifier\":\"0191fb2e510270b796b27f002fd9613a\",\"versionId\":null,\"translated\":{\"name\":\"Deutschland\",\"customFields\":[],\"addressFormat\":[[\"address\\/company\",\"symbol\\/dash\",\"address\\/department\"],[\"address\\/first_name\",\"address\\/last_name\"],[\"address\\/street\"],[\"address\\/zipcode\",\"address\\/city\"],[\"address\\/country\"]]},\"createdAt\":\"2024-09-16T14:13:22.306+00:00\",\"updatedAt\":null,\"name\":\"Deutschland\",\"iso\":\"DE\",\"position\":1,\"active\":true,\"shippingAvailable\":true,\"iso3\":\"DEU\",\"displayStateInRegistration\":false,\"forceStateInRegistration\":false,\"checkVatIdPattern\":false,\"vatIdPattern\":\"(DE)?[0-9]{9}\",\"vatIdRequired\":false,\"customerTax\":{\"extensions\":[],\"enabled\":false,\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"amount\":0.0},\"companyTax\":{\"extensions\":[],\"enabled\":false,\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"amount\":0.0},\"states\":null,\"translations\":null,\"orderAddresses\":null,\"customerAddresses\":null,\"salesChannelDefaultAssignments\":null,\"salesChannels\":null,\"taxRules\":null,\"currencyCountryRoundings\":null,\"postalCodeRequired\":false,\"isEu\":true,\"checkPostalCodePattern\":false,\"checkAdvancedPostalCodePattern\":false,\"advancedPostalCodePattern\":null,\"defaultPostalCodePattern\":\"\\\\d{5}\",\"addressFormat\":[[\"address\\/company\",\"symbol\\/dash\",\"address\\/department\"],[\"address\\/first_name\",\"address\\/last_name\"],[\"address\\/street\"],[\"address\\/zipcode\",\"address\\/city\"],[\"address\\/country\"]],\"customFields\":null,\"id\":\"0191fb2e510270b796b27f002fd9613a\"},\"countryState\":null,\"salutation\":{\"extensions\":{\"foreignKeys\":{\"extensions\":[],\"apiAlias\":\"salutation_foreign_keys_extension\"},\"internal_mapping_storage\":{\"extensions\":[],\"apiAlias\":null}},\"_uniqueIdentifier\":\"0191fb2e510270b796b27f002e149c31\",\"versionId\":null,\"translated\":{\"displayName\":\"Frau\",\"letterName\":\"Sehr geehrte Frau\",\"customFields\":[]},\"createdAt\":\"2024-09-16T14:13:22.306+00:00\",\"updatedAt\":null,\"salutationKey\":\"mrs\",\"displayName\":\"Frau\",\"letterName\":\"Sehr geehrte Frau\",\"translations\":null,\"customers\":null,\"customerAddresses\":null,\"orderCustomers\":null,\"orderAddresses\":null,\"newsletterRecipients\":null,\"customFields\":null,\"id\":\"0191fb2e510270b796b27f002e149c31\"},\"customer\":null,\"customFields\":null,\"id\":\"0195cc605f6f7333bb6a22872fb1903b\"},\"activeBillingAddress\":null,\"activeShippingAddress\":null,\"addresses\":null,\"orderCustomers\":null,\"autoIncrement\":3,\"tags\":null,\"tagIds\":null,\"promotions\":null,\"recoveryCustomer\":null,\"productReviews\":null,\"remoteAddress\":null,\"requestedGroupId\":null,\"requestedGroup\":null,\"boundSalesChannelId\":null,\"boundSalesChannel\":null,\"wishlists\":null,\"createdById\":null,\"createdBy\":null,\"updatedById\":null,\"updatedBy\":null,\"customFields\":null,\"id\":\"0195cc605f6f7333bb6a22872f4ba2e3\"},\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"mailStruct\":{}}'),
 ('ë˚.Q-r1úhº∂\'¥r','newsletterDoubleOptIn','{\"newsletterRecipient\":\"newsletter_recipient\",\"salesChannel\":\"sales_channel\"}','2024-09-16 14:13:22.349',NULL,'{\"newsletterRecipient\":{\"email\":\"test@example.com\",\"title\":null,\"firstName\":\"Max\",\"lastName\":\"Mustermann\",\"zipCode\":\"48624\",\"city\":\"Sch\\u00f6ppingen\",\"street\":null,\"status\":\"direct\",\"hash\":\"7ee7a7cb1fb741f387b07f4b86a67124\",\"salutationId\":\"44706b43d8bd4b34a4582185c3fd07f1\",\"salutation\":null,\"languageId\":\"2fbb5fe2e29a4d70aa5854ce7ce3e20b\",\"language\":null,\"salesChannelId\":\"e87ba37297a94629abc2be5ea1d0a1e0\",\"salesChannel\":null,\"customFields\":null,\"confirmedAt\":null,\"tags\":null,\"_uniqueIdentifier\":\"e622fb2224fc4baa9125e0bfd0f2a927\",\"versionId\":null,\"translated\":[],\"createdAt\":\"2021-03-29T15:10:10.880+00:00\",\"updatedAt\":null,\"extensions\":{\"foreignKeys\":{\"apiAlias\":null,\"extensions\":[]}},\"id\":\"e622fb2224fc4baa9125e0bfd0f2a927\"},\"salesChannel\":{\"typeId\":\"8a243080f92e4c719546314b577cf82b\",\"languageId\":\"2fbb5fe2e29a4d70aa5854ce7ce3e20b\",\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"paymentMethodId\":\"cf7892d60b794b65b7badae58462715b\",\"shippingMethodId\":\"71ebb873740e4f44a9f49a3229961a69\",\"countryId\":\"c0da63f63ceb4d8ebaa5874dbe48f5dc\",\"navigationCategoryId\":\"edffcfe389e84a5aaa40c56874f97e39\",\"navigationCategoryDepth\":2,\"homeSlotConfig\":null,\"homeCmsPageId\":null,\"homeCmsPage\":null,\"homeEnabled\":null,\"homeName\":null,\"homeMetaTitle\":null,\"homeMetaDescription\":null,\"homeKeywords\":null,\"footerCategoryId\":null,\"serviceCategoryId\":null,\"name\":\"Storefront\",\"shortName\":null,\"accessKey\":\"SWSCAETKEFPZSJJHZVBNQ2D6YG\",\"currencies\":null,\"languages\":null,\"configuration\":null,\"active\":true,\"maintenance\":false,\"maintenanceIpWhitelist\":null,\"taxCalculationType\":\"horizontal\",\"type\":null,\"currency\":null,\"language\":null,\"paymentMethod\":null,\"shippingMethod\":null,\"country\":null,\"orders\":null,\"customers\":null,\"countries\":null,\"paymentMethods\":null,\"shippingMethods\":null,\"translations\":null,\"domains\":[{\"url\":\"http:\\/\\/localhost\\/development\\/public\",\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"currency\":null,\"snippetSetId\":\"530d80c5293b402d84fe903b9579eb19\",\"snippetSet\":null,\"salesChannelId\":\"e87ba37297a94629abc2be5ea1d0a1e0\",\"salesChannel\":null,\"languageId\":\"2fbb5fe2e29a4d70aa5854ce7ce3e20b\",\"language\":null,\"customFields\":null,\"productExports\":null,\"salesChannelDefaultHreflang\":null,\"hreflangUseOnlyLocale\":false,\"_uniqueIdentifier\":\"c448b63e00d448ca939b311edce409d3\",\"versionId\":null,\"translated\":[],\"createdAt\":\"2021-03-09T09:44:27.960+00:00\",\"updatedAt\":null,\"extensions\":{\"foreignKeys\":{\"apiAlias\":null,\"extensions\":[]}},\"id\":\"c448b63e00d448ca939b311edce409d3\"}],\"systemConfigs\":null,\"customFields\":null,\"navigationCategory\":null,\"footerCategory\":null,\"serviceCategory\":null,\"productVisibilities\":null,\"mailHeaderFooterId\":null,\"numberRangeSalesChannels\":null,\"mailHeaderFooter\":null,\"customerGroupId\":\"cfbd5018d38d41d8adca10d94fc8bdd6\",\"customerGroup\":null,\"newsletterRecipients\":null,\"promotionSalesChannels\":null,\"documentBaseConfigSalesChannels\":null,\"productReviews\":null,\"seoUrls\":null,\"seoUrlTemplates\":null,\"mainCategories\":null,\"paymentMethodIds\":[\"a4386b473b24419591511f2d60cda25f\",\"bfb351a897eb4a699c7c1d6718e1674b\",\"cf7892d60b794b65b7badae58462715b\",\"eee8328b1c3240a8873fe99723dcdf27\"],\"productExports\":null,\"hreflangActive\":false,\"hreflangDefaultDomainId\":null,\"hreflangDefaultDomain\":null,\"analyticsId\":null,\"analytics\":null,\"customerGroupsRegistrations\":null,\"eventActions\":null,\"boundCustomers\":null,\"wishlists\":null,\"landingPages\":null,\"_uniqueIdentifier\":\"e87ba37297a94629abc2be5ea1d0a1e0\",\"versionId\":null,\"translated\":{\"name\":\"Storefront\",\"customFields\":[]},\"createdAt\":\"2021-03-09T09:44:27.960+00:00\",\"updatedAt\":null,\"extensions\":{\"foreignKeys\":{\"apiAlias\":null,\"extensions\":[]}},\"id\":\"e87ba37297a94629abc2be5ea1d0a1e0\",\"navigationCategoryVersionId\":\"0fa91ce3e96a4bc2be4bd9ce752c3425\",\"footerCategoryVersionId\":null,\"serviceCategoryVersionId\":null}}'),
 ('ë˚.Q-r1úhº∂\'∏Ûµ','newsletterRegister','{\"newsletterRecipient\":\"newsletter_recipient\",\"salesChannel\":\"sales_channel\"}','2024-09-16 14:13:22.349',NULL,'{\"newsletterRecipient\":{\"email\":\"test@example.com\",\"title\":null,\"firstName\":\"Max\",\"lastName\":\"Mustermann\",\"zipCode\":\"48624\",\"city\":\"Sch\\u00f6ppingen\",\"street\":null,\"status\":\"direct\",\"hash\":\"7ee7a7cb1fb741f387b07f4b86a67124\",\"salutationId\":\"44706b43d8bd4b34a4582185c3fd07f1\",\"salutation\":null,\"languageId\":\"2fbb5fe2e29a4d70aa5854ce7ce3e20b\",\"language\":null,\"salesChannelId\":\"e87ba37297a94629abc2be5ea1d0a1e0\",\"salesChannel\":null,\"customFields\":null,\"confirmedAt\":null,\"tags\":null,\"_uniqueIdentifier\":\"e622fb2224fc4baa9125e0bfd0f2a927\",\"versionId\":null,\"translated\":[],\"createdAt\":\"2021-03-29T15:10:10.880+00:00\",\"updatedAt\":null,\"extensions\":{\"foreignKeys\":{\"apiAlias\":null,\"extensions\":[]}},\"id\":\"e622fb2224fc4baa9125e0bfd0f2a927\"},\"salesChannel\":{\"typeId\":\"8a243080f92e4c719546314b577cf82b\",\"languageId\":\"2fbb5fe2e29a4d70aa5854ce7ce3e20b\",\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"paymentMethodId\":\"cf7892d60b794b65b7badae58462715b\",\"shippingMethodId\":\"71ebb873740e4f44a9f49a3229961a69\",\"countryId\":\"c0da63f63ceb4d8ebaa5874dbe48f5dc\",\"navigationCategoryId\":\"edffcfe389e84a5aaa40c56874f97e39\",\"navigationCategoryDepth\":2,\"homeSlotConfig\":null,\"homeCmsPageId\":null,\"homeCmsPage\":null,\"homeEnabled\":null,\"homeName\":null,\"homeMetaTitle\":null,\"homeMetaDescription\":null,\"homeKeywords\":null,\"footerCategoryId\":null,\"serviceCategoryId\":null,\"name\":\"Storefront\",\"shortName\":null,\"accessKey\":\"SWSCAETKEFPZSJJHZVBNQ2D6YG\",\"currencies\":null,\"languages\":null,\"configuration\":null,\"active\":true,\"maintenance\":false,\"maintenanceIpWhitelist\":null,\"taxCalculationType\":\"horizontal\",\"type\":null,\"currency\":null,\"language\":null,\"paymentMethod\":null,\"shippingMethod\":null,\"country\":null,\"orders\":null,\"customers\":null,\"countries\":null,\"paymentMethods\":null,\"shippingMethods\":null,\"translations\":null,\"domains\":[{\"url\":\"http:\\/\\/localhost\\/development\\/public\",\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"currency\":null,\"snippetSetId\":\"530d80c5293b402d84fe903b9579eb19\",\"snippetSet\":null,\"salesChannelId\":\"e87ba37297a94629abc2be5ea1d0a1e0\",\"salesChannel\":null,\"languageId\":\"2fbb5fe2e29a4d70aa5854ce7ce3e20b\",\"language\":null,\"customFields\":null,\"productExports\":null,\"salesChannelDefaultHreflang\":null,\"hreflangUseOnlyLocale\":false,\"_uniqueIdentifier\":\"c448b63e00d448ca939b311edce409d3\",\"versionId\":null,\"translated\":[],\"createdAt\":\"2021-03-09T09:44:27.960+00:00\",\"updatedAt\":null,\"extensions\":{\"foreignKeys\":{\"apiAlias\":null,\"extensions\":[]}},\"id\":\"c448b63e00d448ca939b311edce409d3\"}],\"systemConfigs\":null,\"customFields\":null,\"navigationCategory\":null,\"footerCategory\":null,\"serviceCategory\":null,\"productVisibilities\":null,\"mailHeaderFooterId\":null,\"numberRangeSalesChannels\":null,\"mailHeaderFooter\":null,\"customerGroupId\":\"cfbd5018d38d41d8adca10d94fc8bdd6\",\"customerGroup\":null,\"newsletterRecipients\":null,\"promotionSalesChannels\":null,\"documentBaseConfigSalesChannels\":null,\"productReviews\":null,\"seoUrls\":null,\"seoUrlTemplates\":null,\"mainCategories\":null,\"paymentMethodIds\":[\"a4386b473b24419591511f2d60cda25f\",\"bfb351a897eb4a699c7c1d6718e1674b\",\"cf7892d60b794b65b7badae58462715b\",\"eee8328b1c3240a8873fe99723dcdf27\"],\"productExports\":null,\"hreflangActive\":false,\"hreflangDefaultDomainId\":null,\"hreflangDefaultDomain\":null,\"analyticsId\":null,\"analytics\":null,\"customerGroupsRegistrations\":null,\"eventActions\":null,\"boundCustomers\":null,\"wishlists\":null,\"landingPages\":null,\"_uniqueIdentifier\":\"e87ba37297a94629abc2be5ea1d0a1e0\",\"versionId\":null,\"translated\":{\"name\":\"Storefront\",\"customFields\":[]},\"createdAt\":\"2021-03-09T09:44:27.960+00:00\",\"updatedAt\":null,\"extensions\":{\"foreignKeys\":{\"apiAlias\":null,\"extensions\":[]}},\"id\":\"e87ba37297a94629abc2be5ea1d0a1e0\",\"navigationCategoryVersionId\":\"0fa91ce3e96a4bc2be4bd9ce752c3425\",\"footerCategoryVersionId\":null,\"serviceCategoryVersionId\":null}}'),
 ('ë˚.Q-r1úhº∂\'‡œ9','order_confirmation_mail','{\"order\":\"order\",\"salesChannel\":\"sales_channel\",\"editOrderUrl\":null}','2024-09-16 14:13:22.350',NULL,'{\"order\":{\"orderNumber\":\"10060\",\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"currencyFactor\":1,\"salesChannelId\":\"08757990bf314633b5d0fa55efc5e63d\",\"billingAddressId\":\"3e112279819f4c1d8f5d7107f6b33a25\",\"orderDateTime\":\"2021-04-12T08:39:51.371+00:00\",\"orderDate\":\"2021-04-12T00:00:00.000+00:00\",\"price\":{\"netPrice\":799.07,\"totalPrice\":855,\"calculatedTaxes\":[{\"tax\":55.93,\"taxRate\":7,\"price\":855,\"extensions\":[]}],\"taxRules\":[{\"taxRate\":7,\"percentage\":100,\"extensions\":[]}],\"positionPrice\":855,\"taxStatus\":\"gross\",\"rawTotal\":855,\"extensions\":[]},\"amountTotal\":855,\"amountNet\":799.07,\"positionPrice\":855,\"taxStatus\":\"gross\",\"shippingCosts\":{\"unitPrice\":0,\"quantity\":1,\"totalPrice\":0,\"calculatedTaxes\":[{\"tax\":0,\"taxRate\":7,\"price\":0,\"extensions\":[]}],\"taxRules\":[{\"taxRate\":7,\"percentage\":100,\"extensions\":[]}],\"referencePrice\":null,\"listPrice\":null,\"extensions\":[]},\"shippingTotal\":0,\"orderCustomer\":{\"email\":\"test@example.com\",\"orderId\":\"e96e47f99c844f1b9997e613bc621f65\",\"salutationId\":\"4f602c9cb4994a7a96a06630d9f62cee\",\"firstName\":\"Max\",\"lastName\":\"Mustermann\",\"title\":null,\"vatIds\":null,\"company\":null,\"customerNumber\":\"1337\",\"customerId\":\"7f0eef7a233a41f886a2fc69b0ca79df\",\"customer\":{\"groupId\":\"cfbd5018d38d41d8adca10d94fc8bdd6\",\"defaultPaymentMethodId\":\"69867b98038e4d41bde2382bbb5810fc\",\"salesChannelId\":\"98432def39fc4624b33213a56b8c944d\",\"languageId\":\"2fbb5fe2e29a4d70aa5854ce7ce3e20b\",\"lastPaymentMethodId\":null,\"defaultBillingAddressId\":\"c9036a6e1bf84f769f06d0ba6490d75b\",\"defaultShippingAddressId\":\"3fc4a0d7787c466daeb6fade1b51c4fd\",\"customerNumber\":\"1337\",\"salutationId\":\"4f602c9cb4994a7a96a06630d9f62cee\",\"firstName\":\"Max\",\"lastName\":\"Mustermann\",\"company\":null,\"password\":\"$2y$10$9xvO2tM3dEfcOG4lO9CA3eogJD1wkYhW7erQv0d14AAUA9u0V5Dpy\",\"email\":\"test@example.com\",\"title\":null,\"vatIds\":null,\"affiliateCode\":null,\"campaignCode\":null,\"active\":true,\"doubleOptInRegistration\":false,\"doubleOptInEmailSentDate\":null,\"doubleOptInConfirmDate\":null,\"hash\":null,\"guest\":false,\"firstLogin\":null,\"lastLogin\":\"2021-04-12T08:39:36.376+00:00\",\"newsletter\":false,\"birthday\":null,\"lastOrderDate\":\"2021-04-12T08:39:51.371+00:00\",\"orderCount\":4,\"createdAt\":\"2021-04-12T07:54:30.118+00:00\",\"updatedAt\":\"2021-04-12T08:39:51.671+00:00\",\"legacyEncoder\":null,\"legacyPassword\":null,\"group\":null,\"defaultPaymentMethod\":null,\"salesChannel\":null,\"language\":null,\"lastPaymentMethod\":null,\"salutation\":null,\"defaultBillingAddress\":null,\"defaultShippingAddress\":null,\"activeBillingAddress\":null,\"activeShippingAddress\":null,\"addresses\":null,\"orderCustomers\":null,\"autoIncrement\":61,\"tags\":null,\"tagIds\":null,\"promotions\":null,\"recoveryCustomer\":null,\"customFields\":null,\"productReviews\":null,\"remoteAddress\":\"::\",\"requestedGroupId\":null,\"requestedGroup\":null,\"boundSalesChannelId\":null,\"boundSalesChannel\":null,\"wishlists\":null,\"_uniqueIdentifier\":\"7f0eef7a233a41f886a2fc69b0ca79df\",\"versionId\":null,\"translated\":[],\"extensions\":{\"internal_mapping_storage\":{\"apiAlias\":null,\"extensions\":[]},\"foreignKeys\":{\"apiAlias\":null,\"extensions\":[]}},\"id\":\"7f0eef7a233a41f886a2fc69b0ca79df\"},\"salutation\":{\"salutationKey\":\"not_specified\",\"displayName\":\"Not specified\",\"letterName\":\" \",\"translations\":null,\"customers\":null,\"customerAddresses\":null,\"orderCustomers\":null,\"orderAddresses\":null,\"newsletterRecipients\":null,\"_uniqueIdentifier\":\"4f602c9cb4994a7a96a06630d9f62cee\",\"versionId\":null,\"translated\":{\"displayName\":\"Not specified\",\"letterName\":\" \"},\"createdAt\":\"2021-04-12T07:52:38.207+00:00\",\"updatedAt\":null,\"extensions\":{\"internal_mapping_storage\":{\"apiAlias\":null,\"extensions\":[]},\"foreignKeys\":{\"apiAlias\":null,\"extensions\":[]}},\"id\":\"4f602c9cb4994a7a96a06630d9f62cee\"},\"order\":null,\"customFields\":null,\"remoteAddress\":\"::\",\"_uniqueIdentifier\":\"e61b6f06cbe5421ebb41d428ce457ac2\",\"versionId\":\"0fa91ce3e96a4bc2be4bd9ce752c3425\",\"translated\":[],\"createdAt\":\"2021-04-12T08:39:51.542+00:00\",\"updatedAt\":null,\"extensions\":{\"foreignKeys\":{\"apiAlias\":null,\"extensions\":[]}},\"id\":\"e61b6f06cbe5421ebb41d428ce457ac2\",\"orderVersionId\":\"0fa91ce3e96a4bc2be4bd9ce752c3425\"},\"currency\":{\"isoCode\":\"EUR\",\"factor\":1,\"symbol\":\"\\u20ac\",\"shortName\":\"EUR\",\"name\":\"Euro\",\"position\":1,\"translations\":null,\"orders\":null,\"salesChannels\":null,\"salesChannelDefaultAssignments\":null,\"salesChannelDomains\":null,\"customFields\":null,\"shippingMethodPrices\":null,\"promotionDiscountPrices\":null,\"isSystemDefault\":true,\"productExports\":null,\"countryRoundings\":null,\"itemRounding\":{\"decimals\":2,\"interval\":0.01,\"roundForNet\":true,\"extensions\":[]},\"totalRounding\":{\"decimals\":2,\"interval\":0.01,\"roundForNet\":true,\"extensions\":[]},\"_uniqueIdentifier\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"versionId\":null,\"translated\":{\"shortName\":\"EUR\",\"name\":\"Euro\",\"customFields\":[]},\"createdAt\":\"2021-04-12T07:52:38.772+00:00\",\"updatedAt\":null,\"extensions\":{\"internal_mapping_storage\":{\"apiAlias\":null,\"extensions\":[]},\"foreignKeys\":{\"apiAlias\":null,\"extensions\":[]}},\"id\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\"},\"languageId\":\"2fbb5fe2e29a4d70aa5854ce7ce3e20b\",\"language\":null,\"salesChannel\":null,\"addresses\":[{\"countryId\":\"f68b900afd7644dfb8b7f5392183efd9\",\"countryStateId\":null,\"salutationId\":\"4f602c9cb4994a7a96a06630d9f62cee\",\"firstName\":\"Max\",\"lastName\":\"Mustermann\",\"street\":\"Bahnhofstra\\u00dfe 27\",\"zipcode\":\"10332\",\"city\":\"Berlin\",\"company\":null,\"department\":null,\"title\":null,\"vatId\":null,\"phoneNumber\":null,\"additionalAddressLine1\":null,\"additionalAddressLine2\":null,\"country\":{\"name\":\"Saint Barth\\u00e9lemy\",\"iso\":\"BL\",\"position\":10,\"taxFree\":false,\"active\":true,\"shippingAvailable\":true,\"iso3\":\"BLM\",\"displayStateInRegistration\":false,\"forceStateInRegistration\":false,\"companyTaxFree\":false,\"checkVatIdPattern\":false,\"vatIdPattern\":null,\"states\":null,\"translations\":null,\"orderAddresses\":null,\"customerAddresses\":null,\"salesChannelDefaultAssignments\":null,\"salesChannels\":null,\"customFields\":null,\"taxRules\":null,\"currencyCountryRoundings\":null,\"_uniqueIdentifier\":\"f68b900afd7644dfb8b7f5392183efd9\",\"versionId\":null,\"translated\":{\"name\":\"Saint Barth\\u00e9lemy\",\"customFields\":[]},\"createdAt\":\"2021-04-12T07:52:46.949+00:00\",\"updatedAt\":null,\"extensions\":{\"internal_mapping_storage\":{\"apiAlias\":null,\"extensions\":[]},\"foreignKeys\":{\"apiAlias\":null,\"extensions\":[]}},\"id\":\"f68b900afd7644dfb8b7f5392183efd9\"},\"countryState\":null,\"order\":null,\"salutation\":null,\"orderDeliveries\":null,\"orderId\":\"e96e47f99c844f1b9997e613bc621f65\",\"customFields\":null,\"_uniqueIdentifier\":\"3e112279819f4c1d8f5d7107f6b33a25\",\"versionId\":\"0fa91ce3e96a4bc2be4bd9ce752c3425\",\"translated\":[],\"createdAt\":\"2021-04-12T08:39:51.556+00:00\",\"updatedAt\":null,\"extensions\":{\"foreignKeys\":{\"apiAlias\":null,\"extensions\":[]}},\"id\":\"3e112279819f4c1d8f5d7107f6b33a25\",\"orderVersionId\":\"0fa91ce3e96a4bc2be4bd9ce752c3425\"},{\"countryId\":\"bf7fe4dae0aa4ebcb28f8e91a4aabc8b\",\"countryStateId\":null,\"salutationId\":\"4f602c9cb4994a7a96a06630d9f62cee\",\"firstName\":\"Max\",\"lastName\":\"Mustermann\",\"street\":\"Ebbinghoff 10\",\"zipcode\":\"48624\",\"city\":\"Sch\\u00f6ppingen\",\"company\":null,\"department\":null,\"title\":null,\"vatId\":null,\"phoneNumber\":null,\"additionalAddressLine1\":null,\"additionalAddressLine2\":null,\"country\":{\"name\":\"Kazakhstan\",\"iso\":\"KZ\",\"position\":10,\"taxFree\":false,\"active\":true,\"shippingAvailable\":true,\"iso3\":\"KAZ\",\"displayStateInRegistration\":false,\"forceStateInRegistration\":false,\"companyTaxFree\":false,\"checkVatIdPattern\":false,\"vatIdPattern\":null,\"states\":null,\"translations\":null,\"orderAddresses\":null,\"customerAddresses\":null,\"salesChannelDefaultAssignments\":null,\"salesChannels\":null,\"customFields\":null,\"taxRules\":null,\"currencyCountryRoundings\":null,\"_uniqueIdentifier\":\"bf7fe4dae0aa4ebcb28f8e91a4aabc8b\",\"versionId\":null,\"translated\":{\"name\":\"Kazakhstan\",\"customFields\":[]},\"createdAt\":\"2021-04-12T07:52:46.847+00:00\",\"updatedAt\":null,\"extensions\":{\"internal_mapping_storage\":{\"apiAlias\":null,\"extensions\":[]},\"foreignKeys\":{\"apiAlias\":null,\"extensions\":[]}},\"id\":\"bf7fe4dae0aa4ebcb28f8e91a4aabc8b\"},\"countryState\":null,\"order\":null,\"salutation\":null,\"orderDeliveries\":null,\"orderId\":\"e96e47f99c844f1b9997e613bc621f65\",\"customFields\":null,\"_uniqueIdentifier\":\"7796bf226130426fb71bef6270dcf8e3\",\"versionId\":\"0fa91ce3e96a4bc2be4bd9ce752c3425\",\"translated\":[],\"createdAt\":\"2021-04-12T08:39:51.561+00:00\",\"updatedAt\":null,\"extensions\":{\"foreignKeys\":{\"apiAlias\":null,\"extensions\":[]}},\"id\":\"7796bf226130426fb71bef6270dcf8e3\",\"orderVersionId\":\"0fa91ce3e96a4bc2be4bd9ce752c3425\"}],\"billingAddress\":null,\"deliveries\":[{\"orderId\":\"e96e47f99c844f1b9997e613bc621f65\",\"shippingOrderAddressId\":\"7796bf226130426fb71bef6270dcf8e3\",\"shippingMethodId\":\"7ab645770dbb4a648268248492ed5f0a\",\"trackingCodes\":[],\"shippingDateEarliest\":\"2021-04-13T00:00:00.000+00:00\",\"shippingDateLatest\":\"2021-04-15T00:00:00.000+00:00\",\"shippingCosts\":{\"unitPrice\":0,\"quantity\":1,\"totalPrice\":0,\"calculatedTaxes\":[{\"tax\":0,\"taxRate\":7,\"price\":0,\"extensions\":[]}],\"taxRules\":[{\"taxRate\":7,\"percentage\":100,\"extensions\":[]}],\"referencePrice\":null,\"listPrice\":null,\"extensions\":[]},\"shippingOrderAddress\":{\"countryId\":\"bf7fe4dae0aa4ebcb28f8e91a4aabc8b\",\"countryStateId\":null,\"salutationId\":\"4f602c9cb4994a7a96a06630d9f62cee\",\"firstName\":\"Max\",\"lastName\":\"Mustermann\",\"street\":\"Ebbinghoff 10\",\"zipcode\":\"48624\",\"city\":\"Sch\\u00f6ppingen\",\"company\":null,\"department\":null,\"title\":null,\"vatId\":null,\"phoneNumber\":null,\"additionalAddressLine1\":null,\"additionalAddressLine2\":null,\"country\":{\"name\":\"Kazakhstan\",\"iso\":\"KZ\",\"position\":10,\"taxFree\":false,\"active\":true,\"shippingAvailable\":true,\"iso3\":\"KAZ\",\"displayStateInRegistration\":false,\"forceStateInRegistration\":false,\"companyTaxFree\":false,\"checkVatIdPattern\":false,\"vatIdPattern\":null,\"states\":null,\"translations\":null,\"orderAddresses\":null,\"customerAddresses\":null,\"salesChannelDefaultAssignments\":null,\"salesChannels\":null,\"customFields\":null,\"taxRules\":null,\"currencyCountryRoundings\":null,\"_uniqueIdentifier\":\"bf7fe4dae0aa4ebcb28f8e91a4aabc8b\",\"versionId\":null,\"translated\":{\"name\":\"Kazakhstan\",\"customFields\":[]},\"createdAt\":\"2021-04-12T07:52:46.847+00:00\",\"updatedAt\":null,\"extensions\":{\"internal_mapping_storage\":{\"apiAlias\":null,\"extensions\":[]},\"foreignKeys\":{\"apiAlias\":null,\"extensions\":[]}},\"id\":\"bf7fe4dae0aa4ebcb28f8e91a4aabc8b\"},\"countryState\":null,\"order\":null,\"salutation\":null,\"orderDeliveries\":null,\"orderId\":\"e96e47f99c844f1b9997e613bc621f65\",\"customFields\":null,\"_uniqueIdentifier\":\"7796bf226130426fb71bef6270dcf8e3\",\"versionId\":\"0fa91ce3e96a4bc2be4bd9ce752c3425\",\"translated\":[],\"createdAt\":\"2021-04-12T08:39:51.561+00:00\",\"updatedAt\":null,\"extensions\":{\"foreignKeys\":{\"apiAlias\":null,\"extensions\":[]}},\"id\":\"7796bf226130426fb71bef6270dcf8e3\",\"orderVersionId\":\"0fa91ce3e96a4bc2be4bd9ce752c3425\"},\"stateId\":\"4753bf682a1640d8a89ca672f3982b1b\",\"stateMachineState\":{\"name\":\"Open\",\"technicalName\":\"open\",\"stateMachineId\":\"2669c221e38a477980f8bef5e9cccdaf\",\"stateMachine\":null,\"fromStateMachineTransitions\":null,\"toStateMachineTransitions\":null,\"translations\":null,\"orders\":null,\"orderTransactions\":null,\"orderDeliveries\":null,\"fromStateMachineHistoryEntries\":null,\"toStateMachineHistoryEntries\":null,\"customFields\":null,\"_uniqueIdentifier\":\"4753bf682a1640d8a89ca672f3982b1b\",\"versionId\":null,\"translated\":{\"name\":\"Open\",\"customFields\":[]},\"createdAt\":\"2021-04-12T07:52:39.108+00:00\",\"updatedAt\":null,\"extensions\":{\"internal_mapping_storage\":{\"apiAlias\":null,\"extensions\":[]},\"foreignKeys\":{\"apiAlias\":null,\"extensions\":[]}},\"id\":\"4753bf682a1640d8a89ca672f3982b1b\"},\"shippingMethod\":{\"name\":\"Standard\",\"active\":true,\"description\":null,\"trackingUrl\":null,\"deliveryTimeId\":\"d5352c5bdd10417db10125050af38b64\",\"deliveryTime\":{\"name\":\"1-3 days\",\"min\":1,\"max\":3,\"unit\":\"day\",\"shippingMethods\":null,\"translations\":null,\"customFields\":null,\"products\":null,\"_uniqueIdentifier\":\"d5352c5bdd10417db10125050af38b64\",\"versionId\":null,\"translated\":{\"name\":\"1-3 days\",\"customFields\":[]},\"createdAt\":\"2021-04-12T07:52:38.000+00:00\",\"updatedAt\":null,\"extensions\":{\"internal_mapping_storage\":{\"apiAlias\":null,\"extensions\":[]},\"foreignKeys\":{\"apiAlias\":null,\"extensions\":[]}},\"id\":\"d5352c5bdd10417db10125050af38b64\"},\"translations\":null,\"orderDeliveries\":null,\"salesChannelDefaultAssignments\":null,\"salesChannels\":null,\"customFields\":null,\"availabilityRule\":null,\"availabilityRuleId\":\"132058274b4c4ba5b292e78b79e7fd90\",\"prices\":[],\"mediaId\":null,\"taxId\":null,\"media\":null,\"tags\":null,\"taxType\":\"auto\",\"tax\":null,\"_uniqueIdentifier\":\"7ab645770dbb4a648268248492ed5f0a\",\"versionId\":null,\"translated\":{\"name\":\"Standard\",\"customFields\":[],\"description\":null,\"trackingUrl\":null},\"createdAt\":\"2021-04-12T07:52:38.814+00:00\",\"updatedAt\":null,\"extensions\":{\"internal_mapping_storage\":{\"apiAlias\":null,\"extensions\":[]},\"foreignKeys\":{\"apiAlias\":null,\"extensions\":[]}},\"id\":\"7ab645770dbb4a648268248492ed5f0a\"},\"order\":null,\"positions\":null,\"customFields\":null,\"_uniqueIdentifier\":\"35bf2776cc6c4857980ed8a651bf6060\",\"versionId\":\"0fa91ce3e96a4bc2be4bd9ce752c3425\",\"translated\":[],\"createdAt\":\"2021-04-12T08:39:51.565+00:00\",\"updatedAt\":null,\"extensions\":{\"foreignKeys\":{\"apiAlias\":null,\"extensions\":[]}},\"id\":\"35bf2776cc6c4857980ed8a651bf6060\",\"orderVersionId\":\"0fa91ce3e96a4bc2be4bd9ce752c3425\",\"shippingOrderAddressVersionId\":\"0fa91ce3e96a4bc2be4bd9ce752c3425\"}],\"lineItems\":[{\"orderId\":\"e96e47f99c844f1b9997e613bc621f65\",\"identifier\":\"f47e72bf6d0e40c4aa290330a7ffd44d\",\"referencedId\":\"f47e72bf6d0e40c4aa290330a7ffd44d\",\"productId\":\"f47e72bf6d0e40c4aa290330a7ffd44d\",\"quantity\":1,\"unitPrice\":855,\"totalPrice\":855,\"label\":\"Aerodynamic Cotton Brand Muffin\",\"description\":null,\"good\":true,\"removable\":true,\"coverId\":\"5f3c1ac1ce3744009cc8613f1524fc80\",\"stackable\":true,\"position\":1,\"price\":{\"unitPrice\":855,\"quantity\":1,\"totalPrice\":855,\"calculatedTaxes\":[{\"tax\":55.93,\"taxRate\":7,\"price\":855,\"extensions\":[]}],\"taxRules\":[{\"taxRate\":7,\"percentage\":100,\"extensions\":[]}],\"referencePrice\":null,\"listPrice\":null,\"extensions\":[]},\"priceDefinition\":{\"price\":855,\"taxRules\":[{\"taxRate\":7,\"percentage\":100,\"extensions\":[]}],\"quantity\":1,\"isCalculated\":true,\"referencePriceDefinition\":null,\"listPrice\":null,\"extensions\":[],\"type\":\"quantity\"},\"payload\":{\"isNew\":false,\"taxId\":\"40afe75845934469b3528a06573bd395\",\"tagIds\":null,\"options\":[],\"features\":[],\"createdAt\":\"2021-04-12 07:54:39.961\",\"optionIds\":null,\"isCloseout\":false,\"categoryIds\":[\"e38a91bb89b94313acd546bb813c9bde\",\"f5fd0ad1b7904012adeab43c5571249f\",\"1f232fdf7e744a6188e70373c64059ec\"],\"propertyIds\":[\"08342bf3c949475081380d7f18ac3013\",\"1f4a747cd9084a91b5b3354483f64d5c\",\"242c6322e09642db9a6dd34e4945563b\",\"2f8fdf5146e3495b93f1477a13b30a70\",\"33443da934024d7d9a4e949f2dbade33\",\"38414ab339ae45e8a34c742f74ca951c\",\"517fa1113cc749cb82acca7a7a911f51\",\"5db7f83261c746818e2cb119d7b690e3\",\"6b463dcccdcf44b69c1d64aaa99f465a\",\"7b0924b10e6c4e7c8cebb21f779014fe\",\"95746abcc9fe46cc93277210e7184e38\",\"98a65897b93440e7b5f848e51efa53df\",\"ad24e8a73b0f4018827e267346c08254\",\"af8b23072130451b8a80b1a94af2a529\",\"c021d77e23eb44568bd321158519b807\",\"e4a316f3eaf64983a6af02654f7d2fc7\",\"fdfb81dcdbb2400aab7ac18e9c967350\",\"fe4960c9a2df4bfd9e977b473983bd86\"],\"releaseDate\":null,\"customFields\":[],\"productNumber\":\"dc0f18c1a31f4f189e7ef7d921052fe6\",\"manufacturerId\":\"0f721bed5f054043a2b5d0986f55757c\",\"purchasePrices\":\"{\\\"currencyId\\\":\\\"b7d2554b0ce847cd82f3ac9bd1c0dfca\\\",\\\"net\\\":31.570093457943923,\\\"gross\\\":33.78,\\\"linked\\\":true,\\\"listPrice\\\":null,\\\"extensions\\\":[]}\",\"markAsTopseller\":null},\"parentId\":null,\"type\":\"product\",\"order\":null,\"orderDeliveryPositions\":null,\"customFields\":null,\"cover\":null,\"children\":null,\"product\":null,\"_uniqueIdentifier\":\"2095623819c546a2893afe2db1557bec\",\"versionId\":\"0fa91ce3e96a4bc2be4bd9ce752c3425\",\"translated\":[],\"createdAt\":\"2021-04-12T08:39:51.572+00:00\",\"updatedAt\":null,\"extensions\":{\"foreignKeys\":{\"apiAlias\":null,\"extensions\":[]}},\"id\":\"2095623819c546a2893afe2db1557bec\",\"orderVersionId\":\"0fa91ce3e96a4bc2be4bd9ce752c3425\",\"productVersionId\":\"0fa91ce3e96a4bc2be4bd9ce752c3425\",\"parentVersionId\":\"0fa91ce3e96a4bc2be4bd9ce752c3425\"}],\"transactions\":[{\"orderId\":\"e96e47f99c844f1b9997e613bc621f65\",\"paymentMethodId\":\"69867b98038e4d41bde2382bbb5810fc\",\"amount\":{\"unitPrice\":855,\"quantity\":1,\"totalPrice\":855,\"calculatedTaxes\":[{\"tax\":55.93,\"taxRate\":7,\"price\":855,\"extensions\":[]}],\"taxRules\":[{\"taxRate\":7,\"percentage\":100,\"extensions\":[]}],\"referencePrice\":null,\"listPrice\":null,\"extensions\":[]},\"paymentMethod\":{\"pluginId\":null,\"handlerIdentifier\":\"Shopware\\\\Core\\\\Checkout\\\\Payment\\\\Cart\\\\PaymentHandler\\\\CashPayment\",\"name\":\"Cash on delivery\",\"description\":\"Payment upon receipt of goods.\",\"position\":1,\"active\":true,\"afterOrderEnabled\":true,\"plugin\":null,\"translations\":null,\"orderTransactions\":null,\"customers\":null,\"salesChannelDefaultAssignments\":null,\"salesChannels\":null,\"availabilityRule\":null,\"availabilityRuleId\":null,\"mediaId\":null,\"media\":null,\"customFields\":null,\"formattedHandlerIdentifier\":\"handler_shopware_cashpayment\",\"shortName\":\"cash_payment\",\"_uniqueIdentifier\":\"69867b98038e4d41bde2382bbb5810fc\",\"versionId\":null,\"translated\":{\"name\":\"Cash on delivery\",\"description\":\"Payment upon receipt of goods.\",\"customFields\":[]},\"createdAt\":\"2021-04-12T07:52:38.793+00:00\",\"updatedAt\":null,\"extensions\":{\"internal_mapping_storage\":{\"apiAlias\":null,\"extensions\":[]},\"foreignKeys\":{\"apiAlias\":null,\"extensions\":[]}},\"id\":\"69867b98038e4d41bde2382bbb5810fc\"},\"order\":null,\"stateMachineState\":{\"name\":\"Open\",\"technicalName\":\"open\",\"stateMachineId\":\"3e52d2ea8045489bbc13528a1cd68170\",\"stateMachine\":null,\"fromStateMachineTransitions\":null,\"toStateMachineTransitions\":null,\"translations\":null,\"orders\":null,\"orderTransactions\":null,\"orderDeliveries\":null,\"fromStateMachineHistoryEntries\":null,\"toStateMachineHistoryEntries\":null,\"customFields\":null,\"_uniqueIdentifier\":\"db5897dec897426985f29b105875e6a8\",\"versionId\":null,\"translated\":{\"name\":\"Open\",\"customFields\":[]},\"createdAt\":\"2021-04-12T07:52:39.129+00:00\",\"updatedAt\":null,\"extensions\":{\"internal_mapping_storage\":{\"apiAlias\":null,\"extensions\":[]},\"foreignKeys\":{\"apiAlias\":null,\"extensions\":[]}},\"id\":\"db5897dec897426985f29b105875e6a8\"},\"stateId\":\"db5897dec897426985f29b105875e6a8\",\"customFields\":null,\"_uniqueIdentifier\":\"a57d8d1c18f64f55bfb48b39ceec660f\",\"versionId\":\"0fa91ce3e96a4bc2be4bd9ce752c3425\",\"translated\":[],\"createdAt\":\"2021-04-12T08:39:51.575+00:00\",\"updatedAt\":null,\"extensions\":{\"foreignKeys\":{\"apiAlias\":null,\"extensions\":[]}},\"id\":\"a57d8d1c18f64f55bfb48b39ceec660f\",\"orderVersionId\":\"0fa91ce3e96a4bc2be4bd9ce752c3425\"}],\"deepLinkCode\":\"s2i1jbau4LeH0R7RUDrzHo8Y7KglbZ_D\",\"autoIncrement\":61,\"stateMachineState\":{\"name\":\"Open\",\"technicalName\":\"open\",\"stateMachineId\":\"040ddecd833d4c98a1935f19b5617e8c\",\"stateMachine\":null,\"fromStateMachineTransitions\":null,\"toStateMachineTransitions\":null,\"translations\":null,\"orders\":null,\"orderTransactions\":null,\"orderDeliveries\":null,\"fromStateMachineHistoryEntries\":null,\"toStateMachineHistoryEntries\":null,\"customFields\":null,\"_uniqueIdentifier\":\"ed244ea9e52c4497ab57c4a12b10d962\",\"versionId\":null,\"translated\":{\"name\":\"Open\",\"customFields\":[]},\"createdAt\":\"2021-04-12T07:52:39.066+00:00\",\"updatedAt\":null,\"extensions\":{\"internal_mapping_storage\":{\"apiAlias\":null,\"extensions\":[]},\"foreignKeys\":{\"apiAlias\":null,\"extensions\":[]}},\"id\":\"ed244ea9e52c4497ab57c4a12b10d962\"},\"stateId\":\"ed244ea9e52c4497ab57c4a12b10d962\",\"customFields\":null,\"documents\":null,\"tags\":null,\"affiliateCode\":null,\"campaignCode\":null,\"customerComment\":null,\"ruleIds\":[\"132058274b4c4ba5b292e78b79e7fd90\",\"5bbbd6951e8f4c91a8de6544a5fb8ea2\",\"b3963d2ae9f04c8ebd7ea09304f6294f\",\"8583f4c0d9254ea091c8354a180a3a6d\"],\"createdById\":null,\"createdBy\":null,\"updatedById\":null,\"updatedBy\":null,\"itemRounding\":{\"decimals\":2,\"interval\":0.01,\"roundForNet\":true,\"extensions\":[]},\"totalRounding\":{\"decimals\":2,\"interval\":0.01,\"roundForNet\":true,\"extensions\":[]},\"_uniqueIdentifier\":\"e96e47f99c844f1b9997e613bc621f65\",\"versionId\":\"0fa91ce3e96a4bc2be4bd9ce752c3425\",\"translated\":[],\"createdAt\":\"2021-04-12T08:39:51.578+00:00\",\"updatedAt\":null,\"extensions\":{\"foreignKeys\":{\"apiAlias\":null,\"extensions\":[]}},\"id\":\"e96e47f99c844f1b9997e613bc621f65\",\"billingAddressVersionId\":\"0fa91ce3e96a4bc2be4bd9ce752c3425\"},\"salesChannel\":{\"typeId\":\"8a243080f92e4c719546314b577cf82b\",\"languageId\":\"2fbb5fe2e29a4d70aa5854ce7ce3e20b\",\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"paymentMethodId\":\"69867b98038e4d41bde2382bbb5810fc\",\"shippingMethodId\":\"7ab645770dbb4a648268248492ed5f0a\",\"countryId\":\"77304b7727794e1c9460f192a55d66cf\",\"navigationCategoryId\":\"e38a91bb89b94313acd546bb813c9bde\",\"navigationCategoryDepth\":2,\"homeSlotConfig\":null,\"homeCmsPageId\":null,\"homeCmsPage\":null,\"homeEnabled\":null,\"homeName\":null,\"homeMetaTitle\":null,\"homeMetaDescription\":null,\"homeKeywords\":null,\"footerCategoryId\":null,\"serviceCategoryId\":null,\"name\":\"Storefront\",\"shortName\":null,\"accessKey\":\"SWSCOGFIOGDVTJLZOVZ5WLEWEA\",\"currencies\":null,\"languages\":null,\"configuration\":null,\"active\":true,\"maintenance\":false,\"maintenanceIpWhitelist\":null,\"taxCalculationType\":\"horizontal\",\"type\":null,\"currency\":null,\"language\":null,\"paymentMethod\":null,\"shippingMethod\":null,\"country\":null,\"orders\":null,\"customers\":null,\"countries\":null,\"paymentMethods\":null,\"shippingMethods\":null,\"translations\":null,\"domains\":[{\"url\":\"http:\\/\\/localhost\\/development\\/public\",\"currencyId\":\"b7d2554b0ce847cd82f3ac9bd1c0dfca\",\"currency\":null,\"snippetSetId\":\"c6dd40a58bfd4c54979eaf1c6be56cb1\",\"snippetSet\":null,\"salesChannelId\":\"08757990bf314633b5d0fa55efc5e63d\",\"salesChannel\":null,\"languageId\":\"2fbb5fe2e29a4d70aa5854ce7ce3e20b\",\"language\":null,\"customFields\":null,\"productExports\":null,\"salesChannelDefaultHreflang\":null,\"hreflangUseOnlyLocale\":false,\"_uniqueIdentifier\":\"46d268ec94c5430295ec21fa5952ca53\",\"versionId\":null,\"translated\":[],\"createdAt\":\"2021-04-12T07:53:19.452+00:00\",\"updatedAt\":null,\"extensions\":{\"foreignKeys\":{\"apiAlias\":null,\"extensions\":[]}},\"id\":\"46d268ec94c5430295ec21fa5952ca53\"}],\"systemConfigs\":null,\"customFields\":null,\"navigationCategory\":null,\"footerCategory\":null,\"serviceCategory\":null,\"productVisibilities\":null,\"mailHeaderFooterId\":null,\"numberRangeSalesChannels\":null,\"mailHeaderFooter\":null,\"customerGroupId\":\"cfbd5018d38d41d8adca10d94fc8bdd6\",\"customerGroup\":null,\"newsletterRecipients\":null,\"promotionSalesChannels\":null,\"documentBaseConfigSalesChannels\":null,\"productReviews\":null,\"seoUrls\":null,\"seoUrlTemplates\":null,\"mainCategories\":null,\"paymentMethodIds\":[\"69867b98038e4d41bde2382bbb5810fc\",\"81fcce6eda1e4ee994281cf6c41e1208\",\"8b9ed316d2da4756ab995bd0fa46ef87\",\"9c8bb5aa0c974f87b44b4a61a9d61d0a\"],\"productExports\":null,\"hreflangActive\":false,\"hreflangDefaultDomainId\":null,\"hreflangDefaultDomain\":null,\"analyticsId\":null,\"analytics\":null,\"customerGroupsRegistrations\":null,\"eventActions\":null,\"boundCustomers\":null,\"wishlists\":null,\"landingPages\":null,\"_uniqueIdentifier\":\"08757990bf314633b5d0fa55efc5e63d\",\"versionId\":null,\"translated\":{\"name\":\"Storefront\",\"customFields\":[]},\"createdAt\":\"2021-04-12T07:53:19.452+00:00\",\"updatedAt\":null,\"extensions\":{\"foreignKeys\":{\"apiAlias\":null,\"extensions\":[]}},\"id\":\"08757990bf314633b5d0fa55efc5e63d\",\"navigationCategoryVersionId\":\"0fa91ce3e96a4bc2be4bd9ce752c3425\",\"footerCategoryVersionId\":null,\"serviceCategoryVersionId\":null}}'),
@@ -5830,7 +5877,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `mail_template_type_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `mail_template_type_translation` (
   `mail_template_type_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -5854,7 +5901,7 @@ LOCK TABLES `mail_template_type_translation` WRITE;
 /*!40000 ALTER TABLE `mail_template_type_translation` DISABLE KEYS */;
 INSERT INTO `mail_template_type_translation` VALUES
 ('ë˚.Q-r1úhº∂\'','ë˚.Œ&ps§xu’s√?µ','Customer registration',NULL,'2024-09-16 14:13:22.349',NULL),
-('ë˚.Q-r1úhº∂\'','/ª_‚‚öMp™XTŒ|„‚','Kunden-Registrierung',NULL,'2024-09-16 14:13:22.349','2024-09-16 15:31:28.823'),
+('ë˚.Q-r1úhº∂\'','/ª_‚‚öMp™XTŒ|„‚','Kunden-Registrierung',NULL,'2024-09-16 14:13:22.349','2025-03-25 08:17:02.924'),
 ('ë˚.Q-r1úhº∂\'¥r','ë˚.Œ&ps§xu’s√?µ','Newsletter double opt-in',NULL,'2024-09-16 14:13:22.349',NULL),
 ('ë˚.Q-r1úhº∂\'¥r','/ª_‚‚öMp™XTŒ|„‚','Newsletter Double-Opt-In',NULL,'2024-09-16 14:13:22.349',NULL),
 ('ë˚.Q-r1úhº∂\'∏Ûµ','ë˚.Œ&ps§xu’s√?µ','Newsletter registration',NULL,'2024-09-16 14:13:22.349',NULL),
@@ -5944,7 +5991,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `main_category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `main_category` (
   `id` binary(16) NOT NULL,
   `product_id` binary(16) NOT NULL,
@@ -5979,7 +6026,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `media`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `media` (
   `id` binary(16) NOT NULL,
   `user_id` binary(16) DEFAULT NULL,
@@ -6051,7 +6098,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `media_default_folder`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `media_default_folder` (
   `id` binary(16) NOT NULL,
   `entity` varchar(255) NOT NULL,
@@ -6092,7 +6139,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `media_folder`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `media_folder` (
   `id` binary(16) NOT NULL,
   `parent_id` binary(16) DEFAULT NULL,
@@ -6142,7 +6189,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `media_folder_configuration`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `media_folder_configuration` (
   `id` binary(16) NOT NULL,
   `create_thumbnails` tinyint(1) DEFAULT 1,
@@ -6188,7 +6235,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `media_folder_configuration_media_thumbnail_size`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `media_folder_configuration_media_thumbnail_size` (
   `media_folder_configuration_id` binary(16) NOT NULL,
   `media_thumbnail_size_id` binary(16) NOT NULL,
@@ -6231,7 +6278,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `media_tag`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `media_tag` (
   `media_id` binary(16) NOT NULL,
   `tag_id` binary(16) NOT NULL,
@@ -6257,7 +6304,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `media_thumbnail`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `media_thumbnail` (
   `id` binary(16) NOT NULL,
   `media_id` binary(16) NOT NULL,
@@ -6326,7 +6373,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `media_thumbnail_size`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `media_thumbnail_size` (
   `id` binary(16) NOT NULL,
   `width` int(11) NOT NULL,
@@ -6362,7 +6409,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `media_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `media_translation` (
   `media_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -6424,7 +6471,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `messenger_messages`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `messenger_messages` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `body` longtext NOT NULL,
@@ -6437,7 +6484,7 @@ CREATE TABLE `messenger_messages` (
   KEY `queue_name` (`queue_name`),
   KEY `available_at` (`available_at`),
   KEY `delivered_at` (`delivered_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=650 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1351 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -6447,19 +6494,8 @@ CREATE TABLE `messenger_messages` (
 LOCK TABLES `messenger_messages` WRITE;
 /*!40000 ALTER TABLE `messenger_messages` DISABLE KEYS */;
 INSERT INTO `messenger_messages` VALUES
-(624,'{\"themePath\":\"7c1d1d1eaf6f72e7db8f8d7bf7598f27\",\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"themeId\":\"0191fb2ed2bd7251b2fd03c8b03deae9\"}','{\"type\":\"Shopware\\\\Storefront\\\\Theme\\\\Message\\\\DeleteThemeFilesMessage\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\DelayStamp\":\"[{\\\"delay\\\":900000}]\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\BusNameStamp\":\"[{\\\"busName\\\":\\\"messenger.bus.default\\\"}]\",\"Content-Type\":\"application\\/json\"}','default','2024-09-19 15:21:04','2024-09-19 15:36:04',NULL),
-(630,'{\"themePath\":\"881d64059223df0b2ad4c5c8de300ad6\",\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"themeId\":\"0191fb2ed2bd7251b2fd03c8b03deae9\"}','{\"type\":\"Shopware\\\\Storefront\\\\Theme\\\\Message\\\\DeleteThemeFilesMessage\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\DelayStamp\":\"[{\\\"delay\\\":900000}]\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\BusNameStamp\":\"[{\\\"busName\\\":\\\"messenger.bus.default\\\"}]\",\"Content-Type\":\"application\\/json\"}','default','2024-09-19 15:26:51','2024-09-19 15:41:51',NULL),
-(639,'{\"themePath\":\"e789012ae48be21c1e9c8303b3abcfac\",\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"themeId\":\"0191fb2ed2bd7251b2fd03c8b03deae9\"}','{\"type\":\"Shopware\\\\Storefront\\\\Theme\\\\Message\\\\DeleteThemeFilesMessage\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\DelayStamp\":\"[{\\\"delay\\\":900000}]\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\BusNameStamp\":\"[{\\\"busName\\\":\\\"messenger.bus.default\\\"}]\",\"Content-Type\":\"application\\/json\"}','default','2024-09-20 07:28:25','2024-09-20 07:43:25',NULL),
-(640,'{\"themePath\":\"647d775931251534c300f687b83a65d6\",\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"themeId\":\"0191fb2ed2bd7251b2fd03c8b03deae9\"}','{\"type\":\"Shopware\\\\Storefront\\\\Theme\\\\Message\\\\DeleteThemeFilesMessage\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\DelayStamp\":\"[{\\\"delay\\\":900000}]\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\BusNameStamp\":\"[{\\\"busName\\\":\\\"messenger.bus.default\\\"}]\",\"Content-Type\":\"application\\/json\"}','default','2024-09-20 07:34:51','2024-09-20 07:49:51',NULL),
-(641,'{\"themePath\":\"2c45027d1dfd7ff695639f3462e6f904\",\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"themeId\":\"0191fb2ed2bd7251b2fd03c8b03deae9\"}','{\"type\":\"Shopware\\\\Storefront\\\\Theme\\\\Message\\\\DeleteThemeFilesMessage\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\DelayStamp\":\"[{\\\"delay\\\":900000}]\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\BusNameStamp\":\"[{\\\"busName\\\":\\\"messenger.bus.default\\\"}]\",\"Content-Type\":\"application\\/json\"}','default','2024-09-24 13:26:07','2024-09-24 13:41:07',NULL),
-(642,'{\"themePath\":\"f753c5c20c942ba062fd86ad69673cf6\",\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"themeId\":\"0191fb2ed2bd7251b2fd03c8b03deae9\"}','{\"type\":\"Shopware\\\\Storefront\\\\Theme\\\\Message\\\\DeleteThemeFilesMessage\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\DelayStamp\":\"[{\\\"delay\\\":900000}]\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\BusNameStamp\":\"[{\\\"busName\\\":\\\"messenger.bus.default\\\"}]\",\"Content-Type\":\"application\\/json\"}','default','2024-09-24 13:31:39','2024-09-24 13:46:39',NULL),
-(643,'{\"themePath\":\"d1775ea52761eb4baea9a7c3fd13ec4c\",\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"themeId\":\"0191fb2ed2bd7251b2fd03c8b03deae9\"}','{\"type\":\"Shopware\\\\Storefront\\\\Theme\\\\Message\\\\DeleteThemeFilesMessage\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\DelayStamp\":\"[{\\\"delay\\\":900000}]\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\BusNameStamp\":\"[{\\\"busName\\\":\\\"messenger.bus.default\\\"}]\",\"Content-Type\":\"application\\/json\"}','default','2024-09-24 13:32:27','2024-09-24 13:47:27',NULL),
-(644,'{\"themePath\":\"8035950977bc8a7ebdf42909d3f5e888\",\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"themeId\":\"0191fb2ed2bd7251b2fd03c8b03deae9\"}','{\"type\":\"Shopware\\\\Storefront\\\\Theme\\\\Message\\\\DeleteThemeFilesMessage\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\DelayStamp\":\"[{\\\"delay\\\":900000}]\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\BusNameStamp\":\"[{\\\"busName\\\":\\\"messenger.bus.default\\\"}]\",\"Content-Type\":\"application\\/json\"}','default','2024-09-24 14:48:52','2024-09-24 15:03:52',NULL),
-(645,'{\"themePath\":\"2202617ddba9beae2d7473e0c256e9e2\",\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"themeId\":\"0191fb2ed2bd7251b2fd03c8b03deae9\"}','{\"type\":\"Shopware\\\\Storefront\\\\Theme\\\\Message\\\\DeleteThemeFilesMessage\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\DelayStamp\":\"[{\\\"delay\\\":900000}]\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\BusNameStamp\":\"[{\\\"busName\\\":\\\"messenger.bus.default\\\"}]\",\"Content-Type\":\"application\\/json\"}','default','2024-09-24 15:51:03','2024-09-24 16:06:03',NULL),
-(646,'{\"themePath\":\"54add47b6718f0f23b8d6b169d501996\",\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"themeId\":\"0191fb2ed2bd7251b2fd03c8b03deae9\"}','{\"type\":\"Shopware\\\\Storefront\\\\Theme\\\\Message\\\\DeleteThemeFilesMessage\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\DelayStamp\":\"[{\\\"delay\\\":900000}]\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\BusNameStamp\":\"[{\\\"busName\\\":\\\"messenger.bus.default\\\"}]\",\"Content-Type\":\"application\\/json\"}','default','2024-09-24 15:56:02','2024-09-24 16:11:02',NULL),
-(647,'{\"themePath\":\"1d731d34be2933da501b204ffa524dbb\",\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"themeId\":\"0191fb2ed2bd7251b2fd03c8b03deae9\"}','{\"type\":\"Shopware\\\\Storefront\\\\Theme\\\\Message\\\\DeleteThemeFilesMessage\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\DelayStamp\":\"[{\\\"delay\\\":900000}]\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\BusNameStamp\":\"[{\\\"busName\\\":\\\"messenger.bus.default\\\"}]\",\"Content-Type\":\"application\\/json\"}','default','2024-09-24 16:16:39','2024-09-24 16:31:39',NULL),
-(648,'{\"themePath\":\"32de622a2e477c6ca4ae39180c90e604\",\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"themeId\":\"0191fb2ed2bd7251b2fd03c8b03deae9\"}','{\"type\":\"Shopware\\\\Storefront\\\\Theme\\\\Message\\\\DeleteThemeFilesMessage\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\DelayStamp\":\"[{\\\"delay\\\":900000}]\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\BusNameStamp\":\"[{\\\"busName\\\":\\\"messenger.bus.default\\\"}]\",\"Content-Type\":\"application\\/json\"}','default','2024-09-24 16:19:57','2024-09-24 16:34:57',NULL),
-(649,'{\"themePath\":\"fd13535b8cb88d60e45971af4b371fb0\",\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"themeId\":\"0191fb2ed2bd7251b2fd03c8b03deae9\"}','{\"type\":\"Shopware\\\\Storefront\\\\Theme\\\\Message\\\\DeleteThemeFilesMessage\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\DelayStamp\":\"[{\\\"delay\\\":900000}]\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\BusNameStamp\":\"[{\\\"busName\\\":\\\"messenger.bus.default\\\"}]\",\"Content-Type\":\"application\\/json\"}','default','2024-09-25 07:06:37','2024-09-25 07:21:37',NULL);
+(1346,'{\"themePath\":\"f99ce25f53305f1d3ffb6f4333be9bd3\",\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"themeId\":\"0191fb2ed2bd7251b2fd03c8b03deae9\"}','{\"type\":\"Shopware\\\\Storefront\\\\Theme\\\\Message\\\\DeleteThemeFilesMessage\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\DelayStamp\":\"[{\\\"delay\\\":900000}]\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\BusNameStamp\":\"[{\\\"busName\\\":\\\"messenger.bus.default\\\"}]\",\"Content-Type\":\"application\\/json\"}','default','2025-03-27 09:10:08','2025-03-27 09:25:08',NULL),
+(1350,'{\"themePath\":\"67268bbd663383d1fd87117a97fd16e1\",\"salesChannelId\":\"0191fb2ed31471f090441bf60cf517e7\",\"themeId\":\"0191fb2ed2bd7251b2fd03c8b03deae9\"}','{\"type\":\"Shopware\\\\Storefront\\\\Theme\\\\Message\\\\DeleteThemeFilesMessage\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\DelayStamp\":\"[{\\\"delay\\\":900000}]\",\"X-Message-Stamp-Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\BusNameStamp\":\"[{\\\"busName\\\":\\\"messenger.bus.default\\\"}]\",\"Content-Type\":\"application\\/json\"}','default','2025-03-27 10:17:15','2025-03-27 10:32:15',NULL);
 /*!40000 ALTER TABLE `messenger_messages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -6469,7 +6505,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `migration`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `migration` (
   `class` varchar(255) NOT NULL,
   `creation_timestamp` int(8) NOT NULL,
@@ -7173,7 +7209,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `newsletter_recipient`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `newsletter_recipient` (
   `id` binary(16) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -7220,7 +7256,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `newsletter_recipient_tag`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `newsletter_recipient_tag` (
   `newsletter_recipient_id` binary(16) NOT NULL,
   `tag_id` binary(16) NOT NULL,
@@ -7246,7 +7282,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `notification`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `notification` (
   `id` binary(16) NOT NULL,
   `status` varchar(255) NOT NULL,
@@ -7280,7 +7316,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `number_range`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `number_range` (
   `id` binary(16) NOT NULL,
   `type_id` binary(16) NOT NULL,
@@ -7316,7 +7352,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `number_range_sales_channel`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `number_range_sales_channel` (
   `id` binary(16) NOT NULL,
   `number_range_id` binary(16) NOT NULL,
@@ -7349,7 +7385,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `number_range_state`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `number_range_state` (
   `id` binary(16) NOT NULL,
   `number_range_id` binary(16) NOT NULL,
@@ -7369,7 +7405,8 @@ CREATE TABLE `number_range_state` (
 LOCK TABLES `number_range_state` WRITE;
 /*!40000 ALTER TABLE `number_range_state` DISABLE KEYS */;
 INSERT INTO `number_range_state` VALUES
-('ë˚}x∑sÛ†?Âgan*','ë˚.Q:qR®Ø©]Zƒ«V',10000,'2024-09-16 15:39:49.815',NULL);
+('ë˚}x∑sÛ†?Âgan*','ë˚.Q:qR®Ø©]Zƒ«V',10000,'2024-09-16 15:39:49.815',NULL),
+('ï…‹î˝qâ˛Y†€b1','ë˚.Q:qR®Ø©][6',10001,'2025-03-24 20:33:51.357',NULL);
 /*!40000 ALTER TABLE `number_range_state` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -7379,7 +7416,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `number_range_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `number_range_translation` (
   `number_range_id` binary(16) NOT NULL,
   `name` varchar(64) DEFAULT NULL,
@@ -7426,7 +7463,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `number_range_type`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `number_range_type` (
   `id` binary(16) NOT NULL,
   `technical_name` varchar(64) DEFAULT NULL,
@@ -7461,7 +7498,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `number_range_type_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `number_range_type_translation` (
   `number_range_type_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -7507,7 +7544,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `order`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `order` (
   `id` binary(16) NOT NULL,
   `version_id` binary(16) NOT NULL,
@@ -7581,7 +7618,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `order_address`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `order_address` (
   `id` binary(16) NOT NULL,
   `version_id` binary(16) NOT NULL,
@@ -7633,7 +7670,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `order_customer`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `order_customer` (
   `id` binary(16) NOT NULL,
   `version_id` binary(16) NOT NULL,
@@ -7678,7 +7715,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `order_delivery`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `order_delivery` (
   `id` binary(16) NOT NULL,
   `version_id` binary(16) NOT NULL,
@@ -7725,7 +7762,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `order_delivery_position`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `order_delivery_position` (
   `id` binary(16) NOT NULL,
   `version_id` binary(16) NOT NULL,
@@ -7765,7 +7802,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `order_line_item`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `order_line_item` (
   `id` binary(16) NOT NULL,
   `version_id` binary(16) NOT NULL,
@@ -7830,7 +7867,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `order_line_item_download`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `order_line_item_download` (
   `id` binary(16) NOT NULL,
   `version_id` binary(16) NOT NULL,
@@ -7866,7 +7903,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `order_tag`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `order_tag` (
   `order_id` binary(16) NOT NULL,
   `order_version_id` binary(16) NOT NULL,
@@ -7893,7 +7930,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `order_transaction`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `order_transaction` (
   `id` binary(16) NOT NULL,
   `version_id` binary(16) NOT NULL,
@@ -7933,7 +7970,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `order_transaction_capture`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `order_transaction_capture` (
   `id` binary(16) NOT NULL,
   `order_transaction_id` binary(16) NOT NULL,
@@ -7970,7 +8007,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `order_transaction_capture_refund`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `order_transaction_capture_refund` (
   `id` binary(16) NOT NULL,
   `capture_id` binary(16) NOT NULL,
@@ -8008,7 +8045,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `order_transaction_capture_refund_position`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `order_transaction_capture_refund_position` (
   `id` binary(16) NOT NULL,
   `refund_id` binary(16) NOT NULL,
@@ -8048,7 +8085,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `payment_method`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `payment_method` (
   `id` binary(16) NOT NULL,
   `handler_identifier` varchar(255) NOT NULL DEFAULT 'Shopware\\Core\\Checkout\\Payment\\Cart\\PaymentHandler\\DefaultPayment',
@@ -8109,7 +8146,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `payment_method_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `payment_method_translation` (
   `payment_method_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -8185,7 +8222,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `payment_token`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `payment_token` (
   `token` char(32) NOT NULL,
   `expires` datetime(3) NOT NULL,
@@ -8208,7 +8245,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `plugin`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `plugin` (
   `id` binary(16) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -8242,9 +8279,9 @@ CREATE TABLE `plugin` (
 LOCK TABLES `plugin` WRITE;
 /*!40000 ALTER TABLE `plugin` DISABLE KEYS */;
 INSERT INTO `plugin` VALUES
-('ë˚.“IrcòWÍÙü’|','DockwareSamplePlugin','DockwareSamplePlugin\\DockwareSamplePlugin','dockware/sample-plugin',0,0,'custom/plugins/DockwareSamplePlugin/','{\"psr-4\":{\"DockwareSamplePlugin\\\\\":\"src\\/\"}}',NULL,NULL,'MIT','1.0.0',NULL,'âPNG\n\Z\n\0\0\0\nIHDR\0\0\0(\0\0\0(\0\0\0ú/:\0\0≥iTXtXML:com.adobe.xmp\0\0\0\0\0<?xpacket begin=\"Ôªø\" id=\"W5M0MpCehiHzreSzNTczkc9d\"?>\n<x:xmpmeta xmlns:x=\"adobe:ns:meta/\" x:xmptk=\"XMP Core 5.5.0\">\n <rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n  <rdf:Description rdf:about=\"\"\n    xmlns:tiff=\"http://ns.adobe.com/tiff/1.0/\"\n    xmlns:exif=\"http://ns.adobe.com/exif/1.0/\"\n    xmlns:photoshop=\"http://ns.adobe.com/photoshop/1.0/\"\n    xmlns:xmp=\"http://ns.adobe.com/xap/1.0/\"\n    xmlns:xmpMM=\"http://ns.adobe.com/xap/1.0/mm/\"\n    xmlns:stEvt=\"http://ns.adobe.com/xap/1.0/sType/ResourceEvent#\"\n   tiff:ImageLength=\"40\"\n   tiff:ImageWidth=\"40\"\n   tiff:ResolutionUnit=\"2\"\n   tiff:XResolution=\"72.0\"\n   tiff:YResolution=\"72.0\"\n   exif:PixelXDimension=\"40\"\n   exif:PixelYDimension=\"40\"\n   exif:ColorSpace=\"1\"\n   photoshop:ColorMode=\"3\"\n   photoshop:ICCProfile=\"sRGB IEC61966-2.1\"\n   xmp:ModifyDate=\"2021-08-31T09:06:05+02:00\"\n   xmp:MetadataDate=\"2021-08-31T09:06:05+02:00\">\n   <xmpMM:History>\n    <rdf:Seq>\n     <rdf:li\n      stEvt:action=\"produced\"\n      stEvt:softwareAgent=\"Affinity Designer 1.10.1\"\n      stEvt:when=\"2021-08-31T09:06:05+02:00\"/>\n    </rdf:Seq>\n   </xmpMM:History>\n  </rdf:Description>\n </rdf:RDF>\n</x:xmpmeta>\n<?xpacket end=\"r\"?> xk\0\0ÄiCCPsRGB IEC61966-2.1\0\0(ëuëœ+DQ«?3h&FeVC~‘ƒFôI(i\Z£¸⁄Ã<Ûf‘¸xΩ˜$Ÿ*€)Jl¸Z∞U÷J)Ÿ)kbÉûsç\Z…ú€πÁsø˜û”ΩÁÇ;ñ—≤Ve7ds∂	˘ßgf˝ûGº¥‡Í„öeE\"„îµ∑\\*^u™ZÂœ˝k5IKóWxP3L[xTx|Ÿ6o\n7jÈ¯Ç±p¿î\n_+=Q‰\'≈©\"(6c—0∏ÎÖ˝©_ú¯≈Z⁄Ã\nÀÀiÀfñ¥ü˚®ó¯íπ©Iâ≠‚ÕXD!Ñü1Ü	§áôÉt“Kó¨(ìﬂ˝ù?A^r5ô\nV0Y$E\ZõÄ®KR=)Q=)#√äÍˇﬂæZz_o±∫/UéÛ“û\n¯,8Œ˚æ„|@≈=úÂJ˘˘=ËΩP“⁄v°n\nNŒKZbN◊°ÈŒàõÒo©B‹≠Î|µ3–p	’s≈û˝Ïsx±U˘™ÿﬁÅ9_7ˇ˛Pg∂D‚ˇ\0\0\0	pHYs\0\0\0\0\0öú\0\0JIDATXÖÂñYl\\W«øÔú{ÁŒù›≥Ÿ„›±ú•Ÿú&M“4AUiUBTQV	!ê\nîäH< êêxI©ÑZ†¢HE®4UBIP7â;âÎÒ6û€3cœÃùªú{>Ïƒgí∏Å®˝?Õ’úÛ˝Œ∑Í√cá´Qà}$‘è%Xy‡õm›‘≥ây<8ùñ7ØêÎ‚CácÙ‹Wq`ójVAqÆ,‹?˝∆ùô`DÎ5“ ‘ü˙∂oX1Ä∫Oﬁ˛E‹£_q<Î\nÑôY£“<q6Ìˆæ¯Sµ).Ô¥v7·ùÌƒ9!Ç+°cå§\\˛¸Úã,ë•DbllƒI_•‹4bˇVv‡˛ OÑm◊≈<ëã•Ó5ıùŸ∫MM§d(\"ı üáøºÊ⁄ø}Ê¸ªêœà-è¬≈”uwRÉÔ&d∞cù}GZ1ÄµÔõE≥‚rÖπ‚˛Ö∆¬—ı÷√∂=41‚ÙmUááÓ⁄Ñí‡˚øR◊cMY(‘ΩA6™”Ä‹åßxBﬁ´˚	Ñµ.O÷ö jLÄ©4h^QöøWπBoºÏ<¯™.\"SòtÔz ôrÉÈÙ∫l~02hºws„Äx4˙ƒvôh„\nˇ˝ü¿©N¸—qﬂÁ_PZª÷≤}y‡i±müÚ›_¯?yt]÷>D;È>‚\nj:{Ê\";Âû;…fgÄbIyY‰ú˘C\0yå#‘⁄≈å*]:„^˙˜ Y≠ìkÌ	ÑduodëÇD´Íı±õóMØN˛ ⁄ñ[-ÀŒ~Ø¿Ãò].¬ñΩ\Z‚2,=\"˛kklx-˚>`_\0ûˇ{‚à∆8ﬁxﬂÍ‹®j˙Ω≤#%˝ıwãü9FÈ\01ŒjU˘≥o÷rSı}ª^=ç†µãˆ>…cIL∂≥ﬁ-™pÑp(=ÏÏÚÄÇs>~ÕíÅÙ±•À„\n…fT\\È\"êd\nË~éàD4z’˘˘wƒjré{`Ù*\0ÄÍ°/}[y¸”EYyá¢*s3v≤MÄ—k•b°\\úµm™$ó@∫ÇÃ¨õ…±≈\"Ù\n$RmëÙ∞kÊë»ÌÜ!ë¢Ÿôõu°Ê\n˚{Ï)/\0\0Å+%Iê.í§ÏÑ€ﬁœ•\'Núé∑4eÛFuﬁ´»™a;Ækÿ∂QïjµIæÙΩØ\nü7CQ¥j§˚I”ô«+}Aœƒu˘Àól€¬:èó¥eñ©\0ÄÄàÄ¿8¢™QfLtÙyJ≈ÚØ€ãeßïrO¯U15Z7ä•π?≈®+ﬁ‰\n å9ÌΩzpø]b\0–≥âˆÎÓ//∑b]•<z∏Óå!WPQQ’0’•Ê¶åõW*ÆÉ=|&Ó„˚∂U‚\'?∏nª◊öã±Ï©W#NdËÏ‹ˆ«Ω°®≤ö∫§›á=∫\0@ÛR∏{†q≈Jó¶F≠ù√Åòe\Z+e£π	sÆ:Si´˘öwˆ8Q{˙Êﬁ)å˜oLÌ>/óDπË¿öM»Bè\0`ôXÁ\"_5Ôà`‰Bçsx¡4dˇv„ÿíä=˘‘éW%oêñUâµ≈£÷Ù\\ˆ»ŒÕœΩr¸≠ÀÖ¡=q√f}‰¢(àZUõXsá&•dåqéÄ÷ÊxfÇö;ñ[¶$¡ˆ$õbï¡¯r‹⁄ª¬¡˝öïFkz®*I	˘˜ü∏Ü≤òÔ}tGV%#Ã∆\Zõüñ¡X\\ı®å1·êÎ.°¸Ó€N $˙—ó\\^¨e≥ÙÎ±Ê\0\0eô∂u?~ÎáÉå£cª◊ÌT∑«‡\0 ˘˛øÏëãfˇvç1å∑*Üe F\n3πŸæûN\0òö¨‘åÂ’•.©π)Ë€™Ä„MÁVIÄ…Ã,•áÕ∑^3µûÕ⁄í˜ä {∑ÍKT\0PT6x»€∑M;Û˜™p»£±ÙT\0¢ëPow\'\0å¶\'_?>Á‹jß:∞?b/-Ràê…ÊˆÏO9∫m;È’°sôÁ_#Ça‘\0Äà§tÂk4Á∏„êÚﬁ?”Èã∂Â‰«EMîF”ìßŒú˚ÛoçÒKÕ+\'wvˇxÂûRÌ€UåÑCús\"ö/¢Qﬂ»•≈‹|n˜ﬁˆ¶∏\0ÀŸ¸ú¬Ô”Û≥”≤¿u•iZïä!Ñz=ä◊:˘èÒ <cÅ9£Vªaú{;˘¡Ö÷’O¨Àqi&p˛‹EDÏÓláÇä¢ºwˆ¬∆m≠…x;ëMO™ä“ﬁ⁄íàGâ[ö„éCóá≥˘πŒˆT{*ôûúüÃ¶|ßﬂ‹‰∫\\U;à@8\n÷ø∫ë©zHÒÿÉGov\nHøO\'¢…±™mB(i@kK\"ã2∆j¶˘Û„º©Õú+gÁã∂Ì,≈ø8Ì9›6;ñÓ}Vå∞¢–”_‰{]P≤ªnÆ∫/e˝’í6xd4ﬁ]a∑LëÑB∆7|™√±XK_…±\0∞Z–Úc·b6xo^cèÔî◊G¶Å\0åWz∂Á˝Mv•†M\\N,Ã÷	x@0‚⁄±˜ˇ“}2Òê®˜?<}¸¿ˇ“ClPπ\"√\0\0\0\0IENDÆB`Ç',NULL,NULL,'2024-09-16 14:13:55.402','2024-09-16 15:39:25.749'),
-('ë˚.“Mssø\"ûF°`','SwagPlatformDemoData','Swag\\PlatformDemoData\\SwagPlatformDemoData','swag/demo-data',1,0,'custom/plugins/SwagPlatformDemoData/','{\"psr-4\":{\"Swag\\\\PlatformDemoData\\\\\":\"src\\/\"}}','shopware AG',NULL,'MIT','2.0.1',NULL,'âPNG\r\n\Z\n\0\0\0\rIHDR\0\0\0®\0\0\0®\0\0\0tK•¥\0\0\0sRGB\0ÆŒÈ\0\0\0DeXIfMM\0*\0\0\0\0ái\0\0\0\0\0\0\0\Z\0\0\0\0\0†\0\0\0\0\0\0\0†\0\0\0\0\0\0\0®†\0\0\0\0\0\0\0®\0\0\0\0qå÷\0\0@\0IDATxÏΩ{ÃÔ]z÷ı›˚}Á–NœÌÙ8ÔÃ[(≈ö\"-‘Çh4°\"H‘x ïP#≈‘4⁄ƒ≠∂ç¢ˇ®%Z(\'Âêñ(1@cDÅñpî•”w¶–ÛLsz{{}ÆÎæ÷ZøÁyˆt¶ù“Xªˆ˛}◊Z˜}]◊}›Î˚˝={?œ~ˆﬁèÆr¸¬?ÙÙµ?¸„◊Ø|¸Ù˙5Oû^ü£˘”ü^◊ßã˛Qñx™›åG]07Ã¨πß¬>Ú\n¿ÛùMé˝#Ì´[‡áñŸ⁄[”¯MCmÅ´C›Y?\Z<ó3~_ÏV9<õ€Az*7çﬂÍßP7˛)®Ãù∫’_-`7¸âi≤ã;:d∑V{¯¿˝[qlm~ä∑Ü£& ï{FèÆW‰Ô>z˙ÙÔ*˙mO?˜?_OüˇÊøÒ5è^≤ÓOpIï\0zÎÔz˙©/Ωz}ïj˛z5ˆ198€⁄,<i‰ÜßYÔu—Œ∆Õ0Æçêúf’X«Â¯ÌüÎ÷\n∆dÛ≥‚ÿßÓ‡y3T ˜?%9Jáô|√Cµ7?`„ü|lBú˛≠u∑∏ékÖê«@>ŒÑ‰>°û≠=Z^‚√ ∏,4¨±ÅÎ·q~«É˛—ó„’—¡X_‹ﬁœãñÛA=”ˇ∫/è˝®ÿﬂˇè_˜}Î◊<˙ﬁUÎÅEtH|Ê7=}›{æÔ˙ ßOÆØP≥o¿à≠®ÒıëßèQëÁﬁË%ÎCIJã>Ù¿YáôäÎ–[ÊAæk§–-_Ç„ì∏kŒ∫ÏWò‚\n“ü}6æ6ìü|‡\n≠zÌò„∫0&ûÕmˇƒÃØÉR8∫X‚≤˛òKŸÁ≠B.,¥Ê∆WœHXK˝ÕzTôÃ)›¸D]\'ıÚ9zi˚ÔY.∂ÁÇœ∆‚O†ƒﬁ˝Ù—”ﬂ˙ÊOz˝Ú\'æ¸—˚·ﬁãw&Ê£Ê7J„Q≤°9ç\r^Ù?‚;ª«vkYáÍÊè™÷)¸|7Zz(6œ÷nxRï €´¢áœJWìπ•™”XÓŒ…ÔC>à—µ¬ZìM<g”@º51≥˘„dxÀ+ã;√∫ƒwØı∫˝[bDÌ·Ù|GÀNîÔGo†]”UúÊûF˜ò\ZÛ ˆˆØ7\r¯Ë_◊„Î—ü˝ÛØ˝u}4s3ﬁÙıOˇ·\'/_\\Ï7≈˚]±ïäC3-»<(ûIˆk86	Ç√;;©é√3‹Á£JUìpäîÕ*Il$ög•Ÿú¸Pé~…€Éÿ“[5´K,ˇiÖ“gúµÌtèO-Dò>PŸ•∂S;ß≠À¡◊∆CøÏ&Crúé›üûµ6ﬁg?òDé´5≥Ÿq¢9MÌèSo|ôØ?∫ﬁ°Gıã˛˙¸∫ø^8Û„s√GŒ\'Ø\\\\\rº…ß–Ü4Ô·™ÇùnÁ]%•xÛl/ˇF√l%G+>Ê–Cv®5Ã\'BŒ∫ 8I\rtL \Zêq9(o\'o	ÂÍã˝‚;û7	ÒUGOıô°5	Îµ∫pñZJ,«∏∏wçg–äπ>˝`m>Pc¡∞ˆ&zZñC¿^&üx∞Ê∏QX\'b·„Ìu¨\'ñ):¨mÜ\Z¢&?m/ΩÉ◊TΩ[ˇ¡Q◊=£Û‰zìvﬂÙ_ÛÙS)◊±P~œ©OÜæQBÊ&Â∞$&¥¡,óÙÅ·uvªI01Æ3_nÇ0Éú]ÇQAwÃ<23É[|8káWØÊ	Ò®/xX£C≠öûÎ€^Ü”>C	†A˘Èë≠ÌSHõÙD4˙≥ÖzMÀÈ£Z∏MíÊx⁄káìs∞∞·«Ä=øµ◊L˙Ú\Z}áVl)`\0ë◊ö∫BR∫eyFP£=áØÎ¬&‚{ı‰Èõﬁ˜Ú˚æÒW˝◊O_÷ÒÙ=Oü]Oı{ŒëB¯lÆÎôA-∆n¸îlçÃÊ)√G\"çbh(ëŒ %0ÒÉŒ˝? \Z€k&ª&{pâÎ»ﬁ;G~0ìY{jÂ‡Sè|¸Ü#~˚ä∆FÜùeÜÙxøı%ï√èÎZ–2¿	®W{∏ÒÂ‡x’∫|f´9%∑∆b≥Ëﬁ¸Èb÷ô\ZπuM≠µïO»z)ÅWÔâçéV_¯éÔÈ+À0ﬂü=Ω˛∂>ÃÍ≥u¿”î≤¸“Êw2ä#âeﬁ·ïöYqzPπ1bî§lçcÇ£¯È˙‡Y™Pµ!ËÃ÷â¡wﬁ%s\0#5˘QëFﬂ¸+Ÿ)0Ó\\_°Çá^è>á∆ò«[∫‘¿˝Hƒø´?cG√˛\rCU\rk≥`DóÈ÷ﬁËhw}kÈR˝É^Õ•!=Ózbü8‰j¡ä)„•Ôû*Ëöı≤ΩÆ\ZG>∂T˚È£wø˛µØ˚L>iÚ/Ò|ùS‚zh˚ó;åŒòÊl	Q{⁄‡L‚nf¿<ÿõw>4≤	è±ÚiŒÒÊVæ~H,g´vƒT›”÷ÑæçŒz—ßàÎk≠x~9?ã+8˛hä˘Åı∫Yì£JVotôaç‰*Uˇ=É)5\'à2#óáq˙7:πU?ÑRˆåä†ıWˇÖ≥wmÀÂ˛%	r∏,©Âás‚¡Uõ pÓc˝7ˇé?∫ﬁ˛óﬁˇUdÒ\'DÔ¸±ÎdÓclDNCu[`lÄ)¢≈\r32µÅyÔ¿dΩ5R±DèıŒGßÙ%&∆4ò˙H?‰’%so•}J5ò4€ûî?ºµ{¯Rˆ9Pa	ß‹\n\rŒQÉtù‘]ƒQ#˘-âtc÷Ò>æ@?çÿ´÷Ho˛lîﬂniAtc‡;b≠9âπÁênı°ûg¥u»D…åîJùuáñà7>=˙—œ~ÕÎﬁ¯¯Gı«ó2z<ú<8RÊÇËòÖÃÕ±6ïèúîQ7Œ\\DfÃKCµÚ·Ö∞ÃyÌ†˜P\"K#Bio«Z¯”óFâÌÉhogS’vO#D]/m`÷ö∂ˇƒÍìyÒïbmgÊè≠ÒJΩù8{©ı±-&∏∑|púGk\"2˜ì•Î≥»í©ﬂæå€ÿ!M¥ûÓÒ	ú~ΩÌôÁ\\|p”G˝g^‚|ÆÚ1ﬂÒ“˚Â„WıgÎ—mrÆ¥ÃÉ!í®> ¢år⁄e\'TÔûç$÷º)Êßô10ØWç#AÏ&n§NÙêSi∞¨ü ·Á⁄ﬁ2cD¨˚£ÇìÁπ\nÖw;7új´W5û üàœhﬂºëpUºËkÛú\Zï]ÿjÎúC<æ©¡—ÌπÁ>∫í{6˛πûÁ∫∞°Ú=£‘\'ªù≥ÍycWÅ™•ˇÙ9Q9\Zï¯5œãˇ9.d!¢mºs\n\'B—.Ì:cæq\\Ü`€Ú–OﬂßM∑∆È…f≠ßZ⁄ÏõVæb˙ÅDt‰põ8y°+D\Zƒ‡&Ü\"?!∑ÊÆAΩhfsØgﬂ4ó{≈ÁÃhLJ„4µK=\ne¥ÔáØTãÈ\rAçd¢πÃ8C€¬˙É?uz~V¡/ê6ìbÓ;!Fk§›‹\0åˆdÌMq8˙aè‘Ph}ı¿óÄÙ9èï¯t!ó∞uïAæØöfÔ±\r¿ØH-iVe\nﬂÚá¨¯9¬üö8÷Äœ «jòkvÚ∏ Èf\'V<÷≤ÓµôÓE(u∂ã9ï˙#≠ÂÊSG?Ïªs˝ÔöYEÄu3ˆÔ}\"£,ÅVŒ\\|™\r_òÛúN]zÎ®2ö˜0¬µ&sœˇñ?’ˆßIıü˚p?Á£3Õ^Oµ¬\"Ø	2È3¯OÁ≥x}Àúå≠D∆ÎBo‰˙éDƒ\0ÿ—ÿ¨úb00ËxÄùÂ©e£ïÃOìR#Î…MÕ\rÕ÷˝°«Î:XùpYˇC∞|‡⁄Í≠\rL0ìQ°Ëm˝Ë√ì>Ñ•4/¶SõΩ£ìP“GÀ<:viêÒ?$Å7?ê¯N‘µ∞ß≠Â`D,ù˚ó¿¯EŒ>RŸ\0X\Z\rÚ⁄wﬂ†‰í⁄}ê2Å,:YÚ…<†˙~N†£õ\"‡9Û‡ÛîOlcõ\'Ä¨dƒëLgƒ´ÉÜ=;œÖHÍzC-ﬂv—!?∞¨F ˙¡¨fßsJ:bß◊ËÁ⁄û⁄jıÅñGunÍæ\n⁄Ö£;Ã5ëÀ˘*–ò€Vä=#ıµk›âï≤Uvˇs÷∆¢R:H4[_{mRã+ºôm$Í∑1¯ôÅ\r‘AÙíÖ\Z≥∆È_±ûuÚ∑ò•-öêıºŸ#‡™8≠0Bº{™xÀéÄæÁo#6«í2∞Î∞s!sê‚±í8oÄÒ¬\Z≤1Ü{\r:Mê\r◊áëÑbâ[€á⁄õjµ·¬¡ú≠ç¥˘ì\Z%˚OJÑ5|5œ◊û••Y≥ÙÃÍ\n∆ï]WúY!™µ¬ﬁò	èxÓükZ5h\n∑∆DD”j¸[ÿúç˙ﬂ5†E!WÈ\ZWU™pâß\"\\Î”BOSpSO∆axÏ√P¨Ò¡:á\0≈c¿,!4WHπ.©ï8\nQa∫·ÿ7Ç\0UµnBˆUa<ÓêÄÍBÇQM/≥©_Á#PòÁÌﬂ_`÷?áû3rÒ©m‚Àø=qîÜ≤kL`™è∂∫îœ^k⁄“+Q÷π\rœ#8]ùZx„?≠Á˛9¨K¸œN\0Î5È9~ÌﬂÀÚÌz≠ñsÚÆ\r◊ˇ@Íaı≠\Z˘fëi“∏@ÏÄµbíõÍÉi!ac)PnZ4:G¨RÃÊ-G G‚á¨ò<\\2ÄîÇ∂Á§jick y∆áÇìé6\0ôı¢Ç˝Klx -Ö–‚8¥Æ+º˙∑⁄T¶Ü3µòr√úô=¯Æ®ƒ ë`WØ£·û£ç˚˛ˆÂV/ÿX€œÈøÃûÖ˘U\nóî$FeóÔF˚úûÉÒ›´◊¡€øêp„ªBiUªÕó‘zCπ‚ÒÄbÄ1g`Sâ‹\Z cÆàHÀàÛ\\¬\0N^ÏY˜ê⁄9u_çéI:∞q»\Z¡iqòfπ˘YÉı@;w…€Õ& Œ`ˆ\Zû#3K#˚˝ê;çyÛïù÷[¸©ﬂ=∏˙ÁAXÉ∏™ÏJ⁄:‘ öYB7ñπÕ3åV‹:‰YgÄ\0?,e/Ä¥3V+∞≥€Ÿö˘ÿfZk\0‘YgáöÜRÜ≤d1Ù€ø?Ç.3[/x€\"=ê®a-MÏ∆i∏ç•\"(Ü˘^xìp2Êó1√ˆΩ]-±å¯á5Ôaˇ\0˘πÔÁÃ¡Õ—pü¯ë≥Ïaˆ^pd:√—Œ˛<WÓgΩÔ9˜%ÁÌ[ ^s∑¸‹øV]˜Ã%Mmf}#3c^‰¬zƒfã»	1êú]&_¸‘∫«o1k+E17	$f˛D…±˜¨ÿ	∫|4i*#Nk.N∞àµG*€>ñ—Ë«◊r∞“rjVót?eZÍÌ•/l¯1–≥=X8…]ËÀÎÑ	≠ÿ,HMˇ√6ÿµà€#3À‹Ô%ÕB£w?¸õàıˇ~p•ç^¯∫j9Ë©µ˜π?-∂œÙ±˘ƒ˝\n`âXz.*Ûsﬂœ…]‹\'√ZØõ¡my∆y≤ı|rç+?†>∑˜Ωypf∂ZÖGﬂ\nyÃ¢{ÛÊÅôt8ùg;ì1G(}\n´^ΩGcÈ9◊<ˆ‚ú∞º7‡Çùó¶‘$†ﬂÉﬁ0ëÜ%íCESç1çÜ÷YÿƒéãöÂ\n:k¯›#r‘(3u*(Å£ºu‚ÍSV≠DÕ)å⁄Ï˚-÷ıg”ÿ.©}Ò•g«\0πgƒö≠VºÃ“e˘O\05Áù%/‹¯Ô√>Qq˙—(hÆ\Z‘8˙Èë‘™Ñˆ®Egpw0ı\0Å‘Í≈:{«ÉLç‚„\Z~üÌ«&G∂÷Sl9§”¸7Æa7R\r4m◊c–7◊â‹º,ïtûBñÚ˛ñ_„√“∂ú Zç∂¶Q`:nËì(_≤πQ\'a9ƒzÑòX˚p§g;Ç‡îû◊ô4Åå5í´T˝¶`¯@·QFb‰¨?{–…≠˙!î≤gT≠ø˙/úΩk[n>Í9		r∏,©µ&3¢ù\0Z}Äí∂{◊\'ûÛ\'≥zd=wÔÙh\n@\r◊◊µΩ¯#®¡ÆD#9‰\ZI¥±AH$\rıJ‹H‚#∫„ë≤ë\ZäûÆp£ƒ◊aMö#–˙kDQÛ…ß…Väﬁ¨EŸ˛·Ô:ÿËê°^˙góxìŒì˘Ï´˛ìÁö·é}Ù-`ˇh=ìè¿£O6Ä&DÂ„MBç\rV±@o˝Á&NŒùæñwø±#Ïî¥ß£/”[\'íQƒ¥-∂Ω˙ç§xΩ˙≥xËò|gë)@ú•°ôç\"ıÃ◊“@f∆h1ÂÊ	eËc≠<ÜK˙≤v„–hk÷ü†c“Nù‡¶ºcıÖ¥o>º÷Ÿ¿Õ\'Ì∏ÄÃÉ©>ıv^‡ïdõSk¬ï-˜ñü~¢	˝É;kb‹D€?<˘Ÿ/RñÓıåM”˜¯÷ÅÏ∫	Á\\}p÷⁄˛”GÒ#ÅGáˆ=[}πèÌ?Ôùº°,=^ÛÖzBíËô÷ª7¿XIπ©ú›ú«ò2j%`ÏI2•ãe<™¡B8\Z	?◊õõnô1¢5÷˝$.Å0vÃ˚¬;ë‹MØÍÒgTKøÁ4‡Ë(k~Ç[ábª∞„ÂìR‡|¯ ´ë‡jH&~‰s¸Ô˙Êk)ÖÁ{<——	¢Áˇ∞3VÁﬁõÛIüÑÂgíÛ>ôçS;1+kôøaí»Êy∂aµÁË¸a‹Í	‹8r˜CEchç∏œMÇﬁà›Âƒ˜MŸ|§~ aÕ-ßU§)â^Ç≠hÉsM÷—F/ËÓ\Zƒ–ãf6ﬂû\\Œı‚_Ïü3Csbu¡ﬁ¡”\'IçˆÒ<Á?ΩY\0kd‚i†C—qOÏ«ç≤[|ßM@ßIM.ØÄæWê5ÍUÒÊ‘$„ª˜M¥Ó˛≤˜)g∂\\ÜoˇA›ØAeÂÙs>ÇRõ\0Ñ¬5K‰Áæü3g”SŸÁ√YÂp+9ΩçXú@“µ¯\"Ω&÷\\8ﬂó–”Ux÷7·Zìy=x7¸a,~ì‹wÖ´ïŒ¶~·7µÑŒkÚL∫§GqÁ‚x˛ú2ˇ˙$I \Z[$\\åèyÉY=ÇçÜq^ü“„0?M °eç6ò‘táFsËKûΩ^XÎÕ[FF,.Îø\\„∆Y÷Îj`Çôå\n›<ò—÷è÷Or ¯ëIlá√W“GÀ<:´ã@j#Ì15‚;Q◊öF∂rº‹ø∆Ø6´ØìMA0xúÑ÷¸»$ó‘Ó√^,!úâk≤$y/\"\Z‰‘¿?ZØ˜œœ—îìè†y$¿·pXy‹:SÂ®œ†	:A∏—ØN∞ãéÖ\rlp≈@?k$oXöú•ãN≠psÌ¡/∞ƒÍ£Tºyòﬂ˙©>˛›Ä`u6úôò^·œkbnª}(ñ˙hybÂ∑F4Ÿi®ægc	îéü‘_{ñ+ºôèÛáøR√-*ZˇÅ‰æ\'ÁJ£∑ËÜQ#gÖVp·˚ö„”“.˙ü3¿s¯∞áè\nÜèÚ]˙=h¬\\£ÔEj3fçHı†Ü£YAØuÒ:âò\"5+∞¯¨)d\ZYÉ6—Ÿp≠ûÑíZ[§X‚Â\"+Ç9[i„&5Jˆüî\"k¯j\\nû„⁄/ü¨¡yfu”ù]óJàÆµ6⁄∫Pÿ3·c•P\rö¬≠1—¥\Zˇv<œ}•˛hÌ\Z–¢ê´tçÀjRmüıbªªÖû¶vü¯ß>–˙˜⁄\ZÌÀœè¢|?±>Ç¢6∂àÅBær]I.ØLp¿À®1v£è«]>\r¨:‚˘ß.ôf)Î∞ıú\0∑¯¶˛çÿ|D|\\„k∏ß!j,ˇˆ`ík››bBÓ¯§GèÚŸhM\\ØDYs~IÈÍ∏În≈X¨ˇ±üÛo*˛g\'\0uV-á%Lú†óÂ√ú˙ãë:Ê∑·Òµ∂£±˙v\r1T≈9ºt©cUaRøµ¡≠Oí\n\")ò\r«u‰∏∫»Ã9ÿ-ï‚>í)∞`·jﬁ!1åB¥XÀ;ÕõÚß∏^T†H`Õw°¨‡E›\n¶eE\"Ûµå€·•Åÿ+	T¯º:˘§°òÕ∆ÉÄ^„œ2ZÁ!C3¿˚˛Àø´>˘xq˙/≥gah‡0\\íï]æÌsz\n(IÿÁ±¸ü˛Á£ﬂ¯èêêÂkü^\'Ëi˙∑≠©Ñé˚⁄πÒÕÜ5ÂxQ–4ôA¨rÃ=$ôü|ul¥U4gøµ∏”Â…ﬂµÃ‡\0÷i3/öœX^·1N4˚˝ê;çé˘ éNÎ-˛‘ÔﬁµW˘Y Üñ™ÏJƒµ≤fñä˘YíMã£≥9V«@‡á•ò∫÷\r÷º≠WMGÑábæÅù‘\Z\0u§g~‰¨m®ˆÎY 7¡¥en\"V9˚?◊$›™x˛+ªq\Znc1\\S8¬EksúúuçUŸ8Î4=ä5åçÜµ:Æá\'ïv\"?˜˝ú9∏9FÓ?rñÎ.ÕYÍP{?8`évˆl…˘ÅÛ≠>Ô˘‹¬ÎÛpÀœ˝kU¥|œÏ\r—19u0`˛Ñ±˜S„x˙¯ÄÅ˜∏GçXú Û4≥2Ió\nb\0LbÃÊ*êªæX±Ü√ö>A¥àíØ&ë÷\\ú`\rµèP(oË“A(˙({=sΩöc!iåj—æôπlˇ…Y∞∏·É»Cê\ZFÑ|÷Üh£m∫bì4ùu;2µ¶Æ3‚‘ˇíf°1ß>u§µ∞—u≥áÓ≈∫ßÊÎ\"Œ†áø˜π?-∆}OM?T˜an<˙∆ ®Öu°èD˘˙~P†åŒ)»Ò\\ x∞–œÕhPúÊãa21\\~ˆÜ°ﬂ\Z\0ŸÃ>=–DÍëÌÅCåu|y7ó ©[ùÌu8¨k_÷=Î∫¯K^ë≈GÎéØ•\\˘ÃVs¿õ¥!|œﬁb§∆uVˇá/◊∑DÅ—Î5µ∫√.8Ωîÿz⁄è◊Ö4,gÊ{qNXﬁp#YØ©I–œ%˙WB«{_íêß”ÛÛ{#Çˇÿ(&ÊÅWMD,l\\ÇôSpΩ;Ï…I;[ Çıîj=\ZuÉ>¶ÿ≥N5&ûÅO›}`Æü–“lç∆\0»ˇ«Ω˛—ı¬«^◊˜¯zÛ«i˛ÿÏﬂ¸ÒèÆè}˝uΩ¯ŒÎ˙OˇÃ´◊∑æ˝ÙÔí¥õ\Zx^’\Z›ë4î7:Qz≈ß˛\'ã{˛Ì±á!‹œ˚‰G◊¯´ûø>ÎçèÆ˜æ|]oÁSøﬁÒ√3øÛëˆOÆwæá≥ö∆SÅ@´Ÿkœ÷âq/≈Ì˚ª‹ÁﬁFµ>Á¯-π¥¥(”:Qç∆ÌÖΩs>¿∏Véy1™çv…±&ˇ¶Ø}ı©◊ú7ÅLıµãQâ|		6ÕxeqäÏ8˘‘•\Z¨⁄8≠Fˇñüèò£∏Ùã\r?˙œIÚ3>Ü—ıfD?åzµã»è~Ë<^’Ôsø¸èæz˝©øÖù1<˛≥ùÉ_MIOk¸qS¯ŸÉ≠«ƒsqªÈ∫˘ºœxt}›?}ƒk~bèÔ~ÈÈı=zxﬂ°◊ãzxôﬂ˛√óÁÔy◊”ÎïWGu’`!›Èß^s¶JM‹¨g¯œçä.›~∂ÏÙ∫’\'µ2Îõehü\"C∑åç˜πzÙÇPä”®ôÕëqÌ$ÿwHD@`\nN$+]èòó∫§‰‹pÄÉ…bI5Á>áòèÇOØÙèEˆ£ „õı~⁄G_◊s∑?`ïˇP/ΩÚÙ˙◊˛–´◊∑ºËG.∂ºç“¯ÍC<nï‹ÁË¡8ÖŒ©˝Î\rÒôü¸¯˙}ø·˘Îc?Ç‹Om‡Á˚~4k\\=¿˝¨Ÿ}Ò¬y˜‹^e“ñ◊√ÀƒñCˆn%ã.=WgùE¢®˘ú®›Q]AlIÒŒ—ÁÖﬂ¶T¿U‰\0W\'/\r)ÏáÊ6÷∂ˆÉN‰¿vm¡hˆ¿h‚3>˙ÈıÀﬁ¬G>>\ZÊ#\"‰ÛQ∞í?ï˘=˙(ıeﬂÍıæ-7-}mˇÌe\":í;g¬)œG=à<úÛ9>ÁS]ø„_y˛˙ƒ7TÈÃ~¯◊Ôy>‚Ú˙¡’C˚◊ı[öøÒ=O|O{ˇNü7H‰øúÍŒmMˇ¸˛ÚÓG»Ûç⁄cπ◊≠tot–s±˝îÕﬁΩÉU?˝¿∆Ã~háX~JYﬁóO9õQ¡jFÎ∫>È#ØÎø˙¢ÁÆÙÖ{-lΩøO´óıæ˝wˇÿ´◊˚6›<;>Q˚õ5gÑ5∞+ß8ÌØ7*ÄÈˇÙ¸⁄Ò˘Î£>àﬂz@˚È„OÆˇèº|}◊ÿ≠JÂ9⁄öp*VîÙ*BÏC≈˝Ï9¯\0Ñπˇ\\%∂jÃπ∏6f<z·øùﬂÉN¿\n‰≠£®J©Úœ;-èô\\Äæ˚Z|ƒië\Zgé(Ö]˝⁄Î˙¶/~¨ﬂGûÃ1ı38}›_xı˙œø˘…•ÁıAˇπ•È–Ωı\0∆s∫9{ΩÆﬂ¯ÖèØØ¯\'ûªûˇ0¸ñ‰√u4?¸Óß◊ˇˆóÆ∑ˇ–ÒtH|›\rá”≠¿πÁ‘˜Ω¨ë≥¡yv¨¢8)Ôg6Tó<kÅDô˙«√2˙–E/∂Ú·ö˚íwD±Àt’–\\Ñ¿Q´∆PaÏÜÇ‡˙•üØ_⁄öŒzè~I˚ë˘ÃXÛã˙l¯ÌÔ“˛G‰Hœø¸¸≈gÛç/˘•œ]ˇ»õ]ˇ¡7Ωz˝≠b#˝H¶OÈ‰#Á*æ◊ıi˙$Ó´øË˘ÎW|÷˙Ê{‡w Îo¸˙óØwÈ≥ı‰ÈMÈ•OˆºŒ¸I¸{ÑπÛ˜¯?Ÿ¿\'Ë∑ø˘˛˙J}$ıùSh=0πs˘¨:˜1øFpè{wCÙ·—ΩGÄ-qv~&º62ggX@â\nˇf}ç$WñJYHRæ\r7äÅìa¥‡Á:t«÷Cng˜˘Ú_}Ó˙¨ODÂC/©ÖÔ·¡”g±oÁA‘Ã˙≥œK«Gx…˚ò›cj}ä>¡˙˝˙Ω‡≥RP¸íˇ{æı…ı;ˇØWØwΩÔæˇ›ˇÆ’˛ﬂöÎ˙ı_¯˙“_˛‹ıëØ}vèy8_πæ„˚¯m≈∫Z›÷{Ω>¨|¨~è˛¬\'–Í!ˆ¨7π‚Øˇ æ\Z@Ow=~˛WΩ?∑ü$˜ìŸfˆ≥ë\\}6Çõõ,h˙á÷aç¿≤+?SŒ ^œJ«£7ÛYºˆ~Ä¸ƒÀè8`B<≥ˆ⁄ÔbkÕáÔ™Œø:˘ËE› &¸µ/{|Ω·‹<>\næ®èzÔ–G=æı Ú\02ÛôÎìi.Ò8Á™Em™/O~3aAÿ7æ·Èıﬂ˝Øπ~°>q˘@ÉO†˛_yr˝—øˆ‰˙ˆÔ€g‘>OÓ[?Aˇ»˙Á>w˝Kø¯ÒıÒ˘Åu˘ƒÂﬂ¯/_ÁœÛÜ„^˝†ÔZ#gêÈü‹ıñ6yY?ˆöÿıf¸@}ÈWøÔzü>àÆ1Â[4ır¶√Ç¬3lçm$‚ì^¸u¯ìkSÙ¡Û6„Ê#h√~Ç%ÿß9qKª–Y◊πﬂêò\n›>òTµÛÃGç?˜õûª>Â£Riº]ØË≥¬_˚{_ı/«Ôye®M∂¶√∑Mùáµ¶¶èÚHŸ2>¥˛˝>¯?˚gûª˛…ü˜Ï_Ç·t≈Ùø§O0˛üÔÀópd˜˙¯è∏Æì]üßﬂ|ñæÑÙ¡åøÙ‚ìÎÀˇ‡À˙2–Ù‹Ï”ˇæ/Rù˛≠?=ôÌ¯|¿hœ˘M*“ÎÙc‹ﬂÒ%ØΩ>˘Œo©û®Å_Ú’Ôø^‚¨ÖÕÉÒû”M¸Ù05ÃˇÂ0/+<ÄﬁÄÏÿ5àú}Ê∞Âˆ√√ƒ∞1Íâ09‚1Ã¥kNäõoXÄˆO˝)é˘ËË\'8&Æh˘#∑÷o”ü‰|äﬁ˘Á‡ìàwΩÔ∫ﬁsæ£ÕÃ.%Ìw%¸Jî«hêp‹µm«áá–{ı—Òﬂ¸#Ø\\_ÚÖœ]ˇˆØx|Ωˆπ8çÊ˝+ø/|·„u«?˜~ÓÉâ‡ÎÎÙ[ÜˇÊœ<πÙü©i‡±Á3}È>ÿ∫.˜›–óp:[0>çŸs∫Á9ì•oæŒ˚]?§7íæbrw|Ø~5\"ü{ﬁjö%nvñC#Øb\ZËÇ9{Ô∞/‹v`¯Àí´Ü7$Xk„\ZŒXo|ª]räf)&∞_VöxtâE◊lm£B,áe@˘c\0Q73‚`√{zΩMø\\?4¯ZË\ZÊ—ã∞Æ	Úi@Pˆ…SØûw/·S\räŸl<ËOu˛¸´◊?ˇª^π˛¶>2˛t\r~IˇíﬂÛ ı_¸©WØóıè±˜,Ïá¢n!˜ÅN‹~7⁄ßwî$Ï”†©uN,{ÊYv}∫˛p„5«rcº¯C˘z®ãÂb-?∞⁄WÀ˙ËÆ3OçxàVÈÃƒÊ≥¡\rëçjπßÒ.ˇ¬≤ƒ¬ùb&Z≈√LqS≈An~÷Œ9Ø˝j¶∏å˘ªu√\ZˇÄæ@œ@õf<ÎJ≥”•Î”@õ”z¡ﬂﬂª·)©ÓQœ∞Ó£Î;æˇ∫~›ˇ ı’ﬂÙ ≈ó`>\\É?™¸/ˇÙ+◊?˝µ/]·mÛ…5ßn≠ÿˇQ÷=a¢1·°èˇIåN˙ÄÏ{|bı–xë/1ôèÓÅ±ÃMƒÙ‹ÉPŒ5…õ«áΩ_’‘Løî–ÏáW®ÍD‡“ﬂI\ZÛ˛.ö@ŸDf\nÕGT63Hüä¡F◊nG¿Óı’fD§ˆòL\r~âhºEøåZ∆ááÆ«YC∏÷3k¥È\'7q*¨xˆıJSÂ”üx˝¡ør]ˇÀˇ˝Úıœ}ﬁ„Î7|¡s˛˝€®|H”˛¯”Î|À´◊ˇ¯ü\\?Úﬁºô‚1û}Êáå*∏KS8.:=≥Óç5_‡Âﬂøµ æ˝[Kú∑<„´%/ûü†qæ≠√˘qfëﬁ?«ÖÌ˝Òm∂∆¡±µñÁC◊·Ùeæ~;„˚ä($ΩÙÅB\ZI≥®‡¬AO$4¶$ﬁÕ<&˘ﬂ@™…\rèqEÏ+§ËiÕv‚ﬂ≠œ–\ZoÌGPka}ñ4\"Å^jÒ Vüö¡¨é`%o+cÄÿxMƒƒuX¸¯˜~Î”Î˜}ÀÀ◊/yÎ„Îü˙˘èÆL_À¸åÛ∑VæΩ¸¿è=Ω˛èÔ|r˝oﬂ˛‰˙sﬂ˘‘_™ZﬁıyÁ`p`Øı_gÈçl∫\Zg¬ÚÛxhGß˛ùõû‡ò≠$∞ûıÄÍóxÛR3œDÓgô˙©çÙ\Zgﬂqﬁ?t\0õÔ“z†C@A<¨z@Û\0aÊŒ0Æ‡‹¸hƒ$xÀYtéè¿“ÜwÒÑ⁄hf`“Dé∆≥P>Ç∫÷4S~NFD◊_2S^åâ£m~Á—!ÓÃ‚√QÑ&ˆsˆ:8~Y˛ñ∑]◊o˘ìOÆè˚àß◊/¯îG◊\'Ù£ÎcÙ-{|Œ˛£˙§ÓáÙ[Çoˇﬁ\'◊˛¯¯ò√?u0ÂJÀÁµè1nV§˜ã˛˘`∞Œc!f1˛üΩ6î{ãæ –x—‘_æ7\",dœâ/U(òåPŸEõiÖQ0_Î—Y«¨˝™1⁄ßˇ$©7%ü∏´‚T›¿<ÕæÅµÇ1ÍçU¬y∞R≤-∞µn{JDsJ]Ô”ó6æOøﬁ˝Rﬂ$L⁄®WÇˆ«/˙1¢{Và(‹∏aSW¿\Z]l\Z0!ôƒÒ˘¨ÔÁ|◊{ØÎœ}h<Ã–ñõ{®ZìΩ„¶Œ84q™	c∏≠D±n&>ïÚ`∂JÁ‘Nˆ‘—4≠YÚÕ¸î/1}øÕ∫„üÛ√9Áé.í˙È53Ø5\\dr¨=<ë”©¥X°a–◊X˛ Íàì4@§)îò9 ÕÃƒ∫ıõ(_Ò<D\'aä;ƒz¥òèıCøÂ{$?U_~¬¥™}û\Z…U™˛\rS´∂◊bNeÑ≈√ì0˝≥ü\\¯›-J©QëL˝qÏß«‹\0@ÁFáïÿpISÀ˜ñçÒév8qç§¥[ıE<ÁOr∏eE¯„æ`w|Ø˛\0ƒ_bR¬~á‰xñ\\rÒiçñ`vˇ\'~*°á?	∆‚¶õK>∫Êì÷˛ˆ€p#∫-¨√R™1∏ÅûED/ÛY≈däb·G«I]ﬁˆåœ‰˚Àº˘ëZ˙ÊJw™ª©á¸\'œ5√+yÌpﬁßßò˚WDÀZvﬁUÜO`¯…•gìÄåVú°IÕú≠„äzÎlG2FÕ˘Iß˘U)iOOP◊÷—Ú”ı˚Êøƒ§Oê®≈√°^•∫\ZKµ^ßbdËÀk¯¬jú˜èxÔ”ÍQ∂>g\'_uÄÏñsOæ\0À\"±p∞cU/”$UZi´∞ËZﬂ|x{÷óöﬁ˙q\0?‡Í˚P#Oïåc©±,‹[>∏Ë†ü¡AŒí≈¨ÕW∂?Äpn}¬vï\Z°{|-2XŒπ˙‡\\s˚OK<ÚjûÙ*˚&˝ÒÎCÉÔb ôNø”SyÃ‰{÷ ®–Ê˝u√œsaæ‚`…{÷5uâçyÜˆz@îëC7ŸUâ±ëΩc’G¿ÁÁwã5\"?ë1AŸIœBAüÒô|æ‘T{ŒæFhJÿ•Ì˚ z)ï]\r‘OˆŒÈÇW÷Î,~K◊<»≈IÑh≥RŸ{xwŒ#åŸ˙·Ôx˜QKˇ€ß¢¸LrûìŸhzÀ\'Âwu’Ë¸›|›0{\'∑üã¯Hœ¡ëO6s÷∑¸çÄì]í«Ø⁄ù¡¯ﬂf‚†x‡HT9znv∞ä5È[æ*R[AÎªkCèŒÿmpÓè∑˙k°O47C47}ÍãOPªÂs$À[q¯F∆÷˛ìA@jçå1ÈâÁ »ÉÔ‘-?≈†å§Ú–’j`ÏΩjì—òæÃë≤=é÷›_ˆëaƒï<Ωﬁ¸å/1Â˚@Öv\r‡\"å∂U‘˝ÃÜÍ≤¸€rx.ÓK ·3Ò÷¸ëKÌ>º7o\'Â|pm™≥ç!<Ì∂‰ﬁ+%PÄtù/q¯‚<≈fóΩ˛∏Û|±˛¨˝∞ŒﬁΩy]lÁ’¸™8°üÉ·∞GØ≥ë>–pRKW·ÔaÃ/B⁄”nH˘…o˛ÏOì‚A]˛è\\%Q+”ü%sº&»¥Û⁄xËØ—<„˝Ó‘◊@ÔÙiˇ÷Â\"=	Vh÷πÊÅˆü˛…:\'¥ë´ÅhZÿòY	‘æô˝Äˆ∆Á`¥˝bD§ç·&-~ºã¶éõÃÃÁ!6ò‹#}©IÈK_j∫;Ú•¶<<¯∞\"”@o¥w8EïÙô0Î«Êopùõ#}m|∞Æ;}$pGÀ¡X∑tﬁ∞	(7¢=«Ål<UÏëî’À7÷uì~˙ ï™k1{·F∆Éà<¸EzâI3î·áC–X∞É$,òxj÷ã“ ïóRÈØ¸ÿÁ6{˚2Ø¸Ã∫Æ|}oi:˙0l›4ÃuƒΩya◊@åXõı§‹Íòü<^=¯∑È/r›|©©ﬂÈT,¨¯•µ˘NF/yzíxõQˇi	4Ωy÷mF–9\'b·kØM \\Á‡ôáÿÏVà7 √\06PDÕKŒYaò5jWKb9´¨πzfiÉùî˘‘‘˛·/1È≤ı¡Å·J8®ª?ß|!æÍªÅ…πpΩ·≤?»gzÚáÍ	>ü˛ë˙˘$…A$g@0«óPXZ»6mt\rá≠úqâwΩÀÚ¡XJÿJ*?ÎOîﬁ™o∫ıæZãOl;úTÒaı˝‹X*óÍπ*‰¢oë‘‘2Ω∑kLDD≠RxD2˘ç¡R\ZˆSZrE7uï—ÿû˜Y\'NŒ~µÖÀ™˘ñàı?MCˆ°/1Ω}˛à≥èî˘ñü˛$±œ\\^ÿ €≈\\_≥X„ˇ‡;o’¢Ñ: èˇ·+ûˇ\në®FÀ6hóÌa\ré)v‡Ï√Å±íbÀåM∏åÛâªïh•¯3ø´È-˝R”‘∂iB€5&‡2mX»U;\r¨+q¯±e1∑:¶õõ¡~^• ¿Yƒ~oL≤ƒOoq!\ZcÎÂ√l-Vå‘ÒÆ¢ı?êz x⁄(AÓôƒÈoñ˙»ç‰Ú?±…x≤È£F˘≠Œº2K≥Jhr˛M¨˙j†º|°~VI≈3ŸŒTÑY/à~wR–BéÒ°e,≠ccækn#=â∑ÕÔÖL>.˛L~ƒ‹àrπZ–§á<4ø,„”±ÉOr˚/ŒjÈïO>á‚Ù_fµ÷)∏<úh\"ÈÚ\0F?7ø¡¯4ñˇ‡Ìﬂ5Ÿqf†ÂkèèËo¨c\næâÉø3Ò]LΩï¨«zÉí≥Ùbj∏†’RÉ>®øk–aÙ€«]ˇf+ò|4ÚÎ¶òlKfÊµ¬K≠8eóë¨ÀY¸1Ñés“Ê÷Ñu§Eˆªı7.\Zoù?ûkçpÇå˚aŸSè{Í∫πV÷ÃR±î)∆Ï F€øV‰pwúA~X\nÅ©¨–`Õã&8^+&<ÛË§÷\0îgo~‰¨c(í,Üv[§s∞ﬂ¸âÛ€§ùÒÍE}sä∫’j≤˜´4ªÊ‘’\Z>5™À˚r˙GÂÆgJ5ûNΩÀgÒ9ÃcÕ¡{Ptú˛˝˙˜9_|∆Ó˛yõ5d/æqCòF˝≤ˆ!Ù§…íúµ5ƒÑ“jøãàÕMa.?ê›^Êº®S?Ä)9{∂‰\\_Úê{·‘Úoç‘πœß&π8ægpà∂÷‘q≠üıK¸€ıW@:|÷!¬C«…1îÕ¯O6Á?¯Ê¿õÉO»Cã}f≥F≈©i}„øõË\'˚˝úm$EdÉb=,ôé~¸9Œ“MÛÆñ&ﬁ˚≤æ‘§Ô£¸}€9ﬁ¨øZ˚˝•6G«øã$‚Z}¢ˇÙÍ_7éNŒLQtf€¨C+÷®f^úF–§û\Z-2öÛ¿“J¡iœ·ÉÂ\'zD\0ÀM$ÊúbÆA\ZZ°˙#ÀÎ9è°Q†]wt¶∆C(_bzá>ÇVü2§ÏC˜ÿ¬$«†˙ﬂÁ ¢<t¿<0{ÄÔ∏â\"È˘»Mù2$óö6¬˜s⁄Ç(ãæ<E;F˜ÅØìÂ$4r\rˇªı{˛Æ˙9¯R”_˛\n˝Ûa◊+æ˝{ü^ø˝œ>π˛ÏﬂŸΩ\"uÂè_¶∞ß∏D¥ò©7#ÁïT`#P°;˛å9bõØs˘I|?ÁÁÍoã~©˛ÅÖ_¸÷«◊G~˛ŸæãÈÂ˛ãx”,û€’∫£æOúG2}c‰æ\rj…_}6uúc‘ÿ∏pîëÆÔˇÂ#tÚ.–bÃ¯pÊ∆Ÿ—~7ÿòîÀ®È’Ñ√˙X çV±@4aÚSºFÁ°ØÖNÍCö¯{ˆüˇÊ«◊Øî·7ˇ2˛Å∆Ìµ+HÌÙàµûÊd«k>™\rÓ˜ıO™k©Yƒ˚9êΩÅ¡Ö]ümY°À€u˝⁄_Ù‹ıª”kØ_˛Ûı@|NJºÌ˚ß\0ähÏ˙ﬁM…—Ÿˆ?éI\r˜ÜOºÚkNkD-⁄>^r…‰Î†Q≈ôO67™ $%@Œ!÷ƒ4òX€Ç€E)Ï—ôç5b™Rﬂ¨øÒ·_ÆøFÃﬂU˜®|g›ﬁ¯™ˇz`œ√ô^˜√Â\0\Z§ƒeIﬂ´âW#Ω>oŒ&…¯∂¨õ<∞O˝ÿÎ˙˜~ÕÛ◊Û?¡_Ö^í‰‚ˇ∂˘9~„zTlNå˝¬Z¸ßÄöKæ˝s^\Zæåë	†◊ê|NÕA:;ùÄ^âœü$E¬÷¬ão êaún\n\rDƒW–¡Fá†’”ù1’œÜ›hâ¸Õ˚…ı7œw∂A?µã˛1˛Î◊~Ó˛,+>Ù©õ˙¶êΩˆAí)˝tOúâ9∫“(ka”ÜÿƒùsfV.*|Û¥FÿËhCl‚ì¥ﬁØ˛º¸œÊ˚!^˛ûæbÚ\'˛Ú´á√)-Ω∏ÎHˇk\'õ«YÊHhi‚π\'V§∑ñ±:®#bÑﬂ»Ê#Êo∑SU#ÁÜhﬂ‚ÄH3Bûµ&(º…¿Õ/œé∂Xı1m]Á£Õ_{˘◊ˇ+◊wﬁ˘ó÷í˝…_AW/¯œë•˛Ùw«\'’|<Ó≥ç\"ìu¬Y[á@ã∞dH ·ú´ŒáJ˝Ùü9p”ë‘À<->˚”ˆõkP?•È{ﬂı‰˙∑~˜K◊èÈÔPπ? ·S›õ˝ı±»sAﬁ*ÉµÉ˙\'|N#{CHÃ6|qÔf∏.j≠√2ˇù$»\r∞ÙÉGyÉjÑ¯6„T4°dÃ\rèÕâQºi≠hﬁ7”>ç…è°	]ﬂˇc˙wçÙ˜“ˇŸHøè|”c˝1›çÍ(ﬁüjÈÛıoåﬁ˝ó_7ˇ®ñ1Ù?`¸¯p∆FõÕ\0√òΩÌ+÷˛ÿ˚áï¨hÙ‚≥KÁ¨QLˇÎ∆’áXrPCt}î˛RﬁC„/Î/ÒΩ¢^ÎÓ0ˇ¶÷u}ø>)‚ﬂ˝˝„Ô?˛9!Í‰ˆ}˜ﬂ8µ¢ûnR;¸l-Ô‹@ï9õéúr˜∑uÑô¡ˇ_|\nNŸúà,à\n[’˙`Ê· °¡wﬁŒb…!ˆ˙Ÿ\rkYÛÓk|\Z√v¯Ë¶0ˇ⁄⁄˘´ó^˝}Rõ:¯Ê≈åÃ‹Î˙ãˇŒkÙè√¢zd5¸0»T†£ÂÍ…3w÷fbÎËOâ¯ó>\Z÷‘UÄ˚÷4©8˝\0≈O‰Ô˛≤O)ÜÎg˘‡ıÀø˛˝◊èΩ˜@Ÿ¿@G€*xÍ~fCuY˛ë!®ü{¥É·ì0Ò÷ˇ‚òﬁæ\Z˛áÔÛ\'_D∞}P˘:—ÙØnOﬂ∏\nr4úúF‚^˙|˜5–¥7Øs˘—™Wó—fbq#Fπ–\\¯\"Îß>OÕEöEjÈ™b78H6 Î∆ë[¸(l˛Ï◊P˝sÀˇëõ#µZô¸˜s÷≈˝Ÿ7ˆ∆\'6TÎèßp	•~Æ∫{É”^@∏~A∑»tÉà«>∂k})geoéá9ÈŸd≤E]PoJ˘≈¿∫•¡+ñ&‚§\nÃDplö7|¥ı£èÕ\"\0ÙÄ/Ìû˙x#∏ulÄ\Z#ˇ⁄2ŸÏÔ\\Ìuäm/0⁄“Ru\rB çËÍC—ïv\'°5?J.©›|„¡e—…Â¨èˆ‰‡ﬂNQw?SØ–=XLºrÌ%ÂUæzÊöø˝F\'{/|y)e! ¡oÃF±ßä˜É7¶‹¯®◊¸À\"#fsÆ≠>X•6’CÔ°êØÁ8¨1ëe®a¨Ê9Sc7öuûÇ^3®Y>»zÁ5Õ¸¿lk∆à+ ÿ0Ê‡ÿ§\\≤5P]◊b£óˆ^|ô´íß1Nˇ±∏1·èqã€‡ö2.E8oÏªÊÙq≤ù\rÏ4o†:–~∂ãﬂtg¯†4ıÆÿHËãOå\Zåç„AN#êIr˛$ÈﬁÅçÄÆhÌ¶G\Z#§lò⁄Ïq(¶\Z7ytı”Pñ¨•ëô’1Ã±ÿ≈43¸©äò\"—45n<¥éÂÕ\r8jÏÍZa»#ıXˆçÅv˝o˝”è}WU:—ç·á¥ˆö\ZO˘pílÜäw`õ†vpÎPé4—ﬁ◊˜Ê‘±Ÿ∞ï3?°ÕW6˛£’öVq}Ußê÷´˛p‚J◊4¶hµ‘„pò‚?û´Îˇ\n±çY@\"‹çÏŸBc2ñ#LÒæF›ı‡⁄\\îGl(6È˝Xõ;¶Œ(üù÷ƒı™_ÍeBπsªŒÂAàu¯´rÄ‡àÎ8	—‡Ü3u≤≤@ÙX∂·˙Cı@zÛ¥9<Aø;äm˝÷∑J≠söbûl\Zîkl~ôÉWg≥≤*óÿ¢áë\\|-œ3`5√zëúÚ%¸»çdˇ·Ü£ä†£7§-–ÉB(∆6≤N¬Öì÷≈ùÉ∂ms#à∑ÜêçãÜ˘ç|H4‹FÖCØ—Œ:>BÏj-=ó«¶À`£ëÍ¯\r∆ßQØ ÉOˇ‘Ã⁄Dâ”bÂkÔõ®ΩE=•OÛûy·åóõ†¨°ÂhÃYz1Ú.H*uôı√f	⁄Áibãetw˝õ≠`ÚÂAäfŒb¯“∏}`-}-áùOíºÉågØ—>b ˛Ê+;:-æ¯”M˜Ó∂=,;8#ÿ„û˙µ≤fñäı†L	m‹>kZ’-–è\n÷ô∫µ≤îh¡4õ:·°ƒ\n¡IåN˙ÄrÏœÍÒo•Ù1tã*|Én.{WJﬁú¸[X∂[Sªêb[Î<<ΩØXÙˇñ6Ú≠©sPr˜ü¨[BÉ°âeyYøÛˇ≈hÒf÷Ü¥w®OødœÕ ïµÎ5ko(Î}9lmyÚâkNOöº√ôW√⁄Œ≥›—g∫?™ëö‘Ev{ô^Û>¥˚˛É£Æ{Gc˘∑FÍ‹ÁÉ#ó«∑ÿ\ZhçòÊΩ¡ﬂLÇnˇ—≠LQ√V¨©U6ÊT;ÁèjÎïÑG¸Ëß¯P=¥∏≠9ûW|ê«ûÔ\'N[—±.b∆DñkÓ…ï|Ï˙D∞Ò\ráò§Ÿ1j‚,\\qn≤±i$(ö-Œ^€Cç(òC∞W,Ã*ÃLmËÅ.}á\n›%◊ÍLπ÷‘µíÆH#®—\r_◊Ö≈;˛π\rÙÑ^¯∫jπÍõø˜9ﬂ`98h˚fâµàñ[ v\Z˙Hú|rÁ˝l®yfŒYGKWÿXÁaç$ruù©´»ÚOa»‹Û$?ïfV^?„ﬂ˜úÖ)√ﬂã˜ÇçÑ¨ékÑ[»na≠◊Õç@›—Fì•Áìk\\˘µç#‡òxÂ3[≠¬°⁄«˙cn/Ëƒ‚÷Y~∆Ï-≈5œP˙V‰≠óN\\˝«´2»k≥ ±ıÓ‰ô5¬…ÊÜüÙÕı‘ãP˘ÖçBÅÃ˙Iî◊∫üÕ;ÆÂcAãc=∏®Ê<{¶I≠;xêˆµP‘ÿqâU–uS|ˇIí ~öÅﬁò‡·£ô±(\'õò∑ *ƒf9]ú;tñ´ÑÎw°äÂ! &ñ8˝hÑ÷M\r3àÁ]å˝4◊\\ÁËŒò•6.ÇLøõ≈ »ÒèØ÷àBº⁄Ø∞‰\ZÔMˆŸé-rµX±Ù_~åª5$‰AÕﬁE /∆®MëÒ∫œxR√Öµ¸CÈQÆuµhü˜o≈·sá˛™1ñf:0êRgµ‘II‘á„}Lß)ö\0<»±dÏÉ÷FA˜¶y!ÃØ≠∞»Y_ç§G¢áÃ°ø\nµ†Û¡@Hk¨\Z˚·≤946˙∏ÚYNº\nˆ6Öqv[#^¡ﬂ7ctÀhSNawÔt0Æo~¸ßﬁ‡@o©Z ‹8≥^Ò?=Œﬁ@ä¢o)|ts…|“ƒ;ºØ}íßsè•ü˛?úü~\Zf&Œ8÷>€¡ﬂ˛˚†Å\Z€C6XÒ6^?ƒ{àtÌ¸JÎÕNæ«R£uzÍ+&s1©8ÖÓÒ?90NÈ{◊hÊê´à^´ëÉ⁄‘då2Œ´⁄û√-&^„)ñX2<˚Ç–b{’ÎÛ∑˛!`ˆ˝À©käd{ˇ¶öI—,?˜n`,¸˝\0˜¸a-\\6:™ç#¬œÑDå≈G…Z,‚ÎA_G}‚>Irê›e>2•˘¡4èëù_ïñ§eœù˘p“-_A◊â˘®ÎµÎ\'j˛<X©_Œ¯ÏŒ˝åæÛ{PD≠C‡ÙõDZEÉi\r‹ßˇÃÄ5(3/ÀiSŸzM	X©ÀΩ#∑thP£<o∫òú˘Ïø·W7˛£9ûT!u%.\ZπTæø ^è¡Ç¶†¥ÊIæÎ?y¡4‡ÆZ⁄õ„Ç„ù—«ÿøƒ≥õ»@b&±†j{/@¢#Ëê1‡bjÛ–à :Ü[˛\00ø˘¶ï8¯âIfên8⁄π‚òé8º1ÎËËîœÃ´ëv“s˙ﬂ/?!ìuõ≥qj\'f58ÈlÿÙt∑æ°∑ÎßN›eéÿÈüx¢Ω2G\0üâÓyåi:[~Ó˚loÎ@µ>+‘xâÃyì¥r|Ç”ﬂÍÙ	7 Ö0´|LÓ5O„ò†±î	\'wEE}Û(îëõxƒEÊx“~4€h2‰\0§VT®¡Õ§)\"„%HÁäª?õ\0eıÑHT´±/*W{î\\0^lè£µæzSî∞Vpæ˝ï˛\rwÌ¿ï”OZ7g“˜&¸OÔû®ŸÅ6+∑Ëµ«[ˇãcz5\Z˛∑ÁOæà`Wå\\BÀV∞îü3\'?k˛ãoºôØ∏˚÷¨œ‚k†\rhÔlÁ4=%‹‰tƒ:{·f=äUNÍå‚[€{ëm\\òj.‹Ùƒt•âµ◊¬“É˘®∑Õo‹œ‡∞^ÿY`ä9\0\0-GIDATÈï¨è¶∞ô?¯ÔÁ≈Ÿ˙È›=⁄æÿ:˙o…=«ﬁ,Ä1éˇyA∑ˇ€⁄Dœ±vGﬂ0P˜C„¯0ﬁ∂®©¶{V‰n‚ÏV¡(˜ﬂƒt—bæPœñË∞PÏK1r}xl,–nÕÓ—gåÜj]\'7`õa12´F¥Öl\Z⁄ZFπÏ»ˆºÆ>®ﬁBûÈ)\\ﬂæ±%áNëôT™Æ≈Ï«:∫ºbQ~f˜ù†zäíÔÉ†hªÜYœæT∫ºÏs6·üÁnæˆ•\ZõOÆu≤Hè‹õ~¥Z∆RkÅ≥|0—¢÷§–Ú`6V≥◊}∂ñ¿ì_ˇ≤y«\"ê\"ﬁÆ≠ÔXÌÊL-∏˘Sﬂyäk¡kFõÖ2Ûq≥G€Y%·á>X«rH‘á7ây∑å°r;åó†!ÂSÄ∫\nRØÆ¿∫zxGŒΩŒŒ~¢c.9Ú‘sçz=qCkì‡µ@çòÓ!mÀ	!cizΩ´È:‘3Y◊–±!L\rvw‹øÇ·∏XxVt+ZÒ∑\"ïtﬁÈ9S„áhè˛=(ıssÇj≈z∫¨<Ò·3≥]öm*~úÃ1¿n3êéµ6‰ca5Ô\'lù’åÈ®Ç”êÅ÷òàÇZçcÓ\\Ïy êj˝ûVt§ãœuÇ©Iµ˝p.ˆàƒΩ£#\Zül∏y¯„x#£}QÉ¡ﬂÀ±÷é<pôZ>#“Æ£†~bÛUﬂ˛\'øÜ◊xTjÎ´j¸Ç1Ø™•sS˚˙“r‹f–Åsˇ,¨C\rÎaA}ôi™}ïÇÎ&π*Ïâ≥JƒŸOÄv]Oäyîœf‚ %™ê¯G«]˛hÄ]x≠Ip\0)\rsˆÓÂ.¢˝ã7¸ujïë:ﬁµ·Òµ∂£±˙vq1¨+ﬂïj|Ã•⁄Æ¨–rûŸï˚mç¯G/¸ΩRfiV›TÑßX˚ÁÃOÖuˆ5cJI”Ñ¶#7Y?å ¯gc0*Ö/3ò0§óqsÒ?a1úé`v∞Œ»Jƒ:‰<Ë’Œ]O¸∆\'m1«Õ/]Û≠^∞i&á¬|IÙ°ÁPáË›[R`¸Üèﬂ|[Íò‚‘\"ﬁµıÏüö£^æˆÎ\r’\"\rå◊åÿƒ—H\r‰*YzΩM•˚”òH\r¯RôßY˜˝ú?^Gn¸õ≠`Ôè≥h‘ú≥»ô∞oMpïb¶\"/{Itü•≤»∆≠a’2≤‚˙œ‚)ÊÇ”†ìÄ¬›}8÷V-gå!îBh9›É$bîœKÉ!l^<ëz0¿Uπ±£3uO+¡›π÷™PbÖ‡$F\'µ†˚√û·ÜÆ˙SgÇ7hÀ‹D>˚?◊$}\\c…{3∏ÄQÕõõo¬ç€ˇ˚ÃFæñç«©w‡ıü¨≠≠∞Öuñ0yÂHΩ“^Ûz¿€¯Ëü˛ÎΩ÷Í˜;õ$ M}	K´h≈1uÃÄ±eÛM¿±û4kC2ØÜAåıÃôL`âÿº≤•&?R¬,@©–Çæs…ı›ö÷˙oÿEãZôöªﬂˇxÃgVéµ∆¿‘AÃ¸√W‹Oçπq⁄I+1÷∫=®I≠ÎÈ?}9ıÄˇ•°E˙åà◊>ﬂ∆πpÚˇì¸~N¸3“øÛsÍ+ªjï≥T,˜{æÍõ<7	°à“Ï\05µ2^#Ç˙å6æâ1Å∏Gfû±ò ÕÇÓMÚ√—\ZsãC“µàªÛƒ\\Ô·K¯\'6ïN˝Ô7k¸u¯L≠Ì;7<X¥∞ÑÙº∫„}c÷¢˙m˜‰ìs˛ÅñrF ˚¢XÓ_˙	ˇF√V{Øáﬂ¶®6æ_˙·wñ\0=dni«‡„\"˝ì√3#≥\0Ó,>rfÎ,Ëè†sê%C¬Ecâpq°Ûµ’rŸÄ@N√1≠Àg6◊oR\nL(\nŒ¢{ÛÁÜOÃ:Sc·#˜Ãk¸K@‰ä÷h,ù°R√5èΩ8\'ÃœÑπ`Á•…æ∆÷‰\0h‚K,\Z‘&wÍE§|√åÏÍ°ô›\"áPŒ[Ëî\n≠Î¡≈WŒ”g22q÷J%Õπ^¸È^·]9∞£°±ﬂ˜/›#ó7juo§DÒÍ˝tO∏¡™ÔwáëŒ¢¬€ëDÛ.Ó√>Që9DÁlq,JÑvã…Cî0ZX‘¢38Û7¶¿ﬂë∂Dt®ì©ë∫;\Z=rYÈJÛ\Z>ãÆµo\r‘ú7&¯7Ω¶¬dnÎ[bä$6q‡\0ÓO∆q©>å˙w°·¨u”Û\0uﬁøßÁ”ˇ»ôÔ‚ÈgÒùá‘ì—“~b¿6uI}≈¯IJ&è–œ7ãH\0qFåZWkPCÀA∞YrâëC√Ö\\—ëËÈzÍWfÕŒ¡V]É]ˆÆÌR«ªbL¬≥ú^°=sÄ<éC∏xEÉ¯zò¨ô⁄AüµìÇÉq}Û«ÔrË∑9”#3∫‘GÈW7cY8ÊÉrr‡åˇÈ_±ú\ZX6y#Ö¡§˙+l»`éı∫ãÆ™√wG¨=4õßÕ aìƒ¸{P-ÊÈıa¿ÿÎ§dﬁ‘`Qœpe⁄–b˜¯∆hr’Õ—JMLa3˙KkAÉ\"æ\Zé≠€´“ﬁÆüDºR´\0—IµŒ®Ìâû\n≥¨1PØß@c©ˆ∞ÆKK÷X◊[Ë©~;ë≠-b]\"eı¸a-\\6ˆZ!yc˜/âd-ñ\0º<\'ßÇ£>Å¯G¶ßuœ©E≈cÑæ‚úÆøjS@âÃ8ñn§q≥›H\ZˆMqQ¯∞¢MX1b>˘∂95lOÊ•·¡\rPƒ`ga!díø«\'–\"É]ìeu·†≠O˝‹îÃÉDz^ñ”¶≤´/Úf#•º%sC,Ìãª±|p¶Ae4/À•ÍÜ√2u_Í_¡\\ß…EÀÇ´k∏(ÿm‡|†Nˇ1A˚W√Ï˘§ºÉ]cñéim˛°≥q’Œ9Å”◊A∑8¿æIH¶ˆùΩ1\\é£n¡ïS\0Ûõo¬8õ©˛mÿ»≈—ªQ0ºf¿≥ééNÆ¯ôœL÷Èü:ã´Eœ!Á<,‚ı∞6√n˚è˚Å¨á©«HùjgÚ‰ﬂie∂\"jÑü–™—ƒ(ﬂƒ{ﬂCπy†åª=\0wù–®§Ï<yì§√Ù±z»⁄A˚≥-.≠±¨Î%ˇÀ«∆Q⁄zæ®®õÿmÂ&q·ô¬yê{†…ê†´5Ÿ∞V±Ñ¬§s∆ÃÂÜüb>îH*0Z¿÷åp˜ÆÒÇg{ú˛Ô˛≤O)ÜÎ≥pÄÀÌ?®Û‡ß©Ìr∞Öo¥‚üuŒB+√Ãè¨Cóáâ‹Lá¶„⁄Ô˚Ü–œ¯ÈΩ\n\"ÿìêÎ≥eÿ~=õı≥æü”úûïÌ€=π∆´\rÕT ?}”†ÎIgÖ8£¯\"S]Ñ´ëŸåÃWW|)ñΩc∂5ô˚“π≈∆‚Wa◊»S0Ñ;ìê•5˛ªËºFé© ªˇq7\"ıääoÏù>Ìﬂ∫Ò≠ö@≥Œ5oñ1  \\ø–ﬁ(ı‡H•\\£ qhoé5È[◊ÖT””¶èˇ&bqsˇÒMLóËsd<\rÀ8√ßK÷±˛ø¯15EWm\\c\ZñÕÛQè¨ûÉÙ;6UljÛ·U{∞ÏçMC[´·†üZ⁄“fQ≥“ñéßHß©ª#¸Ù?U◊bˆë\\-F‘R´>˛Ù£ı˙fÚ·J.XM,&ûö…W∫ºÍôªjîQ±=o~ÙìI’j‡çuœ:µÇ1^πyñ£iº2S#|/Ê–0⁄˚°\nw@‡‘/Mì=e∫ı‰§œ€òˆ!k›„Hc#Ü®Fõ\r¶∂xò∂ÅÕOq ëu\\◊bØ5±‹fÆ≥#ÅüŸÉàÇß‘™ó§«|}x†ô˙‰ãì@JDªTãkc˝¿wˇÂéÖ5¸–ñ7}81ß∆Îz*¨Øã=õÕiÒypÂ˙RG¶}πæ–é\rkj∞€∏„˛;È›X]∞Çˆá˝úyãö9cºˆy#∏˙n\r≈∞ØøìDÚ0	˚‡¿YÀ¬M˘ˆdÛåààãÌ;∆:n\r“ZπvR∞fÁ£Äˆ’\ZD0∆¡\"EÊ∫Œ≈^zH˘Û\rÇˇ|à„’Ãçv˚¢„Ê˚9ß-◊«ÎÙÅ4Â˙Æ£}BsoÇzÊ’Z«∑æÓZOÿ\'s\'/R•ñ¶¯√zâÁºî]ûu.úi´0#Äø±-ßÅ8Æ)Ωü≥ˆf@‰ïıˇq»√É]lZ·\"Í+qΩe=ÕMÄiΩKF√1≈˜àπîÜøäπˆÈÌ!.5ç\rn¯c`Y+g*J)Ω÷v4ÿÁfA”∆∫±]£ÿ÷\'”Ï©ùÿd<π‡Q#˛—+∂´‘|‡J#πÍ´hyû¡\0´÷ã‰î/·Gn$áÉœU∆ÿJ…±’<qÔ∏ ÊRúIs!ÂÙ‹ØÂkÒùı}Yˇ_|∏J†êäÆ«01«I\'O<RSyﬁ{∞1πÛ%q≤´µÙ\\NöqE.\0ò5¬«[¬Ïó◊@æNÒ%H˘í\n⁄±ˇu/Äø‚¡∫∂ñ =Ü^mbÎ,Ã\'‚Ç,R◊ë—\'Æ>ÿ?kñ∫ÈﬂÁ[\Zsˇ‚?>n˝óü˘¶™=†æﬂ<÷wM∫Œπiidƒ5»ƒV¨üE»yh≠X¸+†∏øT2 »∫«ùÇNœ›¥%W\Zûß–ñx∆¶’hD’º€“ãœ”x|T”|•n¨@\Z¢Õô2œ∫\nn(LCo–æÀUé˝]’≥ˇs\rÕ≠VìΩ_U–ÏöSWk¯T®NP˙ |¡PØŒÏB∆ø•zf[√CKÛµa6÷ÈÉ5˜œ8sÀ?˝S+ıê;1ˆå≈∫\rL]åêØK?†ﬁåŸ<Da˙∞z“‰Œº\Z÷v|;oC∆±ùÆÃó-5˘A85\r \ZZ˝$¨Ì≠ñÎ´5‚`µl¬∑W◊ƒCZˆj\Z¢√◊oπg;q/æµ™D˝ƒ¢ú√F-˛µ ∆∫’ﬁ˛[o4–∆%ú0¨ÉgßÅcˇ3ı˝ú∂çµû©¨„ì,g4=é_MPÚı⁄∂Iì!@§Ÿ%Lå13qîm4°õÖi·ÂJ\0È≥Ü2H#ßóg^áπÆõàÃB˛ƒBΩπÆå˘´õ9∞õ7é‡T¥|hRy‚Ÿ¶G¬π·√	ÿöÄÌ≥û|Ç„ó≥)fBL£8˙øù{û‘∂3ÿ˙◊l?\\/w¸ØZˆëZy∏Ë?gF›‚ºå—™kÌ8>8§fŒ4Z÷ë–Ò˝†B	πÑ`πŸâM·6LîüVÔû«,∫7n¯ƒ‹»‘XB•œlÃÀ#óØûˆKÁ\0?∞<a}\0‹ûN_≥Yıá¯ì˛~Œf÷Otyπ«¶∏„ ∞›!m£ÅòuµÆ¿úÈÄ •â{ﬁSπì1ØÁΩ´§æ0£4˚yijüùI≤v∆vâ;i\r}•°4’èòn∏Q‚…æ˚‰Æ!Ñã) H ÔäËn\Z.¶ÿì⁄FsPﬁ;djóX∫ÄNµÔŒhRŒÚ/*¸∆çcÔï\"\n˛·´~É≤Ü≈à◊xú*)û¥ÆãÔB+¸‡\"j—>ÔﬂäS˚Ù?*Æ1ñf⁄=⁄xøŒÉs–^óx‘ÜücÚ†f„i>⁄äGµ¸¿Î5˛Û°´ˇ\')j<<¸‰Bëa∞œÅfΩ827÷\n±s82	¸j.x«Ãåòkª ˘=Z5?Ëv’¸xuIë-“‹ÌlipÑ]íKåP∫üÏY4?˙π9†5B≠—]=ŒY\ZÁb>ﬂìo∫S∫Ëßè¨|«]ÂôótÆnzS-¿ñ{qÚ£?PÔÕÉ„Z\\‹Û®¬÷∑¡S¿<Íh˙=àç,Œhçœ8.≈©ä~¨ˇÌÿVl4k“:\n9™5\rÌü(8¬≈“ôGk Ÿ|ﬂ·†™o÷Q◊Múaú◊Zçº·ı·Uƒ‰+ˇú?Ì„]ˇ”óΩˆ}ËÎgÀËZ√Ë©yªŒ˙VÓÖ7Ç∫?n£Û∆ÃÁÆõ|Ê}˛s¿ÆÈ¸\rBLŒZÒïüsVåá·˚rGﬂ≈îa}fÎ¿Nñ…/æ–˝¢æbãØÖˇ+Dø€∆ê•\r∆ËG-Ô`ôÜ	ª•ÃKß»–ﬂm√’Ü?:ãa∆Ë√_uY»[dy8˜ÕÈ≤◊¸Zu˚>„–]ôˇ//‘Á≥˙Ô9Ù^%œAÂ· Ω¢„ﬁ?Û◊}?ß;Á2RÊk›{yÔ$ÒÅé‰ﬁ†0èºg]4Í1Îπ©F˝˘2A3‰Çy\0y¯¥`å#OÅ[iêã∞?r(%è\0[Ò{@’\'Xbº6«Y1¢∆°ú>µK¬òˇø\\Œsr˚~ä|0>b	Õ·˜è?πﬁ;‰z.ˆ›A–Ù÷ÿVR„«?¥Y7∫rFçë≥é\0ïˆÖh##l£‚0Cµh6Kãw,BKi4Ô!÷˝ \Z\\Åp\r‚«Vó¿Ûélc¢®$1WÅÆu<LºÆwæ˚V∑ÈüMÛÀØ<Ωﬁ˝ﬁûgêÕùœ9¯lrd>>Œ…˜»orv∫°πßú=\nzyÊ^ı¨Uk¥†;?∂[Ó‰ÂÅ<—r¨!k•ò%ßºˇ®3≈®G≥v6”Øú7B˜0Ê[M9˝†∆\rø±ÚgÔéÁ†∫âLB±¬YÀæüÛ˝kOÁgÎ‚œ¸’WØWßM±œüKœäg’ÛÚπÚ\0ùC†>@·	=}.ﬂwÂv/æ©≥+Å©nı±\r‘œ=üí…ˇv,iº\0`±çÂà%Á…‡ÑT<x⁄Üm…‚—±H$g.∆Ô÷bïÀ\'D≠Q~<B5øB£G˘ﬂˆß_π^Û‹u˝Íœ{Ó˙ƒè\n¸œÜÒÓ˜=Ω˛Ù_yÂ˙≠ﬂR⁄—y˘YÚπg5Õ“ΩÔiorgÎ~Á#õ)÷Ò≈[†˝LL|a»qÊûl#æøÙûﬁÛau`ÁÛß`K”◊gˇñó¥Â›”õ=,Ñ¡.0ÖíãŸl6FbaÑi¢≥C⁄˙Æ5ZãØ`\ZŸ8ÔËÙ B:™œTOMÆçO—‘´◊\r€çN}xΩëáŒ‚˜0ökSÙ·s®ˆò)¸;=Z√MjWﬁ/çL∆gÇFë‹?ÒŒg%˝|%ÀˆÒ·õÄmh1}¯·!åû\rÕÜÍ≈;t∑Ô‡˚¨T«—∆ø4ë\"?S|*bR√ìùm3)4Æ±r\"Zk5¨0Z}πV(îò\Z–¢ê´tÒ4±ËÁæﬁ…õ=\"ÌA€óì¬ﬁÈ€ø@„ÕRX0~ŒÔÁDõ⁄ÈK≈Œ⁄^„1ÒU8ÎdÍkiÌá\nL¸ßÜ∂Æ—ƒ‚ÆÁ˛Y‰®•bÇÌó~X¢«p\\; zŒ˝◊ õëw {ÁÌÅ{Cjt\Zw\r]‡˚n@◊CHkLÄ…	ö£ÎX–sç9xÏ·íƒT\Z◊Fπá∏éì∏·ªù¡ìd§éw_k;\ZÏ£\0O˚¢ˆ{Sl˝ìi∂˙Kl2û\\0ËÈ›áæ™£|é˚∂6ö>◊ë\\ıU¥<œ‡4ˆ/%%«5¸¯úÏpYˇ¡Øæj¿^¿Â>E^U*¥À8ÂÙº|—ê˘!¡≈\'·ò∏£$óh ÷&Ê˚AÉı’`&Ëü kàû-º§}ÏVDynJ\r¿∫Ω¢bX+˚º!@Ô˙Æ…>Ò	ﬂbÂkøﬁP>¯à‰\0ÛÊqMtÙZ+,q‰*YzΩ≈ú\Z#‚Ç,ñ÷“\'høıúmËâ›ıèû“gyöJ+g¡R±ˇvBE˚á9l„\Z\rˇˆ˛·á—≥à?,í˚g¿àÆ¸p“ØDä?B‚∏¶˝≥è+˚\r‹Õh$X‘<ˆÕu©ÿ6ê√€Z2ØPz`àn\Zû5pñoLE©k~Nÿ4—Z†é∫1?(·VøSs7hÀ‹DÓAA9◊$9<€2≤˛Î@sH¡h\rü\n’â¿ê≠∑Î[⁄¸…√£Wuz2F‡ıˆ‡9KÛ9+≈x≈øW⁄kvS£L˝6H}Ω‚?∞ÛÅEj®,≠Ì>mÇH¥R≥ıŸeçœªzgy˜ÅD<ŸØb˘%ﬁâ‘å6»/⁄hÌóSnf7¥lö¨ö⁄ﬁj˘¿E£FÕ†úF®Ö|ÉÓ¡çˆpÏ’%¿{·πz∑\Z]!S„8}/áN€¯◊*˚¨v=\Z_-„n˝Ú–\"‹lΩû≥≠Ê-N›˝˝˚úıqﬁ?÷€ˇqˇ¶ØˆÈ€0Á·ÔkB¢>{ƒ◊Yh¡Z?Zã{Í›.	[aÈõ_pÓHÉá0⁄5\Z\'Ü:Fä1∫h¯&zŒ@∞cïF§”Ê8ˆ√∞ËŸ©Óon¨y©æ™œAèæ˘¥púR)óú¢Ò#-Ûá≠…PÛs>A˚eÒvÚÆ3u…Y_ALÅúyÒïüJ3ÉÖ\'83T«‡k≠Ë}~∞‘ˇÃ·oOEN™Øµıπ®W…ô¬ß~˙è)Ú03÷2tC¢œ=Å7|È‰_∑/ıîÙ°YtøöP`b.‰Æ<Àc,3√Äî¿î˜ƒñNÅ¿hˆÿks¬“«¯Y–·ËZã!˛å}?gÏ,Òò˛sMùèBIsN44}≈∂®µr`GCcﬂÛŒŸ7n…—%Ê|$Ígfıo?‚∂áƒ≠páü{a‹§=M]ó“•}≤ø£^ëºãc&rìà&å…AüCæÊ®Ÿu]z?¨5∆Çª\n=´ÿ95Â•kñk]0Z+~‚∆È“ﬁ0F¶‘ÙÈ\"ÂOÃÇ¨ãå◊«1©·Ç\\˛]àà∆ZáSL‘¢›sM.˜|˙èZjÑ∂ù-Œx¢Kknl‰Ñ7}Z A˜l£S>‚©d∑˜°èÌŸ∫∆`·ÄK¨äÏq0ÑqºPD0Õ0e÷›Û·€≈ï-.bB6%Z\'x™}¥b+9¸C5W£a–û≠è5¶ÂFS¡z¸◊£qB{oÎ·£zÊâsP? ÈEoÒü∏È\\úèÆ˘§ù.k˙:˝#Y–“◊	PﬂÒC‡–/%ê¡0Å—X˜o—1≠ç˜≥6rbƒW^|õ$6/∞÷∂@÷ë`†3/≈Û†\rh”ÅWj÷úâœ‹ÓCÄøæõ	OnlDs\'Ê âÈßKhaßÒƒ‚µòIfV”‘˙mƒò+∆ibáe·÷q !«]h±]´7∂^OÅ∆ÍÒÄÆK+n¨A=˝W’Ú†Qa0ö¬œÅLO·,úÈ∆·õ$cÒëÑØ€S‚©É.\'ÏË¯úRÉÔºQ©Äîj“√,oz>˝;oüC$¿P¨ÁÇV˚\'ÌµAQrØ$2QwØ˙,æÖ¢-E¨·ê◊ñ)tƒ⁄¥0.‘ŸF7ŒH8Ê-f˝òÍAØí–Áeû6ïm≠îüñ–‡Fgƒ c&„å†yû¬gÍÜüm>µh™≥v©Klt»3V±,∏÷c∞€¿˘@πÙ‘èA´ôªj)dı‚ôÊúC[>‡÷„‚√\\ÅÍ>	œnüÀ—sp°M@jE\\WaÀêò%˛c?1ì¨áïƒÊOís√1ïákÅ)WÀ©êC#6îÇD@Zu\na™Ò¨á\'◊≈E]W~fœFòÆ’NÃ r¯,áxq€Í-é˝\nxúM9€˝>(äøWÊ–fµ;√È°ªâOﬂ∆6Fäk3s~Ê[`T\n˜‹˚î\\|ö1ıÎ}∏‘£pk∞áWüƒÁ\r©Âm˜A—∏≈Uô%-›≈s˘ŸM_‘ç´,Í0=Ãü≈á2∞!⁄o…T#NqáàÒ`ÑãA”uô«nô#ód¥®ôwd¥Ó˛≤O)∆RvÄÀU≥ﬂ¥l|j`o—.o∂:sΩ.ˇ#®ü{T]äHòxÎqLß{ã	<¸3n°ª˛)zƒÍC2µEÈ¨ÁÃ°áˇüÆü≥˛9O€∆£~∏+«®7BıÃyÛJ;·ÂÉIÇÈ⁄hkˆûr‡Ï?Í¥¬vY›‘Ê02«\rﬂ&÷û@áx6f¡ù´$Qly<˝ú‰v~pä86\"ª6U„∆\'#4•\'O—\"˝\\9Ù‡¥Æ_–-r[;¬ıuÏ†/Â¨ÏÕÒ¡ß‰&Sc|íj\Zøåz]q‡œ!êo<’\r‘e/∏ÓÓÓ€Âˆ_\'’›V€ÄÁ¯(ÌÚÃ≥®ˇfägøÊÛ¸ﬂˇ>®B>ùQ¿µßa∂¶åü6À÷4“ŒE«*$‡ì0®5ÿÓw©T]ãŸG“T•dQ~fÙ[œ£°‘\"_åié5ûö…áOâ≤ó≤¸rç˝ë\r·b—€|ÃM≠YTo¨ç^¸∆»∫ô¡DÀî©>Ò	P√ÎhÁVO}§…Y Ωm\ZIÚº≤Né˛\'ódˆä’?ΩÓ>…}Ahﬂôz˙Y^ÁuhSÕÌü~‡ÜÔˇ/û4ëÄbT˜AÔ⁄¯›!ZäF,ç#Zº¿õA.Üg¿`¨Ω¡·í„EΩπŸ≠aË2ˇ≈k·nç:†”£ÅÉù¶nJä#…H)ŒÊŒpÍÅô,˙„}·«¥ä„ÕÌ»D\ZæÜë^k’øM;t≤ˆm<BZH–g]ë…uºrñ’_}∑5-£Äc°Üì¿ÍSÄÂˇ÷•é⁄Á˝Cø√˜ç\ræâK}ˇıÏ6÷ÆÜ\'‘¨∞â#`Ω^¶Zt∆r∞k?ú%j˛€9^Õ™2äœΩs£íIHà1hlËÏß«V;+øãô@h˘4Tv‘&Xí–˘á¬ö 5BîâôÎ˙≠ı¨Ω˜˚éËpˆû≥˜Û¨{üs/√Ã\rı†§ëMÖì¶¢Jãz62ÜV6~\Z/û”Ê„…s·pı·π–“«\'…K¡Ãü`˙.dÌæ˝¢®NÎyûÛ ©Èﬂè\'¬÷“Ω<G2π‚ÅÇ˛t^’0‰”Å–~«¿eÌg™œ∆6?ÇÁ àèW≈Jüµú¨£\0OÁ⁄8™Æg≤∞ı«√>‹g“√X◊mÙÏ\rÔ€⁄{∆aU≥\ZhíøçÂ/”Ê˜∞ÜaæHn˘~‰Í9óç±ï\"ó;‹‰¸)Ÿ•BfÂB…eaΩﬂ%V~Hî…È}:¿‘]çΩTµn∑≤CÁDo¯Óü≤ÁÂ∆ÃHpÎoí\n—=≤˘(ﬂ†1[≠k∫I∆πt◊π’YhÙ\\º˜YáOwL‡8áâSƒéæ_*rxΩ⁄‘Ú0<y°\'D<zX€{Áà-˙Ë0ÆÛõ≠b˙á@qÏ_˛⁄ó•|~÷§?wÏe◊·èæ@ú+∆Œüú…Û3`Dìﬂs¨0QQdS›\ZŒÏ¸‚Ãæ€ß\\ˇ(rm%¢Ÿ35ãπO≠ı†’CÏ°PﬂÉò∆~Q¬ÇnâÈ\n5Õ|5rt˙Rïƒ˙\"Ç(Ü¬dÇcähıX_\r\r…Ù·Õ-˚≠¶∞p∑ÇV!≈WÛò≥{}`g~¥Æ3c’z|ºB…õüÆ£5¨L√»wjÊ9œí}¢qÊZ≈‰ù?—s˛—DÍ|˛ã?Ù≈ó Ùõ“Ó‘oÙN{/–\nxÛgO‡≠ßæ!< Zfn∂”|˛‡•M@f-O-áâ∞Ê>p—x9mæÑ—“¬\ZåÂ_u¡Íäñ_rk ÍâÔ9òº@÷ƒ_OÛÌ·πNqËL∫åø\ZÙV˛tw˛Ÿ?B∆≈á9|Jö\\zJáÃ´>»c˝ˇ˙Ûúú „ÛÁXÊhÊÈgñ£Ìã	Œ≠ö√EhäëÈ+AzóÿT¸∆Òı¡ú«â∂ÉÖë0ÊÎbØxP Ø<zÂkÊ‰èæ1õM∏| ·7k`Õ™v˙Êsaêùh[#ç\\\r_UV~åï€&øπ„N/w·Ùè∑≈]S]”Jw™ÀÒÉ5¿Ÿ¿í#gñ9\\\rãv ‚ò[üãx\\•ü3çñuÃ709&°µ?ôúóMŸ‹ıF√Kë\"=Xı(Ykp‚ËØ:j\\/o{[©¿Jj‰PFuÈﬂ∞˝\0&πóAˆ?í\rº6†ÚÚ˝ó?œôÛZØπŒ%èÑC<FœT%Œ∞/zü_ŒUW»÷®Óï∆‚où>˙uiÆÛÇø¡IPú˜ ÅU5ÜøI∫π˘\Z¬mÓ|¨≥û\0 ≥—‚¬ÆB√›1ÚPÁÚK†¯∆_sø±ÙÊ´∏8÷pPgπÙGAc0€ü¢LÌ€%k¯ìòVıaÿüZË∫ÛpäâZ¥ìæãàl$ﬁg~ãç«Dö€ﬁ£««uúYr˛Fh›ZuÜûz6Øπ∫ ’ÚÜö\r¶«Xéﬁàªm’R°ùg4Ñq2tÂoV¯¬Õ∑Ÿh!nÏﬂ˘=ËòQÑR∞[#$…∂_†xP—/i¨ç∫±d†œúª(Ωƒﬂ|z/~8¥yÙÜøÈ—ö:µÒÄ4 °/„‰ü≤{ÌG◊¸÷ãæò…?˚G2õ∞vÙï◊Ë∞ˇπo5hSgs?Ú¡ßIhùyIÊ¡o_YÕ(ƒ«¡\Z4=ÑÕ◊]ıºhÿ¥m3X0∏Õ‹ÔèÁ§aÒyû¸\Z⁄»Z\"\Z£üJ¸æøø˘õ˛.˛˛±\'>%V5W›mÎÏ(∆{&≈JbZ4gäÆóŸb€+õ‚E¿:\0≥≥÷LEh6‹µë‘Ùi÷q=öû≤í|^∏& ò-ßéÆÀßN¶´>∏åh\"bMr¥•˚Œîz¸/BÂÇù	–˝#â>YO∂™µNÏp`ÑìYx›øWy’—ß>>û[ \'.\0Ú+˘ï€œ/ujº3≠!a;’<¥`ΩjˆìûæyÚ√\"üŸHÄB)ìπÜÇÑúE8U˘ï\rÂ¿Çáìèy§°ZΩb;µºè‡F«˙;tq…(Í„s:ub§J˘’=2ŸoÁ≥èô∫,≥L∏vØÙí>|¯*^ÁO¿¬\r?kslXˇŸ–:\'†ì√5˚RN§r]5ÒUAö—ïÔ¬–Ÿ9í£M@~ÛÕI›çôí?Ò—§8Æ∫ù˘K/∑P∏·S—X¶$EÎ˛≥€˚€ábçùÁs`G˚YõÉ∫ÿ∞\Z˝jK∏ _\njL’bÊoÿ¬ù•Ω8Œ´¬ƒÀﬁ“çGÊó¸∫ü∏¨≥9=HÊ\rúä/ÊO}2^Äsß4;Ë±˙û¶ª√m9⁄?ÁñZ\\B≠ƒ—uÔkuƒÔº¸ÆÉü ßè\0çﬂ˜ãÊ7ÈO\0xL5∫É˝^§ûﬁÃΩtR\n˚ˆÊ·G˙Ø¯ªèÂ¸UÈˆ’Ö{ƒk%Ñõí–ù™ﬂsˆßRÑcn©ªŒ¸‹˘ÍCˇ“C»¡¯+H≈ﬂiMJ°Œ2¡??rÁóäˆ“d<íøZ <LÁ¬äKÿLõ’˙™≥f^Óﬁì©ÙL˜\Z)’H§·É[5Û«%Ô?g-/cB«€£NIÍ*ZßÈˆY£E5¸!„c\n8&CßÓkxsü hM\Zk˙LTA\0pi¯S∑¸åjC‘ØØﬁxÎﬂ˛ÂÈÕ≥õõ˚\\CÊ¯{.Óû√–ÊÃ_˛<Á<‘<¿ûKœ™j’yL˚Hsö<}¸:®ÀÙ≈p?ïÀ55~#‚X›‡ÁÂ8/Ú9C_ı2ãg\rƒ0ÛØ˜‘º¯YB+øîŸøÆoo>¸ùﬁMˇ]¸˜º˙é˛HÙíƒ,iΩeRSıù[ë;•¨…¨± –S)?wÙÎÁÔív¬ã~1*2,òz<”éJòÍ%ﬂﬁ4ÎË$ı6<\Z({^/J¯B≥∆•z ç1Ez‘2ôNˇ	¿hÁQèÜ˘»ﬁ∞KVö\Z≈0uÔÃ‰f\ZŒñ¸˜>…s∞∏÷Ω”Bÿ⁄·-æ1ÙiØDº(∫A{mó˘PòŒB<a˜KØ˙Õ˝7˙≠Á;@¸Ç~˙ÙÊÀ˚õÁÔÁAÿî1MÆ˙°Õúä«`@≈üi%l`}ÿ CàÔ›¨¿,°ÇÂ~÷Àø@\06ÓÉ®z˘ºT¸©˘÷ìõ√ÕfO∆…≥/[]/˝üÒ–Û9\0ÊÁ9uÔ˛–Èû∫‡M?DJc∂˘¯˜n—7ªp\Z˝¸Jigÿÿ~ˆ˝*\\~≥æslÅ§JVWï•g‰¸ìMˇªõ˜ˇ¡k_ÇY?ÕÙ”7Ωß@ü8§N2!*>õ◊2±Î™¯*;¿Ñ¡‰tr0ÂÉÑw|Ãœv]FPÊ@…Œÿa1üÿ_@+˘˛z’BœïúÃæ*˙ö|‘Å¨)ı†M%Èi–’0úãÊÀT|ÊgOã¥Uwo8E\'éôWã8å<∏Yè∏„¶2ô¡ó4<∞î¬‡’Öe3Œ˛Áå›ß∆ É>4Ã§è˛\\>øÙVMúõõ€OΩ˛¯=∞ÓÑ˚ìß˜?˙«ø˛˘© ?qê1√(@Ã«ç˚Èôf-Ï“˙`•\\7®íÎÓÃfåæE©>CA«£VÄî}ÄÙVé@K9˚äLÑ3ç>Î£˛Œü£ ›áÓb¿gˇ∫Ê,ÉÄœXyΩ⁄q ®Æ€¢xˇ∫/˛πO˜Á;Ú‘Ûƒâ®Óÿ;Wµ≥â‰Î>≤œµ\Z˛·èB≈f„Y2µ>˘gÏ\'|›>pw˜§ﬂ=°¨Ô†,¯W˝Éª€_j{ü≥F§·:ßﬁ0Ëz`¢	Î˝r™»—5\rÛnf’\rr›\Z&¡õ…he=›∑°ÅÒ ájÙæwû%‰`\\Á7[≈ÙÀ”†8…?|≠Îi-+¢†˛|\\≤W™›øıëMZ√™ï|¡”Ì%∫˙*√…~É˚ \r{:?ÎàŸﬂ¸‰-;wk÷≥¯÷]˘’√„°õ≤:◊˛Âõ~˚˘›››/Œóπãî¬üüæ˙«Gwèû‹Í[≠CZ=cl^¶O†lÇçh\\VPœ˜À9=Ô∑ö¨˝©¶Óˆﬂ„¿z¯◊ñáâr¥Æ3cÖz~V¿U‘JÅ‚æW2Lü8ÊÃ›XDO÷<D„ Ù–.Ú„≈«\n√N\r5∆‚[üJ¥Ãê˜¶\\µ+Ω”>g9¬+øòí5øzZt≠íFDk¬ÃÕv?¯}ÜxÊYYÙ}c|Ú˚^˚Sp˚˙¬JãÔ§?˛·+oÀ‰›[ˇ◊Ω¢8≈1>¬rò≤õºj´{z¬LxTàÍÕZÀ3ãwcq aCãˇxånµ≠dÌ˙A»ß=¯Ü ¨I_\0ñûìy’y¨_˛<gŒßá8OÔ83N2ÔÖ1¿9S7œªŒs“O*}£ø |˜˚Ø?~˚˙;ßy∫Ï7£ï´;ø/˝ˆŸ∑ø’u˛Fˇı˘ò/àæü\n1Öbîno&¡Œ‡/‰‰oÑx\\ΩtnTW~Kõ∫˝\r%¸ˇ∞…ÂÛ]¸hœ.Ω◊˙˘+≥>Ï—&Ò§Ã“ózê— ’Õ;	@ªûﬂ7Fj_Gg£–iõâ£2π¨Ÿ0\'_Û3ØuF87å—™Y≠3)5ﬂyœ≥Â√´	óé·Î[≈W‹|x˜ùÔz1ÀœÓ∫˙/˜_?ΩÂØœæ˝π2¸J9¶oΩoÍ•}Û˛˘Û◊Z‰Ô‹L7F-{à≥å3¸„7íóäìV”˝∞◊mæÃKßFL≈È∆\\∆©w]€k‚ÙRCj“lØπZ3LËã¨•s◊hûrX;MÔáâÜ,˝¬8Í·◊„»Ë-NNÛßW¬Ëúæ»“∂—·ë}\\i®¯¯ZX˝ƒ‹Û/¥˙Lﬂ1?z„≠«Ûá»¸ØÒoq-wNDµL\0\0\0\0IENDÆB`Ç','2024-09-16 15:31:25.438',NULL,'2024-09-16 14:13:55.406','2024-09-16 15:39:25.772'),
-('ë˚wÌ’r}æªÈ9Qˆ$™','MadTecsafe','Madco\\Tecsafe\\MadTecsafe','mad/tecsafe',1,0,'custom/plugins/MadTecsafe/','{\"psr-4\":{\"Madco\\\\Tecsafe\\\\\":\"src\\/\"}}','madco GmbH',NULL,'MIT','0.1.0',NULL,NULL,'2024-09-16 15:35:44.252',NULL,'2024-09-16 15:33:46.581','2024-09-16 15:39:25.761');
+('ë˚.“IrcòWÍÙü’|','DockwareSamplePlugin','DockwareSamplePlugin\\DockwareSamplePlugin','dockware/sample-plugin',0,0,'custom/plugins/DockwareSamplePlugin/','{\"psr-4\":{\"DockwareSamplePlugin\\\\\":\"src\\/\"}}',NULL,NULL,'MIT','1.0.0',NULL,'âPNG\n\Z\n\0\0\0\nIHDR\0\0\0(\0\0\0(\0\0\0ú/:\0\0≥iTXtXML:com.adobe.xmp\0\0\0\0\0<?xpacket begin=\"Ôªø\" id=\"W5M0MpCehiHzreSzNTczkc9d\"?>\n<x:xmpmeta xmlns:x=\"adobe:ns:meta/\" x:xmptk=\"XMP Core 5.5.0\">\n <rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n  <rdf:Description rdf:about=\"\"\n    xmlns:tiff=\"http://ns.adobe.com/tiff/1.0/\"\n    xmlns:exif=\"http://ns.adobe.com/exif/1.0/\"\n    xmlns:photoshop=\"http://ns.adobe.com/photoshop/1.0/\"\n    xmlns:xmp=\"http://ns.adobe.com/xap/1.0/\"\n    xmlns:xmpMM=\"http://ns.adobe.com/xap/1.0/mm/\"\n    xmlns:stEvt=\"http://ns.adobe.com/xap/1.0/sType/ResourceEvent#\"\n   tiff:ImageLength=\"40\"\n   tiff:ImageWidth=\"40\"\n   tiff:ResolutionUnit=\"2\"\n   tiff:XResolution=\"72.0\"\n   tiff:YResolution=\"72.0\"\n   exif:PixelXDimension=\"40\"\n   exif:PixelYDimension=\"40\"\n   exif:ColorSpace=\"1\"\n   photoshop:ColorMode=\"3\"\n   photoshop:ICCProfile=\"sRGB IEC61966-2.1\"\n   xmp:ModifyDate=\"2021-08-31T09:06:05+02:00\"\n   xmp:MetadataDate=\"2021-08-31T09:06:05+02:00\">\n   <xmpMM:History>\n    <rdf:Seq>\n     <rdf:li\n      stEvt:action=\"produced\"\n      stEvt:softwareAgent=\"Affinity Designer 1.10.1\"\n      stEvt:when=\"2021-08-31T09:06:05+02:00\"/>\n    </rdf:Seq>\n   </xmpMM:History>\n  </rdf:Description>\n </rdf:RDF>\n</x:xmpmeta>\n<?xpacket end=\"r\"?> xk\0\0ÄiCCPsRGB IEC61966-2.1\0\0(ëuëœ+DQ«?3h&FeVC~‘ƒFôI(i\Z£¸⁄Ã<Ûf‘¸xΩ˜$Ÿ*€)Jl¸Z∞U÷J)Ÿ)kbÉûsç\Z…ú€πÁsø˜û”ΩÁÇ;ñ—≤Ve7ds∂	˘ßgf˝ûGº¥‡Í„öeE\"„îµ∑\\*^u™ZÂœ˝k5IKóWxP3L[xTx|Ÿ6o\n7jÈ¯Ç±p¿î\n_+=Q‰\'≈©\"(6c—0∏ÎÖ˝©_ú¯≈Z⁄Ã\nÀÀiÀfñ¥ü˚®ó¯íπ©Iâ≠‚ÕXD!Ñü1Ü	§áôÉt“Kó¨(ìﬂ˝ù?A^r5ô\nV0Y$E\ZõÄ®KR=)Q=)#√äÍˇﬂæZz_o±∫/UéÛ“û\n¯,8Œ˚æ„|@≈=úÂJ˘˘=ËΩP“⁄v°n\nNŒKZbN◊°ÈŒàõÒo©B‹≠Î|µ3–p	’s≈û˝Ïsx±U˘™ÿﬁÅ9_7ˇ˛Pg∂D‚ˇ\0\0\0	pHYs\0\0\0\0\0öú\0\0JIDATXÖÂñYl\\W«øÔú{ÁŒù›≥Ÿ„›±ú•Ÿú&M“4AUiUBTQV	!ê\nîäH< êêxI©ÑZ†¢HE®4UBIP7â;âÎÒ6û€3cœÃùªú{>Ïƒgí∏Å®˝?Õ’úÛ˝Œ∑Í√cá´Qà}$‘è%Xy‡õm›‘≥ây<8ùñ7ØêÎ‚CácÙ‹Wq`ójVAqÆ,‹?˝∆ùô`DÎ5“ ‘ü˙∂oX1Ä∫Oﬁ˛E‹£_q<Î\nÑôY£“<q6Ìˆæ¯Sµ).Ô¥v7·ùÌƒ9!Ç+°cå§\\˛¸Úã,ë•DbllƒI_•‹4bˇVv‡˛ OÑm◊≈<ëã•Ó5ıùŸ∫MM§d(\"ı üáøºÊ⁄ø}Ê¸ªêœà-è¬≈”uwRÉÔ&d∞cù}GZ1ÄµÔõE≥‚rÖπ‚˛Ö∆¬—ı÷√∂=41‚ÙmUááÓ⁄Ñí‡˚øR◊cMY(‘ΩA6™”Ä‹åßxBﬁ´˚	Ñµ.O÷ö jLÄ©4h^QöøWπBoºÏ<¯™.\"SòtÔz ôrÉÈÙ∫l~02hºws„Äx4˙ƒvôh„\nˇ˝ü¿©N¸—qﬂÁ_PZª÷≤}y‡i±müÚ›_¯?yt]÷>D;È>‚\nj:{Ê\";Âû;…fgÄbIyY‰ú˘C\0yå#‘⁄≈å*]:„^˙˜ Y≠ìkÌ	ÑduodëÇD´Íı±õóMØN˛ ⁄ñ[-ÀŒ~Ø¿Ãò].¬ñΩ\Z‚2,=\"˛kklx-˚>`_\0ûˇ{‚à∆8ﬁxﬂÍ‹®j˙Ω≤#%˝ıwãü9FÈ\01ŒjU˘≥o÷rSı}ª^=ç†µãˆ>…cIL∂≥ﬁ-™pÑp(=ÏÏÚÄÇs>~ÕíÅÙ±•À„\n…fT\\È\"êd\nË~éàD4z’˘˘wƒjré{`Ù*\0ÄÍ°/}[y¸”EYyá¢*s3v≤MÄ—k•b°\\úµm™$ó@∫ÇÃ¨õ…±≈\"Ù\n$RmëÙ∞kÊë»ÌÜ!ë¢Ÿôõu°Ê\n˚{Ï)/\0\0Å+%Iê.í§ÏÑ€ﬁœ•\'Núé∑4eÛFuﬁ´»™a;Ækÿ∂QïjµIæÙΩØ\nü7CQ¥j§˚I”ô«+}Aœƒu˘Àól€¬:èó¥eñ©\0ÄÄàÄ¿8¢™QfLtÙyJ≈ÚØ€ãeßïrO¯U15Z7ä•π?≈®+ﬁ‰\n å9ÌΩzpø]b\0–≥âˆÎÓ//∑b]•<z∏Óå!WPQQ’0’•Ê¶åõW*ÆÉ=|&Ó„˚∂U‚\'?∏nª◊öã±Ï©W#NdËÏ‹ˆ«Ω°®≤ö∫§›á=∫\0@ÛR∏{†q≈Jó¶F≠ù√Åòe\Z+e£π	sÆ:Si´˘öwˆ8Q{˙Êﬁ)å˜oLÌ>/óDπË¿öM»Bè\0`ôXÁ\"_5Ôà`‰Bçsx¡4dˇv„ÿíä=˘‘éW%oêñUâµ≈£÷Ù\\ˆ»ŒÕœΩr¸≠ÀÖ¡=q√f}‰¢(àZUõXsá&•dåqéÄ÷ÊxfÇö;ñ[¶$¡ˆ$õbï¡¯r‹⁄ª¬¡˝öïFkz®*I	˘˜ü∏Ü≤òÔ}tGV%#Ã∆\Zõüñ¡X\\ı®å1·êÎ.°¸Ó€N $˙—ó\\^¨e≥ÙÎ±Ê\0\0eô∂u?~ÎáÉå£cª◊ÌT∑«‡\0 ˘˛øÏëãfˇvç1å∑*Üe F\n3πŸæûN\0òö¨‘åÂ’•.©π)Ë€™Ä„MÁVIÄ…Ã,•áÕ∑^3µûÕ⁄í˜ä {∑ÍKT\0PT6x»€∑M;Û˜™p»£±ÙT\0¢ëPow\'\0å¶\'_?>Á‹jß:∞?b/-Ràê…ÊˆÏO9∫m;È’°sôÁ_#Ça‘\0Äà§tÂk4Á∏„êÚﬁ?”Èã∂Â‰«EMîF”ìßŒú˚ÛoçÒKÕ+\'wvˇxÂûRÌ€UåÑCús\"ö/¢Qﬂ»•≈‹|n˜ﬁˆ¶∏\0ÀŸ¸ú¬Ô”Û≥”≤¿u•iZïä!Ñz=ä◊:˘èÒ <cÅ9£Vªaú{;˘¡Ö÷’O¨Àqi&p˛‹EDÏÓláÇä¢ºwˆ¬∆m≠…x;ëMO™ä“ﬁ⁄íàGâ[ö„éCóá≥˘πŒˆT{*ôûúüÃ¶|ßﬂ‹‰∫\\U;à@8\n÷ø∫ë©zHÒÿÉGov\nHøO\'¢…±™mB(i@kK\"ã2∆j¶˘Û„º©Õú+gÁã∂Ì,≈ø8Ì9›6;ñÓ}Vå∞¢–”_‰{]P≤ªnÆ∫/e˝’í6xd4ﬁ]a∑LëÑB∆7|™√±XK_…±\0∞Z–Úc·b6xo^cèÔî◊G¶Å\0åWz∂Á˝Mv•†M\\N,Ã÷	x@0‚⁄±˜ˇ“}2Òê®˜?<}¸¿ˇ“ClPπ\"√\0\0\0\0IENDÆB`Ç',NULL,NULL,'2024-09-16 14:13:55.402','2025-03-26 16:32:14.459'),
+('ë˚.“Mssø\"ûF°`','SwagPlatformDemoData','Swag\\PlatformDemoData\\SwagPlatformDemoData','swag/demo-data',1,0,'custom/plugins/SwagPlatformDemoData/','{\"psr-4\":{\"Swag\\\\PlatformDemoData\\\\\":\"src\\/\"}}','shopware AG',NULL,'MIT','2.0.1',NULL,'âPNG\r\n\Z\n\0\0\0\rIHDR\0\0\0®\0\0\0®\0\0\0tK•¥\0\0\0sRGB\0ÆŒÈ\0\0\0DeXIfMM\0*\0\0\0\0ái\0\0\0\0\0\0\0\Z\0\0\0\0\0†\0\0\0\0\0\0\0†\0\0\0\0\0\0\0®†\0\0\0\0\0\0\0®\0\0\0\0qå÷\0\0@\0IDATxÏΩ{ÃÔ]z÷ı›˚}Á–NœÌÙ8ÔÃ[(≈ö\"-‘Çh4°\"H‘x ïP#≈‘4⁄ƒ≠∂ç¢ˇ®%Z(\'Âêñ(1@cDÅñpî•”w¶–ÛLsz{{}ÆÎæ÷ZøÁyˆt¶ù“Xªˆ˛}◊Z˜}]◊}›Î˚˝={?œ~ˆﬁèÆr¸¬?ÙÙµ?¸„◊Ø|¸Ù˙5Oû^ü£˘”ü^◊ßã˛Qñx™›åG]07Ã¨πß¬>Ú\n¿ÛùMé˝#Ì´[‡áñŸ⁄[”¯MCmÅ´C›Y?\Z<ó3~_ÏV9<õ€Az*7çﬂÍßP7˛)®Ãù∫’_-`7¸âi≤ã;:d∑V{¯¿˝[qlm~ä∑Ü£& ï{FèÆW‰Ô>z˙ÙÔ*˙mO?˜?_OüˇÊøÒ5è^≤ÓOpIï\0zÎÔz˙©/Ωz}ïj˛z5ˆ198€⁄,<i‰ÜßYÔu—Œ∆Õ0Æçêúf’X«Â¯ÌüÎ÷\n∆dÛ≥‚ÿßÓ‡y3T ˜?%9Jáô|√Cµ7?`„ü|lBú˛≠u∑∏ékÖê«@>ŒÑ‰>°û≠=Z^‚√ ∏,4¨±ÅÎ·q~«É˛—ó„’—¡X_‹ﬁœãñÛA=”ˇ∫/è˝®ÿﬂˇè_˜}Î◊<˙ﬁUÎÅEtH|Ê7=}›{æÔ˙ ßOÆØP≥o¿à≠®ÒıëßèQëÁﬁË%ÎCIJã>Ù¿YáôäÎ–[ÊAæk§–-_Ç„ì∏kŒ∫ÏWò‚\n“ü}6æ6ìü|‡\n≠zÌò„∫0&ûÕmˇƒÃØÉR8∫X‚≤˛òKŸÁ≠B.,¥Ê∆WœHXK˝ÕzTôÃ)›¸D]\'ıÚ9zi˚ÔY.∂ÁÇœ∆‚O†ƒﬁ˝Ù—”ﬂ˙ÊOz˝Ú\'æ¸—˚·ﬁãw&Ê£Ê7J„Q≤°9ç\r^Ù?‚;ª«vkYáÍÊè™÷)¸|7Zz(6œ÷nxRï €´¢áœJWìπ•™”XÓŒ…ÔC>à—µ¬ZìM<g”@º51≥˘„dxÀ+ã;√∫ƒwØı∫˝[bDÌ·Ù|GÀNîÔGo†]”UúÊûF˜ò\ZÛ ˆˆØ7\r¯Ë_◊„Î—ü˝ÛØ˝u}4s3ﬁÙıOˇ·\'/_\\Ï7≈˚]±ïäC3-»<(ûIˆk86	Ç√;;©é√3‹Á£JUìpäîÕ*Il$ög•Ÿú¸Pé~…€Éÿ“[5´K,ˇiÖ“gúµÌtèO-Dò>PŸ•∂S;ß≠À¡◊∆CøÏ&Crúé›üûµ6ﬁg?òDé´5≥Ÿq¢9MÌèSo|ôØ?∫ﬁ°Gıã˛˙¸∫ø^8Û„s√GŒ\'Ø\\\\\rº…ß–Ü4Ô·™ÇùnÁ]%•xÛl/ˇF√l%G+>Ê–Cv®5Ã\'BŒ∫ 8I\rtL \Zêq9(o\'o	ÂÍã˝‚;û7	ÒUGOıô°5	Îµ∫pñZJ,«∏∏wçg–äπ>˝`m>Pc¡∞ˆ&zZñC¿^&üx∞Ê∏QX\'b·„Ìu¨\'ñ):¨mÜ\Z¢&?m/ΩÉ◊TΩ[ˇ¡Q◊=£Û‰zìvﬂÙ_ÛÙS)◊±P~œ©OÜæQBÊ&Â∞$&¥¡,óÙÅ·uvªI01Æ3_nÇ0Éú]ÇQAwÃ<23É[|8káWØÊ	Ò®/xX£C≠öûÎ€^Ü”>C	†A˘Èë≠ÌSHõÙD4˙≥ÖzMÀÈ£Z∏MíÊx⁄káìs∞∞·«Ä=øµ◊L˙Ú\Z}áVl)`\0ë◊ö∫BR∫eyFP£=áØÎ¬&‚{ı‰Èõﬁ˜Ú˚æÒW˝◊O_÷ÒÙ=Oü]Oı{ŒëB¯lÆÎôA-∆n¸îlçÃÊ)√G\"çbh(ëŒ %0ÒÉŒ˝? \Z€k&ª&{pâÎ»ﬁ;G~0ìY{jÂ‡Sè|¸Ü#~˚ä∆FÜùeÜÙxøı%ï√èÎZ–2¿	®W{∏ÒÂ‡x’∫|f´9%∑∆b≥Ëﬁ¸Èb÷ô\ZπuM≠µïO»z)ÅWÔâçéV_¯éÔÈ+À0ﬂü=Ω˛∂>ÃÍ≥u¿”î≤¸“Êw2ä#âeﬁ·ïöYqzPπ1bî§lçcÇ£¯È˙‡Y™Pµ!ËÃ÷â¡wﬁ%s\0#5˘QëFﬂ¸+Ÿ)0Ó\\_°Çá^è>á∆ò«[∫‘¿˝Hƒø´?cG√˛\rCU\rk≥`DóÈ÷ﬁËhw}kÈR˝É^Õ•!=Ózbü8‰j¡ä)„•Ôû*Ëöı≤ΩÆ\ZG>∂T˚È£wø˛µØ˚L>iÚ/Ò|ùS‚zh˚ó;åŒòÊl	Q{⁄‡L‚nf¿<ÿõw>4≤	è±ÚiŒÒÊVæ~H,g´vƒT›”÷ÑæçŒz—ßàÎk≠x~9?ã+8˛hä˘Åı∫Yì£JVotôaç‰*Uˇ=É)5\'à2#óáq˙7:πU?ÑRˆåä†ıWˇÖ≥wmÀÂ˛%	r∏,©Âás‚¡Uõ pÓc˝7ˇé?∫ﬁ˛óﬁˇUdÒ\'DÔ¸±ÎdÓclDNCu[`lÄ)¢≈\r32µÅyÔ¿dΩ5R±DèıŒGßÙ%&∆4ò˙H?‰’%so•}J5ò4€ûî?ºµ{¯Rˆ9Pa	ß‹\n\rŒQÉtù‘]ƒQ#˘-âtc÷Ò>æ@?çÿ´÷Ho˛lîﬂniAtc‡;b≠9âπÁênı°ûg¥u»D…åîJùuáñà7>=˙—œ~ÕÎﬁ¯¯Gı«ó2z<ú<8RÊÇËòÖÃÕ±6ïèúîQ7Œ\\DfÃKCµÚ·Ö∞ÃyÌ†˜P\"K#Bio«Z¯”óFâÌÉhogS’vO#D]/m`÷ö∂ˇƒÍìyÒïbmgÊè≠ÒJΩù8{©ı±-&∏∑|púGk\"2˜ì•Î≥»í©ﬂæå€ÿ!M¥ûÓÒ	ú~ΩÌôÁ\\|p”G˝g^‚|ÆÚ1ﬂÒ“˚Â„WıgÎ—mrÆ¥ÃÉ!í®> ¢år⁄e\'TÔûç$÷º)Êßô10ØWç#AÏ&n§NÙêSi∞¨ü ·Á⁄ﬁ2cD¨˚£ÇìÁπ\nÖw;7új´W5û üàœhﬂºëpUºËkÛú\Zï]ÿjÎúC<æ©¡—ÌπÁ>∫í{6˛πûÁ∫∞°Ú=£‘\'ªù≥ÍycWÅ™•ˇÙ9Q9\Zï¯5œãˇ9.d!¢mºs\n\'B—.Ì:cæq\\Ü`€Ú–OﬂßM∑∆È…f≠ßZ⁄ÏõVæb˙ÅDt‰põ8y°+D\Zƒ‡&Ü\"?!∑ÊÆAΩhfsØgﬂ4ó{≈ÁÃhLJ„4µK=\ne¥ÔáØTãÈ\rAçd¢πÃ8C€¬˙É?uz~V¡/ê6ìbÓ;!Fk§›‹\0åˆdÌMq8˙aè‘Ph}ı¿óÄÙ9èï¯t!ó∞uïAæØöfÔ±\r¿ØH-iVe\nﬂÚá¨¯9¬üö8÷Äœ «jòkvÚ∏ Èf\'V<÷≤ÓµôÓE(u∂ã9ï˙#≠ÂÊSG?Ïªs˝ÔöYEÄu3ˆÔ}\"£,ÅVŒ\\|™\r_òÛúN]zÎ®2ö˜0¬µ&sœˇñ?’ˆßIıü˚p?Á£3Õ^Oµ¬\"Ø	2È3¯OÁ≥x}Àúå≠D∆ÎBo‰˙éDƒ\0ÿ—ÿ¨úb00ËxÄùÂ©e£ïÃOìR#Î…MÕ\rÕ÷˝°«Î:XùpYˇC∞|‡⁄Í≠\rL0ìQ°Ëm˝Ë√ì>Ñ•4/¶SõΩ£ìP“GÀ<:viêÒ?$Å7?ê¯N‘µ∞ß≠Â`D,ù˚ó¿¯EŒ>RŸ\0X\Z\rÚ⁄wﬂ†‰í⁄}ê2Å,:YÚ…<†˙~N†£õ\"‡9Û‡ÛîOlcõ\'Ä¨dƒëLgƒ´ÉÜ=;œÖHÍzC-ﬂv—!?∞¨F ˙¡¨fßsJ:bß◊ËÁ⁄û⁄jıÅñGunÍæ\n⁄Ö£;Ã5ëÀ˘*–ò€Vä=#ıµk›âï≤Uvˇs÷∆¢R:H4[_{mRã+ºôm$Í∑1¯ôÅ\r‘AÙíÖ\Z≥∆È_±ûuÚ∑ò•-öêıºŸ#‡™8≠0Bº{™xÀéÄæÁo#6«í2∞Î∞s!sê‚±í8oÄÒ¬\Z≤1Ü{\r:Mê\r◊áëÑbâ[€á⁄õjµ·¬¡ú≠ç¥˘ì\Z%˚OJÑ5|5œ◊û••Y≥ÙÃÍ\n∆ï]WúY!™µ¬ﬁò	èxÓükZ5h\n∑∆DD”j¸[ÿúç˙ﬂ5†E!WÈ\ZWU™pâß\"\\Î”BOSpSO∆axÏ√P¨Ò¡:á\0≈c¿,!4WHπ.©ï8\nQa∫·ÿ7Ç\0UµnBˆUa<ÓêÄÍBÇQM/≥©_Á#PòÁÌﬂ_`÷?áû3rÒ©m‚Àø=qîÜ≤kL`™è∂∫îœ^k⁄“+Q÷π\rœ#8]ùZx„?≠Á˛9¨K¸œN\0Î5È9~ÌﬂÀÚÌz≠ñsÚÆ\r◊ˇ@Íaı≠\Z˘fëi“∏@ÏÄµbíõÍÉi!ac)PnZ4:G¨RÃÊ-G G‚á¨ò<\\2ÄîÇ∂Á§jick y∆áÇìé6\0ôı¢Ç˝Klx -Ö–‚8¥Æ+º˙∑⁄T¶Ü3µòr√úô=¯Æ®ƒ ë`WØ£·û£ç˚˛ˆÂV/ÿX€œÈøÃûÖ˘U\nóî$FeóÔF˚úûÉÒ›´◊¡€øêp„ªBiUªÕó‘zCπ‚ÒÄbÄ1g`Sâ‹\Z cÆàHÀàÛ\\¬\0N^ÏY˜ê⁄9u_çéI:∞q»\Z¡iqòfπ˘YÉı@;w…€Õ& Œ`ˆ\Zû#3K#˚˝ê;çyÛïù÷[¸©ﬂ=∏˙ÁAXÉ∏™ÏJ⁄:‘ öYB7ñπÕ3åV‹:‰YgÄ\0?,e/Ä¥3V+∞≥€Ÿö˘ÿfZk\0‘YgáöÜRÜ≤d1Ù€ø?Ç.3[/x€\"=ê®a-MÏ∆i∏ç•\"(Ü˘^xìp2Êó1√ˆΩ]-±å¯á5Ôaˇ\0˘πÔÁÃ¡Õ—pü¯ë≥Ïaˆ^pd:√—Œ˛<WÓgΩÔ9˜%ÁÌ[ ^s∑¸‹øV]˜Ã%Mmf}#3c^‰¬zƒfã»	1êú]&_¸‘∫«o1k+E17	$f˛D…±˜¨ÿ	∫|4i*#Nk.N∞àµG*€>ñ—Ë«◊r∞“rjVót?eZÍÌ•/l¯1–≥=X8…]ËÀÎÑ	≠ÿ,HMˇ√6ÿµà€#3À‹Ô%ÕB£w?¸õàıˇ~p•ç^¯∫j9Ë©µ˜π?-∂œÙ±˘ƒ˝\n`âXz.*Ûsﬂœ…]‹\'√ZØõ¡my∆y≤ı|rç+?†>∑˜Ωypf∂ZÖGﬂ\nyÃ¢{ÛÊÅôt8ùg;ì1G(}\n´^ΩGcÈ9◊<ˆ‚ú∞º7‡Çùó¶‘$†ﬂÉﬁ0ëÜ%íCESç1çÜ÷YÿƒéãöÂ\n:k¯›#r‘(3u*(Å£ºu‚ÍSV≠DÕ)å⁄Ï˚-÷ıg”ÿ.©}Ò•g«\0πgƒö≠VºÃ“e˘O\05Áù%/‹¯Ô√>Qq˙—(hÆ\Z‘8˙Èë‘™Ñˆ®Egpw0ı\0Å‘Í≈:{«ÉLç‚„\Z~üÌ«&G∂÷Sl9§”¸7Æa7R\r4m◊c–7◊â‹º,ïtûBñÚ˛ñ_„√“∂ú Zç∂¶Q`:nËì(_≤πQ\'a9ƒzÑòX˚p§g;Ç‡îû◊ô4Åå5í´T˝¶`¯@·QFb‰¨?{–…≠˙!î≤gT≠ø˙/úΩk[n>Í9		r∏,©µ&3¢ù\0Z}Äí∂{◊\'ûÛ\'≥zd=wÔÙh\n@\r◊◊µΩ¯#®¡ÆD#9‰\ZI¥±AH$\rıJ‹H‚#∫„ë≤ë\ZäûÆp£ƒ◊aMö#–˙kDQÛ…ß…Väﬁ¨EŸ˛·Ô:ÿËê°^˙góxìŒì˘Ï´˛ìÁö·é}Ù-`ˇh=ìè¿£O6Ä&DÂ„MBç\rV±@o˝Á&NŒùæñwø±#Ïî¥ß£/”[\'íQƒ¥-∂Ω˙ç§xΩ˙≥xËò|gë)@ú•°ôç\"ıÃ◊“@f∆h1ÂÊ	eËc≠<ÜK˙≤v„–hk÷ü†c“Nù‡¶ºcıÖ¥o>º÷Ÿ¿Õ\'Ì∏ÄÃÉ©>ıv^‡ïdõSk¬ï-˜ñü~¢	˝É;kb‹D€?<˘Ÿ/RñÓıåM”˜¯÷ÅÏ∫	Á\\}p÷⁄˛”GÒ#ÅGáˆ=[}πèÌ?Ôùº°,=^ÛÖzBíËô÷ª7¿XIπ©ú›ú«ò2j%`ÏI2•ãe<™¡B8\Z	?◊õõnô1¢5÷˝$.Å0vÃ˚¬;ë‹MØÍÒgTKøÁ4‡Ë(k~Ç[ábª∞„ÂìR‡|¯ ´ë‡jH&~‰s¸Ô˙Êk)ÖÁ{<——	¢Áˇ∞3VÁﬁõÛIüÑÂgíÛ>ôçS;1+kôøaí»Êy∂aµÁË¸a‹Í	‹8r˜CEchç∏œMÇﬁà›Âƒ˜MŸ|§~ aÕ-ßU§)â^Ç≠hÉsM÷—F/ËÓ\Zƒ–ãf6ﬂû\\Œı‚_Ïü3Csbu¡ﬁ¡”\'IçˆÒ<Á?ΩY\0kd‚i†C—qOÏ«ç≤[|ßM@ßIM.ØÄæWê5ÍUÒÊ‘$„ª˜M¥Ó˛≤˜)g∂\\ÜoˇA›ØAeÂÙs>ÇRõ\0Ñ¬5K‰Áæü3g”SŸÁ√YÂp+9ΩçXú@“µ¯\"Ω&÷\\8ﬂó–”Ux÷7·Zìy=x7¸a,~ì‹wÖ´ïŒ¶~·7µÑŒkÚL∫§GqÁ‚x˛ú2ˇ˙$I \Z[$\\åèyÉY=ÇçÜq^ü“„0?M °eç6ò‘táFsËKûΩ^XÎÕ[FF,.Îø\\„∆Y÷Îj`Çôå\n›<ò—÷è÷Or ¯ëIlá√W“GÀ<:´ã@j#Ì15‚;Q◊öF∂rº‹ø∆Ø6´ØìMA0xúÑ÷¸»$ó‘Ó√^,!úâk≤$y/\"\Z‰‘¿?ZØ˜œœ—îìè†y$¿·pXy‹:SÂ®œ†	:A∏—ØN∞ãéÖ\rlp≈@?k$oXöú•ãN≠psÌ¡/∞ƒÍ£Tºyòﬂ˙©>˛›Ä`u6úôò^·œkbnª}(ñ˙hybÂ∑F4Ÿi®ægc	îéü‘_{ñ+ºôèÛáøR√-*ZˇÅ‰æ\'ÁJ£∑ËÜQ#gÖVp·˚ö„”“.˙ü3¿s¯∞áè\nÜèÚ]˙=h¬\\£ÔEj3fçHı†Ü£YAØuÒ:âò\"5+∞¯¨)d\ZYÉ6—Ÿp≠ûÑíZ[§X‚Â\"+Ç9[i„&5Jˆüî\"k¯j\\nû„⁄/ü¨¡yfu”ù]óJàÆµ6⁄∫Pÿ3·c•P\rö¬≠1—¥\Zˇv<œ}•˛hÌ\Z–¢ê´tçÀjRmüıbªªÖû¶vü¯ß>–˙˜⁄\ZÌÀœè¢|?±>Ç¢6∂àÅBær]I.ØLp¿À®1v£è«]>\r¨:‚˘ß.ôf)Î∞ıú\0∑¯¶˛çÿ|D|\\„k∏ß!j,ˇˆ`ík››bBÓ¯§GèÚŸhM\\ØDYs~IÈÍ∏În≈X¨ˇ±üÛo*˛g\'\0uV-á%Lú†óÂ√ú˙ãë:Ê∑·Òµ∂£±˙v\r1T≈9ºt©cUaRøµ¡≠Oí\n\")ò\r«u‰∏∫»Ã9ÿ-ï‚>í)∞`·jﬁ!1åB¥XÀ;ÕõÚß∏^T†H`Õw°¨‡E›\n¶eE\"Ûµå€·•Åÿ+	T¯º:˘§°òÕ∆ÉÄ^„œ2ZÁ!C3¿˚˛Àø´>˘xq˙/≥gah‡0\\íï]æÌsz\n(IÿÁ±¸ü˛Á£ﬂ¯èêêÂkü^\'Ëi˙∑≠©Ñé˚⁄πÒÕÜ5ÂxQ–4ôA¨rÃ=$ôü|ul¥U4gøµ∏”Â…ﬂµÃ‡\0÷i3/öœX^·1N4˚˝ê;çé˘ éNÎ-˛‘ÔﬁµW˘Y Üñ™ÏJƒµ≤fñä˘YíMã£≥9V«@‡á•ò∫÷\r÷º≠WMGÑábæÅù‘\Z\0u§g~‰¨m®ˆÎY 7¡¥en\"V9˚?◊$›™x˛+ªq\Znc1\\S8¬EksúúuçUŸ8Î4=ä5åçÜµ:Æá\'ïv\"?˜˝ú9∏9FÓ?rñÎ.ÕYÍP{?8`évˆl…˘ÅÛ≠>Ô˘‹¬ÎÛpÀœ˝kU¥|œÏ\r—19u0`˛Ñ±˜S„x˙¯ÄÅ˜∏GçXú Û4≥2Ió\nb\0LbÃÊ*êªæX±Ü√ö>A¥àíØ&ë÷\\ú`\rµèP(oË“A(˙({=sΩöc!iåj—æôπlˇ…Y∞∏·É»Cê\ZFÑ|÷Üh£m∫bì4ùu;2µ¶Æ3‚‘ˇíf°1ß>u§µ∞—u≥áÓ≈∫ßÊÎ\"Œ†áø˜π?-∆}OM?T˜an<˙∆ ®Öu°èD˘˙~P†åŒ)»Ò\\ x∞–œÕhPúÊãa21\\~ˆÜ°ﬂ\Z\0ŸÃ>=–DÍëÌÅCåu|y7ó ©[ùÌu8¨k_÷=Î∫¯K^ë≈GÎéØ•\\˘ÃVs¿õ¥!|œﬁb§∆uVˇá/◊∑DÅ—Î5µ∫√.8Ωîÿz⁄è◊Ö4,gÊ{qNXﬁp#YØ©I–œ%˙WB«{_íêß”ÛÛ{#Çˇÿ(&ÊÅWMD,l\\ÇôSpΩ;Ï…I;[ Çıîj=\ZuÉ>¶ÿ≥N5&ûÅO›}`Æü–“lç∆\0»ˇ«Ω˛—ı¬«^◊˜¯zÛ«i˛ÿÏﬂ¸ÒèÆè}˝uΩ¯ŒÎ˙OˇÃ´◊∑æ˝ÙÔí¥õ\Zx^’\Z›ë4î7:Qz≈ß˛\'ã{˛Ì±á!‹œ˚‰G◊¯´ûø>ÎçèÆ˜æ|]oÁSøﬁÒ√3øÛëˆOÆwæá≥ö∆SÅ@´Ÿkœ÷âq/≈Ì˚ª‹ÁﬁFµ>Á¯-π¥¥(”:Qç∆ÌÖΩs>¿∏Véy1™çv…±&ˇ¶Ø}ı©◊ú7ÅLıµãQâ|		6ÕxeqäÏ8˘‘•\Z¨⁄8≠Fˇñüèò£∏Ùã\r?˙œIÚ3>Ü—ıfD?åzµã»è~Ë<^’Ôsø¸èæz˝©øÖù1<˛≥ùÉ_MIOk¸qS¯ŸÉ≠«ƒsqªÈ∫˘ºœxt}›?}ƒk~bèÔ~ÈÈı=zxﬂ°◊ãzxôﬂ˛√óÁÔy◊”ÎïWGu’`!›Èß^s¶JM‹¨g¯œçä.›~∂ÏÙ∫’\'µ2Îõehü\"C∑åç˜πzÙÇPä”®ôÕëqÌ$ÿwHD@`\nN$+]èòó∫§‰‹pÄÉ…bI5Á>áòèÇOØÙèEˆ£ „õı~⁄G_◊s∑?`ïˇP/ΩÚÙ˙◊˛–´◊∑ºËG.∂ºç“¯ÍC<nï‹ÁË¡8ÖŒ©˝Î\rÒôü¸¯˙}ø·˘Îc?Ç‹Om‡Á˚~4k\\=¿˝¨Ÿ}Ò¬y˜‹^e“ñ◊√ÀƒñCˆn%ã.=WgùE¢®˘ú®›Q]AlIÒŒ—ÁÖﬂ¶T¿U‰\0W\'/\r)ÏáÊ6÷∂ˆÉN‰¿vm¡hˆ¿h‚3>˙ÈıÀﬁ¬G>>\ZÊ#\"‰ÛQ∞í?ï˘=˙(ıeﬂÍıæ-7-}mˇÌe\":í;g¬)œG=à<úÛ9>ÁS]ø„_y˛˙ƒ7TÈÃ~¯◊Ôy>‚Ú˙¡’C˚◊ı[öøÒ=O|O{ˇNü7H‰øúÍŒmMˇ¸˛ÚÓG»Ûç⁄cπ◊≠tot–s±˝îÕﬁΩÉU?˝¿∆Ã~háX~JYﬁóO9õQ¡jFÎ∫>È#ØÎø˙¢ÁÆÙÖ{-lΩøO´óıæ˝wˇÿ´◊˚6›<;>Q˚õ5gÑ5∞+ß8ÌØ7*ÄÈˇÙ¸⁄Ò˘Î£>àﬂz@˚È„OÆˇèº|}◊ÿ≠JÂ9⁄öp*VîÙ*BÏC≈˝Ï9¯\0Ñπˇ\\%∂jÃπ∏6f<z·øùﬂÉN¿\n‰≠£®J©Úœ;-èô\\Äæ˚Z|ƒië\Zgé(Ö]˝⁄Î˙¶/~¨ﬂGûÃ1ı38}›_xı˙œø˘…•ÁıAˇπ•È–Ωı\0∆s∫9{ΩÆﬂ¯ÖèØØ¯\'ûªûˇ0¸ñ‰√u4?¸Óß◊ˇˆóÆ∑ˇ–ÒtH|›\rá”≠¿πÁ‘˜Ω¨ë≥¡yv¨¢8)Ôg6Tó<kÅDô˙«√2˙–E/∂Ú·ö˚íwD±Àt’–\\Ñ¿Q´∆PaÏÜÇ‡˙•üØ_⁄öŒzè~I˚ë˘ÃXÛã˙l¯ÌÔ“˛G‰Hœø¸¸≈gÛç/˘•œ]ˇ»õ]ˇ¡7Ωz˝≠b#˝H¶OÈ‰#Á*æ◊ıi˙$Ó´øË˘ÎW|÷˙Ê{‡w Îo¸˙óØwÈ≥ı‰ÈMÈ•OˆºŒ¸I¸{ÑπÛ˜¯?Ÿ¿\'Ë∑ø˘˛˙J}$ıùSh=0πs˘¨:˜1øFpè{wCÙ·—ΩGÄ-qv~&º62ggX@â\nˇf}ç$WñJYHRæ\r7äÅìa¥‡Á:t«÷Cng˜˘Ú_}Ó˙¨ODÂC/©ÖÔ·¡”g±oÁA‘Ã˙≥œK«Gx…˚ò›cj}ä>¡˙˝˙Ω‡≥RP¸íˇ{æı…ı;ˇØWØwΩÔæˇ›ˇÆ’˛ﬂöÎ˙ı_¯˙“_˛‹ıëØ}vèy8_πæ„˚¯m≈∫Z›÷{Ω>¨|¨~è˛¬\'–Í!ˆ¨7π‚Øˇ æ\Z@Ow=~˛WΩ?∑ü$˜ìŸfˆ≥ë\\}6Çõõ,h˙á÷aç¿≤+?SŒ ^œJ«£7ÛYºˆ~Ä¸ƒÀè8`B<≥ˆ⁄ÔbkÕáÔ™Œø:˘ËE› &¸µ/{|Ω·‹<>\næ®èzÔ–G=æı Ú\02ÛôÎìi.Ò8Á™Em™/O~3aAÿ7æ·Èıﬂ˝Øπ~°>q˘@ÉO†˛_yr˝—øˆ‰˙ˆÔ€g‘>OÓ[?Aˇ»˙Á>w˝Kø¯ÒıÒ˘Åu˘ƒÂﬂ¯/_ÁœÛÜ„^˝†ÔZ#gêÈü‹ıñ6yY?ˆöÿıf¸@}ÈWøÔzü>àÆ1Â[4ır¶√Ç¬3lçm$‚ì^¸u¯ìkSÙ¡Û6„Ê#h√~Ç%ÿß9qKª–Y◊πﬂêò\n›>òTµÛÃGç?˜õûª>Â£Riº]ØË≥¬_˚{_ı/«Ôye®M∂¶√∑Mùáµ¶¶èÚHŸ2>¥˛˝>¯?˚gûª˛…ü˜Ï_Ç·t≈Ùø§O0˛üÔÀópd˜˙¯è∏Æì]üßﬂ|ñæÑÙ¡åøÙ‚ìÎÀˇ‡À˙2–Ù‹Ï”ˇæ/Rù˛≠?=ôÌ¯|¿hœ˘M*“ÎÙc‹ﬂÒ%ØΩ>˘Œo©û®Å_Ú’Ôø^‚¨ÖÕÉÒû”M¸Ù05ÃˇÂ0/+<ÄﬁÄÏÿ5àú}Ê∞Âˆ√√ƒ∞1Íâ09‚1Ã¥kNäõoXÄˆO˝)é˘ËË\'8&Æh˘#∑÷o”ü‰|äﬁ˘Á‡ìàwΩÔ∫ﬁsæ£ÕÃ.%Ìw%¸Jî«hêp‹µm«áá–{ı—Òﬂ¸#Ø\\_ÚÖœ]ˇˆØx|Ωˆπ8çÊ˝+ø/|·„u«?˜~ÓÉâ‡ÎÎÙ[ÜˇÊœ<πÙü©i‡±Á3}È>ÿ∫.˜›–óp:[0>çŸs∫Á9ì•oæŒ˚]?§7íæbrw|Ø~5\"ü{ﬁjö%nvñC#Øb\ZËÇ9{Ô∞/‹v`¯Àí´Ü7$Xk„\ZŒXo|ª]räf)&∞_VöxtâE◊lm£B,áe@˘c\0Q73‚`√{zΩMø\\?4¯ZË\ZÊ—ã∞Æ	Úi@Pˆ…SØûw/·S\räŸl<ËOu˛¸´◊?ˇª^π˛¶>2˛t\r~IˇíﬂÛ ı_¸©WØóıè±˜,Ïá¢n!˜ÅN‹~7⁄ßwî$Ï”†©uN,{ÊYv}∫˛p„5«rcº¯C˘z®ãÂb-?∞⁄WÀ˙ËÆ3OçxàVÈÃƒÊ≥¡\rëçjπßÒ.ˇ¬≤ƒ¬ùb&Z≈√LqS≈An~÷Œ9Ø˝j¶∏å˘ªu√\ZˇÄæ@œ@õf<ÎJ≥”•Î”@õ”z¡ﬂﬂª·)©ÓQœ∞Ó£Î;æˇ∫~›ˇ ı’ﬂÙ ≈ó`>\\É?™¸/ˇÙ+◊?˝µ/]·mÛ…5ßn≠ÿˇQ÷=a¢1·°èˇIåN˙ÄÏ{|bı–xë/1ôèÓÅ±ÃMƒÙ‹ÉPŒ5…õ«áΩ_’‘Løî–ÏáW®ÍD‡“ﬂI\ZÛ˛.ö@ŸDf\nÕGT63Hüä¡F◊nG¿Óı’fD§ˆòL\r~âhºEøåZ∆ááÆ«YC∏÷3k¥È\'7q*¨xˆıJSÂ”üx˝¡ør]ˇÀˇ˝Úıœ}ﬁ„Î7|¡s˛˝€®|H”˛¯”Î|À´◊ˇ¯ü\\?Úﬁºô‚1û}Êáå*∏KS8.:=≥Óç5_‡Âﬂøµ æ˝[Kú∑<„´%/ûü†qæ≠√˘qfëﬁ?«ÖÌ˝Òm∂∆¡±µñÁC◊·Ùeæ~;„˚ä($ΩÙÅB\ZI≥®‡¬AO$4¶$ﬁÕ<&˘ﬂ@™…\rèqEÏ+§ËiÕv‚ﬂ≠œ–\ZoÌGPka}ñ4\"Å^jÒ Vüö¡¨é`%o+cÄÿxMƒƒuX¸¯˜~Î”Î˜}ÀÀ◊/yÎ„Îü˙˘èÆL_À¸åÛ∑VæΩ¸¿è=Ω˛èÔ|r˝oﬂ˛‰˙sﬂ˘‘_™ZﬁıyÁ`p`Øı_gÈçl∫\Zg¬ÚÛxhGß˛ùõû‡ò≠$∞ûıÄÍóxÛR3œDÓgô˙©çÙ\Zgﬂqﬁ?t\0õÔ“z†C@A<¨z@Û\0aÊŒ0Æ‡‹¸hƒ$xÀYtéè¿“ÜwÒÑ⁄hf`“Dé∆≥P>Ç∫÷4S~NFD◊_2S^åâ£m~Á—!ÓÃ‚√QÑ&ˆsˆ:8~Y˛ñ∑]◊o˘ìOÆè˚àß◊/¯îG◊\'Ù£ÎcÙ-{|Œ˛£˙§ÓáÙ[Çoˇﬁ\'◊˛¯¯ò√?u0ÂJÀÁµè1nV§˜ã˛˘`∞Œc!f1˛üΩ6î{ãæ –x—‘_æ7\",dœâ/U(òåPŸEõiÖQ0_Î—Y«¨˝™1⁄ßˇ$©7%ü∏´‚T›¿<ÕæÅµÇ1ÍçU¬y∞R≤-∞µn{JDsJ]Ô”ó6æOøﬁ˝Rﬂ$L⁄®WÇˆ«/˙1¢{Và(‹∏aSW¿\Z]l\Z0!ôƒÒ˘¨ÔÁ|◊{ØÎœ}h<Ã–ñõ{®ZìΩ„¶Œ84q™	c∏≠D±n&>ïÚ`∂JÁ‘Nˆ‘—4≠YÚÕ¸î/1}øÕ∫„üÛ√9Áé.í˙È53Ø5\\dr¨=<ë”©¥X°a–◊X˛ Íàì4@§)îò9 ÕÃƒ∫ıõ(_Ò<D\'aä;ƒz¥òèıCøÂ{$?U_~¬¥™}û\Z…U™˛\rS´∂◊bNeÑ≈√ì0˝≥ü\\¯›-J©QëL˝qÏß«‹\0@ÁFáïÿpISÀ˜ñçÒév8qç§¥[ıE<ÁOr∏eE¯„æ`w|Ø˛\0ƒ_bR¬~á‰xñ\\rÒiçñ`vˇ\'~*°á?	∆‚¶õK>∫Êì÷˛ˆ€p#∫-¨√R™1∏ÅûED/ÛY≈däb·G«I]ﬁˆåœ‰˚Àº˘ëZ˙ÊJw™ª©á¸\'œ5√+yÌpﬁßßò˚WDÀZvﬁUÜO`¯…•gìÄåVú°IÕú≠„äzÎlG2FÕ˘Iß˘U)iOOP◊÷—Ú”ı˚Êøƒ§Oê®≈√°^•∫\ZKµ^ßbdËÀk¯¬jú˜èxÔ”ÍQ∂>g\'_uÄÏñsOæ\0À\"±p∞cU/”$UZi´∞ËZﬂ|x{÷óöﬁ˙q\0?‡Í˚P#Oïåc©±,‹[>∏Ë†ü¡AŒí≈¨ÕW∂?Äpn}¬vï\Z°{|-2XŒπ˙‡\\s˚OK<ÚjûÙ*˚&˝ÒÎCÉÔb ôNø”SyÃ‰{÷ ®–Ê˝u√œsaæ‚`…{÷5uâçyÜˆz@îëC7ŸUâ±ëΩc’G¿ÁÁwã5\"?ë1AŸIœBAüÒô|æ‘T{ŒæFhJÿ•Ì˚ z)ï]\r‘OˆŒÈÇW÷Î,~K◊<»≈IÑh≥RŸ{xwŒ#åŸ˙·Ôx˜QKˇ€ß¢¸LrûìŸhzÀ\'Âwu’Ë¸›|›0{\'∑üã¯Hœ¡ëO6s÷∑¸çÄì]í«Ø⁄ù¡¯ﬂf‚†x‡HT9znv∞ä5È[æ*R[AÎªkCèŒÿmpÓè∑˙k°O47C47}ÍãOPªÂs$À[q¯F∆÷˛ìA@jçå1ÈâÁ »ÉÔ‘-?≈†å§Ú–’j`ÏΩjì—òæÃë≤=é÷›_ˆëaƒï<Ωﬁ¸å/1Â˚@Öv\r‡\"å∂U‘˝ÃÜÍ≤¸€rx.ÓK ·3Ò÷¸ëKÌ>º7o\'Â|pm™≥ç!<Ì∂‰ﬁ+%PÄtù/q¯‚<≈fóΩ˛∏Û|±˛¨˝∞ŒﬁΩy]lÁ’¸™8°üÉ·∞GØ≥ë>–pRKW·ÔaÃ/B⁄”nH˘…o˛ÏOì‚A]˛è\\%Q+”ü%sº&»¥Û⁄xËØ—<„˝Ó‘◊@ÔÙiˇ÷Â\"=	Vh÷πÊÅˆü˛…:\'¥ë´ÅhZÿòY	‘æô˝Äˆ∆Á`¥˝bD§ç·&-~ºã¶éõÃÃÁ!6ò‹#}©IÈK_j∫;Ú•¶<<¯∞\"”@o¥w8EïÙô0Î«Êopùõ#}m|∞Æ;}$pGÀ¡X∑tﬁ∞	(7¢=«Ål<UÏëî’À7÷uì~˙ ï™k1{·F∆Éà<¸EzâI3î·áC–X∞É$,òxj÷ã“ ïóRÈØ¸ÿÁ6{˚2Ø¸Ã∫Æ|}oi:˙0l›4ÃuƒΩya◊@åXõı§‹Íòü<^=¯∑È/r›|©©ﬂÈT,¨¯•µ˘NF/yzíxõQˇi	4Ωy÷mF–9\'b·kØM \\Á‡ôáÿÏVà7 √\06PDÕKŒYaò5jWKb9´¨πzfiÉùî˘‘‘˛·/1È≤ı¡Å·J8®ª?ß|!æÍªÅ…πpΩ·≤?»gzÚáÍ	>ü˛ë˙˘$…A$g@0«óPXZ»6mt\rá≠úqâwΩÀÚ¡XJÿJ*?ÎOîﬁ™o∫ıæZãOl;úTÒaı˝‹X*óÍπ*‰¢oë‘‘2Ω∑kLDD≠RxD2˘ç¡R\ZˆSZrE7uï—ÿû˜Y\'NŒ~µÖÀ™˘ñàı?MCˆ°/1Ω}˛à≥èî˘ñü˛$±œ\\^ÿ €≈\\_≥X„ˇ‡;o’¢Ñ: èˇ·+ûˇ\në®FÀ6hóÌa\ré)v‡Ï√Å±íbÀåM∏åÛâªïh•¯3ø´È-˝R”‘∂iB€5&‡2mX»U;\r¨+q¯±e1∑:¶õõ¡~^• ¿Yƒ~oL≤ƒOoq!\ZcÎÂ√l-Vå‘ÒÆ¢ı?êz x⁄(AÓôƒÈoñ˙»ç‰Ú?±…x≤È£F˘≠Œº2K≥Jhr˛M¨˙j†º|°~VI≈3ŸŒTÑY/à~wR–BéÒ°e,≠ccækn#=â∑ÕÔÖL>.˛L~ƒ‹àrπZ–§á<4ø,„”±ÉOr˚/ŒjÈïO>á‚Ù_fµ÷)∏<úh\"ÈÚ\0F?7ø¡¯4ñˇ‡Ìﬂ5Ÿqf†ÂkèèËo¨c\næâÉø3Ò]LΩï¨«zÉí≥Ùbj∏†’RÉ>®øk–aÙ€«]ˇf+ò|4ÚÎ¶òlKfÊµ¬K≠8eóë¨ÀY¸1Ñés“Ê÷Ñu§Eˆªı7.\Zoù?ûkçpÇå˚aŸSè{Í∫πV÷ÃR±î)∆Ï F€øV‰pwúA~X\nÅ©¨–`Õã&8^+&<ÛË§÷\0îgo~‰¨c(í,Üv[§s∞ﬂ¸âÛ€§ùÒÍE}sä∫’j≤˜´4ªÊ‘’\Z>5™À˚r˙GÂÆgJ5ûNΩÀgÒ9ÃcÕ¡{Ptú˛˝˙˜9_|∆Ó˛yõ5d/æqCòF˝≤ˆ!Ù§…íúµ5ƒÑ“jøãàÕMa.?ê›^Êº®S?Ä)9{∂‰\\_Úê{·‘Úoç‘πœß&π8ægpà∂÷‘q≠üıK¸€ıW@:|÷!¬C«…1îÕ¯O6Á?¯Ê¿õÉO»Cã}f≥F≈©i}„øõË\'˚˝úm$EdÉb=,ôé~¸9Œ“MÛÆñ&ﬁ˚≤æ‘§Ô£¸}€9ﬁ¨øZ˚˝•6G«øã$‚Z}¢ˇÙÍ_7éNŒLQtf€¨C+÷®f^úF–§û\Z-2öÛ¿“J¡iœ·ÉÂ\'zD\0ÀM$ÊúbÆA\ZZ°˙#ÀÎ9è°Q†]wt¶∆C(_bzá>ÇVü2§ÏC˜ÿ¬$«†˙ﬂÁ ¢<t¿<0{ÄÔ∏â\"È˘»Mù2$óö6¬˜s⁄Ç(ãæ<E;F˜ÅØìÂ$4r\rˇªı{˛Æ˙9¯R”_˛\n˝Ûa◊+æ˝{ü^ø˝œ>π˛ÏﬂŸΩ\"uÂè_¶∞ß∏D¥ò©7#ÁïT`#P°;˛å9bõØs˘I|?ÁÁÍoã~©˛ÅÖ_¸÷«◊G~˛ŸæãÈÂ˛ãx”,û€’∫£æOúG2}c‰æ\rj…_}6uúc‘ÿ∏pîëÆÔˇÂ#tÚ.–bÃ¯pÊ∆Ÿ—~7ÿòîÀ®È’Ñ√˙X çV±@4aÚSºFÁ°ØÖNÍCö¯{ˆüˇÊ«◊Øî·7ˇ2˛Å∆Ìµ+HÌÙàµûÊd«k>™\rÓ˜ıO™k©Yƒ˚9êΩÅ¡Ö]ümY°À€u˝⁄_Ù‹ıª”kØ_˛Ûı@|NJºÌ˚ß\0ähÏ˙ﬁM…—Ÿˆ?éI\r˜ÜOºÚkNkD-⁄>^r…‰Î†Q≈ôO67™ $%@Œ!÷ƒ4òX€Ç€E)Ï—ôç5b™Rﬂ¨øÒ·_ÆøFÃﬂU˜®|g›ﬁ¯™ˇz`œ√ô^˜√Â\0\Z§ƒeIﬂ´âW#Ω>oŒ&…¯∂¨õ<∞O˝ÿÎ˙˜~ÕÛ◊Û?¡_Ö^í‰‚ˇ∂˘9~„zTlNå˝¬Z¸ßÄöKæ˝s^\Zæåë	†◊ê|NÕA:;ùÄ^âœü$E¬÷¬ão êaún\n\rDƒW–¡Fá†’”ù1’œÜ›hâ¸Õ˚…ı7œw∂A?µã˛1˛Î◊~Ó˛,+>Ù©õ˙¶êΩˆAí)˝tOúâ9∫“(ka”ÜÿƒùsfV.*|Û¥FÿËhCl‚ì¥ﬁØ˛º¸œÊ˚!^˛ûæbÚ\'˛Ú´á√)-Ω∏ÎHˇk\'õ«YÊHhi‚π\'V§∑ñ±:®#bÑﬂ»Ê#Êo∑SU#ÁÜhﬂ‚ÄH3Bûµ&(º…¿Õ/œé∂Xı1m]Á£Õ_{˘◊ˇ+◊wﬁ˘ó÷í˝…_AW/¯œë•˛Ùw«\'’|<Ó≥ç\"ìu¬Y[á@ã∞dH ·ú´ŒáJ˝Ùü9p”ë‘À<->˚”ˆõkP?•È{ﬂı‰˙∑~˜K◊èÈÔPπ? ·S›õ˝ı±»sAﬁ*ÉµÉ˙\'|N#{CHÃ6|qÔf∏.j≠√2ˇù$»\r∞ÙÉGyÉjÑ¯6„T4°dÃ\rèÕâQºi≠hﬁ7”>ç…è°	]ﬂˇc˙wçÙ˜“ˇŸHøè|”c˝1›çÍ(ﬁüjÈÛıoåﬁ˝ó_7ˇ®ñ1Ù?`¸¯p∆FõÕ\0√òΩÌ+÷˛ÿ˚áï¨hÙ‚≥KÁ¨QLˇÎ∆’áXrPCt}î˛RﬁC„/Î/ÒΩ¢^ÎÓ0ˇ¶÷u}ø>)‚ﬂ˝˝„Ô?˛9!Í‰ˆ}˜ﬂ8µ¢ûnR;¸l-Ô‹@ï9õéúr˜∑uÑô¡ˇ_|\nNŸúà,à\n[’˙`Ê· °¡wﬁŒb…!ˆ˙Ÿ\rkYÛÓk|\Z√v¯Ë¶0ˇ⁄⁄˘´ó^˝}Rõ:¯Ê≈åÃ‹Î˙ãˇŒkÙè√¢zd5¸0»T†£ÂÍ…3w÷fbÎËOâ¯ó>\Z÷‘UÄ˚÷4©8˝\0≈O‰Ô˛≤O)ÜÎg˘‡ıÀø˛˝◊èΩ˜@Ÿ¿@G€*xÍ~fCuY˛ë!®ü{¥É·ì0Ò÷ˇ‚òﬁæ\Z˛áÔÛ\'_D∞}P˘:—ÙØnOﬂ∏\nr4úúF‚^˙|˜5–¥7Øs˘—™Wó—fbq#Fπ–\\¯\"Îß>OÕEöEjÈ™b78H6 Î∆ë[¸(l˛Ï◊P˝sÀˇëõ#µZô¸˜s÷≈˝Ÿ7ˆ∆\'6TÎèßp	•~Æ∫{É”^@∏~A∑»tÉà«>∂k})geoéá9ÈŸd≤E]PoJ˘≈¿∫•¡+ñ&‚§\nÃDplö7|¥ı£èÕ\"\0ÙÄ/Ìû˙x#∏ulÄ\Z#ˇ⁄2ŸÏÔ\\Ìuäm/0⁄“Ru\rB çËÍC—ïv\'°5?J.©›|„¡e—…Â¨èˆ‰‡ﬂNQw?SØ–=XLºrÌ%ÂUæzÊöø˝F\'{/|y)e! ¡oÃF±ßä˜É7¶‹¯®◊¸À\"#fsÆ≠>X•6’CÔ°êØÁ8¨1ëe®a¨Ê9Sc7öuûÇ^3®Y>»zÁ5Õ¸¿lk∆à+ ÿ0Ê‡ÿ§\\≤5P]◊b£óˆ^|ô´íß1Nˇ±∏1·èqã€‡ö2.E8oÏªÊÙq≤ù\rÏ4o†:–~∂ãﬂtg¯†4ıÆÿHËãOå\Zåç„AN#êIr˛$ÈﬁÅçÄÆhÌ¶G\Z#§lò⁄Ïq(¶\Z7ytı”Pñ¨•ëô’1Ã±ÿ≈43¸©äò\"—45n<¥éÂÕ\r8jÏÍZa»#ıXˆçÅv˝o˝”è}WU:—ç·á¥ˆö\ZO˘pílÜäw`õ†vpÎPé4—ﬁ◊˜Ê‘±Ÿ∞ï3?°ÕW6˛£’öVq}Ußê÷´˛p‚J◊4¶hµ‘„pò‚?û´Îˇ\n±çY@\"‹çÏŸBc2ñ#LÒæF›ı‡⁄\\îGl(6È˝Xõ;¶Œ(üù÷ƒı™_ÍeBπsªŒÂAàu¯´rÄ‡àÎ8	—‡Ü3u≤≤@ÙX∂·˙Cı@zÛ¥9<Aø;äm˝÷∑J≠söbûl\Zîkl~ôÉWg≥≤*óÿ¢áë\\|-œ3`5√zëúÚ%¸»çdˇ·Ü£ä†£7§-–ÉB(∆6≤N¬Öì÷≈ùÉ∂ms#à∑ÜêçãÜ˘ç|H4‹FÖCØ—Œ:>BÏj-=ó«¶À`£ëÍ¯\r∆ßQØ ÉOˇ‘Ã⁄Dâ”bÂkÔõ®ΩE=•OÛûy·åóõ†¨°ÂhÃYz1Ú.H*uôı√f	⁄Áibãetw˝õ≠`ÚÂAäfŒb¯“∏}`-}-áùOíºÉågØ—>b ˛Ê+;:-æ¯”M˜Ó∂=,;8#ÿ„û˙µ≤fñäı†L	m‹>kZ’-–è\n÷ô∫µ≤îh¡4õ:·°ƒ\n¡IåN˙ÄrÏœÍÒo•Ù1tã*|Én.{WJﬁú¸[X∂[Sªêb[Î<<ΩØXÙˇñ6Ú≠©sPr˜ü¨[BÉ°âeyYøÛˇ≈hÒf÷Ü¥w®OødœÕ ïµÎ5ko(Î}9lmyÚâkNOöº√ôW√⁄Œ≥›—g∫?™ëö‘Ev{ô^Û>¥˚˛É£Æ{Gc˘∑FÍ‹ÁÉ#ó«∑ÿ\ZhçòÊΩ¡ﬂLÇnˇ—≠LQ√V¨©U6ÊT;ÁèjÎïÑG¸Ëß¯P=¥∏≠9ûW|ê«ûÔ\'N[—±.b∆DñkÓ…ï|Ï˙D∞Ò\ráò§Ÿ1j‚,\\qn≤±i$(ö-Œ^€Cç(òC∞W,Ã*ÃLmËÅ.}á\n›%◊ÍLπ÷‘µíÆH#®—\r_◊Ö≈;˛π\rÙÑ^¯∫jπÍõø˜9ﬂ`98h˚fâµàñ[ v\Z˙Hú|rÁ˝l®yfŒYGKWÿXÁaç$ruù©´»ÚOa»‹Û$?ïfV^?„ﬂ˜úÖ)√ﬂã˜ÇçÑ¨ékÑ[»na≠◊Õç@›—Fì•Áìk\\˘µç#‡òxÂ3[≠¬°⁄«˙cn/Ëƒ‚÷Y~∆Ï-≈5œP˙V‰≠óN\\˝«´2»k≥ ±ıÓ‰ô5¬…ÊÜüÙÕı‘ãP˘ÖçBÅÃ˙Iî◊∫üÕ;ÆÂcAãc=∏®Ê<{¶I≠;xêˆµP‘ÿqâU–uS|ˇIí ~öÅﬁò‡·£ô±(\'õò∑ *ƒf9]ú;tñ´ÑÎw°äÂ! &ñ8˝hÑ÷M\r3àÁ]å˝4◊\\ÁËŒò•6.ÇLøõ≈ »ÒèØ÷àBº⁄Ø∞‰\ZÔMˆŸé-rµX±Ù_~åª5$‰AÕﬁE /∆®MëÒ∫œxR√Öµ¸CÈQÆuµhü˜o≈·sá˛™1ñf:0êRgµ‘II‘á„}Lß)ö\0<»±dÏÉ÷FA˜¶y!ÃØ≠∞»Y_ç§G¢áÃ°ø\nµ†Û¡@Hk¨\Z˚·≤946˙∏ÚYNº\nˆ6Öqv[#^¡ﬂ7ctÀhSNawÔt0Æo~¸ßﬁ‡@o©Z ‹8≥^Ò?=Œﬁ@ä¢o)|ts…|“ƒ;ºØ}íßsè•ü˛?úü~\Zf&Œ8÷>€¡ﬂ˛˚†Å\Z€C6XÒ6^?ƒ{àtÌ¸JÎÕNæ«R£uzÍ+&s1©8ÖÓÒ?90NÈ{◊hÊê´à^´ëÉ⁄‘då2Œ´⁄û√-&^„)ñX2<˚Ç–b{’ÎÛ∑˛!`ˆ˝À©käd{ˇ¶öI—,?˜n`,¸˝\0˜¸a-\\6:™ç#¬œÑDå≈G…Z,‚ÎA_G}‚>Irê›e>2•˘¡4èëù_ïñ§eœù˘p“-_A◊â˘®ÎµÎ\'j˛<X©_Œ¯ÏŒ˝åæÛ{PD≠C‡ÙõDZEÉi\r‹ßˇÃÄ5(3/ÀiSŸzM	X©ÀΩ#∑thP£<o∫òú˘Ïø·W7˛£9ûT!u%.\ZπTæø ^è¡Ç¶†¥ÊIæÎ?y¡4‡ÆZ⁄õ„Ç„ù—«ÿøƒ≥õ»@b&±†j{/@¢#Ëê1‡bjÛ–à :Ü[˛\00ø˘¶ï8¯âIfên8⁄π‚òé8º1ÎËËîœÃ´ëv“s˙ﬂ/?!ìuõ≥qj\'f58ÈlÿÙt∑æ°∑ÎßN›eéÿÈüx¢Ω2G\0üâÓyåi:[~Ó˚loÎ@µ>+‘xâÃyì¥r|Ç”ﬂÍÙ	7 Ö0´|LÓ5O„ò†±î	\'wEE}Û(îëõxƒEÊx“~4€h2‰\0§VT®¡Õ§)\"„%HÁäª?õ\0eıÑHT´±/*W{î\\0^lè£µæzSî∞Vpæ˝ï˛\rwÌ¿ï”OZ7g“˜&¸OÔû®ŸÅ6+∑Ëµ«[ˇãcz5\Z˛∑ÁOæà`Wå\\BÀV∞îü3\'?k˛ãoºôØ∏˚÷¨œ‚k†\rhÔlÁ4=%‹‰tƒ:{·f=äUNÍå‚[€{ëm\\òj.‹Ùƒt•âµ◊¬“É˘®∑Õo‹œ‡∞^ÿY`ä9\0\0-GIDATÈï¨è¶∞ô?¯ÔÁ≈Ÿ˙È›=⁄æÿ:˙o…=«ﬁ,Ä1éˇyA∑ˇ€⁄Dœ±vGﬂ0P˜C„¯0ﬁ∂®©¶{V‰n‚ÏV¡(˜ﬂƒt—bæPœñË∞PÏK1r}xl,–nÕÓ—gåÜj]\'7`õa12´F¥Öl\Z⁄ZFπÏ»ˆºÆ>®ﬁBûÈ)\\ﬂæ±%áNëôT™Æ≈Ï«:∫ºbQ~f˜ù†zäíÔÉ†hªÜYœæT∫ºÏs6·üÁnæˆ•\ZõOÆu≤Hè‹õ~¥Z∆RkÅ≥|0—¢÷§–Ú`6V≥◊}∂ñ¿ì_ˇ≤y«\"ê\"ﬁÆ≠ÔXÌÊL-∏˘Sﬂyäk¡kFõÖ2Ûq≥G€Y%·á>X«rH‘á7ây∑å°r;åó†!ÂSÄ∫\nRØÆ¿∫zxGŒΩŒŒ~¢c.9Ú‘sçz=qCkì‡µ@çòÓ!mÀ	!cizΩ´È:‘3Y◊–±!L\rvw‹øÇ·∏XxVt+ZÒ∑\"ïtﬁÈ9S„áhè˛=(ıssÇj≈z∫¨<Ò·3≥]öm*~úÃ1¿n3êéµ6‰ca5Ô\'lù’åÈ®Ç”êÅ÷òàÇZçcÓ\\Ïy êj˝ûVt§ãœuÇ©Iµ˝p.ˆàƒΩ£#\Zül∏y¯„x#£}QÉ¡ﬂÀ±÷é<pôZ>#“Æ£†~bÛUﬂ˛\'øÜ◊xTjÎ´j¸Ç1Ø™•sS˚˙“r‹f–Åsˇ,¨C\rÎaA}ôi™}ïÇÎ&π*Ïâ≥JƒŸOÄv]Oäyîœf‚ %™ê¯G«]˛hÄ]x≠Ip\0)\rsˆÓÂ.¢˝ã7¸ujïë:ﬁµ·Òµ∂£±˙vq1¨+ﬂïj|Ã•⁄Æ¨–rûŸï˚mç¯G/¸ΩRfiV›TÑßX˚ÁÃOÖuˆ5cJI”Ñ¶#7Y?å ¯gc0*Ö/3ò0§óqsÒ?a1úé`v∞Œ»Jƒ:‰<Ë’Œ]O¸∆\'m1«Õ/]Û≠^∞i&á¬|IÙ°ÁPáË›[R`¸Üèﬂ|[Íò‚‘\"ﬁµıÏüö£^æˆÎ\r’\"\rå◊åÿƒ—H\r‰*YzΩM•˚”òH\r¯RôßY˜˝ú?^Gn¸õ≠`Ôè≥h‘ú≥»ô∞oMpïb¶\"/{Itü•≤»∆≠a’2≤‚˙œ‚)ÊÇ”†ìÄ¬›}8÷V-gå!îBh9›É$bîœKÉ!l^<ëz0¿Uπ±£3uO+¡›π÷™PbÖ‡$F\'µ†˚√û·ÜÆ˙SgÇ7hÀ‹D>˚?◊$}\\c…{3∏ÄQÕõõo¬ç€ˇ˚ÃFæñç«©w‡ıü¨≠≠∞Öuñ0yÂHΩ“^Ûz¿€¯Ëü˛ÎΩ÷Í˜;õ$ M}	K´h≈1uÃÄ±eÛM¿±û4kC2ØÜAåıÃôL`âÿº≤•&?R¬,@©–Çæs…ı›ö÷˙oÿEãZôöªﬂˇxÃgVéµ∆¿‘AÃ¸√W‹Oçπq⁄I+1÷∫=®I≠ÎÈ?}9ıÄˇ•°E˙åà◊>ﬂ∆πpÚˇì¸~N¸3“øÛsÍ+ªjï≥T,˜{æÍõ<7	°à“Ï\05µ2^#Ç˙å6æâ1Å∏Gfû±ò ÕÇÓMÚ√—\ZsãC“µàªÛƒ\\Ô·K¯\'6ïN˝Ô7k¸u¯L≠Ì;7<X¥∞ÑÙº∫„}c÷¢˙m˜‰ìs˛ÅñrF ˚¢XÓ_˙	ˇF√V{Øáﬂ¶®6æ_˙·wñ\0=dni«‡„\"˝ì√3#≥\0Ó,>rfÎ,Ëè†sê%C¬Ecâpq°Ûµ’rŸÄ@N√1≠Àg6◊oR\nL(\nŒ¢{ÛÁÜOÃ:Sc·#˜Ãk¸K@‰ä÷h,ù°R√5èΩ8\'ÃœÑπ`Á•…æ∆÷‰\0h‚K,\Z‘&wÍE§|√åÏÍ°ô›\"áPŒ[Ëî\n≠Î¡≈WŒ”g22q÷J%Õπ^¸È^·]9∞£°±ﬂ˜/›#ó7juo§DÒÍ˝tO∏¡™ÔwáëŒ¢¬€ëDÛ.Ó√>Që9DÁlq,JÑvã…Cî0ZX‘¢38Û7¶¿ﬂë∂Dt®ì©ë∫;\Z=rYÈJÛ\Z>ãÆµo\r‘ú7&¯7Ω¶¬dnÎ[bä$6q‡\0ÓO∆q©>å˙w°·¨u”Û\0uﬁøßÁ”ˇ»ôÔ‚ÈgÒùá‘ì—“~b¿6uI}≈¯IJ&è–œ7ãH\0qFåZWkPCÀA∞YrâëC√Ö\\—ëËÈzÍWfÕŒ¡V]É]ˆÆÌR«ªbL¬≥ú^°=sÄ<éC∏xEÉ¯zò¨ô⁄AüµìÇÉq}Û«ÔrË∑9”#3∫‘GÈW7cY8ÊÉrr‡åˇÈ_±ú\ZX6y#Ö¡§˙+l»`éı∫ãÆ™√wG¨=4õßÕ aìƒ¸{P-ÊÈıa¿ÿÎ§dﬁ‘`Qœpe⁄–b˜¯∆hr’Õ—JMLa3˙KkAÉ\"æ\Zé≠€´“ﬁÆüDºR´\0—IµŒ®Ìâû\n≥¨1PØß@c©ˆ∞ÆKK÷X◊[Ë©~;ë≠-b]\"eı¸a-\\6ˆZ!yc˜/âd-ñ\0º<\'ßÇ£>Å¯G¶ßuœ©E≈cÑæ‚úÆøjS@âÃ8ñn§q≥›H\ZˆMqQ¯∞¢MX1b>˘∂95lOÊ•·¡\rPƒ`ga!díø«\'–\"É]ìeu·†≠O˝‹îÃÉDz^ñ”¶≤´/Úf#•º%sC,Ìãª±|p¶Ae4/À•ÍÜ√2u_Í_¡\\ß…EÀÇ´k∏(ÿm‡|†Nˇ1A˚W√Ï˘§ºÉ]cñéim˛°≥q’Œ9Å”◊A∑8¿æIH¶ˆùΩ1\\é£n¡ïS\0Ûõo¬8õ©˛mÿ»≈—ªQ0ºf¿≥ééNÆ¯ôœL÷Èü:ã´Eœ!Á<,‚ı∞6√n˚è˚Å¨á©«HùjgÚ‰ﬂie∂\"jÑü–™—ƒ(ﬂƒ{ﬂCπy†åª=\0wù–®§Ï<yì§√Ù±z»⁄A˚≥-.≠±¨Î%ˇÀ«∆Q⁄zæ®®õÿmÂ&q·ô¬yê{†…ê†´5Ÿ∞V±Ñ¬§s∆ÃÂÜüb>îH*0Z¿÷åp˜ÆÒÇg{ú˛Ô˛≤O)ÜÎ≥pÄÀÌ?®Û‡ß©Ìr∞Öo¥‚üuŒB+√Ãè¨Cóáâ‹Lá¶„⁄Ô˚Ü–œ¯ÈΩ\n\"ÿìêÎ≥eÿ~=õı≥æü”úûïÌ€=π∆´\rÕT ?}”†ÎIgÖ8£¯\"S]Ñ´ëŸåÃWW|)ñΩc∂5ô˚“π≈∆‚Wa◊»S0Ñ;ìê•5˛ªËºFé© ªˇq7\"ıääoÏù>Ìﬂ∫Ò≠ö@≥Œ5oñ1  \\ø–ﬁ(ı‡H•\\£ qhoé5È[◊ÖT””¶èˇ&bqsˇÒMLóËsd<\rÀ8√ßK÷±˛ø¯15EWm\\c\ZñÕÛQè¨ûÉÙ;6UljÛ·U{∞ÏçMC[´·†üZ⁄“fQ≥“ñéßHß©ª#¸Ù?U◊bˆë\\-F‘R´>˛Ù£ı˙fÚ·J.XM,&ûö…W∫ºÍôªjîQ±=o~ÙìI’j‡çuœ:µÇ1^πyñ£iº2S#|/Ê–0⁄˚°\nw@‡‘/Mì=e∫ı‰§œ€òˆ!k›„Hc#Ü®Fõ\r¶∂xò∂ÅÕOq ëu\\◊bØ5±‹fÆ≥#ÅüŸÉàÇß‘™ó§«|}x†ô˙‰ãì@JDªTãkc˝¿wˇÂéÖ5¸–ñ7}81ß∆Îz*¨Øã=õÕiÒypÂ˙RG¶}πæ–é\rkj∞€∏„˛;È›X]∞Çˆá˝úyãö9cºˆy#∏˙n\r≈∞ØøìDÚ0	˚‡¿YÀ¬M˘ˆdÛåààãÌ;∆:n\r“ZπvR∞fÁ£Äˆ’\ZD0∆¡\"EÊ∫Œ≈^zH˘Û\rÇˇ|à„’Ãçv˚¢„Ê˚9ß-◊«ÎÙÅ4Â˙Æ£}BsoÇzÊ’Z«∑æÓZOÿ\'s\'/R•ñ¶¯√zâÁºî]ûu.úi´0#Äø±-ßÅ8Æ)Ωü≥ˆf@‰ïıˇq»√É]lZ·\"Í+qΩe=ÕMÄiΩKF√1≈˜àπîÜøäπˆÈÌ!.5ç\rn¯c`Y+g*J)Ω÷v4ÿÁfA”∆∫±]£ÿ÷\'”Ï©ùÿd<π‡Q#˛—+∂´‘|‡J#πÍ´hyû¡\0´÷ã‰î/·Gn$áÉœU∆ÿJ…±’<qÔ∏ ÊRúIs!ÂÙ‹ØÂkÒùı}Yˇ_|∏J†êäÆ«01«I\'O<RSyﬁ{∞1πÛ%q≤´µÙ\\NöqE.\0ò5¬«[¬Ïó◊@æNÒ%H˘í\n⁄±ˇu/Äø‚¡∫∂ñ =Ü^mbÎ,Ã\'‚Ç,R◊ë—\'Æ>ÿ?kñ∫ÈﬂÁ[\Zsˇ‚?>n˝óü˘¶™=†æﬂ<÷wM∫Œπiidƒ5»ƒV¨üE»yh≠X¸+†∏øT2 »∫«ùÇNœ›¥%W\Zûß–ñx∆¶’hD’º€“ãœ”x|T”|•n¨@\Z¢Õô2œ∫\nn(LCo–æÀUé˝]’≥ˇs\rÕ≠VìΩ_U–ÏöSWk¯T®NP˙ |¡PØŒÏB∆ø•zf[√CKÛµa6÷ÈÉ5˜œ8sÀ?˝S+ıê;1ˆå≈∫\rL]åêØK?†ﬁåŸ<Da˙∞z“‰Œº\Z÷v|;oC∆±ùÆÃó-5˘A85\r \ZZ˝$¨Ì≠ñÎ´5‚`µl¬∑W◊ƒCZˆj\Z¢√◊oπg;q/æµ™D˝ƒ¢ú√F-˛µ ∆∫’ﬁ˛[o4–∆%ú0¨ÉgßÅcˇ3ı˝ú∂çµû©¨„ì,g4=é_MPÚı⁄∂Iì!@§Ÿ%Lå13qîm4°õÖi·ÂJ\0È≥Ü2H#ßóg^áπÆõàÃB˛ƒBΩπÆå˘´õ9∞õ7é‡T¥|hRy‚Ÿ¶G¬π·√	ÿöÄÌ≥û|Ç„ó≥)fBL£8˙øù{û‘∂3ÿ˙◊l?\\/w¸ØZˆëZy∏Ë?gF›‚ºå—™kÌ8>8§fŒ4Z÷ë–Ò˝†B	πÑ`πŸâM·6LîüVÔû«,∫7n¯ƒ‹»‘XB•œlÃÀ#óØûˆKÁ\0?∞<a}\0‹ûN_≥Yıá¯ì˛~Œf÷Otyπ«¶∏„ ∞›!m£ÅòuµÆ¿úÈÄ •â{ﬁSπì1ØÁΩ´§æ0£4˚yijüùI≤v∆vâ;i\r}•°4’èòn∏Q‚…æ˚‰Æ!Ñã) H ÔäËn\Z.¶ÿì⁄FsPﬁ;djóX∫ÄNµÔŒhRŒÚ/*¸∆çcÔï\"\n˛·´~É≤Ü≈à◊xú*)û¥ÆãÔB+¸‡\"j—>ÔﬂäS˚Ù?*Æ1ñf⁄=⁄xøŒÉs–^óx‘ÜücÚ†f„i>⁄äGµ¸¿Î5˛Û°´ˇ\')j<<¸‰Bëa∞œÅfΩ827÷\n±s82	¸j.x«Ãåòkª ˘=Z5?Ëv’¸xuIë-“‹ÌlipÑ]íKåP∫üÏY4?˙π9†5B≠—]=ŒY\ZÁb>ﬂìo∫S∫Ëßè¨|«]ÂôótÆnzS-¿ñ{qÚ£?PÔÕÉ„Z\\‹Û®¬÷∑¡S¿<Íh˙=àç,Œhçœ8.≈©ä~¨ˇÌÿVl4k“:\n9™5\rÌü(8¬≈“ôGk Ÿ|ﬂ·†™o÷Q◊Múaú◊Zçº·ı·Uƒ‰+ˇú?Ì„]ˇ”óΩˆ}ËÎgÀËZ√Ë©yªŒ˙VÓÖ7Ç∫?n£Û∆ÃÁÆõ|Ê}˛s¿ÆÈ¸\rBLŒZÒïüsVåá·˚rGﬂ≈îa}fÎ¿Nñ…/æ–˝¢æbãØÖˇ+Dø€∆ê•\r∆ËG-Ô`ôÜ	ª•ÃKß»–ﬂm√’Ü?:ãa∆Ë√_uY»[dy8˜ÕÈ≤◊¸Zu˚>„–]ôˇ//‘Á≥˙Ô9Ù^%œAÂ· Ω¢„ﬁ?Û◊}?ß;Á2RÊk›{yÔ$ÒÅé‰ﬁ†0èºg]4Í1Îπ©F˝˘2A3‰Çy\0y¯¥`å#OÅ[iêã∞?r(%è\0[Ò{@’\'Xbº6«Y1¢∆°ú>µK¬òˇø\\Œsr˚~ä|0>b	Õ·˜è?πﬁ;‰z.ˆ›A–Ù÷ÿVR„«?¥Y7∫rFçë≥é\0ïˆÖh##l£‚0Cµh6Kãw,BKi4Ô!÷˝ \Z\\Åp\r‚«Vó¿Ûélc¢®$1WÅÆu<LºÆwæ˚V∑ÈüMÛÀØ<Ωﬁ˝ﬁûgêÕùœ9¯lrd>>Œ…˜»orv∫°πßú=\nzyÊ^ı¨Uk¥†;?∂[Ó‰ÂÅ<—r¨!k•ò%ßºˇ®3≈®G≥v6”Øú7B˜0Ê[M9˝†∆\rø±ÚgÔéÁ†∫âLB±¬YÀæüÛ˝kOÁgÎ‚œ¸’WØWßM±œüKœäg’ÛÚπÚ\0ùC†>@·	=}.ﬂwÂv/æ©≥+Å©nı±\r‘œ=üí…ˇv,iº\0`±çÂà%Á…‡ÑT<x⁄Üm…‚—±H$g.∆Ô÷bïÀ\'D≠Q~<B5øB£G˘ﬂˆß_π^Û‹u˝Íœ{Ó˙ƒè\n¸œÜÒÓ˜=Ω˛Ù_yÂ˙≠ﬂR⁄—y˘YÚπg5Õ“ΩÔiorgÎ~Á#õ)÷Ò≈[†˝LL|a»qÊûl#æøÙûﬁÛau`ÁÛß`K”◊gˇñó¥Â›”õ=,Ñ¡.0ÖíãŸl6FbaÑi¢≥C⁄˙Æ5ZãØ`\ZŸ8ÔËÙ B:™œTOMÆçO—‘´◊\r€çN}xΩëáŒ‚˜0ökSÙ·s®ˆò)¸;=Z√MjWﬁ/çL∆gÇFë‹?ÒŒg%˝|%ÀˆÒ·õÄmh1}¯·!åû\rÕÜÍ≈;t∑Ô‡˚¨T«—∆ø4ë\"?S|*bR√ìùm3)4Æ±r\"Zk5¨0Z}πV(îò\Z–¢ê´tÒ4±ËÁæﬁ…õ=\"ÌA€óì¬ﬁÈ€ø@„ÕRX0~ŒÔÁDõ⁄ÈK≈Œ⁄^„1ÒU8ÎdÍkiÌá\nL¸ßÜ∂Æ—ƒ‚ÆÁ˛Y‰®•bÇÌó~X¢«p\\; zŒ˝◊ õëw {ÁÌÅ{Cjt\Zw\r]‡˚n@◊CHkLÄ…	ö£ÎX–sç9xÏ·íƒT\Z◊Fπá∏éì∏·ªù¡ìd§éw_k;\ZÏ£\0O˚¢ˆ{Sl˝ìi∂˙Kl2û\\0ËÈ›áæ™£|é˚∂6ö>◊ë\\ıU¥<œ‡4ˆ/%%«5¸¯úÏpYˇ¡Øæj¿^¿Â>E^U*¥À8ÂÙº|—ê˘!¡≈\'·ò∏£$óh ÷&Ê˚AÉı’`&Ëü kàû-º§}ÏVDynJ\r¿∫Ω¢bX+˚º!@Ô˙Æ…>Ò	ﬂbÂkøﬁP>¯à‰\0ÛÊqMtÙZ+,q‰*YzΩ≈ú\Z#‚Ç,ñ÷“\'høıúmËâ›ıèû“gyöJ+g¡R±ˇvBE˚á9l„\Z\rˇˆ˛·á—≥à?,í˚g¿àÆ¸p“ØDä?B‚∏¶˝≥è+˚\r‹Õh$X‘<ˆÕu©ÿ6ê√€Z2ØPz`àn\Zû5pñoLE©k~Nÿ4—Z†é∫1?(·VøSs7hÀ‹DÓAA9◊$9<€2≤˛Î@sH¡h\rü\n’â¿ê≠∑Î[⁄¸…√£Wuz2F‡ıˆ‡9KÛ9+≈x≈øW⁄kvS£L˝6H}Ω‚?∞ÛÅEj®,≠Ì>mÇH¥R≥ıŸeçœªzgy˜ÅD<ŸØb˘%ﬁâ‘å6»/⁄hÌóSnf7¥lö¨ö⁄ﬁj˘¿E£FÕ†úF®Ö|ÉÓ¡çˆpÏ’%¿{·πz∑\Z]!S„8}/áN€¯◊*˚¨v=\Z_-„n˝Ú–\"‹lΩû≥≠Ê-N›˝˝˚úıqﬁ?÷€ˇqˇ¶ØˆÈ€0Á·ÔkB¢>{ƒ◊Yh¡Z?Zã{Í›.	[aÈõ_pÓHÉá0⁄5\Z\'Ü:Fä1∫h¯&zŒ@∞cïF§”Ê8ˆ√∞ËŸ©Óon¨y©æ™œAèæ˘¥púR)óú¢Ò#-Ûá≠…PÛs>A˚eÒvÚÆ3u…Y_ALÅúyÒïüJ3ÉÖ\'83T«‡k≠Ë}~∞‘ˇÃ·oOEN™Øµıπ®W…ô¬ß~˙è)Ú03÷2tC¢œ=Å7|È‰_∑/ıîÙ°YtøöP`b.‰Æ<Àc,3√Äî¿î˜ƒñNÅ¿hˆÿks¬“«¯Y–·ËZã!˛å}?gÏ,Òò˛sMùèBIsN44}≈∂®µr`GCcﬂÛŒŸ7n…—%Ê|$Ígfıo?‚∂áƒ≠páü{a‹§=M]ó“•}≤ø£^ëºãc&rìà&å…AüCæÊ®Ÿu]z?¨5∆Çª\n=´ÿ95Â•kñk]0Z+~‚∆È“ﬁ0F¶‘ÙÈ\"ÂOÃÇ¨ãå◊«1©·Ç\\˛]àà∆ZáSL‘¢›sM.˜|˙èZjÑ∂ù-Œx¢Kknl‰Ñ7}Z A˜l£S>‚©d∑˜°èÌŸ∫∆`·ÄK¨äÏq0ÑqºPD0Õ0e÷›Û·€≈ï-.bB6%Z\'x™}¥b+9¸C5W£a–û≠è5¶ÂFS¡z¸◊£qB{oÎ·£zÊâsP? ÈEoÒü∏È\\úèÆ˘§ù.k˙:˝#Y–“◊	PﬂÒC‡–/%ê¡0Å—X˜o—1≠ç˜≥6rbƒW^|õ$6/∞÷∂@÷ë`†3/≈Û†\rh”ÅWj÷úâœ‹ÓCÄøæõ	OnlDs\'Ê âÈßKhaßÒƒ‚µòIfV”‘˙mƒò+∆ibáe·÷q !«]h±]´7∂^OÅ∆ÍÒÄÆK+n¨A=˝W’Ú†Qa0ö¬œÅLO·,úÈ∆·õ$cÒëÑØ€S‚©É.\'ÏË¯úRÉÔºQ©Äîj“√,oz>˝;oüC$¿P¨ÁÇV˚\'ÌµAQrØ$2QwØ˙,æÖ¢-E¨·ê◊ñ)tƒ⁄¥0.‘ŸF7ŒH8Ê-f˝òÍAØí–Áeû6ïm≠îüñ–‡Fgƒ c&„å†yû¬gÍÜüm>µh™≥v©Klt»3V±,∏÷c∞€¿˘@πÙ‘èA´ôªj)dı‚ôÊúC[>‡÷„‚√\\ÅÍ>	œnüÀ—sp°M@jE\\WaÀêò%˛c?1ì¨áïƒÊOís√1ïákÅ)WÀ©êC#6îÇD@Zu\na™Ò¨á\'◊≈E]W~fœFòÆ’NÃ r¯,áxq€Í-é˝\nxúM9€˝>(äøWÊ–fµ;√È°ªâOﬂ∆6Fäk3s~Ê[`T\n˜‹˚î\\|ö1ıÎ}∏‘£pk∞áWüƒÁ\r©Âm˜A—∏≈Uô%-›≈s˘ŸM_‘ç´,Í0=Ãü≈á2∞!⁄o…T#NqáàÒ`ÑãA”uô«nô#ód¥®ôwd¥Ó˛≤O)∆RvÄÀU≥ﬂ¥l|j`o—.o∂:sΩ.ˇ#®ü{T]äHòxÎqLß{ã	<¸3n°ª˛)zƒÍC2µEÈ¨ÁÃ°áˇüÆü≥˛9O€∆£~∏+«®7BıÃyÛJ;·ÂÉIÇÈ⁄hkˆûr‡Ï?Í¥¬vY›‘Ê02«\rﬂ&÷û@áx6f¡ù´$Qly<˝ú‰v~pä86\"ª6U„∆\'#4•\'O—\"˝\\9Ù‡¥Æ_–-r[;¬ıuÏ†/Â¨ÏÕÒ¡ß‰&Sc|íj\Zøåz]q‡œ!êo<’\r‘e/∏ÓÓÓ€Âˆ_\'’›V€ÄÁ¯(ÌÚÃ≥®ˇfägøÊÛ¸ﬂˇ>®B>ùQ¿µßa∂¶åü6À÷4“ŒE«*$‡ì0®5ÿÓw©T]ãŸG“T•dQ~fÙ[œ£°‘\"_åié5ûö…áOâ≤ó≤¸rç˝ë\r·b—€|ÃM≠YTo¨ç^¸∆»∫ô¡DÀî©>Ò	P√ÎhÁVO}§…Y Ωm\ZIÚº≤Né˛\'ódˆä’?ΩÓ>…}Ahﬂôz˙Y^ÁuhSÕÌü~‡ÜÔˇ/û4ëÄbT˜AÔ⁄¯›!ZäF,ç#Zº¿õA.Üg¿`¨Ω¡·í„EΩπŸ≠aË2ˇ≈k·nç:†”£ÅÉù¶nJä#…H)ŒÊŒpÍÅô,˙„}·«¥ä„ÕÌ»D\ZæÜë^k’øM;t≤ˆm<BZH–g]ë…uºrñ’_}∑5-£Äc°Üì¿ÍSÄÂˇ÷•é⁄Á˝Cø√˜ç\ræâK}ˇıÏ6÷ÆÜ\'‘¨∞â#`Ω^¶Zt∆r∞k?ú%j˛€9^Õ™2äœΩs£íIHà1hlËÏß«V;+øãô@h˘4Tv‘&Xí–˘á¬ö 5BîâôÎ˙≠ı¨Ω˜˚éËpˆû≥˜Û¨{üs/√Ã\rı†§ëMÖì¶¢Jãz62ÜV6~\Z/û”Ê„…s·pı·π–“«\'…K¡Ãü`˙.dÌæ˝¢®NÎyûÛ ©Èﬂè\'¬÷“Ω<G2π‚ÅÇ˛t^’0‰”Å–~«¿eÌg™œ∆6?ÇÁ àèW≈Jüµú¨£\0OÁ⁄8™Æg≤∞ı«√>‹g“√X◊mÙÏ\rÔ€⁄{∆aU≥\ZhíøçÂ/”Ê˜∞ÜaæHn˘~‰Í9óç±ï\"ó;‹‰¸)Ÿ•BfÂB…eaΩﬂ%V~Hî…È}:¿‘]çΩTµn∑≤CÁDo¯Óü≤ÁÂ∆ÃHpÎoí\n—=≤˘(ﬂ†1[≠k∫I∆πt◊π’YhÙ\\º˜YáOwL‡8áâSƒéæ_*rxΩ⁄‘Ú0<y°\'D<zX€{Áà-˙Ë0ÆÛõ≠b˙á@qÏ_˛⁄ó•|~÷§?wÏe◊·èæ@ú+∆Œüú…Û3`Dìﬂs¨0QQdS›\ZŒÏ¸‚Ãæ€ß\\ˇ(rm%¢Ÿ35ãπO≠ı†’CÏ°PﬂÉò∆~Q¬ÇnâÈ\n5Õ|5rt˙Rïƒ˙\"Ç(Ü¬dÇcähıX_\r\r…Ù·Õ-˚≠¶∞p∑ÇV!≈WÛò≥{}`g~¥Æ3c’z|ºB…õüÆ£5¨L√»wjÊ9œí}¢qÊZ≈‰ù?—s˛—DÍ|˛ã?Ù≈ó Ùõ“Ó‘oÙN{/–\nxÛgO‡≠ßæ!< Zfn∂”|˛‡•M@f-O-áâ∞Ê>p—x9mæÑ—“¬\ZåÂ_u¡Íäñ_rk ÍâÔ9òº@÷ƒ_OÛÌ·πNqËL∫åø\ZÙV˛tw˛Ÿ?B∆≈á9|Jö\\zJáÃ´>»c˝ˇ˙Ûúú „ÛÁXÊhÊÈgñ£Ìã	Œ≠ö√EhäëÈ+AzóÿT¸∆Òı¡ú«â∂ÉÖë0ÊÎbØxP Ø<zÂkÊ‰èæ1õM∏| ·7k`Õ™v˙Êsaêùh[#ç\\\r_UV~åï€&øπ„N/w·Ùè∑≈]S]”Jw™ÀÒÉ5¿Ÿ¿í#gñ9\\\rãv ‚ò[üãx\\•ü3çñuÃ709&°µ?ôúóMŸ‹ıF√Kë\"=Xı(Ykp‚ËØ:j\\/o{[©¿Jj‰PFuÈﬂ∞˝\0&πóAˆ?í\rº6†ÚÚ˝ó?œôÛZØπŒ%èÑC<FœT%Œ∞/zü_ŒUW»÷®Óï∆‚où>˙uiÆÛÇø¡IPú˜ ÅU5ÜøI∫π˘\Z¬mÓ|¨≥û\0 ≥—‚¬ÆB√›1ÚPÁÚK†¯∆_sø±ÙÊ´∏8÷pPgπÙGAc0€ü¢LÌ€%k¯ìòVıaÿüZË∫ÛpäâZ¥ìæãàl$ﬁg~ãç«Dö€ﬁ£««uúYr˛Fh›ZuÜûz6Øπ∫ ’ÚÜö\r¶«Xéﬁàªm’R°ùg4Ñq2tÂoV¯¬Õ∑Ÿh!nÏﬂ˘=ËòQÑR∞[#$…∂_†xP—/i¨ç∫±d†œúª(Ωƒﬂ|z/~8¥yÙÜøÈ—ö:µÒÄ4 °/„‰ü≤{ÌG◊¸÷ãæò…?˚G2õ∞vÙï◊Ë∞ˇπo5hSgs?Ú¡ßIhùyIÊ¡o_YÕ(ƒ«¡\Z4=ÑÕ◊]ıºhÿ¥m3X0∏Õ‹ÔèÁ§aÒyû¸\Z⁄»Z\"\Z£üJ¸æøø˘õ˛.˛˛±\'>%V5W›mÎÏ(∆{&≈JbZ4gäÆóŸb€+õ‚E¿:\0≥≥÷LEh6‹µë‘Ùi÷q=öû≤í|^∏& ò-ßéÆÀßN¶´>∏åh\"bMr¥•˚Œîz¸/BÂÇù	–˝#â>YO∂™µNÏp`ÑìYx›øWy’—ß>>û[ \'.\0Ú+˘ï€œ/ujº3≠!a;’<¥`ΩjˆìûæyÚ√\"üŸHÄB)ìπÜÇÑúE8U˘ï\rÂ¿Çáìèy§°ZΩb;µºè‡F«˙;tq…(Í„s:ub§J˘’=2ŸoÁ≥èô∫,≥L∏vØÙí>|¯*^ÁO¿¬\r?kslXˇŸ–:\'†ì√5˚RN§r]5ÒUAö—ïÔ¬–Ÿ9í£M@~ÛÕI›çôí?Ò—§8Æ∫ù˘K/∑P∏·S—X¶$EÎ˛≥€˚€ábçùÁs`G˚YõÉ∫ÿ∞\Z˝jK∏ _\njL’bÊoÿ¬ù•Ω8Œ´¬ƒÀﬁ“çGÊó¸∫ü∏¨≥9=HÊ\rúä/ÊO}2^Äsß4;Ë±˙û¶ª√m9⁄?ÁñZ\\B≠ƒ—uÔkuƒÔº¸ÆÉü ßè\0çﬂ˜ãÊ7ÈO\0xL5∫É˝^§ûﬁÃΩtR\n˚ˆÊ·G˙Ø¯ªèÂ¸UÈˆ’Ö{ƒk%Ñõí–ù™ﬂsˆßRÑcn©ªŒ¸‹˘ÍCˇ“C»¡¯+H≈ﬂiMJ°Œ2¡??rÁóäˆ“d<íøZ <LÁ¬äKÿLõ’˙™≥f^Óﬁì©ÙL˜\Z)’H§·É[5Û«%Ô?g-/cB«€£NIÍ*ZßÈˆY£E5¸!„c\n8&CßÓkxsü hM\Zk˙LTA\0pi¯S∑¸åjC‘ØØﬁxÎﬂ˛ÂÈÕ≥õõ˚\\CÊ¯{.Óû√–ÊÃ_˛<Á<‘<¿ûKœ™j’yL˚Hsö<}¸:®ÀÙ≈p?ïÀ55~#‚X›‡ÁÂ8/Ú9C_ı2ãg\rƒ0ÛØ˜‘º¯YB+øîŸøÆoo>¸ùﬁMˇ]¸˜º˙é˛HÙíƒ,iΩeRSıù[ë;•¨…¨± –S)?wÙÎÁÔív¬ã~1*2,òz<”éJòÍ%ﬂﬁ4ÎË$ı6<\Z({^/J¯B≥∆•z ç1Ez‘2ôNˇ	¿hÁQèÜ˘»ﬁ∞KVö\Z≈0uÔÃ‰f\ZŒñ¸˜>…s∞∏÷Ω”Bÿ⁄·-æ1ÙiØDº(∫A{mó˘PòŒB<a˜KØ˙Õ˝7˙≠Á;@¸Ç~˙ÙÊÀ˚õÁÔÁAÿî1MÆ˙°Õúä«`@≈üi%l`}ÿ CàÔ›¨¿,°ÇÂ~÷Àø@\06ÓÉ®z˘ºT¸©˘÷ìõ√ÕfO∆…≥/[]/˝üÒ–Û9\0ÊÁ9uÔ˛–Èû∫‡M?DJc∂˘¯˜n—7ªp\Z˝¸Jigÿÿ~ˆ˝*\\~≥æslÅ§JVWï•g‰¸ìMˇªõ˜ˇ¡k_ÇY?ÕÙ”7Ωß@ü8§N2!*>õ◊2±Î™¯*;¿Ñ¡‰tr0ÂÉÑw|Ãœv]FPÊ@…Œÿa1üÿ_@+˘˛z’BœïúÃæ*˙ö|‘Å¨)ı†M%Èi–’0úãÊÀT|ÊgOã¥Uwo8E\'éôWã8å<∏Yè∏„¶2ô¡ó4<∞î¬‡’Öe3Œ˛Áå›ß∆ É>4Ã§è˛\\>øÙVMúõõ€OΩ˛¯=∞ÓÑ˚ìß˜?˙«ø˛˘© ?qê1√(@Ã«ç˚Èôf-Ï“˙`•\\7®íÎÓÃfåæE©>CA«£VÄî}ÄÙVé@K9˚äLÑ3ç>Î£˛Œü£ ›áÓb¿gˇ∫Ê,ÉÄœXyΩ⁄q ®Æ€¢xˇ∫/˛πO˜Á;Ú‘Ûƒâ®Óÿ;Wµ≥â‰Î>≤œµ\Z˛·èB≈f„Y2µ>˘gÏ\'|›>pw˜§ﬂ=°¨Ô†,¯W˝Éª€_j{ü≥F§·:ßﬁ0Ëz`¢	Î˝r™»—5\rÛnf’\rr›\Z&¡õ…he=›∑°ÅÒ ájÙæwû%‰`\\Á7[≈ÙÀ”†8…?|≠Îi-+¢†˛|\\≤W™›øıëMZ√™ï|¡”Ì%∫˙*√…~É˚ \r{:?ÎàŸﬂ¸‰-;wk÷≥¯÷]˘’√„°õ≤:◊˛Âõ~˚˘›››/Œóπãî¬üüæ˙«Gwèû‹Í[≠CZ=cl^¶O†lÇçh\\VPœ˜À9=Ô∑ö¨˝©¶Óˆﬂ„¿z¯◊ñáâr¥Æ3cÖz~V¿U‘JÅ‚æW2Lü8ÊÃ›XDO÷<D„ Ù–.Ú„≈«\n√N\r5∆‚[üJ¥Ãê˜¶\\µ+Ω”>g9¬+øòí5øzZt≠íFDk¬ÃÕv?¯}ÜxÊYYÙ}c|Ú˚^˚Sp˚˙¬JãÔ§?˛·+oÀ‰›[ˇ◊Ω¢8≈1>¬rò≤õºj´{z¬LxTàÍÕZÀ3ãwcq aCãˇxånµ≠dÌ˙A»ß=¯Ü ¨I_\0ñûìy’y¨_˛<gŒßá8OÔ83N2ÔÖ1¿9S7œªŒs“O*}£ø |˜˚Ø?~˚˙;ßy∫Ï7£ï´;ø/˝ˆŸ∑ø’u˛Fˇı˘ò/àæü\n1Öbîno&¡Œ‡/‰‰oÑx\\ΩtnTW~Kõ∫˝\r%¸ˇ∞…ÂÛ]¸hœ.Ω◊˙˘+≥>Ï—&Ò§Ã“ózê— ’Õ;	@ªûﬂ7Fj_Gg£–iõâ£2π¨Ÿ0\'_Û3ØuF87å—™Y≠3)5ﬂyœ≥Â√´	óé·Î[≈W‹|x˜ùÔz1ÀœÓ∫˙/˜_?ΩÂØœæ˝π2¸J9¶oΩoÍ•}Û˛˘Û◊Z‰Ô‹L7F-{à≥å3¸„7íóäìV”˝∞◊mæÃKßFL≈È∆\\∆©w]€k‚ÙRCj“lØπZ3LËã¨•s◊hûrX;MÔáâÜ,˝¬8Í·◊„»Ë-NNÛßW¬Ëúæ»“∂—·ë}\\i®¯¯ZX˝ƒ‹Û/¥˙Lﬂ1?z„≠«Ûá»¸ØÒoq-wNDµL\0\0\0\0IENDÆB`Ç','2024-09-16 15:31:25.438',NULL,'2024-09-16 14:13:55.406','2025-03-26 16:32:14.509'),
+('ë˚wÌ’r}æªÈ9Qˆ$™','MadTecsafe','Madco\\Tecsafe\\MadTecsafe','mad/tecsafe',1,1,'custom/plugins/MadTecsafe/','{\"psr-4\":{\"Madco\\\\Tecsafe\\\\\":\"src\\/\"}}','madco GmbH',NULL,'MIT','0.1.0',NULL,NULL,'2025-03-26 16:32:14.546',NULL,'2024-09-16 15:33:46.581','2025-03-26 16:32:15.724');
 /*!40000 ALTER TABLE `plugin` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -8254,7 +8291,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `plugin_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `plugin_translation` (
   `plugin_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -8280,12 +8317,12 @@ CREATE TABLE `plugin_translation` (
 LOCK TABLES `plugin_translation` WRITE;
 /*!40000 ALTER TABLE `plugin_translation` DISABLE KEYS */;
 INSERT INTO `plugin_translation` VALUES
-('ë˚.“IrcòWÍÙü’|','ë˚.Œ&ps§xu’s√?µ','Dockware Sample Plugin',NULL,NULL,NULL,NULL,'2024-09-16 14:13:55.403','2024-09-16 15:39:25.750'),
-('ë˚.“IrcòWÍÙü’|','/ª_‚‚öMp™XTŒ|„‚','Dockware Sample Plugin',NULL,NULL,NULL,NULL,'2024-09-16 14:13:55.402','2024-09-16 15:39:25.749'),
-('ë˚.“Mssø\"ûF°`','ë˚.Œ&ps§xu’s√?µ','Shopware 6 Demo data','Demo data plugin for Shopware 6. Do not use in production environments! The data is imported on plugin activation and it will overwritten existing data.','https://store.shopware.com/en/shopware-ag.html','https://docs.shopware.com/en',NULL,'2024-09-16 14:13:55.430','2024-09-16 15:39:25.774'),
-('ë˚.“Mssø\"ûF°`','/ª_‚‚öMp™XTŒ|„‚','Shopware 6 Demodaten','Demodaten Plugin f√ºr Shopware 6. Nicht in Produktiv-Umgebungen nutzen! Die Daten werden beim Aktivieren des Plugins importiert und √ºberschreiben bestehende Daten.','https://store.shopware.com/shopware-ag.html','https://docs.shopware.com/de',NULL,'2024-09-16 14:13:55.429','2024-09-16 15:39:25.773'),
-('ë˚wÌ’r}æªÈ9Qˆ$™','ë˚.Œ&ps§xu’s√?µ','Integration of Tecsafe app in Shopware','Get access to over 100 currencies and 200 markets worldwide with the payment module PayPal for your Shopware shop. Experience an easy and comfortable way of payment.','https://store.shopware.com/en/madco-gmbh.html','https://issues.shopware.com/',NULL,'2024-09-16 15:33:46.606','2024-09-16 15:39:25.767'),
-('ë˚wÌ’r}æªÈ9Qˆ$™','/ª_‚‚öMp™XTŒ|„‚','Integration der Tecsafe App in Shopware','Bieten Sie Ihren Kunden Deutschlands beliebteste Bezahlm√∂glichkeiten mit nur einer Integration: Das PayPal-Plugin bietet PayPal Checkout, den Expressbutton, Zettle und vieles mehr','https://store.shopware.com/madco-gmbh.html','https://issues.shopware.com/',NULL,'2024-09-16 15:33:46.606','2024-09-16 15:39:25.767');
+('ë˚.“IrcòWÍÙü’|','ë˚.Œ&ps§xu’s√?µ','Dockware Sample Plugin',NULL,NULL,NULL,NULL,'2024-09-16 14:13:55.403','2025-03-26 16:32:14.460'),
+('ë˚.“IrcòWÍÙü’|','/ª_‚‚öMp™XTŒ|„‚','Dockware Sample Plugin',NULL,NULL,NULL,NULL,'2024-09-16 14:13:55.402','2025-03-26 16:32:14.460'),
+('ë˚.“Mssø\"ûF°`','ë˚.Œ&ps§xu’s√?µ','Shopware 6 Demo data','Demo data plugin for Shopware 6. Do not use in production environments! The data is imported on plugin activation and it will overwritten existing data.','https://store.shopware.com/en/shopware-ag.html','https://docs.shopware.com/en',NULL,'2024-09-16 14:13:55.430','2025-03-26 16:32:14.510'),
+('ë˚.“Mssø\"ûF°`','/ª_‚‚öMp™XTŒ|„‚','Shopware 6 Demodaten','Demodaten Plugin f√ºr Shopware 6. Nicht in Produktiv-Umgebungen nutzen! Die Daten werden beim Aktivieren des Plugins importiert und √ºberschreiben bestehende Daten.','https://store.shopware.com/shopware-ag.html','https://docs.shopware.com/de',NULL,'2024-09-16 14:13:55.429','2025-03-26 16:32:14.510'),
+('ë˚wÌ’r}æªÈ9Qˆ$™','ë˚.Œ&ps§xu’s√?µ','Integration of Tecsafe app in Shopware','Get access to over 100 currencies and 200 markets worldwide with the payment module PayPal for your Shopware shop. Experience an easy and comfortable way of payment.','https://store.shopware.com/en/madco-gmbh.html','https://issues.shopware.com/',NULL,'2024-09-16 15:33:46.606','2025-03-26 16:32:14.506'),
+('ë˚wÌ’r}æªÈ9Qˆ$™','/ª_‚‚öMp™XTŒ|„‚','Integration der Tecsafe App in Shopware','Bieten Sie Ihren Kunden Deutschlands beliebteste Bezahlm√∂glichkeiten mit nur einer Integration: Das PayPal-Plugin bietet PayPal Checkout, den Expressbutton, Zettle und vieles mehr','https://store.shopware.com/madco-gmbh.html','https://issues.shopware.com/',NULL,'2024-09-16 15:33:46.606','2025-03-26 16:32:15.724');
 /*!40000 ALTER TABLE `plugin_translation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -8295,7 +8332,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product` (
   `id` binary(16) NOT NULL,
   `version_id` binary(16) NOT NULL,
@@ -8433,7 +8470,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_category` (
   `product_id` binary(16) NOT NULL,
   `product_version_id` binary(16) NOT NULL,
@@ -8470,7 +8507,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_category_tree`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_category_tree` (
   `product_id` binary(16) NOT NULL,
   `product_version_id` binary(16) NOT NULL,
@@ -8547,7 +8584,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_configurator_setting`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_configurator_setting` (
   `id` binary(16) NOT NULL,
   `version_id` binary(16) NOT NULL,
@@ -8598,7 +8635,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_cross_selling`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_cross_selling` (
   `id` binary(16) NOT NULL,
   `type` varchar(255) NOT NULL,
@@ -8635,7 +8672,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_cross_selling_assigned_products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_cross_selling_assigned_products` (
   `id` binary(16) NOT NULL,
   `cross_selling_id` binary(16) NOT NULL,
@@ -8667,7 +8704,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_cross_selling_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_cross_selling_translation` (
   `product_cross_selling_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -8696,7 +8733,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_custom_field_set`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_custom_field_set` (
   `custom_field_set_id` binary(16) NOT NULL,
   `product_id` binary(16) NOT NULL,
@@ -8723,7 +8760,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_download`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_download` (
   `id` binary(16) NOT NULL,
   `version_id` binary(16) NOT NULL,
@@ -8758,7 +8795,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_export`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_export` (
   `id` binary(16) NOT NULL,
   `product_stream_id` binary(16) NOT NULL,
@@ -8809,7 +8846,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_feature_set`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_feature_set` (
   `id` binary(16) NOT NULL,
   `features` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`features`)),
@@ -8837,7 +8874,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_feature_set_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_feature_set_translation` (
   `product_feature_set_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -8870,7 +8907,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_keyword_dictionary`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_keyword_dictionary` (
   `id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -8890,9 +8927,6 @@ CREATE TABLE `product_keyword_dictionary` (
 LOCK TABLES `product_keyword_dictionary` WRITE;
 /*!40000 ALTER TABLE `product_keyword_dictionary` DISABLE KEYS */;
 INSERT INTO `product_keyword_dictionary` VALUES
-('ë˚}ypxìH€-ÚºH—','/ª_‚‚öMp™XTŒ|„‚','kopie','eipok'),
-('ë˚}ypxìH€-Û“›','/ª_‚‚öMp™XTŒ|„‚','SW10000','00001WS'),
-('ë˚}y&s9ÖI+˝yrd<','ë˚.Œ&ps§xu’s√?µ','SW10000','00001WS'),
 ('ë˚ö~rüáRagÃçÄ','/ª_‚‚öMp™XTŒ|„‚','erweiterten','netretiewre'),
 ('ë˚ö~rüáRag‹ú','/ª_‚‚öMp™XTŒ|„‚','preisen','nesierp'),
 ('ë˚ö~rüáRag »5Õ','/ª_‚‚öMp™XTŒ|„‚','SWDEMO10002','20001OMEDWS'),
@@ -8962,7 +8996,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_manufacturer`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_manufacturer` (
   `id` binary(16) NOT NULL,
   `version_id` binary(16) NOT NULL,
@@ -8996,7 +9030,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_manufacturer_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_manufacturer_translation` (
   `product_manufacturer_id` binary(16) NOT NULL,
   `product_manufacturer_version_id` binary(16) NOT NULL,
@@ -9038,7 +9072,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_media`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_media` (
   `id` binary(16) NOT NULL,
   `version_id` binary(16) NOT NULL,
@@ -9081,7 +9115,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_option`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_option` (
   `product_id` binary(16) NOT NULL,
   `product_version_id` binary(16) NOT NULL,
@@ -9125,7 +9159,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_price`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_price` (
   `id` binary(16) NOT NULL,
   `version_id` binary(16) NOT NULL,
@@ -9166,7 +9200,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_property`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_property` (
   `product_id` binary(16) NOT NULL,
   `product_version_id` binary(16) NOT NULL,
@@ -9218,7 +9252,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_review`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_review` (
   `id` binary(16) NOT NULL,
   `product_id` binary(16) NOT NULL,
@@ -9264,7 +9298,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_search_config`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_search_config` (
   `id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -9298,7 +9332,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_search_config_field`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_search_config_field` (
   `id` binary(16) NOT NULL,
   `product_search_config_id` binary(16) NOT NULL,
@@ -9364,7 +9398,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_search_keyword`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_search_keyword` (
   `id` binary(16) NOT NULL,
   `version_id` binary(16) NOT NULL,
@@ -9541,7 +9575,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_sorting`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_sorting` (
   `id` binary(16) NOT NULL,
   `url_key` varchar(255) NOT NULL,
@@ -9579,7 +9613,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_sorting_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_sorting_translation` (
   `product_sorting_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -9621,7 +9655,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_stream`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_stream` (
   `id` binary(16) NOT NULL,
   `api_filter` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`api_filter`)),
@@ -9648,7 +9682,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_stream_filter`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_stream_filter` (
   `id` binary(16) NOT NULL,
   `product_stream_id` binary(16) NOT NULL,
@@ -9687,7 +9721,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_stream_mapping`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_stream_mapping` (
   `product_id` binary(16) NOT NULL,
   `product_version_id` binary(16) NOT NULL,
@@ -9714,7 +9748,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_stream_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_stream_translation` (
   `product_stream_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -9746,7 +9780,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_tag`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_tag` (
   `product_id` binary(16) NOT NULL,
   `product_version_id` binary(16) NOT NULL,
@@ -9773,7 +9807,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_translation` (
   `product_id` binary(16) NOT NULL,
   `product_version_id` binary(16) NOT NULL,
@@ -9830,7 +9864,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_visibility`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_visibility` (
   `id` binary(16) NOT NULL,
   `product_id` binary(16) NOT NULL,
@@ -9871,7 +9905,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `promotion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `promotion` (
   `id` binary(16) NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT 0,
@@ -9914,7 +9948,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `promotion_cart_rule`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `promotion_cart_rule` (
   `promotion_id` binary(16) NOT NULL,
   `rule_id` binary(16) NOT NULL,
@@ -9940,7 +9974,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `promotion_discount`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `promotion_discount` (
   `id` binary(16) NOT NULL,
   `promotion_id` binary(16) NOT NULL,
@@ -9976,7 +10010,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `promotion_discount_prices`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `promotion_discount_prices` (
   `id` binary(16) NOT NULL,
   `discount_id` binary(16) NOT NULL,
@@ -10007,7 +10041,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `promotion_discount_rule`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `promotion_discount_rule` (
   `discount_id` binary(16) NOT NULL,
   `rule_id` binary(16) NOT NULL,
@@ -10033,7 +10067,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `promotion_individual_code`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `promotion_individual_code` (
   `id` binary(16) NOT NULL,
   `promotion_id` binary(16) NOT NULL,
@@ -10063,7 +10097,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `promotion_order_rule`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `promotion_order_rule` (
   `promotion_id` binary(16) NOT NULL,
   `rule_id` binary(16) NOT NULL,
@@ -10089,7 +10123,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `promotion_persona_customer`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `promotion_persona_customer` (
   `promotion_id` binary(16) NOT NULL,
   `customer_id` binary(16) NOT NULL,
@@ -10115,7 +10149,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `promotion_persona_rule`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `promotion_persona_rule` (
   `promotion_id` binary(16) NOT NULL,
   `rule_id` binary(16) NOT NULL,
@@ -10141,7 +10175,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `promotion_sales_channel`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `promotion_sales_channel` (
   `id` binary(16) NOT NULL,
   `promotion_id` binary(16) NOT NULL,
@@ -10172,7 +10206,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `promotion_setgroup`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `promotion_setgroup` (
   `id` binary(16) NOT NULL,
   `promotion_id` binary(16) NOT NULL,
@@ -10202,7 +10236,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `promotion_setgroup_rule`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `promotion_setgroup_rule` (
   `setgroup_id` binary(16) NOT NULL,
   `rule_id` binary(16) NOT NULL,
@@ -10228,7 +10262,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `promotion_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `promotion_translation` (
   `name` varchar(255) DEFAULT NULL,
   `promotion_id` binary(16) NOT NULL,
@@ -10260,7 +10294,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `property_group`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `property_group` (
   `id` binary(16) NOT NULL,
   `sorting_type` varchar(50) NOT NULL DEFAULT 'alphanumeric',
@@ -10294,7 +10328,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `property_group_option`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `property_group_option` (
   `id` binary(16) NOT NULL,
   `property_group_id` binary(16) NOT NULL,
@@ -10349,7 +10383,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `property_group_option_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `property_group_option_translation` (
   `property_group_option_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -10428,7 +10462,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `property_group_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `property_group_translation` (
   `property_group_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -10472,7 +10506,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `refresh_token`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `refresh_token` (
   `id` binary(16) NOT NULL,
   `user_id` binary(16) NOT NULL,
@@ -10491,18 +10525,8 @@ CREATE TABLE `refresh_token` (
 LOCK TABLES `refresh_token` WRITE;
 /*!40000 ALTER TABLE `refresh_token` DISABLE KEYS */;
 INSERT INTO `refresh_token` VALUES
-('ë˚óX/p…≥œÙD,^ ','ë˚.“‰rºéÑ¨ÏT‰…','acede6a4329dd274eedaafc5575d8c78df9067b9f335f15b944bd6fe581b2a94279cb2d63aea5bf1','2024-09-16 16:08:05.423','2024-09-23 16:08:05.422'),
-('ë˚ ¨)p}¨êf∞0AΩ','ë˚.“‰rºéÑ¨ÏT‰…','69565986f7a76fb1edf1126c67e8f40fb17309aeba25d3e530109c969ec45ebbf1bd542e8d7f43fa','2024-09-16 17:04:09.257','2024-09-23 17:04:09.257'),
-('íäaqÇë¿ËvÒ2','ë˚.“‰rºéÑ¨ÏT‰…','4080127303ccc38c386cab0908ce5cf9438477927fba0962691efecbb0ebe725da1bae49bf367370','2024-09-18 21:30:49.825','2024-09-25 21:30:49.825'),
-('í	ª¿»qÑ°Úü!á','ë˚.“‰rºéÑ¨ÏT‰…','9472ca3b2d95a78164d4fc20db2c29bcbeba5911f704e37ed2677407d1780bd11cd334f1abe8b66f','2024-09-19 10:02:32.520','2024-09-26 10:02:32.520'),
-('í	ºìxq\"∑\\_¨0','ë˚.“‰rºéÑ¨ÏT‰…','3e4dc02a3d1dc94919f823c6d7fdb038c11ac32838ba97144c8efb6273ef861c0d81ab40458e97ce','2024-09-19 10:03:26.456','2024-09-26 10:03:26.456'),
-('í	Ô\Z∫rÒµ—âYåı[Ò','ë˚.“‰rºéÑ¨ÏT‰…','7477fab6e4318ddf90c7ab0a8798463c224b15efbe8ea5d6dc26abb6f29a97c25d9cc62250211a6d','2024-09-19 10:58:37.882','2024-09-26 10:58:37.882'),
-('í	Ú¢Aq	¨π1åT}c','ë˚.“‰rºéÑ¨ÏT‰…','d3746185bd6739661b2c1eae5af2d414ef173e102a5992822c80e9f96bc6f55c823b240c319b7854','2024-09-19 11:02:29.185','2024-09-26 11:02:29.185'),
-('í\n5/¥qˆå»PÅàe6‡','ë˚.“‰rºéÑ¨ÏT‰…','a51c8b4d4bc2ece72515dbafb4728b399b0915dcb3a6c41b28cd5dbe176d9ea1563833f1e8aefa40','2024-09-19 12:15:10.772','2024-09-26 12:15:10.772'),
-('í\nz« sWàòGÂÕù¶','ë˚.“‰rºéÑ¨ÏT‰…','17efe2279fb3f8b538821e78a44684f720b8037d1ec615d10ae6bf95320b5e804fb673bff45f4074','2024-09-19 13:31:11.690','2024-09-26 13:31:11.690'),
-('í\né¯Eq|æ≠n4.,)º','ë˚.“‰rºéÑ¨ÏT‰…','b76b5287c216bfc19e25480eda68d2cbee72374822a395514410023862ace7226c08f4bb3bc8902c','2024-09-19 13:53:14.821','2024-09-26 13:53:14.821'),
-('í\n≠$p‘àbOZ‰ˆÓ','ë˚.“‰rºéÑ¨ÏT‰…','92ce88e7fd939ec72c870348fe6a2dc5a8b26c15cbeefaf6bb24f75b32b3ead666a29d0e581b7cc0','2024-09-19 14:26:08.804','2024-09-26 14:26:08.804'),
-('í\nÎRpAï˘°)wﬁ€\n','ë˚.“‰rºéÑ¨ÏT‰…','8275fcb9c4ebe33c2a749a40dc32450fc23563f1193e88073ddeabc384742f8316d7a4feb51f1f65','2024-09-19 15:34:07.116','2024-09-26 15:34:07.116');
+('ï…¨Ñpˇ©s&ìXYl','ë˚.“‰rºéÑ¨ÏT‰…','c146ce0f13ccab932b7496a96d3bec8b32833d0b42be87e8edc5cb95ffda74854397830f14571df1','2025-03-24 19:41:21.301','2025-03-31 19:41:21.301'),
+('ï÷ﬁSVp˘ÑºæØXhÅ','ë˚.“‰rºéÑ¨ÏT‰…','6f7a997dd8408c792787c66e9397be80ed0abfaaa3be1b2653b9045c6bf3250eb8ccbc97cacc7d60','2025-03-27 09:10:49.430','2025-04-03 09:10:49.430');
 /*!40000 ALTER TABLE `refresh_token` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -10512,7 +10536,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `rule`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `rule` (
   `id` binary(16) NOT NULL,
   `name` varchar(500) NOT NULL,
@@ -10559,7 +10583,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `rule_condition`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `rule_condition` (
   `id` binary(16) NOT NULL,
   `type` varchar(255) NOT NULL,
@@ -10622,7 +10646,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `rule_tag`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `rule_tag` (
   `rule_id` binary(16) NOT NULL,
   `tag_id` binary(16) NOT NULL,
@@ -10648,7 +10672,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sales_channel`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sales_channel` (
   `id` binary(16) NOT NULL,
   `type_id` binary(16) NOT NULL,
@@ -10723,7 +10747,7 @@ CREATE TABLE `sales_channel` (
 LOCK TABLES `sales_channel` WRITE;
 /*!40000 ALTER TABLE `sales_channel` DISABLE KEYS */;
 INSERT INTO `sales_channel` VALUES
-('ë˚.”qêDˆıÁ','ä$0Ä˘.LqïF1KW|¯+',NULL,NULL,'SWSCCZJQVHRRUJZIM1BPYZDFSA','/ª_‚‚öMp™XTŒ|„‚','∑“UKËGÕÇÛ¨õ—¿ﬂ ','ë˚.Q\"s«å%eä‚D\"','ë˚.Q$r-é∂äÌx%\0+','ë˚.Qp∑ñ≤\0/Ÿa:','ë˚.Q%rAôDçãºvÂu','©„ÈjK¬æKŸŒu,4%',3,0,NULL,NULL,'©„ÈjK¬æKŸŒu,4%',NULL,'©„ÈjK¬æKŸŒu,4%',1,0,NULL,'œΩP”çAÿ≠ ŸO»Ω÷',NULL,'[\"0191fb2e512273c78c25658a14b50739\",\"0191fb2e512273c78c25658a14cb08f3\",\"0191fb2e512273c78c25658a14e24422\",\"0191fb2e512273c78c25658a153c882a\"]',NULL,'horizontal','2024-09-16 14:13:55.621','2024-09-19 09:40:08.164','iTw‡.ˆCÂ†∏>‘Õˆ:','©„ÈjK¬æKŸŒu,4%'),
+('ë˚.”qêDˆıÁ','ä$0Ä˘.LqïF1KW|¯+',NULL,NULL,'SWSCCZJQVHRRUJZIM1BPYZDFSA','/ª_‚‚öMp™XTŒ|„‚','∑“UKËGÕÇÛ¨õ—¿ﬂ ','ë˚.Q\"s«å%eä‚D\"','ë˚.Q$r-é∂äÌx%\0+','ë˚.Qp∑ñ≤\0/Ÿa:','ë˚.Q%rAôDçãºvÂu','©„ÈjK¬æKŸŒu,4%',3,0,NULL,NULL,'©„ÈjK¬æKŸŒu,4%',NULL,'©„ÈjK¬æKŸŒu,4%',1,0,NULL,'œΩP”çAÿ≠ ŸO»Ω÷',NULL,'[\"0191fb2e512273c78c25658a14b50739\",\"0191fb2e512273c78c25658a14cb08f3\",\"0191fb2e512273c78c25658a14e24422\",\"0191fb2e512273c78c25658a153c882a\"]',NULL,'horizontal','2024-09-16 14:13:55.621','2025-03-06 14:04:53.186','iTw‡.ˆCÂ†∏>‘Õˆ:','©„ÈjK¬æKŸŒu,4%'),
 ('òC-Ô9¸F$≥2•kåîM','ÒÉÓVPœK€äwC7WPg¶',NULL,NULL,'SWSCUM9UBXVLBGDYQTNQEVDZDG','ë˚.Œ&ps§xu’s√?µ','∑“UKËGÕÇÛ¨õ—¿ﬂ ','ë˚.Q\"s«å%eä‚D\"','ë˚.Q$r-é∂äÌx%\0+','ë˚.Qp∑ñ≤\0/Ÿa:','ë˚.Q%rAôDçãºvÂu','©„ÈjK¬æKŸŒu,4%',2,0,NULL,NULL,NULL,NULL,NULL,1,0,NULL,'œΩP”çAÿ≠ ŸO»Ω÷',NULL,'[\"0191fb2e512273c78c25658a14b50739\",\"0191fb2e512273c78c25658a14cb08f3\",\"0191fb2e512273c78c25658a14e24422\",\"0191fb2e512273c78c25658a153c882a\"]',NULL,'horizontal','2024-09-16 14:13:22.344',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `sales_channel` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -10734,7 +10758,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sales_channel_analytics`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sales_channel_analytics` (
   `id` binary(16) NOT NULL,
   `tracking_id` varchar(50) NOT NULL,
@@ -10762,7 +10786,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sales_channel_api_context`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sales_channel_api_context` (
   `token` varchar(255) NOT NULL,
   `payload` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`payload`)),
@@ -10783,6 +10807,9 @@ CREATE TABLE `sales_channel_api_context` (
 
 LOCK TABLES `sales_channel_api_context` WRITE;
 /*!40000 ALTER TABLE `sales_channel_api_context` DISABLE KEYS */;
+INSERT INTO `sales_channel_api_context` VALUES
+('3s29KYwxuAfABjzFbRa2GWkDBih3ZEYv','{\"expired\":false,\"customerId\":\"0195c9dc94fe70e7b23bfd988fc965a4\",\"billingAddressId\":null,\"shippingAddressId\":null,\"domainId\":\"01956bc5bff1758c885292841b738b11\"}','ë˚.”qêDˆıÁ','ï…‹î˛pÁ≤;˝òè…e§','2025-03-25 08:16:33'),
+('ywktChfC969DVTRckMS0xoD5tSmX4y0i','{\"expired\":false,\"customerId\":\"0195cc605f6f7333bb6a22872f4ba2e3\",\"billingAddressId\":null,\"shippingAddressId\":null,\"domainId\":\"01956bc5bff1758c885292841b738b11\"}','ë˚.”qêDˆıÁ','ïÃ`_os3ªj\"á/K¢„','2025-03-26 17:51:49');
 /*!40000 ALTER TABLE `sales_channel_api_context` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -10792,7 +10819,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sales_channel_country`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sales_channel_country` (
   `sales_channel_id` binary(16) NOT NULL,
   `country_id` binary(16) NOT NULL,
@@ -11071,7 +11098,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sales_channel_currency`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sales_channel_currency` (
   `sales_channel_id` binary(16) NOT NULL,
   `currency_id` binary(16) NOT NULL,
@@ -11110,7 +11137,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sales_channel_domain`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sales_channel_domain` (
   `id` binary(16) NOT NULL,
   `sales_channel_id` binary(16) NOT NULL,
@@ -11145,7 +11172,8 @@ LOCK TABLES `sales_channel_domain` WRITE;
 INSERT INTO `sales_channel_domain` VALUES
 ('ë˚.aÁr?üŒ›*tz‘','òC-Ô9¸F$≥2•kåîM','ë˚.Œ&ps§xu’s√?µ','default.headless0','∑“UKËGÕÇÛ¨õ—¿ﬂ ','ë˚.Q*sZÆ◊≈P,6~',0,NULL,'2024-09-16 14:13:26.631',NULL),
 ('ë˚.”\Zryãliºßµ«','ë˚.”qêDˆıÁ','/ª_‚‚öMp™XTŒ|„‚','https://tecsafe-sw6-plugin.ddev.site','∑“UKËGÕÇÛ¨õ—¿ﬂ ','ë˚.Q*sZÆ◊≈P(¨¢',0,NULL,'2024-09-16 14:13:55.621',NULL),
-('í	•\r∑z(´ˇ¥Á˙[ÎV','ë˚.”qêDˆıÁ','/ª_‚‚öMp™XTŒ|„‚','http://tecsafe-sw6-plugin.ddev.site','∑“UKËGÕÇÛ¨õ—¿ﬂ ','ë˚.Q*sZÆ◊≈P(¨¢',0,NULL,'2024-09-19 09:38:05.369','2024-09-19 09:40:08.163');
+('í	•\r∑z(´ˇ¥Á˙[ÎV','ë˚.”qêDˆıÁ','/ª_‚‚öMp™XTŒ|„‚','http://tecsafe-sw6-plugin.ddev.site','∑“UKËGÕÇÛ¨õ—¿ﬂ ','ë˚.Q*sZÆ◊≈P(¨¢',0,NULL,'2024-09-19 09:38:05.369','2024-09-19 09:40:08.163'),
+('ïk≈øÒuåàRíÑsã','ë˚.”qêDˆıÁ','/ª_‚‚öMp™XTŒ|„‚','https://tecsafe-sw6-plugin.ddev.site:33001','∑“UKËGÕÇÛ¨õ—¿ﬂ ','ë˚.Q*sZÆ◊≈P(¨¢',0,NULL,'2025-03-06 14:04:53.186',NULL);
 /*!40000 ALTER TABLE `sales_channel_domain` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11155,7 +11183,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sales_channel_language`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sales_channel_language` (
   `sales_channel_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -11186,7 +11214,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sales_channel_payment_method`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sales_channel_payment_method` (
   `sales_channel_id` binary(16) NOT NULL,
   `payment_method_id` binary(16) NOT NULL,
@@ -11221,7 +11249,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sales_channel_shipping_method`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sales_channel_shipping_method` (
   `sales_channel_id` binary(16) NOT NULL,
   `shipping_method_id` binary(16) NOT NULL,
@@ -11252,7 +11280,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sales_channel_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sales_channel_translation` (
   `sales_channel_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -11282,7 +11310,7 @@ CREATE TABLE `sales_channel_translation` (
 LOCK TABLES `sales_channel_translation` WRITE;
 /*!40000 ALTER TABLE `sales_channel_translation` DISABLE KEYS */;
 INSERT INTO `sales_channel_translation` VALUES
-('ë˚.”qêDˆıÁ','/ª_‚‚öMp™XTŒ|„‚','ddev',NULL,NULL,NULL,NULL,1,NULL,NULL,'2024-09-16 14:13:55.622','2024-09-19 09:40:08.164'),
+('ë˚.”qêDˆıÁ','/ª_‚‚öMp™XTŒ|„‚','ddev',NULL,NULL,NULL,NULL,1,NULL,NULL,'2024-09-16 14:13:55.622','2025-03-06 14:04:53.187'),
 ('òC-Ô9¸F$≥2•kåîM','ë˚.Œ&ps§xu’s√?µ','Headless',NULL,NULL,NULL,NULL,1,NULL,NULL,'2024-09-16 14:13:22.344',NULL),
 ('òC-Ô9¸F$≥2•kåîM','/ª_‚‚öMp™XTŒ|„‚','Headless',NULL,NULL,NULL,NULL,1,NULL,NULL,'2024-09-16 14:13:22.345',NULL);
 /*!40000 ALTER TABLE `sales_channel_translation` ENABLE KEYS */;
@@ -11294,7 +11322,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sales_channel_type`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sales_channel_type` (
   `id` binary(16) NOT NULL,
   `cover_url` varchar(500) DEFAULT NULL,
@@ -11326,7 +11354,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sales_channel_type_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sales_channel_type_translation` (
   `sales_channel_type_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -11367,7 +11395,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `salutation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `salutation` (
   `id` binary(16) NOT NULL,
   `salutation_key` varchar(255) NOT NULL,
@@ -11397,7 +11425,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `salutation_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `salutation_translation` (
   `salutation_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -11436,7 +11464,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `scheduled_task`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `scheduled_task` (
   `id` binary(16) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -11461,23 +11489,23 @@ CREATE TABLE `scheduled_task` (
 LOCK TABLES `scheduled_task` WRITE;
 /*!40000 ALTER TABLE `scheduled_task` DISABLE KEYS */;
 INSERT INTO `scheduled_task` VALUES
-('ë˚.—jsÄÅ}X˝5-BÎ','log_entry.cleanup','Shopware\\Core\\Framework\\Log\\ScheduledTask\\LogCleanupTask',86400,'scheduled','2024-09-18 20:42:36.145','2024-09-19 20:41:54.878','2024-09-16 14:13:55.185','2024-09-18 20:42:36.145',86400),
-('ë˚.—rzó´ëcÀj‚≈','shopware.invalidate_cache','Shopware\\Core\\Framework\\Adapter\\Cache\\InvalidateCacheTask',20,'skipped',NULL,'2024-09-19 15:33:58.640','2024-09-16 14:13:55.199','2024-09-19 15:33:58.642',20),
-('ë˚.—ÉqıëùœË%âÚ','app_update','Shopware\\Core\\Framework\\App\\ScheduledTask\\UpdateAppsTask',86400,'scheduled','2024-09-18 20:42:36.508','2024-09-19 20:41:55.598','2024-09-16 14:13:55.203','2024-09-18 20:42:36.508',86400),
-('ë˚.—Ürõ%∑w92»','app_delete','Shopware\\Core\\Framework\\App\\ScheduledTask\\DeleteCascadeAppsTask',86400,'scheduled','2024-09-18 20:42:36.521','2024-09-19 20:41:55.622','2024-09-16 14:13:55.207','2024-09-18 20:42:36.522',86400),
-('ë˚.—âs6πYêø„≤–','version.cleanup','Shopware\\Core\\Framework\\DataAbstractionLayer\\Version\\Cleanup\\CleanupVersionTask',86400,'scheduled','2024-09-18 20:42:36.529','2024-09-19 20:41:55.634','2024-09-16 14:13:55.210','2024-09-18 20:42:36.530',86400),
-('ë˚.—åpb∫Œ™?Ch\\','webhook_event_log.cleanup','Shopware\\Core\\Framework\\Webhook\\ScheduledTask\\CleanupWebhookEventLogTask',86400,'scheduled','2024-09-18 20:42:36.537','2024-09-19 20:41:55.640','2024-09-16 14:13:55.213','2024-09-18 20:42:36.537',86400),
-('ë˚.—èrQ©Uû©0å','sales_channel_context.cleanup','Shopware\\Core\\System\\SalesChannel\\Context\\Cleanup\\CleanupSalesChannelContextTask',86400,'scheduled','2024-09-18 20:42:36.544','2024-09-19 20:41:55.646','2024-09-16 14:13:55.216','2024-09-18 20:42:36.544',86400),
-('ë˚.—íp`£º›ö›¥«‚','usage_data.entity_data.collect','Shopware\\Core\\System\\UsageData\\ScheduledTask\\CollectEntityDataTask',86400,'scheduled','2024-09-18 20:42:36.560','2024-09-19 20:41:55.659','2024-09-16 14:13:55.218','2024-09-18 20:42:36.561',86400),
-('ë˚.—îqñ≠!≤=xÊü','product_keyword_dictionary.cleanup','Shopware\\Core\\Content\\Product\\Cleanup\\CleanupProductKeywordDictionaryTask',604800,'scheduled','2024-09-16 15:31:00.895','2024-09-23 14:13:55.220','2024-09-16 14:13:55.220','2024-09-16 15:31:00.895',604800),
-('ë˚.—ïs;êSX˙eız>','product_download.media.cleanup','Shopware\\Core\\Content\\Product\\Cleanup\\CleanupUnusedDownloadMediaTask',2628000,'scheduled','2024-09-16 15:31:00.913','2024-10-17 00:13:55.221','2024-09-16 14:13:55.221','2024-09-16 15:31:00.914',2628000),
-('ë˚.—ópÏ´QD\Zù“ó$','delete_newsletter_recipient_task','Shopware\\Core\\Content\\Newsletter\\ScheduledTask\\NewsletterRecipientTask',86400,'scheduled','2024-09-18 20:42:36.570','2024-09-19 20:41:55.667','2024-09-16 14:13:55.223','2024-09-18 20:42:36.570',86400),
-('ë˚.—òqáÑ_%ëc;','product_stream.mapping.update','Shopware\\Core\\Content\\ProductStream\\ScheduledTask\\UpdateProductStreamMappingTask',86400,'scheduled','2024-09-18 20:42:36.579','2024-09-19 20:41:55.676','2024-09-16 14:13:55.225','2024-09-18 20:42:36.580',86400),
-('ë˚.—örÚåRƒ9û1ù','product_export_generate_task','Shopware\\Core\\Content\\ProductExport\\ScheduledTask\\ProductExportGenerateTask',60,'scheduled','2024-09-19 15:34:11.350','2024-09-19 15:34:32.364','2024-09-16 14:13:55.226','2024-09-19 15:34:11.351',60),
-('ë˚.—ús‰æ◊?úÇ§ã\\','import_export_file.cleanup','Shopware\\Core\\Content\\ImportExport\\ScheduledTask\\CleanupImportExportFileTask',86400,'scheduled','2024-09-18 20:42:36.614','2024-09-19 20:41:55.707','2024-09-16 14:13:55.228','2024-09-18 20:42:36.615',86400),
-('ë˚.—ûs„µp,?z','shopware.sitemap_generate','Shopware\\Core\\Content\\Sitemap\\ScheduledTask\\SitemapGenerateTask',86400,'scheduled','2024-09-18 20:42:36.626','2024-09-19 20:41:55.718','2024-09-16 14:13:55.230','2024-09-18 20:42:36.626',86400),
-('ë˚.—†q1¶«uî\\„ñ','cart.cleanup','Shopware\\Core\\Checkout\\Cart\\Cleanup\\CleanupCartTask',86400,'scheduled','2024-09-18 20:42:36.636','2024-09-19 20:41:55.726','2024-09-16 14:13:55.232','2024-09-18 20:42:36.636',86400),
-('ë˚.—°r´Ω•›øêo6','shopware.elasticsearch.create.alias','Shopware\\Elasticsearch\\Framework\\Indexing\\CreateAliasTask',300,'skipped',NULL,'2024-09-19 15:38:12.206','2024-09-16 14:13:55.234','2024-09-19 15:33:58.677',300);
+('ë˚.—jsÄÅ}X˝5-BÎ','log_entry.cleanup','Shopware\\Core\\Framework\\Log\\ScheduledTask\\LogCleanupTask',86400,'scheduled','2025-03-27 09:06:51.333','2025-03-28 09:05:49.910','2024-09-16 14:13:55.185','2025-03-27 09:06:51.333',86400),
+('ë˚.—rzó´ëcÀj‚≈','shopware.invalidate_cache','Shopware\\Core\\Framework\\Adapter\\Cache\\InvalidateCacheTask',20,'skipped',NULL,'2025-03-27 09:12:51.627','2024-09-16 14:13:55.199','2025-03-27 09:12:51.628',20),
+('ë˚.—ÉqıëùœË%âÚ','app_update','Shopware\\Core\\Framework\\App\\ScheduledTask\\UpdateAppsTask',86400,'scheduled','2025-03-27 09:06:51.587','2025-03-28 09:05:50.137','2024-09-16 14:13:55.203','2025-03-27 09:06:51.588',86400),
+('ë˚.—Ürõ%∑w92»','app_delete','Shopware\\Core\\Framework\\App\\ScheduledTask\\DeleteCascadeAppsTask',86400,'scheduled','2025-03-27 09:06:51.615','2025-03-28 09:05:50.154','2024-09-16 14:13:55.207','2025-03-27 09:06:51.615',86400),
+('ë˚.—âs6πYêø„≤–','version.cleanup','Shopware\\Core\\Framework\\DataAbstractionLayer\\Version\\Cleanup\\CleanupVersionTask',86400,'scheduled','2025-03-27 09:06:51.621','2025-03-28 09:05:50.166','2024-09-16 14:13:55.210','2025-03-27 09:06:51.622',86400),
+('ë˚.—åpb∫Œ™?Ch\\','webhook_event_log.cleanup','Shopware\\Core\\Framework\\Webhook\\ScheduledTask\\CleanupWebhookEventLogTask',86400,'scheduled','2025-03-27 09:06:51.628','2025-03-28 09:05:50.175','2024-09-16 14:13:55.213','2025-03-27 09:06:51.628',86400),
+('ë˚.—èrQ©Uû©0å','sales_channel_context.cleanup','Shopware\\Core\\System\\SalesChannel\\Context\\Cleanup\\CleanupSalesChannelContextTask',86400,'scheduled','2025-03-27 09:06:51.633','2025-03-28 09:05:50.187','2024-09-16 14:13:55.216','2025-03-27 09:06:51.633',86400),
+('ë˚.—íp`£º›ö›¥«‚','usage_data.entity_data.collect','Shopware\\Core\\System\\UsageData\\ScheduledTask\\CollectEntityDataTask',86400,'scheduled','2025-03-27 09:06:51.646','2025-03-28 09:05:50.214','2024-09-16 14:13:55.218','2025-03-27 09:06:51.646',86400),
+('ë˚.—îqñ≠!≤=xÊü','product_keyword_dictionary.cleanup','Shopware\\Core\\Content\\Product\\Cleanup\\CleanupProductKeywordDictionaryTask',604800,'scheduled','2025-03-24 19:12:21.205','2025-03-31 19:11:20.215','2024-09-16 14:13:55.220','2025-03-24 19:12:21.205',604800),
+('ë˚.—ïs;êSX˙eız>','product_download.media.cleanup','Shopware\\Core\\Content\\Product\\Cleanup\\CleanupUnusedDownloadMediaTask',2628000,'scheduled','2025-03-24 19:11:20.233','2025-04-14 20:14:40.057','2024-09-16 14:13:55.221','2025-03-24 19:11:20.233',2628000),
+('ë˚.—ópÏ´QD\Zù“ó$','delete_newsletter_recipient_task','Shopware\\Core\\Content\\Newsletter\\ScheduledTask\\NewsletterRecipientTask',86400,'scheduled','2025-03-27 09:06:51.653','2025-03-28 09:05:50.227','2024-09-16 14:13:55.223','2025-03-27 09:06:51.654',86400),
+('ë˚.—òqáÑ_%ëc;','product_stream.mapping.update','Shopware\\Core\\Content\\ProductStream\\ScheduledTask\\UpdateProductStreamMappingTask',86400,'scheduled','2025-03-27 09:06:51.663','2025-03-28 09:05:50.240','2024-09-16 14:13:55.225','2025-03-27 09:06:51.663',86400),
+('ë˚.—örÚåRƒ9û1ù','product_export_generate_task','Shopware\\Core\\Content\\ProductExport\\ScheduledTask\\ProductExportGenerateTask',60,'scheduled','2025-03-27 09:12:58.462','2025-03-27 09:12:58.462','2024-09-16 14:13:55.226','2025-03-27 09:12:58.462',60),
+('ë˚.—ús‰æ◊?úÇ§ã\\','import_export_file.cleanup','Shopware\\Core\\Content\\ImportExport\\ScheduledTask\\CleanupImportExportFileTask',86400,'scheduled','2025-03-27 09:06:51.695','2025-03-28 09:05:50.291','2024-09-16 14:13:55.228','2025-03-27 09:06:51.695',86400),
+('ë˚.—ûs„µp,?z','shopware.sitemap_generate','Shopware\\Core\\Content\\Sitemap\\ScheduledTask\\SitemapGenerateTask',86400,'scheduled','2025-03-27 09:06:51.705','2025-03-28 09:05:50.310','2024-09-16 14:13:55.230','2025-03-27 09:06:51.705',86400),
+('ë˚.—†q1¶«uî\\„ñ','cart.cleanup','Shopware\\Core\\Checkout\\Cart\\Cleanup\\CleanupCartTask',86400,'scheduled','2025-03-27 09:06:51.712','2025-03-28 09:05:50.321','2024-09-16 14:13:55.232','2025-03-27 09:06:51.713',86400),
+('ë˚.—°r´Ω•›øêo6','shopware.elasticsearch.create.alias','Shopware\\Elasticsearch\\Framework\\Indexing\\CreateAliasTask',300,'skipped',NULL,'2025-03-27 09:15:49.948','2024-09-16 14:13:55.234','2025-03-27 09:10:51.325',300);
 /*!40000 ALTER TABLE `scheduled_task` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11487,7 +11515,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `script`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `script` (
   `id` binary(16) NOT NULL,
   `script` longtext NOT NULL,
@@ -11519,7 +11547,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `seo_url`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `seo_url` (
   `id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -11586,7 +11614,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `seo_url_template`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `seo_url_template` (
   `id` binary(16) NOT NULL,
   `sales_channel_id` binary(16) DEFAULT NULL,
@@ -11623,7 +11651,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `shipping_method`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `shipping_method` (
   `id` binary(16) NOT NULL,
   `active` tinyint(1) unsigned NOT NULL DEFAULT 0,
@@ -11667,7 +11695,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `shipping_method_price`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `shipping_method_price` (
   `id` binary(16) NOT NULL,
   `shipping_method_id` binary(16) NOT NULL,
@@ -11709,7 +11737,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `shipping_method_tag`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `shipping_method_tag` (
   `shipping_method_id` binary(16) NOT NULL,
   `tag_id` binary(16) NOT NULL,
@@ -11735,7 +11763,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `shipping_method_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `shipping_method_translation` (
   `shipping_method_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -11773,7 +11801,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `snippet`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `snippet` (
   `id` binary(16) NOT NULL,
   `translation_key` varchar(255) NOT NULL,
@@ -11797,8 +11825,8 @@ CREATE TABLE `snippet` (
 LOCK TABLES `snippet` WRITE;
 /*!40000 ALTER TABLE `snippet` DISABLE KEYS */;
 INSERT INTO `snippet` VALUES
-('ë˚yπvsyÇÔ\Z#ÕQ©','customFields.tecsafe_enabled','OFCP aktivieren','System','ë˚.Q*sZÆ◊≈P(¨¢','{\"custom_field_id\":\"0191fb79b9717362b1d34d27d5f5fb43\"}','2024-09-16 15:35:44.246',NULL),
-('ë˚yπvsyÇÔ\Z#Õˆéæ','customFields.tecsafe_enabled','Enable OFCP','System','ë˚.Q*sZÆ◊≈P,6~','{\"custom_field_id\":\"0191fb79b9717362b1d34d27d5f5fb43\"}','2024-09-16 15:35:44.246',NULL);
+('ï”L¬s\"∂É–fÊﬂç∞','customFields.tecsafe_enabled','OFCP aktivieren','System','ë˚.Q*sZÆ◊≈P(¨¢','{\"custom_field_id\":\"0195d34c18c073499a0aeec3c76a7769\"}','2025-03-26 16:32:14.530',NULL),
+('ï”L¬s\"∂É–fÁèùÕ','customFields.tecsafe_enabled','Enable OFCP','System','ë˚.Q*sZÆ◊≈P,6~','{\"custom_field_id\":\"0195d34c18c073499a0aeec3c76a7769\"}','2025-03-26 16:32:14.530',NULL);
 /*!40000 ALTER TABLE `snippet` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11808,7 +11836,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `snippet_set`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `snippet_set` (
   `id` binary(16) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -11840,7 +11868,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `state_machine`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `state_machine` (
   `id` binary(16) NOT NULL,
   `technical_name` varchar(255) NOT NULL,
@@ -11875,7 +11903,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `state_machine_history`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `state_machine_history` (
   `id` binary(16) NOT NULL,
   `state_machine_id` binary(16) NOT NULL,
@@ -11916,7 +11944,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `state_machine_state`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `state_machine_state` (
   `id` binary(16) NOT NULL,
   `technical_name` varchar(255) NOT NULL,
@@ -11976,7 +12004,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `state_machine_state_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `state_machine_state_translation` (
   `language_id` binary(16) NOT NULL,
   `state_machine_state_id` binary(16) NOT NULL,
@@ -12069,7 +12097,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `state_machine_transition`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `state_machine_transition` (
   `id` binary(16) NOT NULL,
   `action_name` varchar(255) NOT NULL,
@@ -12210,7 +12238,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `state_machine_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `state_machine_translation` (
   `language_id` binary(16) NOT NULL,
   `state_machine_id` binary(16) NOT NULL,
@@ -12253,7 +12281,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `swag_paypal_pos_sales_channel`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `swag_paypal_pos_sales_channel` (
   `id` binary(16) NOT NULL,
   `sales_channel_id` binary(16) NOT NULL,
@@ -12288,7 +12316,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `swag_paypal_pos_sales_channel_inventory`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `swag_paypal_pos_sales_channel_inventory` (
   `sales_channel_id` binary(16) NOT NULL,
   `product_id` binary(16) NOT NULL,
@@ -12320,7 +12348,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `swag_paypal_pos_sales_channel_media`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `swag_paypal_pos_sales_channel_media` (
   `sales_channel_id` binary(16) NOT NULL,
   `media_id` binary(16) NOT NULL,
@@ -12350,7 +12378,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `swag_paypal_pos_sales_channel_product`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `swag_paypal_pos_sales_channel_product` (
   `sales_channel_id` binary(16) NOT NULL,
   `product_id` binary(16) NOT NULL,
@@ -12379,7 +12407,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `swag_paypal_pos_sales_channel_run`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `swag_paypal_pos_sales_channel_run` (
   `id` binary(16) NOT NULL,
   `sales_channel_id` binary(16) NOT NULL,
@@ -12412,7 +12440,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `swag_paypal_pos_sales_channel_run_log`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `swag_paypal_pos_sales_channel_run_log` (
   `id` binary(16) NOT NULL,
   `run_id` binary(16) NOT NULL,
@@ -12447,7 +12475,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `swag_paypal_transaction_report`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `swag_paypal_transaction_report` (
   `order_transaction_id` binary(16) NOT NULL,
   `order_transaction_version_id` binary(16) NOT NULL,
@@ -12475,7 +12503,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `swag_paypal_vault_token`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `swag_paypal_vault_token` (
   `id` binary(16) NOT NULL,
   `customer_id` binary(16) NOT NULL,
@@ -12508,7 +12536,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `swag_paypal_vault_token_mapping`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `swag_paypal_vault_token_mapping` (
   `customer_id` binary(16) NOT NULL,
   `payment_method_id` binary(16) NOT NULL,
@@ -12539,7 +12567,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `system_config`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `system_config` (
   `id` binary(16) NOT NULL,
   `configuration_key` varchar(255) NOT NULL,
@@ -12574,7 +12602,7 @@ INSERT INTO `system_config` VALUES
 ('ë˚.S&rWûíÒv˛ Õ','core.update.channel','{\"_value\":\"stable\"}',NULL,'2024-09-16 14:13:22.854',NULL),
 ('ë˚.S)p·û·p\Z`¡Œ7','core.update.code','{\"_value\": \"\"}',NULL,'2024-09-16 14:13:22.857',NULL),
 ('ë˚.S.pS°ô:ﬂø¥\Z','core.cart.maxQuantity','{\"_value\": \"100\"}',NULL,'2024-09-16 14:13:22.862',NULL),
-('ë˚.S4rj∞o@°ö€˛','core.loginRegistration.passwordMinLength','{\"_value\": \"8\"}',NULL,'2024-09-16 14:13:22.868',NULL),
+('ë˚.S4rj∞o@°ö€˛','core.loginRegistration.passwordMinLength','{\"_value\":\"8\"}',NULL,'2024-09-16 14:13:22.868','2024-09-25 15:40:42.564'),
 ('ë˚.S9s[ç/€<;¯Ë','core.address.showZipcodeInFrontOfCity','{\"_value\": true}',NULL,'2024-09-16 14:13:22.873',NULL),
 ('ë˚.S?rÕècuhiñ9\n','core.basicInformation.shopName','{\"_value\":\"ddev\"}',NULL,'2024-09-16 14:13:22.879','2024-09-16 14:13:54.000'),
 ('ë˚.SBs?¢˝9‚çR÷p','core.listing.allowBuyInListing','{\"_value\": true}',NULL,'2024-09-16 14:13:22.882',NULL),
@@ -12589,7 +12617,7 @@ INSERT INTO `system_config` VALUES
 ('ë˚.VÜry∂ø<hd—Ñä','core.basicInformation.imprintPage','{\"_value\": \"0191fb2e56867279b6bf3c6862f4893a\"}',NULL,'2024-09-16 14:13:23.718',NULL),
 ('ë˚.W8r∆ëò<`,ñ÷i','core.basicInformation.activeCaptchas','{\"_value\": [\"honeypot\"]}',NULL,'2024-09-16 14:13:23.896',NULL),
 ('ë˚.ZFpæΩ≤÷ΩÎúÉx','core.listing.showReview','{\"_value\": true}',NULL,'2024-09-16 14:13:24.678',NULL),
-('ë˚.ZVq«óòh £ûW1','core.loginRegistration.invalidateSessionOnLogOut','{\"_value\":false}',NULL,'2024-09-16 14:13:24.694',NULL),
+('ë˚.ZVq«óòh £ûW1','core.loginRegistration.invalidateSessionOnLogOut','{\"_value\":false}',NULL,'2024-09-16 14:13:24.694','2024-09-25 15:40:42.565'),
 ('ë˚.[pµíeÁ÷˝Íò','core.listing.defaultSorting','{\"_value\":\"0191fb2e5b14724b93e6f883763aa218\"}',NULL,'2024-09-16 14:13:24.887',NULL),
 ('ë˚.[ûr=†˜ét€t','core.seo.redirectToCanonicalUrl','{\"_value\": true}',NULL,'2024-09-16 14:13:25.022',NULL),
 ('ë˚.[ûr=†˜èCΩ˚','core.listing.disableEmptyFilterOptions','{\"_value\": false}',NULL,'2024-09-16 14:13:25.022',NULL),
@@ -12598,13 +12626,13 @@ INSERT INTO `system_config` VALUES
 ('ë˚.\\qsÄLµfı ®','core.basicInformation.firstNameFieldRequired','{\"_value\": true}',NULL,'2024-09-16 14:13:25.233',NULL),
 ('ë˚.\\qsÄLµg”Àû','core.basicInformation.lastNameFieldRequired','{\"_value\": true}',NULL,'2024-09-16 14:13:25.233',NULL),
 ('ë˚.\\qsÄLµh>„','core.basicInformation.phoneNumberFieldRequired','{\"_value\": true}',NULL,'2024-09-16 14:13:25.233',NULL),
-('ë˚._≈p_ùØÿK‘˝±','core.loginRegistration.requireDataProtectionCheckbox','{\"_value\":false}',NULL,'2024-09-16 14:13:26.085',NULL),
+('ë˚._≈p_ùØÿK‘˝±','core.loginRegistration.requireDataProtectionCheckbox','{\"_value\":false}',NULL,'2024-09-16 14:13:26.085','2024-09-25 15:40:42.565'),
 ('ë˚.arr…ººé+¥3≈','core.basicInformation.activeCaptchasV2','{\"_value\":{\"honeypot\":{\"name\":\"Honeypot\",\"isActive\":true},\"basicCaptcha\":{\"name\":\"basicCaptcha\",\"isActive\":false},\"googleReCaptchaV2\":{\"name\":\"googleReCaptchaV2\",\"isActive\":false,\"config\":{\"siteKey\":\"\",\"secretKey\":\"\",\"invisible\":false}},\"googleReCaptchaV3\":{\"name\":\"googleReCaptchaV3\",\"isActive\":false,\"config\":{\"siteKey\":\"\",\"secretKey\":\"\",\"thresholdScore\":0.5}}}}',NULL,'2024-09-16 14:13:26.730',NULL),
 ('ë˚.bJpæ¢§Öﬂ˙˘N','core.newsletter.subscribeUrl','{\"_value\": \"/newsletter-subscribe?em=%%HASHEDEMAIL%%&hash=%%SUBSCRIBEHASH%%\"}',NULL,'2024-09-16 14:13:26.730',NULL),
-('ë˚.bJpæ¢§Öﬂ	+9R','core.loginRegistration.pwdRecoverUrl','{\"_value\": \"/account/recover/password?hash=%%RECOVERHASH%%\"}',NULL,'2024-09-16 14:13:26.730',NULL),
-('ë˚.bJpæ¢§Öﬂ	U∞à','core.loginRegistration.confirmationUrl','{\"_value\": \"/registration/confirm?em=%%HASHEDEMAIL%%&hash=%%SUBSCRIBEHASH%%\"}',NULL,'2024-09-16 14:13:26.730',NULL),
+('ë˚.bJpæ¢§Öﬂ	+9R','core.loginRegistration.pwdRecoverUrl','{\"_value\":\"\\/account\\/recover\\/password?hash=%%RECOVERHASH%%\"}',NULL,'2024-09-16 14:13:26.730','2024-09-25 15:40:42.565'),
+('ë˚.bJpæ¢§Öﬂ	U∞à','core.loginRegistration.confirmationUrl','{\"_value\":\"\\/registration\\/confirm?em=%%HASHEDEMAIL%%&hash=%%SUBSCRIBEHASH%%\"}',NULL,'2024-09-16 14:13:26.730','2024-09-25 15:40:42.565'),
 ('ë˚.bbrà∫¨ëkÜ-∑r','core.newsletter.doubleOptInRegistered','{\"_value\": false}',NULL,'2024-09-16 14:13:26.754',NULL),
-('ë˚.eár‹ûÉ`\0ù*û ','core.loginRegistration.unusedGuestCustomerLifetime','{\"_value\":86400}',NULL,'2024-09-16 14:13:27.559',NULL),
+('ë˚.eár‹ûÉ`\0ù*û ','core.loginRegistration.unusedGuestCustomerLifetime','{\"_value\":86400}',NULL,'2024-09-16 14:13:27.559','2024-09-25 15:40:42.565'),
 ('ë˚.eâpöÏH Œ“Ü','core.tax.defaultTaxRate','{\"_value\":\"0191fb2e5125724199448d8bbb92a6a5\"}',NULL,'2024-09-16 14:13:27.561',NULL),
 ('ë˚.f¯pZ†⁄òH	z\0','core.basicInformation.useDefaultCookieConsent','{\"_value\": true}',NULL,'2024-09-16 14:13:27.928',NULL),
 ('ë˚.gpÇµ1òùfrïT','core.cms.default_category_cms_page','{\"_value\":\"0191fb2e51427059b7813d2d4d409022\"}',NULL,'2024-09-16 14:13:27.938',NULL),
@@ -12613,10 +12641,9 @@ INSERT INTO `system_config` VALUES
 ('ë˚.hMqºçMju-m','core.storefrontSettings.iconCache','{\"_value\":true}',NULL,'2024-09-16 14:13:28.269',NULL),
 ('ë˚.h[q3í\Z¸pŒV5','core.webhook.entryLifetimeSeconds','{\"_value\": \"1209600\"}',NULL,'2024-09-16 14:13:28.283',NULL),
 ('ë˚.h\\r¨ú§ïIP*:E','core.userPermission.passwordMinLength','{\"_value\": 8}',NULL,'2024-09-16 14:13:28.284',NULL),
-('ë˚.›≥rt™œ ﬂŸÕ¬õ','storefront.themeSeed','{\"_value\":\"01922800d86b70ff92bc4a6b5ce835f6\"}','ë˚.”qêDˆıÁ','2024-09-16 14:13:58.323','2024-09-25 07:06:37.090'),
-('ë˚.Ë∑q\nè¯˛Õëˆ“','storefront.themeSeed','{\"_value\":\"0191fb7cd45c7116abd75540739f2967\"}','òC-Ô9¸F$≥2•kåîM','2024-09-16 14:14:01.143','2024-09-16 15:39:07.789'),
-('ë˚ua˙rüõV.ˇ“4ÄÍ','core.usageData.consentState','{\"_value\":\"requested\"}',NULL,'2024-09-16 15:30:59.706',NULL),
-('ë˚ue∆p{æÒ§Ω=]F^','core.app.shopId','{\"_value\":{\"app_url\":\"https:\\/\\/tecsafe-sw6-plugin.ddev.site\",\"value\":\"sNXr0pognK78cNX4\"}}',NULL,'2024-09-16 15:31:00.678','2024-09-16 15:31:00.883'),
+('ë˚.›≥rt™œ ﬂŸÕ¬õ','storefront.themeSeed','{\"_value\":\"0195d71b24fc72fc9e5d51b433acfc44\"}','ë˚.”qêDˆıÁ','2024-09-16 14:13:58.323','2025-03-27 10:17:15.327'),
+('ë˚.Ë∑q\nè¯˛Õëˆ“','storefront.themeSeed','{\"_value\":\"0195d34c29b270259eb6bdf755efa3f2\"}','òC-Ô9¸F$≥2•kåîM','2024-09-16 14:14:01.143','2025-03-26 16:32:18.913'),
+('ë˚ue∆p{æÒ§Ω=]F^','core.app.shopId','{\"_value\":{\"app_url\":\"https:\\/\\/tecsafe-sw6-plugin.ddev.site:33001\",\"value\":\"sNXr0pognK78cNX4\"}}',NULL,'2024-09-16 15:31:00.678','2025-03-06 14:04:05.444'),
 ('ë˚u˛ır»∑àŒ¬\Z¿è ','core.defaultSalesChannel.active','{\"_value\":true}',NULL,'2024-09-16 15:31:39.893',NULL),
 ('ë˚u˛ır»∑àŒ¬â:','core.defaultSalesChannel.salesChannel','{\"_value\":[\"0191fb2ed31471f090441bf60cf517e7\"]}',NULL,'2024-09-16 15:31:39.893',NULL),
 ('ë˚u˛ır»∑àŒ¬Tï*','core.defaultSalesChannel.visibility','{\"_value\":[]}',NULL,'2024-09-16 15:31:39.893',NULL),
@@ -12654,8 +12681,11 @@ INSERT INTO `system_config` VALUES
 ('ë˚vIws∞ÏÄ\0“&C','SwagPayPal.settings.vaultingEnabledVenmo','{\"_value\":false}',NULL,'2024-09-16 15:31:58.967',NULL),
 ('ë˚vIxq‰≤Eæñö—∏£','SwagPayPal.settings.crossBorderMessagingEnabled','{\"_value\":false}',NULL,'2024-09-16 15:31:58.968',NULL),
 ('ë˚vÅ±rîØ:Sï&ªXπ','core.frw.completedAt','{\"_value\":\"2024-09-16T15:32:13+00:00\"}',NULL,'2024-09-16 15:32:13.361',NULL),
-('ë˚yπhpO¥ÓûÖVD÷≥','MadTecsafe.config.shopApiGatewayUrl','{\"_value\":\"http:\\/\\/cockpit.ofcp.test:8080\\/\"}',NULL,'2024-09-16 15:35:44.232',NULL),
-('ë˚yπopKæË5‹∆·–','MadTecsafe.config.appUrl','{\"_value\":\"http:\\/\\/app.ofcp.test:8080\\/\"}',NULL,'2024-09-16 15:35:44.239',NULL);
+('í)◊Ç≈r”Ñíù€ß¥|','core.loginRegistration.showAdditionalAddressField1','{\"_value\":true}',NULL,'2024-09-25 15:40:42.565',NULL),
+('í)◊Ç∆rÏ≠DyÇc«ùD','core.loginRegistration.showAdditionalAddressField2','{\"_value\":true}',NULL,'2024-09-25 15:40:42.566',NULL),
+('ï…ë¬súä¨xÊ-Û–5','core.usageData.consentState','{\"_value\":\"requested\"}',NULL,'2025-03-24 19:11:19.234',NULL),
+('ï”Lµr=úT¥?ƒT{','MadTecsafe.config.shopApiGatewayUrl','{\"_value\":\"http:\\/\\/cockpit.ofcp.test:8080\\/\"}',NULL,'2025-03-26 16:32:14.517',NULL),
+('ï”Løp€Üä∑‹¥s\ro','MadTecsafe.config.appUrl','{\"_value\":\"http:\\/\\/app.ofcp.test:8080\\/\"}',NULL,'2025-03-26 16:32:14.527',NULL);
 /*!40000 ALTER TABLE `system_config` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -12665,7 +12695,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tag`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tag` (
   `id` binary(16) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -12690,7 +12720,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tax`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tax` (
   `id` binary(16) NOT NULL,
   `tax_rate` decimal(10,3) DEFAULT NULL,
@@ -12724,7 +12754,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tax_provider`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tax_provider` (
   `id` binary(16) NOT NULL,
   `active` tinyint(1) unsigned NOT NULL DEFAULT 1,
@@ -12759,7 +12789,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tax_provider_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tax_provider_translation` (
   `tax_provider_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -12790,7 +12820,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tax_rule`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tax_rule` (
   `id` binary(16) NOT NULL,
   `tax_id` binary(16) NOT NULL,
@@ -12903,7 +12933,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tax_rule_type`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tax_rule_type` (
   `id` binary(16) NOT NULL,
   `technical_name` varchar(255) NOT NULL,
@@ -12935,7 +12965,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tax_rule_type_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tax_rule_type_translation` (
   `tax_rule_type_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -12973,7 +13003,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `theme`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `theme` (
   `id` binary(16) NOT NULL,
   `technical_name` varchar(255) DEFAULT NULL,
@@ -13013,7 +13043,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `theme_child`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `theme_child` (
   `parent_id` binary(16) NOT NULL,
   `child_id` binary(16) NOT NULL,
@@ -13039,7 +13069,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `theme_media`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `theme_media` (
   `theme_id` binary(16) NOT NULL,
   `media_id` binary(16) NOT NULL,
@@ -13069,7 +13099,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `theme_sales_channel`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `theme_sales_channel` (
   `theme_id` binary(16) NOT NULL,
   `sales_channel_id` binary(16) NOT NULL,
@@ -13098,7 +13128,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `theme_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `theme_translation` (
   `theme_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -13135,7 +13165,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `unit`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `unit` (
   `id` binary(16) NOT NULL,
   `created_at` datetime(3) NOT NULL,
@@ -13159,7 +13189,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `unit_translation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `unit_translation` (
   `unit_id` binary(16) NOT NULL,
   `language_id` binary(16) NOT NULL,
@@ -13191,7 +13221,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `usage_data_entity_deletion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `usage_data_entity_deletion` (
   `id` binary(16) NOT NULL,
   `entity_ids` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`entity_ids`)),
@@ -13216,7 +13246,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user` (
   `id` binary(16) NOT NULL,
   `username` varchar(255) NOT NULL,
@@ -13263,7 +13293,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `user_access_key`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user_access_key` (
   `id` binary(16) NOT NULL,
   `user_id` binary(16) NOT NULL,
@@ -13296,7 +13326,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `user_config`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user_config` (
   `id` binary(16) NOT NULL,
   `user_id` binary(16) NOT NULL,
@@ -13317,6 +13347,8 @@ CREATE TABLE `user_config` (
 
 LOCK TABLES `user_config` WRITE;
 /*!40000 ALTER TABLE `user_config` DISABLE KEYS */;
+INSERT INTO `user_config` VALUES
+('ï…ë7prßÛ[!fˇÛ','ë˚.“‰rºéÑ¨ÏT‰…','core.usageData.hideConsentBanner','{\"_value\":true}','2025-03-24 19:11:25.496',NULL);
 /*!40000 ALTER TABLE `user_config` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -13326,7 +13358,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `user_recovery`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user_recovery` (
   `id` binary(16) NOT NULL,
   `user_id` binary(16) NOT NULL,
@@ -13354,7 +13386,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `version`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `version` (
   `id` binary(16) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -13380,7 +13412,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `version_commit`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `version_commit` (
   `id` binary(16) NOT NULL,
   `auto_increment` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -13412,7 +13444,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `version_commit_data`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `version_commit_data` (
   `id` binary(16) NOT NULL,
   `auto_increment` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -13449,7 +13481,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `webhook`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `webhook` (
   `id` binary(16) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -13483,7 +13515,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `webhook_event_log`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `webhook_event_log` (
   `id` binary(16) NOT NULL,
   `app_name` varchar(255) DEFAULT NULL,
@@ -13528,4 +13560,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-09-25 11:11:28
+-- Dump completed on 2025-03-27 11:22:41

@@ -17,9 +17,11 @@ corepack_enable: false
 no_project_mount: true
 hooks:
     post-start:
+        - exec: sudo /mnt/ddev_config/hooks/post-start/add-headless-ip-to-hosts.sh
         - exec: /mnt/ddev_config/db-build/import-if-empty.sh
         - exec: "alias ll='ls -lah'"
         - exec: "bin/console theme:compile | true"
+
 #hooks:
 #    post-start:
 #        - exec: "alias ll='ls -lah'"
